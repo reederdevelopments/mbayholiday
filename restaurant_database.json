@@ -49,7 +49,7 @@
     "id": 1004,
     "name": "Baruch's Coffee Roastery",
     "type": "Cafe",
-    "opening_times": "8:00 AM - 5:00 PM, Mon-Fri",
+    "opening_times": "8:00 AM - 5:00 PM, Mon-Fri | 8:00 AM - 2:00 PM, Sat",
     "images": [
       "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=600"
     ],
@@ -410,9 +410,9 @@
     "id": 1028,
     "name": "Piza ê Vino Hartenbos",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "11:00 AM - 10:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Hartenbos Seefront, Hartenbos",
     "latitude": -34.1129,
@@ -425,29 +425,29 @@
     "id": 1029,
     "name": "Salt and Copper",
     "type": "Restaurant / Gin Bar",
-    "opening_times": null,
+    "opening_times": "8:00 AM - 5:00 PM, Sun-Thu | 8:00 AM - 10:00 PM, Fri-Sat",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Hartenbos",
     "latitude": -34.111,
     "longitude": 22.118,
     "phone": null,
-    "website": null,
+    "website": "https://flymetothemoonguesthouse.com/pf/salt-and-copper/",
     "description": "Restaurant and gin bar on the main road at the edge of Hartenbos, with an outdoor play area used for family events and weddings."
   },
   {
     "id": 1030,
     "name": "Doughy's Bread and Cafe",
     "type": "Cafe",
-    "opening_times": null,
+    "opening_times": "8:00 AM - 6:00 PM, Mon-Fri | 7:30 AM - 4:00 PM, Sat",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Hartenbos Seefront, Hartenbos",
     "latitude": -34.1129,
     "longitude": 22.119,
-    "phone": null,
+    "phone": "+27446912982",
     "website": null,
     "description": "Artisan bakery and cafe overlooking the sea and waterpark, with breads and pastries baked on site plus pizzas, breakfasts, sandwiches and burgers."
   },
@@ -455,9 +455,9 @@
     "id": 1031,
     "name": "Koswerf",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "11:00 AM - 10:30 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "ATKV Hartenbos, 156 Paardekraal Avenue",
     "latitude": -34.1132,
@@ -470,9 +470,9 @@
     "id": 1032,
     "name": "Bootlegger Hartenbos",
     "type": "Cafe",
-    "opening_times": "7:00 AM - 5:00 PM, Mon-Fri (Hours vary on weekends)",
+    "opening_times": "7:00 AM - 5:00 PM, Mon-Fri | 7:00 AM - 3:00 PM, Sat | 8:00 AM - 3:00 PM, Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Kaap De Goede Hoop Avenue, Hartenbos",
     "latitude": -34.1134,
@@ -485,14 +485,14 @@
     "id": 1033,
     "name": "Around The Family Bean",
     "type": "Cafe",
-    "opening_times": null,
+    "opening_times": "8:00 AM - 3:00 PM, Mon-Sat | 9:00 AM - 2:00 PM, Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "20 Bloukrans Way, Hartenbos",
     "latitude": -34.1105,
     "longitude": 22.1195,
-    "phone": null,
+    "phone": "+27784174098",
     "website": null,
     "description": "Neighbourhood coffee shop with outdoor seating, breakfast wraps, burgers, fish and chips, coffee and cake."
   },
@@ -500,14 +500,14 @@
     "id": 1034,
     "name": "Moerby Trading Post",
     "type": "Cafe / Deli",
-    "opening_times": null,
+    "opening_times": "8:00 AM - 5:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Hartenbos Seefront",
     "latitude": -34.1129,
     "longitude": 22.119,
-    "phone": null,
+    "phone": "+27835646462",
     "website": null,
     "description": "Coffee shop, deli and outdoor-equipment store offering breakfast, coffee, homemade jams and baked goods."
   },
@@ -515,9 +515,9 @@
     "id": 1035,
     "name": "At The 19th",
     "type": "Bar / Restaurant",
-    "opening_times": null,
+    "opening_times": "11:00 AM - 10:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Onderbos Lane, Hartenbos",
     "latitude": -34.1055,
@@ -530,14 +530,14 @@
     "id": 1036,
     "name": "Takoda Spur Hartenbos",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "9:00 AM - 9:00 PM, Mon-Thu & Sun | 9:00 AM - 10:00 PM, Fri-Sat",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Hartenbos Seefront",
     "latitude": -34.1129,
     "longitude": 22.119,
-    "phone": null,
+    "phone": "+27446950382",
     "website": "https://www.spursteakranches.com/",
     "description": "Beachfront family steakhouse at the ATKV Strandoord, close to the sand and Hartenbos Seefront."
   },
@@ -545,29 +545,29 @@
     "id": 1037,
     "name": "Doppio Zero Garden Walk",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "8:00 AM - 9:00 PM, Mon-Thu | 8:00 AM - 10:00 PM, Fri-Sat",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Garden Walk, Hartenbos",
     "latitude": -34.1045,
     "longitude": 22.1215,
-    "phone": null,
-    "website": "https://doppiozero.co.za/",
+    "phone": "+27798983764",
+    "website": "https://doppio.co.za/",
     "description": "Italian restaurant at Garden Walk with a wood-fired oven and outdoor terrace."
   },
   {
     "id": 1038,
     "name": "Ocean Basket Hartenbos",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "11:30 AM - 9:00 PM, Mon-Fri | 11:00 AM - 9:00 PM, Sat-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Shop 30, Hartenbos Seefront",
     "latitude": -34.1129,
     "longitude": 22.119,
-    "phone": null,
+    "phone": "+27440501982",
     "website": "https://oceanbasket.com/",
     "description": "Seafood restaurant in Hartenbos Seefront, next to the ATKV waterpark, with bay-facing windows."
   },
@@ -575,14 +575,14 @@
     "id": 1039,
     "name": "Na Donker",
     "type": "Pub / Restaurant",
-    "opening_times": null,
+    "opening_times": "7:30 AM - 10:00 PM, Mon-Thu | 7:30 AM - 2:00 AM, Fri",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1538481199005-d4d1fb20a109?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "ATKV Hartenbos, 156 Paardekraal Avenue",
     "latitude": -34.1132,
     "longitude": 22.1177,
-    "phone": "+27446017200",
+    "phone": "+27446017223",
     "website": "https://hartenbos.co.za/",
     "description": "ATKV Hartenbos pub and function venue beside Koswerf, doubling as a dance floor and serving roosterkoek and other casual food."
   },
@@ -590,24 +590,24 @@
     "id": 1040,
     "name": "Milky Lane Hartenbos Seefront",
     "type": "Cafe / Dessert",
-    "opening_times": null,
+    "opening_times": "10:00 AM - 8:30 PM, Mon-Thu | 10:00 AM - 9:30 PM, Fri-Sat",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1579684947550-22e945225d9a?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Shop GF31B, Hartenbos Seefront",
     "latitude": -34.1129,
     "longitude": 22.119,
-    "phone": null,
-    "website": "https://www.milkylane.co.za/",
+    "phone": "+27761361813",
+    "website": "https://locations.milkylane.co.za/restaurants-HartenbosSeefront-MilkyLaneHartenbosSeefront",
     "description": "Dessert counter offering soft serve, waffles, sundaes and milkshakes above the beach and waterpark."
   },
   {
     "id": 1041,
     "name": "Die Boepensie Restaurant",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "8:00 AM - 5:00 PM, Mon-Sat",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Waboom Street, Hartenbos",
     "latitude": -34.112,
@@ -622,7 +622,7 @@
     "type": "Restaurant / Bar",
     "opening_times": "10:00 AM - 10:00 PM, Mon-Sat (Sun 11:00 AM - 3:00 PM)",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "De Dekke Shopping Centre, Great Brak River",
     "latitude": -34.0415,
@@ -635,14 +635,14 @@
     "id": 1043,
     "name": "De Vette Mossel Beach Restaurant",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "12:00 PM - 3:00 PM and 6:30 PM - 9:30 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1579684947550-22e945225d9a?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Souwesia Beach, Great Brak River",
     "latitude": -34.05,
     "longitude": 22.19,
-    "phone": "0793390170",
+    "phone": "+27793390170",
     "website": "http://www.devettemosselgrootbrak.co.za/",
     "description": "Beach seafood restaurant known for abundant seafood served beside the sea with a casual barefoot atmosphere."
   },
@@ -650,9 +650,9 @@
     "id": 1044,
     "name": "Twin Trees Waffle House & Wine Boutique",
     "type": "Cafe / Restaurant",
-    "opening_times": null,
+    "opening_times": "9:00 AM - 9:00 PM, Tue-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "29 Long Street, Great Brak River",
     "latitude": -34.041,
@@ -665,9 +665,9 @@
     "id": 1045,
     "name": "Oyster World",
     "type": "Seafood Restaurant",
-    "opening_times": null,
+    "opening_times": "11:00 AM - 10:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "150 Charles Street, Great Brak River",
     "latitude": -34.043,
@@ -680,24 +680,24 @@
     "id": 1046,
     "name": "Fork and Train Restaurant",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "7:30 AM - 10:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Santos Express, Santos Beach, Mossel Bay",
     "latitude": -34.177,
     "longitude": 22.141,
-    "phone": null,
-    "website": null,
+    "phone": "+27446911995",
+    "website": "http://www.forkandtrain.co.za/",
     "description": "Restaurant housed in refurbished railway carriages at Santos Express, serving seafood, traditional dishes, burgers, ribs, steaks, sushi and pizza."
   },
   {
     "id": 1047,
     "name": "Coffee@Work",
     "type": "Cafe",
-    "opening_times": null,
+    "opening_times": "7:00 AM - 4:00 PM, Mon-Fri | 8:00 AM - 1:00 PM, Sat",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "65 Marsh Street, Mossel Bay",
     "latitude": -34.1818,
@@ -710,9 +710,9 @@
     "id": 1048,
     "name": "The London Bus Fish & Chip Company",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "11:00 AM - 8:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1579684947550-22e945225d9a?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Quay 4, Mossel Bay Harbour",
     "latitude": -34.1774,
@@ -725,9 +725,9 @@
     "id": 1049,
     "name": "Green Shed Coffee Roastery",
     "type": "Cafe",
-    "opening_times": null,
+    "opening_times": "7:00 AM - 5:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Mossel Bay",
     "latitude": -34.1808,
@@ -740,9 +740,9 @@
     "id": 1050,
     "name": "Bow & Arrow Restaurant",
     "type": "Restaurant",
-    "opening_times": "Tue-Sun (Closed Mondays)",
+    "opening_times": "9:00 AM - 5:00 PM, Tue-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Outeniqua Game Farm, R328, Ruiterbos, Mossel Bay",
     "latitude": -33.99,
@@ -755,9 +755,9 @@
     "id": 1051,
     "name": "Meet @ Sea",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "11:00 AM - 10:00 PM, Tue-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "3 Kus St, Glentana",
     "latitude": -34.048,
@@ -770,9 +770,9 @@
     "id": 1052,
     "name": "Spekbos Restaurant at Botlierskop Day Centre",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "8:00 AM - 5:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Botlierskop Private Game Reserve, Little Brak River",
     "latitude": -34.03,
@@ -785,9 +785,9 @@
     "id": 1053,
     "name": "Fireplace Restaurant at Botlierskop",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "6:00 PM - 10:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1414235077428-33898b12f156?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Botlierskop Private Game Reserve, Little Brak River",
     "latitude": -34.03,
@@ -800,9 +800,9 @@
     "id": 1054,
     "name": "Bellevue Restaurant at Botlierskop",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "12:00 PM - 3:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Botlierskop Private Game Reserve, Little Brak River",
     "latitude": -34.03,
@@ -815,9 +815,9 @@
     "id": 1055,
     "name": "Brinkleys River Village Pub",
     "type": "Pub / Restaurant",
-    "opening_times": null,
+    "opening_times": "11:00 AM - 10:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1538481199005-d4d1fb20a109?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Klein Brak River",
     "latitude": -34.08,
@@ -830,9 +830,9 @@
     "id": 1056,
     "name": "The Hummingbird Braai House",
     "type": "Restaurant",
-    "opening_times": null,
+    "opening_times": "10:00 AM - 5:00 PM, Wed-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Friemersheim",
     "latitude": -33.96,
@@ -845,9 +845,9 @@
     "id": 1057,
     "name": "Fanta Sea @ the Point",
     "type": "Restaurant / Family Venue",
-    "opening_times": null,
+    "opening_times": "9:00 AM - 9:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "Mossel Bay Point",
     "latitude": -34.18,
@@ -860,9 +860,9 @@
     "id": 1058,
     "name": "Mossel Bay Golf Club Restaurant",
     "type": "Restaurant / Clubhouse",
-    "opening_times": null,
+    "opening_times": "7:00 AM - 9:00 PM, Mon-Sun",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
     ],
     "location": "17th Ave, Mossel Bay",
     "latitude": -34.18,
@@ -870,5 +870,110 @@
     "phone": "+27446912379",
     "website": "https://visitmosselbay.co.za/listing/mosselbay-golf-club/",
     "description": "Golf-club restaurant and clubhouse with upper/lower bars, pizza oven and halfway-house facilities."
+  },
+  {
+    "id": 1059,
+    "name": "Admiral's Buffet Restaurant",
+    "type": "Restaurant",
+    "opening_times": "12:00 PM - 9:00 PM, Mon-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "Mossel Bay Town",
+    "latitude": -34.18,
+    "longitude": 22.14,
+    "phone": null,
+    "website": "https://visitmosselbay.co.za/",
+    "description": "A popular buffet restaurant in Mossel Bay offering a wide variety of traditional South African dishes and hot spreads."
+  },
+  {
+    "id": 1060,
+    "name": "Cattle Baron Mossel Bay",
+    "type": "Restaurant",
+    "opening_times": "12:00 PM - 10:00 PM, Mon-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "Langeberg Mall, Mossel Bay",
+    "latitude": -34.153,
+    "longitude": 22.108,
+    "phone": "+27446950275",
+    "website": "https://cattlebaron.co.za",
+    "description": "A renowned steakhouse offering premium aged grills, famous chateaubriand steaks, and traditional South African meat dishes."
+  },
+  {
+    "id": 1061,
+    "name": "La Peron Visskerm",
+    "type": "Restaurant",
+    "opening_times": "11:00 AM - 9:00 PM, Tue-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "Mossel Bay Harbour",
+    "latitude": -34.179,
+    "longitude": 22.143,
+    "phone": "+27446903045",
+    "website": "https://visitmosselbay.co.za/",
+    "description": "An authentic coastal seafood experience right on the harbour edge serving fresh line fish, mussels, and calamari."
+  },
+  {
+    "id": 1062,
+    "name": "Oceans Bar & Bistro",
+    "type": "Bar / Restaurant",
+    "opening_times": "11:00 AM - 11:00 PM, Mon-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "Mossel Bay Town",
+    "latitude": -34.181,
+    "longitude": 22.143,
+    "phone": null,
+    "website": "https://visitmosselbay.co.za/",
+    "description": "A relaxed bar and bistro offering ice-cold craft beers, cocktails, gourmet burgers, and casual seaside dining."
+  },
+  {
+    "id": 1063,
+    "name": "Patricks Pub & Restaurant",
+    "type": "Pub / Restaurant",
+    "opening_times": "10:00 AM - 12:00 AM, Mon-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "113 Marsh Street, Mossel Bay",
+    "latitude": -34.1835,
+    "longitude": 22.1415,
+    "phone": "+27446910012",
+    "website": "https://visitmosselbay.co.za/",
+    "description": "Patrick's Pub and Restaurant is South African hospitality with an Irish twist—an absolute must for a great pub lunch, cold pints, or a night out."
+  },
+  {
+    "id": 1064,
+    "name": "Mossel Bay Oyster Bar",
+    "type": "Bar / Restaurant",
+    "opening_times": "11:00 AM - 10:00 PM, Mon-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "Mossel Bay Harbour",
+    "latitude": -34.179,
+    "longitude": 22.144,
+    "phone": "+27446903333",
+    "website": "https://visitmosselbay.co.za/",
+    "description": "Oysters, Sushi & Bubbly! Located at Mossel Bay Harbour, the perfect venue to enjoy the sunset while sipping bubbly and enjoying fresh seafood."
+  },
+  {
+    "id": 1065,
+    "name": "Billy G",
+    "type": "Restaurant",
+    "opening_times": "12:00 PM - 3:00 PM & 6:00 PM - 10:00 PM, Mon-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "Garden Route Casino, Pinnacle Point, Mossel Bay",
+    "latitude": -34.204,
+    "longitude": 22.088,
+    "phone": "+27446067777",
+    "website": "https://www.tsogosun.com/garden-route-casino/restaurants/billy-g",
+    "description": "A family-friendly buffet restaurant offering a lavish spread of hot roasts, curries, seafood dishes, and decadent desserts."
   }
 ]

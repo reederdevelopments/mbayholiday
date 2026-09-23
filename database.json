@@ -111,7 +111,8 @@
     "name": "kykNET Buite Ekspo Suid-Kaap",
     "category": "event",
     "date": "2026-09-25T12:00:00",
-    "time": "12:00 PM - 6:00 PM",
+    "endDate": "2026-09-27T18:00:00",
+    "time": "12:00 PM - 6:00 PM daily",
     "images": [
       "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&q=80&w=600"
     ],
@@ -740,7 +741,7 @@
     "endDate": "2026-12-05T23:00:00",
     "time": "12:00 PM Dec 4 - 11:00 PM Dec 5",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27446017200",
     "website": "https://www.howler.co.za/events/amfihart-26-hartenbos-atkv-oord-4-5-dec-855b",
@@ -760,7 +761,7 @@
     "date": "2026-12-05T20:00:00",
     "time": "8:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://eventsinsa.com/western-cape/mossel-bay/an-evening-with-amira-willighagen-884101d5",
@@ -778,7 +779,7 @@
     "date": "2026-12-12T06:00:00",
     "time": "First start 6:00 AM; 5 km starts 6:10 AM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27734125440",
     "website": "https://runningcalendar.co.za/events/somerson-half-marathon",
@@ -797,9 +798,9 @@
     "endDate": "2026-12-26T23:59:59",
     "time": "Multi-day access / individual show times vary",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://itickets.co.za/events/486614",
     "price": null,
     "priceDetails": [],
@@ -815,9 +816,9 @@
     "date": "2026-12-19T20:00:00",
     "time": "8:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://itickets.co.za/events/486614",
     "price": null,
     "priceDetails": [],
@@ -833,9 +834,9 @@
     "date": "2026-12-21T10:00:00",
     "time": "10:00 AM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -851,9 +852,9 @@
     "date": "2026-12-20T20:00:00",
     "time": "8:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -869,9 +870,9 @@
     "date": "2026-12-21T15:00:00",
     "time": "3:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -887,9 +888,9 @@
     "date": "2026-12-22T15:00:00",
     "time": "3:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -905,9 +906,9 @@
     "date": "2026-12-22T10:00:00",
     "time": "10:00 AM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -923,9 +924,9 @@
     "date": "2026-12-21T20:00:00",
     "time": "8:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -941,9 +942,9 @@
     "date": "2026-12-23T11:00:00",
     "time": "11:00 AM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -959,9 +960,9 @@
     "date": "2026-12-22T20:00:00",
     "time": "8:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -977,9 +978,9 @@
     "date": "2026-12-24T10:00:00",
     "time": "10:00 AM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -995,9 +996,9 @@
     "date": "2026-12-23T20:00:00",
     "time": "8:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -1013,9 +1014,9 @@
     "date": "2026-12-24T13:00:00",
     "time": "1:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -1031,9 +1032,9 @@
     "date": "2026-12-26T11:00:00",
     "time": "11:00 AM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -1049,7 +1050,7 @@
     "date": "2026-12-26T06:30:00",
     "time": "Registration 5:00-6:30 AM; race starts 6:30 AM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://startingline.co.za/events/monties-cycles-mtb-trail-run-challenge-a466e7dc",
@@ -1074,7 +1075,7 @@
     "date": "2026-12-19T17:00:00",
     "time": "7:00 PM-11:00 PM; gates 5:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://itickets.co.za/events/486560",
@@ -1098,7 +1099,7 @@
     "date": "2026-12-29T15:00:00",
     "time": "4:00 PM-11:00 PM; gates 3:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://itickets.co.za/events/486561",
@@ -1120,7 +1121,7 @@
     "date": "2026-12-31T06:00:00",
     "time": "First start 6:00 AM; prize giving 10:00 AM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27832942640",
     "website": "https://runningcalendar.co.za/events/oujaarsdraffie",
@@ -1139,7 +1140,7 @@
     "endDate": "2027-01-01T23:59:59",
     "time": "8:00 PM; runs selected nights through 1 Jan 2027",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://www.howler.co.za/events/mega-club-26-mosselbaai-main-season-198b?rep=ajm",
@@ -1159,9 +1160,9 @@
     "date": "2026-12-26T20:00:00",
     "time": "8:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27861000291",
     "website": "https://puntindiewind.co.za/",
     "price": null,
     "priceDetails": [],
@@ -1177,7 +1178,7 @@
     "date": "2026-12-31T17:00:00",
     "time": "7:00 PM-11:00 PM; gates 5:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://itickets.co.za/events/486562",
@@ -1200,9 +1201,9 @@
     "date": null,
     "time": "2-hour trip; departure varies",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27446903101",
     "website": "https://romonza.activitar.com/products",
     "price": 500,
     "priceDetails": [
@@ -1220,9 +1221,9 @@
     "date": null,
     "time": "15 minutes; departures subject to availability",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27446903101",
     "website": "https://romonza.activitar.com/products",
     "price": null,
     "priceDetails": [],
@@ -1238,7 +1239,7 @@
     "date": null,
     "time": "2.5 hours; year-round subject to availability",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1519069502901-70eeb6f7df26?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://romonza.activitar.com/services/17754",
@@ -1256,7 +1257,7 @@
     "date": null,
     "time": "Multi-day guided trail; dates by booking",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1582236896263-d143c7bca609?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27609130270",
     "website": "https://www.oystercatchertrail.co.za/",
@@ -1276,7 +1277,7 @@
     "date": null,
     "time": "Day hike; pre-booking required",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1582236896263-d143c7bca609?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27609130270",
     "website": "https://www.oystercatchertrail.co.za/",
@@ -1292,9 +1293,9 @@
     "name": "Hartenbos Adventure Golf",
     "category": "activity",
     "date": null,
-    "time": "Seasonal hours; check venue",
+    "time": "9:00 AM - 5:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27446017200",
     "website": "https://hartenbos.co.za/home/facilities/",
@@ -1314,7 +1315,7 @@
     "date": null,
     "time": "Bookings required",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27446017255",
     "website": "https://hartenbos.co.za/home/facilities/",
@@ -1337,7 +1338,7 @@
     "date": null,
     "time": "Mon-Fri 9:00 AM-4:00 PM; Sat 9:00 AM-12:30 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27446017238",
     "website": "https://hartenbos.co.za/home/facilities/",
@@ -1355,7 +1356,7 @@
     "date": null,
     "time": "Access subject to security / booking",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1519069502901-70eeb6f7df26?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27446065315",
     "website": "https://pinnaclepointestate.co.za/leisure/heritage-tunnel/",
@@ -1375,7 +1376,7 @@
     "date": "2026-12-18T08:00:00",
     "time": "From 8:00 AM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://www.toodoo.co.za/float-fest-groot-brak-2026/",
@@ -1400,7 +1401,7 @@
     "date": "2026-12-20T19:45:00",
     "time": "7:45 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://greatbrakriver.co.za/",
@@ -1418,7 +1419,7 @@
     "date": "2026-12-26T19:45:00",
     "time": "7:45 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://greatbrakriver.co.za/",
@@ -1436,7 +1437,7 @@
     "date": "2026-12-31T08:00:00",
     "time": "Morning / daytime",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://thenewspaper.co.za/festive-season-highlights-in-the-western-cape/",
@@ -1454,7 +1455,7 @@
     "date": "2026-12-28T11:15:00",
     "time": "11:15 AM-12:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://visitmosselbay.co.za/event/trans-agulhas-challenge-2026/",
@@ -1472,7 +1473,7 @@
     "date": "2026-12-12T09:00:00",
     "time": "Daily, typically 9:00 AM-6:00 PM; through 9 Jan 2027",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://www.oev.co.za/iea-application-form/",
@@ -1490,7 +1491,7 @@
     "date": "2026-11-21T09:00:00",
     "time": "9:00 AM-6:00 PM; runs through 3 Jan 2027",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://itgclothing.co.za/blogs/events",
@@ -1508,7 +1509,7 @@
     "date": "2026-11-27T12:00:00",
     "time": "12:00 PM 27 Nov-10:00 AM 6 Dec",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://www.howlerapp.com/events/kampdorp-f39b",
@@ -1524,9 +1525,9 @@
     "name": "Cape Saint Blaize Gin Tasting & Distillery Experience",
     "category": "activity",
     "date": null,
-    "time": "Check booking availability",
+    "time": "10:00 AM - 5:00 PM, Mon - Sat",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27446911885",
     "website": "https://visitmosselbay.co.za/listing/cape-saint-blaize-artisanal-distillery/",
@@ -1544,7 +1545,7 @@
     "date": null,
     "time": "Scheduled excursions / booking required",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27878064200",
     "website": "https://visitmosselbay.co.za/listing/southern-cape-railway/",
@@ -1562,16 +1563,18 @@
     "date": null,
     "time": "Booking / operating times vary",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay",
-    "latitude": -34.18,
-    "longitude": 22.14,
-    "description": "High-adrenaline ocean activity listed by Mossel Bay Tourism under adrenaline, family entertainment, guided tours and ocean adventures."
+    "phone": "+27446911995",
+    "website": "https://www.mosselbayboatadventures.co.za/activities/big-tube/",
+    "price": 650,
+    "priceDetails": [
+      { "item": "Big Tube Ride", "cost": "R650.00" }
+    ],
+    "location": "Quay 4, Mossel Bay Harbour",
+    "latitude": -34.177,
+    "longitude": 22.143,
+    "description": "A massive, towable spinning tube designed for pure, non-stop fun on the water. Holding up to 15 passengers, it's the ultimate shared ocean thrill."
   },
   {
     "id": 83,
@@ -1580,9 +1583,9 @@
     "date": null,
     "time": "Booking / weather dependent",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "+27446913796",
     "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
     "price": null,
     "priceDetails": [],
@@ -1598,7 +1601,7 @@
     "date": null,
     "time": "Check operating schedule",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
@@ -1616,7 +1619,7 @@
     "date": null,
     "time": "Check booking schedule",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
@@ -1632,9 +1635,9 @@
     "name": "VR Game BAR Mossel Bay",
     "category": "activity",
     "date": null,
-    "time": "Check venue",
+    "time": "12:00 PM - 8:00 PM",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
@@ -1652,7 +1655,7 @@
     "date": null,
     "time": "Bookings required",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
@@ -1670,7 +1673,7 @@
     "date": null,
     "time": "Booking required",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": null,
     "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
@@ -1688,7 +1691,7 @@
     "date": null,
     "time": "Open-air site",
     "images": [
-      "https://placehold.co/600x400?text=Image+Coming+Soon"
+      "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=600"
     ],
     "phone": "+27446912202",
     "website": "https://visitmosselbay.co.za/listing/mossel-bay-war-memorial/",
@@ -1698,5 +1701,186 @@
     "latitude": -34.18,
     "longitude": 22.14,
     "description": "Historic war memorial at Frog Rock near the Point, commemorating local servicemen from major 20th-century conflicts."
+  },
+  {
+    "id": 90,
+    "name": "Isuzu Ironman 70.3 Mossel Bay",
+    "category": "event",
+    "date": "2026-11-22T06:00:00",
+    "time": "Morning",
+    "images": [
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": null,
+    "website": "https://www.ironman.com/im703-mossel-bay",
+    "price": null,
+    "priceDetails": [],
+    "location": "De Bakke Beach, Mossel Bay",
+    "latitude": -34.172,
+    "longitude": 22.133,
+    "description": "Annual Isuzu Ironman 70.3 triathlon taking place in Mossel Bay featuring swim, bike, and run legs."
+  },
+  {
+    "id": 91,
+    "name": "MosJazz",
+    "category": "event",
+    "date": "2026-11-26T12:00:00",
+    "endDate": "2026-11-29T23:59:59",
+    "time": "Multi-day festival",
+    "images": [
+      "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": null,
+    "website": "https://visitmosselbay.co.za/events/",
+    "price": null,
+    "priceDetails": [],
+    "location": "Santos Beach, Mossel Bay",
+    "latitude": -34.177,
+    "longitude": 22.141,
+    "description": "Premier beachfront jazz festival right on the sand at Santos Beach."
+  },
+  {
+    "id": 92,
+    "name": "Rattle & Rust Rally",
+    "category": "event",
+    "date": "2027-04-22T08:00:00",
+    "time": "8:00 AM",
+    "images": [
+      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": null,
+    "website": "https://visitmosselbay.co.za/events/",
+    "price": null,
+    "priceDetails": [],
+    "location": "Route R327, Bartelsfontein Farm, Mossel Bay",
+    "latitude": -34.15,
+    "longitude": 21.98,
+    "description": "A massive rally and outdoor outdoor lifestyle exhibition on Bartelsfontein Farm."
+  },
+  {
+    "id": 93,
+    "name": "JO BLACK by Reedvalley!",
+    "category": "event",
+    "date": "2026-10-10T20:00:00",
+    "time": "8:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446981022",
+    "website": "https://reedvalley.com",
+    "price": null,
+    "priceDetails": [],
+    "location": "ReedValley Farm, R327, Mossel Bay",
+    "latitude": -34.1405,
+    "longitude": 22.051,
+    "description": "Live music performance by popular South African artist Jo Black at ReedValley Farm."
+  },
+  {
+    "id": 94,
+    "name": "BASKET CASE - The Ultimate Green Day Experience",
+    "category": "event",
+    "date": "2026-10-03T20:00:00",
+    "time": "8:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446981022",
+    "website": "https://reedvalley.com",
+    "price": null,
+    "priceDetails": [],
+    "location": "ReedValley Farm, R327, Mossel Bay",
+    "latitude": -34.1405,
+    "longitude": 22.051,
+    "description": "A thrilling Green Day tribute show live at ReedValley Farm."
+  },
+  {
+    "id": 95,
+    "name": "Heuwelsrust Oktoberfest Hartenbos",
+    "category": "event",
+    "date": "2026-10-03T17:00:00",
+    "time": "5:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1538481199005-d4d1fb20a109?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": null,
+    "website": "https://visitmosselbay.co.za/events/",
+    "price": null,
+    "priceDetails": [],
+    "location": "ATKV Hartenbos Amphitheatre",
+    "latitude": -34.1132,
+    "longitude": 22.1177,
+    "description": "A lively Oktoberfest celebration at the ATKV Hartenbos Amphitheatre featuring craft beer and live entertainment."
+  },
+  {
+    "id": 96,
+    "name": "The Amazing Race Mossel Bay",
+    "category": "event",
+    "date": "2026-10-02T23:00:00",
+    "time": "11:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446928400",
+    "website": "https://diazhotel.co.za",
+    "price": null,
+    "priceDetails": [],
+    "location": "Diaz Hotel & Resort",
+    "latitude": -34.1575,
+    "longitude": 22.112,
+    "description": "A fun, competitive adventure race starting at the Diaz Hotel & Resort."
+  },
+  {
+    "id": 97,
+    "name": "Crosby, Stills, Nash & Young: A Tribute",
+    "category": "event",
+    "date": "2026-10-28T10:30:00",
+    "time": "10:30 AM",
+    "images": [
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": null,
+    "website": "https://pinnaclepointestate.co.za",
+    "price": null,
+    "priceDetails": [],
+    "location": "Pinnacle Point",
+    "latitude": -34.2045,
+    "longitude": 22.0891,
+    "description": "Live acoustic tribute to Crosby, Stills, Nash & Young performed at Pinnacle Point."
+  },
+  {
+    "id": 98,
+    "name": "Coffee Snobs Live At Reedvalley",
+    "category": "event",
+    "date": "2026-09-25T19:00:00",
+    "time": "7:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446981022",
+    "website": "https://reedvalley.com",
+    "price": null,
+    "priceDetails": [],
+    "location": "ReedValley Farm, R327, Mossel Bay",
+    "latitude": -34.1405,
+    "longitude": 22.051,
+    "description": "An evening of acoustic music, food, and wine with local musical duo Coffee Snobs."
+  },
+  {
+    "id": 99,
+    "name": "Damesoggend Saam Met Francois Boyce Van Hoezit",
+    "category": "event",
+    "date": "2026-10-03T10:00:00",
+    "time": "10:00 AM",
+    "images": [
+      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": null,
+    "website": "https://visitmosselbay.co.za/events/",
+    "price": null,
+    "priceDetails": [],
+    "location": "Mossel Bay Town Hall",
+    "latitude": -34.1833,
+    "longitude": 22.1417,
+    "description": "Inspirational ladies morning event featuring popular speaker Francois Boyce."
   }
 ]
