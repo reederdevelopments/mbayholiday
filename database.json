@@ -189,5 +189,98 @@
     ],
     "location": "ATKV Hartenbos Amphitheatre",
     "description": "Ring in 2027 with popular South African artist Appel performing live at the iconic Hartenbos Amphitheatre."
+  },
+  {
+    "id": 11,
+    "name": "Redberry Farm Strawberry Picking",
+    "category": "activity",
+    "date": null,
+    "time": "9:00 AM - 4:00 PM, Mon - Sat",
+    "images": [
+      "https://images.unsplash.com/photo-1596649284241-2b04f72fae53?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27448704222",
+    "website": "https://www.redberryfarm.co.za/",
+    "price": 50,
+    "priceDetails": [
+      { "item": "Strawberry Picking (Small Container)", "cost": "R50.00" },
+      { "item": "Strawberry Picking (Large Container)", "cost": "R85.00" },
+      { "item": "Hedge Maze Entry", "cost": "R40.00" }
+    ],
+    "location": "Geelhoutboom, George",
+    "description": "A perfect family day out! Pick your own fresh strawberries, conquer the largest permanent hedge maze in the Southern Hemisphere, and enjoy artisan eateries."
+  },
+  {
+    "id": 12,
+    "name": "George Lights Festival",
+    "category": "event",
+    "date": "2026-12-12T18:00:00",
+    "time": "6:00 PM - 10:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      { "item": "General Entry", "cost": "Free" }
+    ],
+    "location": "York Street, George",
+    "description": "The annual switching on of the Christmas lights! A massive street festival featuring local vendors, live music, kids entertainment, and a festive parade."
+  },
+  {
+    "id": 13,
+    "name": "Outeniqua Family Market",
+    "category": "activity",
+    "date": null,
+    "time": "8:00 AM - 2:00 PM, Every Saturday",
+    "images": [
+      "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "https://outeniquafamilymarket.co.za/",
+    "price": 0,
+    "priceDetails": [
+      { "item": "Entry", "cost": "Free" }
+    ],
+    "location": "N2, George",
+    "description": "The Garden Route's premier weekend market. Over 150 food and craft stalls, live local music, and plenty of seating under the trees."
+  },
+  {
+    "id": 14,
+    "name": "Botlierskop Guided Safari",
+    "category": "activity",
+    "date": null,
+    "time": "Multiple departure times daily",
+    "images": [
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446966055",
+    "website": "https://www.botlierskop.co.za/",
+    "price": 750,
+    "priceDetails": [
+      { "item": "3-Hour Guided Game Drive", "cost": "R750.00" },
+      { "item": "Horseback Safari", "cost": "R850.00" }
+    ],
+    "location": "Little Brak River",
+    "description": "Experience the ultimate Garden Route safari. Spot rhinos, lions, buffalo, giraffes, and elephants on a pristine 4,200-hectare private game reserve."
+  },
+  {
+    "id": 15,
+    "name": "ATKV Kersfees Mark",
+    "category": "event",
+    "date": "2026-12-16T09:00:00",
+    "time": "9:00 AM - 5:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      { "item": "Entry", "cost": "Free" }
+    ],
+    "location": "ATKV Hartenbos",
+    "description": "A massive festive holiday market featuring handmade gifts, traditional South African bakes, boerewors rolls, and a festive holiday atmosphere right by the beach."
   }
 ]
