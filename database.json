@@ -12,6 +12,11 @@
     "phone": "+27645755210",
     "website": "https://radinn.com",
     "price": 550,
+    "priceDetails": [
+      { "item": "Jet Boarding - 1 Hour", "cost": "R550.00" },
+      { "item": "Jet Boarding - 2 Hours", "cost": "R900.00" },
+      { "item": "Group Booking (4+)", "cost": "R450.00 pp" }
+    ],
     "location": "Santos Beach",
     "description": "Exhilarating ride on a Radinn X Sport Jet board. Includes helmet, impact vest, safety briefing, and instructor."
   },
@@ -28,6 +33,9 @@
     "phone": "+27441234567",
     "website": "https://mosselbaytourism.com",
     "price": 0,
+    "priceDetails": [
+      { "item": "Standard Entry", "cost": "Free" }
+    ],
     "location": "Goods Shed",
     "description": "Local crafts, food stalls, and live music to celebrate the season."
   },
@@ -43,6 +51,10 @@
     "phone": "",
     "website": "",
     "price": 150,
+    "priceDetails": [
+      { "item": "General Admission", "cost": "R150.00" },
+      { "item": "VIP Access", "cost": "R350.00" }
+    ],
     "location": "Santos Beach",
     "description": "Start the December holidays with our annual beach party featuring local DJs."
   },
@@ -59,6 +71,10 @@
     "phone": "+27446928429",
     "website": "https://diazwaterpark.co.za",
     "price": 180,
+    "priceDetails": [
+      { "item": "Full Day Pass", "cost": "R180.00" },
+      { "item": "Half Day Pass", "cost": "R120.00" }
+    ],
     "location": "Diaz Beach Waterpark",
     "description": "Fun in the sun with indoor and outdoor heated pools and supertubes."
   },
@@ -74,6 +90,9 @@
     "phone": "",
     "website": "https://allevents.in/mossel-bay/garden-route-wedding-expo/80002166540608",
     "price": 50,
+    "priceDetails": [
+      { "item": "Standard Entry", "cost": "R50.00" }
+    ],
     "location": "Mossel Bay Town",
     "description": "The premier wedding exhibition in the Garden Route showcasing top local venues, photographers, and bridal vendors."
   },
@@ -89,6 +108,10 @@
     "phone": "",
     "website": "",
     "price": 100,
+    "priceDetails": [
+      { "item": "Adults", "cost": "R100.00" },
+      { "item": "Pensioners / Kids", "cost": "R50.00" }
+    ],
     "location": "Mossel Bay",
     "description": "A massive outdoor and camping exhibition featuring the latest 4x4 gear, caravans, and outdoor lifestyle products."
   },
@@ -104,6 +127,10 @@
     "phone": "",
     "website": "https://runningcalendar.co.za/events/mosselbaai-sportfees",
     "price": 95,
+    "priceDetails": [
+      { "item": "15km Road Race", "cost": "R95.00" },
+      { "item": "4km Fun Run", "cost": "R40.00" }
+    ],
     "location": "Hartenbos Library",
     "description": "Community 15km road race and 4km fun run promoting inclusive coastal running along the beautiful Hartenbos coastline."
   },
@@ -119,6 +146,9 @@
     "phone": "",
     "website": "",
     "price": 0,
+    "priceDetails": [
+      { "item": "Standard Entry", "cost": "Free" }
+    ],
     "location": "Mossel Bay",
     "description": "Get a head start on the festive season with this early Christmas market featuring local food, crafts, and family entertainment."
   },
@@ -134,6 +164,10 @@
     "phone": "",
     "website": "https://www.howler.co.za/events/matriekbaai-2026-mosselbaai-2dc5",
     "price": 350,
+    "priceDetails": [
+      { "item": "General Access Passport", "cost": "R350.00" },
+      { "item": "VIP Passport", "cost": "R750.00" }
+    ],
     "location": "Diaz Hotel and Resort",
     "description": "The ultimate matric holiday festival in the Southern Cape. Join thousands of matrics for beach parties, live DJs, and massive stage productions."
   },
@@ -149,6 +183,10 @@
     "phone": "",
     "website": "",
     "price": 250,
+    "priceDetails": [
+      { "item": "General Admission", "cost": "R250.00" },
+      { "item": "Kids under 12", "cost": "R100.00" }
+    ],
     "location": "ATKV Hartenbos Amphitheatre",
     "description": "Ring in 2027 with popular South African artist Appel performing live at the iconic Hartenbos Amphitheatre."
   }
