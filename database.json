@@ -61,5 +61,95 @@
     "price": 180,
     "location": "Diaz Beach Waterpark",
     "description": "Fun in the sun with indoor and outdoor heated pools and supertubes."
+  },
+  {
+    "id": 5,
+    "name": "Garden Route Wedding Expo",
+    "category": "event",
+    "date": "2026-09-24T11:00:00",
+    "time": "11:00 AM - 4:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "https://allevents.in/mossel-bay/garden-route-wedding-expo/80002166540608",
+    "price": 50,
+    "location": "Mossel Bay Town",
+    "description": "The premier wedding exhibition in the Garden Route showcasing top local venues, photographers, and bridal vendors."
+  },
+  {
+    "id": 6,
+    "name": "kykNET Buite Ekspo Suid-Kaap",
+    "category": "event",
+    "date": "2026-09-25T12:00:00",
+    "time": "12:00 PM - 6:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "",
+    "price": 100,
+    "location": "Mossel Bay",
+    "description": "A massive outdoor and camping exhibition featuring the latest 4x4 gear, caravans, and outdoor lifestyle products."
+  },
+  {
+    "id": 7,
+    "name": "Mossel Bay Sports Festival Run",
+    "category": "event",
+    "date": "2026-10-03T07:00:00",
+    "time": "7:00 AM",
+    "images": [
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "https://runningcalendar.co.za/events/mosselbaai-sportfees",
+    "price": 95,
+    "location": "Hartenbos Library",
+    "description": "Community 15km road race and 4km fun run promoting inclusive coastal running along the beautiful Hartenbos coastline."
+  },
+  {
+    "id": 8,
+    "name": "Christmas Fest Mossel Bay",
+    "category": "event",
+    "date": "2026-10-09T16:00:00",
+    "time": "4:00 PM - 9:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1511258616111-e6e729505a76?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "",
+    "price": 0,
+    "location": "Mossel Bay",
+    "description": "Get a head start on the festive season with this early Christmas market featuring local food, crafts, and family entertainment."
+  },
+  {
+    "id": 9,
+    "name": "Matriekbaai 2026",
+    "category": "event",
+    "date": "2026-11-27T10:00:00",
+    "time": "10:00 AM (Runs till Dec 6)",
+    "images": [
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "https://www.howler.co.za/events/matriekbaai-2026-mosselbaai-2dc5",
+    "price": 350,
+    "location": "Diaz Hotel and Resort",
+    "description": "The ultimate matric holiday festival in the Southern Cape. Join thousands of matrics for beach parties, live DJs, and massive stage productions."
+  },
+  {
+    "id": 10,
+    "name": "New Year's Eve: Appel Live",
+    "category": "event",
+    "date": "2026-12-31T17:00:00",
+    "time": "5:00 PM - 12:00 AM",
+    "images": [
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "",
+    "price": 250,
+    "location": "ATKV Hartenbos Amphitheatre",
+    "description": "Ring in 2027 with popular South African artist Appel performing live at the iconic Hartenbos Amphitheatre."
   }
 ]
