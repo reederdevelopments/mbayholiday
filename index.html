@@ -3,193 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBayHoliday - Mosselbay Vacation Guide</title>
-    <!-- Tailwind CSS for styling -->
+    <meta name="google-site-verification" content="QgIyntN7B1IkshgHWjAWPwkyNuYHMafYuRjia706wiA" />
+    <title>MBayHoliday ☀️ Vacation Vibes</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #f3f4f6; }
-        .tab-active { border-bottom: 4px solid #3b82f6; color: #1d4ed8; font-weight: 600; }
-        .tab-inactive { color: #6b7280; font-weight: 400; }
-        .ended-overlay { position: absolute; inset: 0; background: rgba(255, 255, 255, 0.6); z-index: 10; display: flex; align-items: center; justify-content: center; backdrop-filter: grayscale(100%); }
+        body { font-family: 'Nunito', sans-serif; }
+        /* Smooth transitions for images */
+        .carousel-img { transition: opacity 0.5s ease-in-out; }
     </style>
 </head>
-<body class="text-gray-800 antialiased">
+<body class="bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 min-h-screen text-gray-800 antialiased">
 
     <!-- Header -->
-    <header class="bg-blue-600 text-white shadow-md sticky top-0 z-50">
+    <header class="bg-white/70 backdrop-blur-md shadow-sm sticky top-0 z-40">
         <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold tracking-wider"><i class="fa-solid fa-sun text-yellow-300 mr-2"></i>MBayHoliday</h1>
-            <p class="hidden sm:block text-sm font-light">Your Mosselbay Vacation Guide</p>
+            <h1 class="text-3xl font-black text-pink-500 tracking-tight drop-shadow-sm">
+                <i class="fa-solid fa-umbrella-beach text-yellow-400 mr-2"></i>MBayHoliday
+            </h1>
         </div>
     </header>
 
-    <!-- Navigation Tabs -->
-    <nav class="bg-white shadow-sm mb-6 sticky top-[68px] z-40">
-        <div class="max-w-5xl mx-auto px-4 flex">
-            <button id="btn-events" class="flex-1 py-4 text-center tab-active transition" onclick="switchTab('events')">
-                <i class="fa-regular fa-calendar-days mr-2"></i> Upcoming Events
-            </button>
-            <button id="btn-activities" class="flex-1 py-4 text-center tab-inactive transition" onclick="switchTab('activities')">
-                <i class="fa-solid fa-map-location-dot mr-2"></i> Local To-Dos
-            </button>
+    <!-- Filters & Tabs -->
+    <section class="max-w-5xl mx-auto px-4 py-6">
+        <div class="bg-white rounded-3xl p-5 shadow-lg border-2 border-white mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Location Dropdown -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-500 mb-1">📍 Location</label>
+                    <select id="filter-location" class="w-full bg-gray-50 border-gray-200 rounded-xl p-2 font-bold text-blue-600 focus:ring-pink-300" onchange="applyFilters()">
+                        <option value="all">All Locations</option>
+                    </select>
+                </div>
+                <!-- Category Dropdown -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-500 mb-1">🎟️ Type</label>
+                    <select id="filter-category" class="w-full bg-gray-50 border-gray-200 rounded-xl p-2 font-bold text-blue-600 focus:ring-pink-300" onchange="applyFilters()">
+                        <option value="all">All Types</option>
+                        <option value="event">Upcoming Events</option>
+                        <option value="activity">Local To-Dos</option>
+                    </select>
+                </div>
+                <!-- Price Slider -->
+                <div>
+                    <label class="block text-sm font-bold text-gray-500 mb-1">💸 Max Price: <span id="price-display" class="text-pink-500">R2000</span></label>
+                    <input type="range" id="filter-price" min="0" max="2000" step="50" value="2000" class="w-full accent-pink-500" oninput="updatePriceLabel(); applyFilters()">
+                </div>
+            </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Main Content Area -->
-    <main class="max-w-5xl mx-auto px-4 pb-12">
-        <!-- Error State -->
-        <div id="error-message" class="hidden bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6">
-            <p class="font-bold">Error loading data.</p>
-            <p>Please ensure you are viewing this via a local server or GitHub pages, not just double-clicking the file (due to CORS).</p>
-        </div>
-
-        <!-- Events Container -->
-        <div id="events-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Main Content Grid -->
+    <main class="max-w-5xl mx-auto px-4 pb-16">
+        <div id="content-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Populated by JS -->
         </div>
-
-        <!-- Activities Container -->
-        <div id="activities-container" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Populated by JS -->
-        </div>
+        <p id="no-results" class="hidden text-center text-xl font-bold text-gray-500 mt-10">🌴 No activities match your filters.</p>
     </main>
+
+    <!-- Popup Modal -->
+    <div id="event-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content-box">
+            <div class="relative h-48 bg-gray-200">
+                <img id="modal-img" src="" class="w-full h-full object-cover">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-white text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-100"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6">
+                <h2 id="modal-title" class="text-2xl font-black text-gray-800 mb-2"></h2>
+                <p id="modal-desc" class="text-gray-600 mb-6"></p>
+                
+                <div class="space-y-3">
+                    <a id="modal-nav" href="#" target="_blank" class="flex items-center justify-center w-full bg-blue-100 text-blue-700 font-bold py-3 rounded-xl hover:bg-blue-200 transition">
+                        <i class="fa-solid fa-map-location-dot mr-2"></i> Open in Google Maps
+                    </a>
+                    <a id="modal-phone" href="#" class="hidden items-center justify-center w-full bg-green-100 text-green-700 font-bold py-3 rounded-xl hover:bg-green-200 transition">
+                        <i class="fa-solid fa-phone mr-2"></i> Call Now
+                    </a>
+                    <a id="modal-web" href="#" target="_blank" class="hidden items-center justify-center w-full bg-pink-100 text-pink-700 font-bold py-3 rounded-xl hover:bg-pink-200 transition">
+                        <i class="fa-solid fa-globe mr-2"></i> Visit Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         let allData = [];
+        let carouselIntervals = [];
 
-        // Fetch JSON Data
         async function loadData() {
             try {
                 const response = await fetch('database.json');
-                if (!response.ok) throw new Error('Network response was not ok');
                 allData = await response.json();
-                renderContent();
+                
+                // Populate unique locations in dropdown
+                const locations = [...new Set(allData.map(item => item.location))];
+                const locSelect = document.getElementById('filter-location');
+                locations.forEach(loc => {
+                    locSelect.innerHTML += `<option value="${loc}">${loc}</option>`;
+                });
+
+                applyFilters();
             } catch (error) {
                 console.error("Failed to load database.json:", error);
-                document.getElementById('error-message').classList.remove('hidden');
             }
         }
 
-        // Render HTML based on fetched data
-        function renderContent() {
-            const eventsContainer = document.getElementById('events-container');
-            const activitiesContainer = document.getElementById('activities-container');
+        function updatePriceLabel() {
+            const val = document.getElementById('filter-price').value;
+            document.getElementById('price-display').innerText = val == 2000 ? 'R2000+' : `R${val}`;
+        }
+
+        function applyFilters() {
+            const catFilter = document.getElementById('filter-category').value;
+            const locFilter = document.getElementById('filter-location').value;
+            const priceFilter = parseInt(document.getElementById('filter-price').value);
             const now = new Date();
 
-            let eventsHtml = '';
-            let activitiesHtml = '';
-            let firstUpcomingId = null;
+            let filtered = allData.filter(item => {
+                if (catFilter !== 'all' && item.category !== catFilter) return false;
+                if (locFilter !== 'all' && item.location !== locFilter) return false;
+                if (priceFilter < 2000 && item.price > priceFilter) return false;
+                return true;
+            });
 
-            // Separate and sort events
-            const events = allData.filter(item => item.category === 'event')
-                                  .sort((a, b) => new Date(a.date) - new Date(b.date));
-            const activities = allData.filter(item => item.category === 'activity');
+            // Sort events by date
+            filtered.sort((a, b) => {
+                if (a.date && b.date) return new Date(a.date) - new Date(b.date);
+                return 0;
+            });
 
-            // Render Events
-            events.forEach(event => {
-                const eventDate = new Date(event.date);
-                const isPast = eventDate < now;
-                
-                // Identify the first event that hasn't passed yet
-                if (!isPast && !firstUpcomingId) {
-                    firstUpcomingId = `event-${event.id}`;
+            renderContent(filtered, now);
+        }
+
+        function renderContent(data, now) {
+            const container = document.getElementById('content-container');
+            const noResults = document.getElementById('no-results');
+            container.innerHTML = '';
+            
+            // Clear old intervals
+            carouselIntervals.forEach(clearInterval);
+            carouselIntervals = [];
+
+            if (data.length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            }
+            noResults.classList.add('hidden');
+
+            data.forEach((item, index) => {
+                const isPast = item.date ? new Date(item.date) < now : false;
+                const imagesStr = encodeURIComponent(JSON.stringify(item.images));
+                const displayPrice = item.price === 0 ? 'Free' : `R${item.price}`;
+
+                const card = `
+                    <div class="bg-white rounded-[2rem] shadow-xl border-4 border-white overflow-hidden cursor-pointer transform transition hover:-translate-y-2 hover:shadow-2xl ${isPast ? 'opacity-60' : ''}" onclick="openModal(${item.id})">
+                        <div class="relative h-56 bg-gray-100">
+                            ${isPast ? '<div class="absolute inset-0 bg-white/50 backdrop-blur-[2px] z-10 flex items-center justify-center"><span class="bg-red-500 text-white font-black px-4 py-1 rounded-full shadow-lg">ENDED</span></div>' : ''}
+                            <div class="absolute top-4 left-4 z-20 flex gap-2">
+                                <span class="bg-white/90 text-pink-600 font-bold px-3 py-1 rounded-xl text-xs shadow-sm uppercase">${item.category}</span>
+                            </div>
+                            <img id="img-${item.id}" src="${item.images[0]}" data-images="${imagesStr}" data-index="0" class="w-full h-full object-cover carousel-img">
+                        </div>
+                        <div class="p-6">
+                            <h2 class="text-2xl font-black text-gray-800 mb-3 leading-tight">${item.name}</h2>
+                            <div class="space-y-2 text-sm font-bold text-gray-500">
+                                <p><i class="fa-regular fa-clock w-5 text-blue-400"></i> ${item.date ? formatDate(new Date(item.date)) + ' • ' : ''}${item.time}</p>
+                                <p><i class="fa-solid fa-location-dot w-5 text-red-400"></i> ${item.location}</p>
+                                <p><i class="fa-solid fa-tag w-5 text-green-400"></i> ${displayPrice}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+
+            startCarousels();
+        }
+
+        function startCarousels() {
+            const images = document.querySelectorAll('.carousel-img');
+            images.forEach(imgEl => {
+                const imgArray = JSON.parse(decodeURIComponent(imgEl.getAttribute('data-images')));
+                if (imgArray.length > 1) {
+                    const interval = setInterval(() => {
+                        let currentIndex = parseInt(imgEl.getAttribute('data-index'));
+                        let nextIndex = (currentIndex + 1) % imgArray.length;
+                        // Fade effect hack via JS
+                        imgEl.style.opacity = '0.8';
+                        setTimeout(() => {
+                            imgEl.src = imgArray[nextIndex];
+                            imgEl.setAttribute('data-index', nextIndex);
+                            imgEl.style.opacity = '1';
+                        }, 200);
+                    }, 3000 + Math.random() * 1000); // Random offset so they don't all flip exactly together
+                    carouselIntervals.push(interval);
                 }
-
-                eventsHtml += `
-                    <div id="event-${event.id}" class="bg-white rounded-xl shadow-md overflow-hidden relative ${isPast ? 'opacity-70 grayscale' : 'transform transition hover:-translate-y-1 hover:shadow-lg'}">
-                        ${isPast ? '<div class="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full z-20 shadow">ENDED</div>' : ''}
-                        <img src="${event.image}" alt="${event.name}" class="w-full h-48 object-cover">
-                        <div class="p-5">
-                            <h2 class="text-xl font-bold mb-2 text-gray-800">${event.name}</h2>
-                            <div class="text-sm text-gray-600 space-y-2 mb-4">
-                                <p><i class="fa-regular fa-clock w-5 text-blue-500"></i> ${formatDate(eventDate)} • ${event.time}</p>
-                                <p><i class="fa-solid fa-location-dot w-5 text-red-500"></i> ${event.location}</p>
-                                <p><i class="fa-solid fa-tag w-5 text-green-500"></i> ${event.price}</p>
-                            </div>
-                            <p class="text-gray-700 text-sm mb-4 line-clamp-3">${event.description}</p>
-                            ${event.link && event.link !== "#" ? `<a href="${event.link}" target="_blank" class="block w-full text-center bg-blue-100 text-blue-700 font-semibold py-2 rounded-lg hover:bg-blue-200 transition">View Details</a>` : ''}
-                        </div>
-                    </div>
-                `;
             });
-
-            // Render Activities
-            activities.forEach(activity => {
-                activitiesHtml += `
-                    <div class="bg-white rounded-xl shadow-md overflow-hidden transform transition hover:-translate-y-1 hover:shadow-lg">
-                        <img src="${activity.image}" alt="${activity.name}" class="w-full h-48 object-cover">
-                        <div class="p-5">
-                            <div class="flex justify-between items-start mb-2">
-                                <h2 class="text-xl font-bold text-gray-800">${activity.name}</h2>
-                                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded">To-Do</span>
-                            </div>
-                            <div class="text-sm text-gray-600 space-y-2 mb-4">
-                                <p><i class="fa-regular fa-clock w-5 text-blue-500"></i> ${activity.time}</p>
-                                <p><i class="fa-solid fa-location-dot w-5 text-red-500"></i> ${activity.location}</p>
-                                <p><i class="fa-solid fa-tag w-5 text-green-500"></i> ${activity.price}</p>
-                            </div>
-                            <p class="text-gray-700 text-sm mb-4">${activity.description}</p>
-                            ${activity.link && activity.link !== "#" ? `<a href="${activity.link}" target="_blank" class="block w-full text-center bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition">Contact / Book</a>` : ''}
-                        </div>
-                    </div>
-                `;
-            });
-
-            eventsContainer.innerHTML = eventsHtml || '<p class="col-span-full text-center text-gray-500">No events found.</p>';
-            activitiesContainer.innerHTML = activitiesHtml || '<p class="col-span-full text-center text-gray-500">No activities found.</p>';
-
-            // Auto-scroll to latest upcoming event
-            if (firstUpcomingId) {
-                setTimeout(() => {
-                    const upcomingElement = document.getElementById(firstUpcomingId);
-                    if (upcomingElement) {
-                        const yOffset = -150; // Offset for sticky headers
-                        const y = upcomingElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                        window.scrollTo({top: y, behavior: 'smooth'});
-                        
-                        // Highlight briefly to draw attention
-                        upcomingElement.classList.add('ring-4', 'ring-blue-400', 'ring-opacity-50');
-                        setTimeout(() => upcomingElement.classList.remove('ring-4', 'ring-blue-400', 'ring-opacity-50'), 2000);
-                    }
-                }, 100); // small delay to ensure rendering is complete
-            }
         }
 
-        // Helper to format date
         function formatDate(date) {
-            return date.toLocaleDateString('en-ZA', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+            return date.toLocaleDateString('en-ZA', { weekday: 'short', month: 'short', day: 'numeric' });
         }
 
-        // Tab Switching Logic
-        function switchTab(tabId) {
-            const btnEvents = document.getElementById('btn-events');
-            const btnActivities = document.getElementById('btn-activities');
-            const eventsContainer = document.getElementById('events-container');
-            const activitiesContainer = document.getElementById('activities-container');
+        function openModal(id) {
+            const item = allData.find(d => d.id === id);
+            if (!item) return;
 
-            if (tabId === 'events') {
-                btnEvents.className = "flex-1 py-4 text-center tab-active transition";
-                btnActivities.className = "flex-1 py-4 text-center tab-inactive transition hover:bg-gray-50";
-                eventsContainer.classList.remove('hidden');
-                activitiesContainer.classList.add('hidden');
-                
-                // Re-trigger auto-scroll when clicking back to events tab
-                renderContent(); 
+            document.getElementById('modal-img').src = item.images[0];
+            document.getElementById('modal-title').innerText = item.name;
+            document.getElementById('modal-desc').innerText = item.description;
+
+            // Setup Maps Link
+            const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.location + ', Mossel Bay')}`;
+            document.getElementById('modal-nav').href = mapsUrl;
+
+            // Setup Phone Link
+            const phoneBtn = document.getElementById('modal-phone');
+            if (item.phone) {
+                phoneBtn.href = `tel:${item.phone.replace(/\s+/g, '')}`;
+                phoneBtn.classList.remove('hidden');
+                phoneBtn.classList.add('flex');
             } else {
-                btnActivities.className = "flex-1 py-4 text-center tab-active transition";
-                btnEvents.className = "flex-1 py-4 text-center tab-inactive transition hover:bg-gray-50";
-                activitiesContainer.classList.remove('hidden');
-                eventsContainer.classList.add('hidden');
-                window.scrollTo({top: 0, behavior: 'smooth'});
+                phoneBtn.classList.add('hidden');
+                phoneBtn.classList.remove('flex');
             }
+
+            // Setup Website Link
+            const webBtn = document.getElementById('modal-web');
+            if (item.website && item.website !== "#" && item.website !== "") {
+                webBtn.href = item.website;
+                webBtn.classList.remove('hidden');
+                webBtn.classList.add('flex');
+            } else {
+                webBtn.classList.add('hidden');
+                webBtn.classList.remove('flex');
+            }
+
+            const modal = document.getElementById('event-modal');
+            const content = document.getElementById('modal-content-box');
+            
+            modal.classList.remove('hidden');
+            // Trigger reflow for animation
+            void modal.offsetWidth; 
+            modal.classList.remove('opacity-0');
+            modal.classList.add('opacity-100');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
         }
 
-        // Initialize
+        function closeModal() {
+            const modal = document.getElementById('event-modal');
+            const content = document.getElementById('modal-content-box');
+            
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            
+            setTimeout(() => { modal.classList.add('hidden'); }, 300);
+        }
+
         document.addEventListener('DOMContentLoaded', loadData);
     </script>
 </body>
