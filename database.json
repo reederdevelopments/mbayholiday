@@ -18,6 +18,8 @@
       { "item": "Group Booking (4+)", "cost": "R450.00 pp" }
     ],
     "location": "Santos Beach",
+    "latitude": -34.1772,
+    "longitude": 22.1418,
     "description": "Exhilarating ride on a Radinn X Sport Jet board. Includes helmet, impact vest, safety briefing, and instructor."
   },
   {
@@ -37,6 +39,8 @@
       { "item": "Standard Entry", "cost": "Free" }
     ],
     "location": "Goods Shed",
+    "latitude": -34.1802,
+    "longitude": 22.1425,
     "description": "Local crafts, food stalls, and live music to celebrate the season."
   },
   {
@@ -56,6 +60,8 @@
       { "item": "VIP Access", "cost": "R350.00" }
     ],
     "location": "Santos Beach",
+    "latitude": -34.1773,
+    "longitude": 22.1419,
     "description": "Start the December holidays with our annual beach party featuring local DJs."
   },
   {
@@ -76,6 +82,8 @@
       { "item": "Half Day Pass", "cost": "R120.00" }
     ],
     "location": "Diaz Beach Waterpark",
+    "latitude": -34.1578,
+    "longitude": 22.1122,
     "description": "Fun in the sun with indoor and outdoor heated pools and supertubes."
   },
   {
@@ -94,6 +102,8 @@
       { "item": "Standard Entry", "cost": "R50.00" }
     ],
     "location": "Mossel Bay Town",
+    "latitude": -34.1833,
+    "longitude": 22.1417,
     "description": "The premier wedding exhibition in the Garden Route showcasing top local venues, photographers, and bridal vendors."
   },
   {
@@ -113,6 +123,8 @@
       { "item": "Pensioners / Kids", "cost": "R50.00" }
     ],
     "location": "Mossel Bay",
+    "latitude": -34.1834,
+    "longitude": 22.1418,
     "description": "A massive outdoor and camping exhibition featuring the latest 4x4 gear, caravans, and outdoor lifestyle products."
   },
   {
@@ -132,6 +144,8 @@
       { "item": "4km Fun Run", "cost": "R40.00" }
     ],
     "location": "Hartenbos Library",
+    "latitude": -34.1133,
+    "longitude": 22.1178,
     "description": "Community 15km road race and 4km fun run promoting inclusive coastal running along the beautiful Hartenbos coastline."
   },
   {
@@ -151,6 +165,8 @@
       { "item": "Standard Entry", "cost": "Free" }
     ],
     "location": "Mossel Bay",
+    "latitude": -34.1832,
+    "longitude": 22.1416,
     "description": "Get a head start on the festive season with this early Christmas market featuring local food, crafts, and family entertainment."
   },
   {
@@ -172,6 +188,8 @@
       { "item": "VIP Passport", "cost": "R750.00" }
     ],
     "location": "Diaz Hotel and Resort",
+    "latitude": -34.1579,
+    "longitude": 22.1123,
     "description": "The ultimate matric holiday festival in the Southern Cape. Join thousands of matrics for beach parties, live DJs, and massive stage productions."
   },
   {
@@ -191,6 +209,8 @@
       { "item": "Kids under 12", "cost": "R100.00" }
     ],
     "location": "ATKV Hartenbos Amphitheatre",
+    "latitude": -34.1134,
+    "longitude": 22.1179,
     "description": "Ring in 2027 with popular South African artist Appel performing live at the iconic Hartenbos Amphitheatre."
   },
   {
@@ -211,6 +231,8 @@
       { "item": "Hedge Maze Entry", "cost": "R40.00" }
     ],
     "location": "Geelhoutboom, George",
+    "latitude": -33.9167,
+    "longitude": 22.3833,
     "description": "A perfect family day out! Pick your own fresh strawberries, conquer the largest permanent hedge maze in the Southern Hemisphere, and enjoy artisan eateries."
   },
   {
@@ -229,6 +251,8 @@
       { "item": "General Entry", "cost": "Free" }
     ],
     "location": "York Street, George",
+    "latitude": -33.9610,
+    "longitude": 22.4580,
     "description": "The annual switching on of the Christmas lights! A massive street festival featuring local vendors, live music, kids entertainment, and a festive parade."
   },
   {
@@ -247,6 +271,8 @@
       { "item": "Entry", "cost": "Free" }
     ],
     "location": "N2, George",
+    "latitude": -33.9880,
+    "longitude": 22.4820,
     "description": "The Garden Route's premier weekend market. Over 150 food and craft stalls, live local music, and plenty of seating under the trees."
   },
   {
@@ -266,6 +292,8 @@
       { "item": "Horseback Safari", "cost": "R850.00" }
     ],
     "location": "Little Brak River",
+    "latitude": -34.0322,
+    "longitude": 22.1389,
     "description": "Experience the ultimate Garden Route safari. Spot rhinos, lions, buffalo, giraffes, and elephants on a pristine 4,200-hectare private game reserve."
   },
   {
@@ -284,6 +312,424 @@
       { "item": "Entry", "cost": "Free" }
     ],
     "location": "ATKV Hartenbos",
+    "latitude": -34.1132,
+    "longitude": 22.1177,
     "description": "A massive festive holiday market featuring handmade gifts, traditional South African bakes, boerewors rolls, and a festive holiday atmosphere right by the beach."
+  },
+  {
+    "id": 16,
+    "name": "Mossel Bay Zipline",
+    "category": "activity",
+    "date": null,
+    "time": "8:00 AM - 5:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1533475960410-6dd8a287c6b5?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27664724835",
+    "website": "https://mosselbayzipline.co.za",
+    "price": 800,
+    "priceDetails": [
+      { "item": "Zipline Experience", "cost": "R800.00" }
+    ],
+    "location": "The Point, Mossel Bay",
+    "latitude": -34.1855,
+    "longitude": 22.1585,
+    "description": "Experience the longest over-ocean zipline in the world, spanning approximately 1.1km. Glide over the ocean and enjoy breathtaking views of the cliffs and bay."
+  },
+  {
+    "id": 17,
+    "name": "RomONza Boat Trips to Seal Island",
+    "category": "activity",
+    "date": null,
+    "time": "Hourly departures depending on weather",
+    "images": [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446903101",
+    "website": "https://romonzaboattrips.co.za",
+    "price": 280,
+    "priceDetails": [
+      { "item": "Adults", "cost": "R280.00" },
+      { "item": "Children under 12", "cost": "R140.00" }
+    ],
+    "location": "Mossel Bay Harbour",
+    "latitude": -34.1795,
+    "longitude": 22.1440,
+    "description": "Take a scenic boat trip around Seal Island, home to thousands of Cape Fur Seals. Great for family outings and marine photography."
+  },
+  {
+    "id": 18,
+    "name": "Bartolomeu Dias Museum Complex",
+    "category": "activity",
+    "date": null,
+    "time": "9:00 AM - 4:45 PM, Mon - Fri",
+    "images": [
+      "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446911067",
+    "website": "https://diasmuseum.co.za",
+    "price": 40,
+    "priceDetails": [
+      { "item": "Adult Entry", "cost": "R40.00" },
+      { "item": "Child Entry", "cost": "R10.00" }
+    ],
+    "location": "1 Market St, Mossel Bay",
+    "latitude": -34.1808,
+    "longitude": 22.1422,
+    "description": "Explore the Maritime Museum featuring a life-size replica of the Dias Caravel, visit the historic Post Office Tree, and stroll through the botanical gardens."
+  },
+  {
+    "id": 19,
+    "name": "White Shark Africa Cage Diving",
+    "category": "activity",
+    "date": null,
+    "time": "7:00 AM - 3:00 PM (Tide dependent)",
+    "images": [
+      "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446913796",
+    "website": "https://whitesharkafrica.com",
+    "price": 3200,
+    "priceDetails": [
+      { "item": "Shark Cage Diving", "cost": "R3200.00" },
+      { "item": "Surface Viewing", "cost": "R2500.00" }
+    ],
+    "location": "Mossel Bay Harbour",
+    "latitude": -34.1790,
+    "longitude": 22.1446,
+    "description": "Get up close and personal with Great White Sharks in their natural habitat. A thrilling, safe, and educational marine experience."
+  },
+  {
+    "id": 20,
+    "name": "Point of Human Origins Tour",
+    "category": "activity",
+    "date": null,
+    "time": "Pre-booked tours only",
+    "images": [
+      "https://images.unsplash.com/photo-1519069502901-70eeb6f7df26?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27796400004",
+    "website": "https://humanorigin.co.za",
+    "price": 350,
+    "priceDetails": [
+      { "item": "Cave Tour (1.5 hrs)", "cost": "R350.00" }
+    ],
+    "location": "Pinnacle Point, Mossel Bay",
+    "latitude": -34.2052,
+    "longitude": 22.0886,
+    "description": "Journey back in time with a guided tour of the Pinnacle Point caves, revealing some of the earliest evidence for modern human behavior."
+  },
+  {
+    "id": 21,
+    "name": "Skydive Mossel Bay",
+    "category": "activity",
+    "date": null,
+    "time": "8:00 AM - 5:00 PM (Weather Dependent)",
+    "images": [
+      "https://images.unsplash.com/photo-1528150177508-7cc0c36cda5c?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27828248599",
+    "website": "https://skydivemosselbay.com",
+    "price": 3200,
+    "priceDetails": [
+      { "item": "Tandem Skydive (10,000ft)", "cost": "R3200.00" },
+      { "item": "Tandem Skydive (14,000ft)", "cost": "R3950.00" },
+      { "item": "Handcam Video & Photos", "cost": "R900.00" }
+    ],
+    "location": "Mossel Bay Airfield",
+    "latitude": -34.1565,
+    "longitude": 22.0642,
+    "description": "Experience the ultimate adrenaline rush with a tandem skydive offering the best scenery in South Africa. Jump over the Indian Ocean and land right on the beach!"
+  },
+  {
+    "id": 22,
+    "name": "Dragon Dune Sandboarding",
+    "category": "activity",
+    "date": null,
+    "time": "9:00 AM & 2:00 PM Sessions",
+    "images": [
+      "https://images.unsplash.com/photo-1541416719124-74944d156557?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27829774338",
+    "website": "https://billeton.co.za",
+    "price": 450,
+    "priceDetails": [
+      { "item": "3 Hour Sandboarding Session", "cost": "R450.00" }
+    ],
+    "location": "Vleesbaai, Mossel Bay",
+    "latitude": -34.2981,
+    "longitude": 21.9054,
+    "description": "Tackle the longest sandboard ride in South Africa! The famous 'Dragon Dune' is a beast of a dune offering an exhilarating 320m ride."
+  },
+  {
+    "id": 23,
+    "name": "Cape St Blaize Lighthouse Walk",
+    "category": "activity",
+    "date": null,
+    "time": "24/7 Access (Daylight recommended)",
+    "images": [
+      "https://images.unsplash.com/photo-1582236896263-d143c7bca609?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      { "item": "Trail Access", "cost": "Free" }
+    ],
+    "location": "The Point, Mossel Bay",
+    "latitude": -34.1865,
+    "longitude": 22.1592,
+    "description": "A stunning 13.5km coastal hiking trail starting at the historic St Blaize Cave. Walk along the dramatic cliff edge offering incredible whale and dolphin watching spots."
+  },
+  {
+    "id": 24,
+    "name": "Diaz Express Train Ride",
+    "category": "activity",
+    "date": null,
+    "time": "10:00 AM - 3:00 PM, Tue - Sat",
+    "images": [
+      "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27824507778",
+    "website": "https://diazexpress.co.za",
+    "price": 150,
+    "priceDetails": [
+      { "item": "Adult Return Ticket", "cost": "R150.00" },
+      { "item": "Kids Return Ticket", "cost": "R100.00" }
+    ],
+    "location": "Hartenbos Station",
+    "latitude": -34.1154,
+    "longitude": 22.1155,
+    "description": "A fun family excursion on a refurbished tractor-train running along the Transnet railway line between Mossel Bay and Great Brak River right next to the ocean."
+  },
+  {
+    "id": 25,
+    "name": "Pinnacle Point Golf Course",
+    "category": "activity",
+    "date": null,
+    "time": "7:00 AM - 6:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446065300",
+    "website": "https://pinnaclepointestate.co.za",
+    "price": 1200,
+    "priceDetails": [
+      { "item": "18 Holes (Visitors)", "cost": "R1200.00" },
+      { "item": "Golf Cart Hire", "cost": "R450.00" }
+    ],
+    "location": "Pinnacle Point, Mossel Bay",
+    "latitude": -34.2045,
+    "longitude": 22.0891,
+    "description": "Voted South Africa's Best Golf Course. An incredibly dramatic clifftop championship course offering ocean views from every single hole."
+  },
+  {
+    "id": 26,
+    "name": "Cango Caves Heritage Tour",
+    "category": "activity",
+    "date": null,
+    "time": "9:00 AM - 4:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1518349633519-8695d7eb8ddb?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27442727410",
+    "website": "https://cango-caves.co.za",
+    "price": 170,
+    "priceDetails": [
+      { "item": "Heritage Tour (Adults)", "cost": "R170.00" },
+      { "item": "Adventure Tour (Adults)", "cost": "R240.00" }
+    ],
+    "location": "Oudtshoorn",
+    "latitude": -33.3932,
+    "longitude": 22.2145,
+    "description": "A must-do day trip from Mossel Bay! Explore the spectacular underground limestone caverns. Choose the Heritage Tour for an easy walk or the Adventure Tour for tight squeezes."
+  },
+  {
+    "id": 27,
+    "name": "Mossel Bay Helicopters",
+    "category": "activity",
+    "sponsored": true,
+    "date": null,
+    "time": "8:00 AM - 5:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1540960589139-4458cc4e0474?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27845056665",
+    "website": "https://mosselbayhelicopters.co.za",
+    "price": 1500,
+    "priceDetails": [
+      { "item": "Coastal Flip (15 mins)", "cost": "R1500.00 pp" },
+      { "item": "Great White Shark Viewing (30 mins)", "cost": "R2800.00 pp" }
+    ],
+    "location": "Mossel Bay Airfield",
+    "latitude": -34.1568,
+    "longitude": 22.0645,
+    "description": "See the Garden Route from above! Mossel Bay Helicopters offers scenic coastal flights, mountain drops, and dedicated shark viewing flights."
+  },
+  {
+    "id": 28,
+    "name": "Map of Africa Viewpoint",
+    "category": "activity",
+    "date": null,
+    "time": "24/7 Access",
+    "images": [
+      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      { "item": "Viewpoint Access", "cost": "Free" },
+      { "item": "Paragliding (Booked Separately)", "cost": "R1100.00" }
+    ],
+    "location": "Wilderness heights",
+    "latitude": -33.9961,
+    "longitude": 22.5612,
+    "description": "A breathtaking viewpoint in Wilderness where the Kaaimans River curves around a forested hill, perfectly forming the shape of the African continent."
+  },
+  {
+    "id": 29,
+    "name": "Wilderness River Safari",
+    "category": "activity",
+    "date": null,
+    "time": "9:00 AM - 4:30 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1522008447814-1e0e5a6bfcfb?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27448770046",
+    "website": "https://sanparks.org",
+    "price": 250,
+    "priceDetails": [
+      { "item": "Canoe Rental (Double)", "cost": "R250.00 / 3 hrs" },
+      { "item": "Guided Boat Tour", "cost": "R350.00 pp" }
+    ],
+    "location": "Wilderness National Park",
+    "latitude": -33.9925,
+    "longitude": 22.6074,
+    "description": "Rent a canoe and paddle up the Touw River to the Wilderness waterfall. A peaceful, stunning journey through indigenous forests."
+  },
+  {
+    "id": 30,
+    "name": "Cango Wildlife Ranch",
+    "category": "activity",
+    "date": null,
+    "time": "8:30 AM - 5:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1545648873-1049219c6b65?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27442725593",
+    "website": "https://cango.co.za",
+    "price": 220,
+    "priceDetails": [
+      { "item": "Adult Entry", "cost": "R220.00" },
+      { "item": "Kids Entry", "cost": "R130.00" }
+    ],
+    "location": "Oudtshoorn",
+    "latitude": -33.5681,
+    "longitude": 22.2085,
+    "description": "Encounter cheetahs, crocodiles, and lemurs. A highly ethical conservation facility offering guided tours and unique animal encounters."
+  },
+  {
+    "id": 31,
+    "name": "ReedValley Wine Estate Concert",
+    "category": "event",
+    "date": "2026-11-14T19:00:00",
+    "time": "7:00 PM - 11:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446981022",
+    "website": "https://reedvalley.com",
+    "price": 250,
+    "priceDetails": [
+      { "item": "General Admission", "cost": "R250.00" }
+    ],
+    "location": "ReedValley, Mossel Bay",
+    "latitude": -34.1402,
+    "longitude": 22.0505,
+    "description": "Live music event in the massive rustic barn at ReedValley. Enjoy premium Eden Valley wines and authentic Portuguese cuisine while you dance the night away."
+  },
+  {
+    "id": 32,
+    "name": "Hartenbos Waterpark Splash Fest",
+    "category": "event",
+    "date": "2026-12-22T10:00:00",
+    "time": "10:00 AM - 5:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1582293041079-7814c2f12063?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446950155",
+    "website": "https://hartenboswaterpark.co.za",
+    "price": 160,
+    "priceDetails": [
+      { "item": "All-Day Slide Pass", "cost": "R160.00" },
+      { "item": "Spectator Entry", "cost": "R40.00" }
+    ],
+    "location": "Hartenbos",
+    "latitude": -34.1130,
+    "longitude": 22.1170,
+    "description": "A massive summer holiday bash at the Hartenbos Waterpark with live DJs, slip-and-slide competitions, and food stalls."
+  },
+  {
+    "id": 33,
+    "name": "Great Brak Grab-a-Camp Weekend",
+    "category": "event",
+    "date": "2026-10-30T14:00:00",
+    "endDate": "2026-11-01T12:00:00",
+    "time": "Fri 2:00 PM - Sun 12:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "",
+    "price": 450,
+    "priceDetails": [
+      { "item": "Weekend Camping Stand", "cost": "R450.00" }
+    ],
+    "location": "Great Brak River",
+    "latitude": -34.0415,
+    "longitude": 22.2185,
+    "description": "A massive family camping weekend on the banks of the Great Brak River. Includes kayaking, fishing competitions, and a massive communal potjiekos competition."
+  },
+  {
+    "id": 34,
+    "name": "Garden Route Casino Live Shows",
+    "category": "activity",
+    "date": null,
+    "time": "Casino: 24/7 | Shows: See schedule",
+    "images": [
+      "https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446067777",
+    "website": "https://tsogosun.com/garden-route-casino",
+    "price": 0,
+    "priceDetails": [
+      { "item": "Casino Entry", "cost": "Free" }
+    ],
+    "location": "Pinnacle Point, Mossel Bay",
+    "latitude": -34.2040,
+    "longitude": 22.0880,
+    "description": "Try your luck at the slots and tables, or catch top-tier South African comedians and musicians at the Bravo Lounge."
+  },
+  {
+    "id": 35,
+    "name": "Oyster Bay Reserve Trail Run",
+    "category": "event",
+    "date": "2026-11-07T08:00:00",
+    "time": "8:00 AM",
+    "images": [
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "https://oysterbayreserve.co.za",
+    "price": 120,
+    "priceDetails": [
+      { "item": "10km Trail Run", "cost": "R120.00" },
+      { "item": "5km Fun Walk", "cost": "R60.00" }
+    ],
+    "location": "Oyster Bay Reserve",
+    "latitude": -34.1950,
+    "longitude": 22.1150,
+    "description": "A beautiful and challenging community trail run through the fynbos reserves of Mossel Bay, ending with a beach cleanup initiative."
   }
 ]

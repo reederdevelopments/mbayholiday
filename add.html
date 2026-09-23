@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>
         body { font-family: 'Nunito', sans-serif; }
         details > summary { list-style: none; }
@@ -16,7 +18,7 @@
 <body class="bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 min-h-screen text-gray-800 antialiased flex flex-col justify-center py-10 px-4 relative">
 
     <div class="max-w-3xl w-full mx-auto bg-white/90 backdrop-blur-md rounded-[2rem] shadow-2xl overflow-hidden border-4 border-white p-6 md:p-10 relative">
-        <a href="index.html" class="absolute top-6 left-6 text-gray-400 hover:text-blue-500 transition text-xl"><i class="fa-solid fa-arrow-left"></i></a>
+        <a href="index.html" class="absolute top-6 left-6 text-gray-400 hover:text-blue-500 transition text-xl z-20"><i class="fa-solid fa-arrow-left"></i></a>
         
         <div class="text-center mb-8 mt-2">
             <img src="images/mbayholiday_logo.png" alt="MBayHoliday" class="h-16 mx-auto mb-3 rounded-xl shadow-sm">
@@ -42,8 +44,22 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Location / Address *</label>
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Location Name *</label>
                     <input type="text" id="f-location" required placeholder="e.g. Santos Beach, Mossel Bay" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none">
+                </div>
+
+                <!-- Map Picker Section -->
+                <div class="md:col-span-2 mt-2">
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-2">Pinpoint Location (Click map to set)</label>
+                    <div id="map-picker" class="w-full h-48 rounded-xl border-2 z-10 mb-2 relative z-0"></div>
+                    <div class="flex gap-4">
+                        <div class="w-1/2">
+                            <input type="text" id="f-lat" placeholder="Latitude" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-2 text-sm font-bold text-gray-500 outline-none" readonly>
+                        </div>
+                        <div class="w-1/2">
+                            <input type="text" id="f-lng" placeholder="Longitude" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-2 text-sm font-bold text-gray-500 outline-none" readonly>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -102,6 +118,7 @@
 
                 <div class="md:col-span-2">
                     <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Image URLs (Comma separated)</label>
+                    <p class="text-[10px] font-bold text-gray-500 mb-2">If you don't have links, you can leave this blank and attach images to the email generated at the end.</p>
                     <input type="text" id="f-images" placeholder="https://..., https://..." class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none">
                 </div>
 
@@ -142,7 +159,7 @@
     </div>
 
     <!-- Live Preview Modal -->
-    <div id="preview-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+    <div id="preview-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[60] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
         <div id="preview-modal-box" class="bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl relative p-6">
             <button onclick="closePreviewModal()" class="absolute top-4 right-4 bg-gray-100 text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 z-20"><i class="fa-solid fa-xmark"></i></button>
             
@@ -176,6 +193,34 @@
     </div>
 
     <script>
+        let pickerMap, pickerMarker;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initMapPicker();
+        });
+
+        function initMapPicker() {
+            // Center around Mossel Bay
+            pickerMap = L.map('map-picker').setView([-34.183, 22.146], 11);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(pickerMap);
+
+            pickerMap.on('click', function(e) {
+                const lat = e.latlng.lat.toFixed(6);
+                const lng = e.latlng.lng.toFixed(6);
+                document.getElementById('f-lat').value = lat;
+                document.getElementById('f-lng').value = lng;
+                
+                if(pickerMarker) {
+                    pickerMarker.setLatLng(e.latlng);
+                } else {
+                    pickerMarker = L.marker(e.latlng).addTo(pickerMap);
+                }
+            });
+        }
+
         function toggleSponsorNote(show) {
             document.getElementById('sponsor-note').classList.toggle('hidden', !show);
         }
@@ -290,6 +335,8 @@
             const name = document.getElementById('f-name').value;
             const category = document.getElementById('f-category').value;
             const location = document.getElementById('f-location').value;
+            const lat = document.getElementById('f-lat').value || 'Not provided';
+            const lng = document.getElementById('f-lng').value || 'Not provided';
             const phone = document.getElementById('f-phone').value || 'N/A';
             const website = document.getElementById('f-website').value || 'N/A';
             const desc = document.getElementById('f-desc').value;
@@ -309,13 +356,14 @@
             body += `NAME: ${name}\n`;
             body += `CATEGORY: ${category}\n`;
             body += `LOCATION: ${location}\n`;
+            body += `COORDINATES: Lat: ${lat}, Lng: ${lng}\n`;
             body += `TIMES / DATES: ${timesOrDates}\n`;
             body += `PRICING TIERS: ${prices || 'N/A'}\n`;
             body += `PHONE: ${phone}\n`;
             body += `WEBSITE: ${website}\n`;
             body += `SPONSORSHIP INTERESTED: ${sponsorInterest}\n\n`;
             body += `DESCRIPTION:\n${desc}\n\n`;
-            body += `*** PLEASE FIND ATTACHED IMAGES IN THIS EMAIL ***\n`;
+            body += `*** PLEASE FIND ATTACHED IMAGES IN THIS EMAIL IF YOU DID NOT PROVIDE URLS ***\n`;
 
             window.location.href = `mailto:reederdevelopments@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
         }

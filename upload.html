@@ -6,6 +6,8 @@
     <title>MBayHoliday - Admin Upload</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <style>body { font-family: 'Nunito', sans-serif; background-color: #f3f4f6; }</style>
 </head>
 <body class="text-gray-800 h-screen flex flex-col">
@@ -75,8 +77,24 @@
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-600 mb-1">Location</label>
+                    <label class="block text-sm font-bold text-gray-600 mb-1">Location Name</label>
                     <input type="text" id="f-location" class="w-full border-2 rounded-xl p-2 font-bold" placeholder="e.g. Santos Beach">
+                </div>
+
+                <!-- Map Picker Section -->
+                <div class="col-span-1 md:col-span-2 mt-2">
+                    <label class="block text-sm font-bold text-gray-600 mb-1">Pinpoint Location (Click map to set)</label>
+                    <div id="map-picker" class="w-full h-64 rounded-xl border-2 z-10 mb-2 relative z-0"></div>
+                    <div class="flex gap-4">
+                        <div class="w-1/2">
+                            <label class="block text-xs font-bold text-gray-500 mb-1">Latitude</label>
+                            <input type="number" step="any" id="f-lat" class="w-full border-2 rounded-xl p-2 font-bold bg-gray-50 text-gray-500" readonly>
+                        </div>
+                        <div class="w-1/2">
+                            <label class="block text-xs font-bold text-gray-500 mb-1">Longitude</label>
+                            <input type="number" step="any" id="f-lng" class="w-full border-2 rounded-xl p-2 font-bold bg-gray-50 text-gray-500" readonly>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
@@ -108,15 +126,44 @@
     </div>
 
     <script>
+        let pickerMap, pickerMarker;
+
         function checkLogin() {
             const user = document.getElementById('username').value;
             const pass = document.getElementById('password').value;
             if (user === 'neil' && pass === 'neil@1234') {
                 document.getElementById('login-screen').classList.add('hidden');
                 document.getElementById('admin-screen').classList.remove('hidden');
+                
+                // Initialize map after container is visible
+                setTimeout(() => {
+                    initMapPicker();
+                }, 100);
             } else {
                 document.getElementById('login-error').classList.remove('hidden');
             }
+        }
+
+        function initMapPicker() {
+            // Center around Mossel Bay
+            pickerMap = L.map('map-picker').setView([-34.183, 22.146], 12);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(pickerMap);
+
+            pickerMap.on('click', function(e) {
+                const lat = e.latlng.lat.toFixed(6);
+                const lng = e.latlng.lng.toFixed(6);
+                document.getElementById('f-lat').value = lat;
+                document.getElementById('f-lng').value = lng;
+                
+                if(pickerMarker) {
+                    pickerMarker.setLatLng(e.latlng);
+                } else {
+                    pickerMarker = L.marker(e.latlng).addTo(pickerMap);
+                }
+            });
         }
 
         function toggleDate() {
@@ -142,6 +189,9 @@
             const imgArray = rawImages.split(',').map(item => item.trim()).filter(item => item);
             const isSponsored = document.getElementById('f-sponsored').value === 'true';
 
+            const latVal = parseFloat(document.getElementById('f-lat').value);
+            const lngVal = parseFloat(document.getElementById('f-lng').value);
+
             const newEntry = {
                 id: Math.floor(Math.random() * 1000000),
                 name: document.getElementById('f-name').value,
@@ -155,6 +205,8 @@
                 website: document.getElementById('f-website').value,
                 price: parseInt(document.getElementById('f-price').value) || 0,
                 location: document.getElementById('f-location').value,
+                latitude: !isNaN(latVal) ? latVal : null,
+                longitude: !isNaN(lngVal) ? lngVal : null,
                 description: document.getElementById('f-description').value
             };
 

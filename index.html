@@ -11,6 +11,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Free Leaflet CSS for Map (No API Key Required) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Free Leaflet JS for Map (No API Key Required) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <style>
         body { font-family: 'Nunito', sans-serif; }
         ::-webkit-scrollbar { width: 6px; }
@@ -18,17 +24,38 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         .cal-cell::-webkit-scrollbar { width: 3px; }
         .cal-cell::-webkit-scrollbar-thumb { background: #fbcfe8; border-radius: 5px; }
+        
+        /* Hide scrollbar for header */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
         details[open] summary .toggle-icon { transform: rotate(180deg); }
 
-        .fade-in-sponsored {
-            animation: fadeIn 0.4s ease-in-out forwards;
-        }
+        .fade-in-sponsored { animation: fadeIn 0.4s ease-in-out forwards; }
         @keyframes fadeIn {
             from { opacity: 0.3; transform: scale(0.99); }
             to { opacity: 1; transform: scale(1); }
         }
+        
+        /* Custom Map Marker Styles */
+        .custom-map-marker { background: none; border: none; }
+        .marker-pin {
+            width: 30px; height: 30px; border-radius: 50% 50% 50% 0; background: #3b82f6;
+            position: absolute; transform: rotate(-45deg); left: 50%; top: 50%; margin: -15px 0 0 -15px;
+            box-shadow: -1px 1px 4px rgba(0,0,0,0.5);
+        }
+        .marker-pin::after {
+            content: ''; width: 14px; height: 14px; margin: 8px 0 0 8px; background: #fff;
+            position: absolute; border-radius: 50%;
+        }
+        .custom-map-marker i {
+            position: absolute; width: 22px; font-size: 14px; left: 0; right: 0; margin: 10px auto;
+            text-align: center; color: #fff; z-index: 10;
+        }
+        .marker-starred .marker-pin { background: #eab308; }
+        .marker-sponsored .marker-pin { background: #ec4899; }
     </style>
 </head>
 <body class="bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 min-h-screen text-gray-800 antialiased relative overflow-x-hidden flex flex-col">
@@ -43,39 +70,60 @@
         <div id="sidebar-content" class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-6"></div>
         <div class="p-4 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
             <button onclick="shareMyList()" class="w-full bg-green-500 text-white font-black py-3 rounded-xl shadow-lg hover:bg-green-600 transition flex items-center justify-center">
-                <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Share via WhatsApp
+                <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Share Itinerary
             </button>
         </div>
     </div>
 
     <!-- Sticky Header & Tabs -->
     <div class="sticky top-0 z-40 bg-white/90 backdrop-blur-md shadow-sm border-b border-white/50">
-        <header class="max-w-5xl mx-auto px-4 py-2 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
-                <img src="images/mbayholiday_logo.png" alt="MBayHoliday Logo" class="h-10 md:h-12 rounded-lg shadow-sm">
-            </a>
-            <div class="flex gap-2">
-                <button onclick="toggleSidebar()" class="bg-yellow-100 text-yellow-700 font-bold px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-xl shadow-sm hover:bg-yellow-200 transition flex items-center whitespace-nowrap">
-                    <i class="fa-solid fa-star mr-1 md:mr-2"></i> <span class="hidden sm:inline">My List</span>
+        <header class="max-w-5xl mx-auto px-4 py-2 flex flex-row items-center justify-between gap-2 overflow-x-auto scrollbar-hide">
+            
+            <!-- Left Side: Logo & Weather -->
+            <div class="flex items-center shrink-0">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/mbayholiday_logo.png" alt="MBayHoliday Logo" class="h-9 md:h-12 rounded-lg shadow-sm">
+                </a>
+                
+                <!-- Weather Widget -->
+                <div id="weather-widget" class="flex items-center bg-cyan-50 border border-cyan-200 rounded-lg px-2 py-1 ml-2 md:ml-4 shadow-inner hidden shrink-0">
+                    <i id="weather-icon" class="fa-solid fa-sun text-yellow-500 text-sm md:text-lg mr-1 md:mr-2"></i>
+                    <div class="flex flex-col">
+                        <span class="text-[8px] md:text-[10px] uppercase font-black text-cyan-800 leading-none">Mossel Bay</span>
+                        <span id="weather-temp" class="text-xs md:text-sm font-bold text-gray-700 leading-none">--°C</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Buttons -->
+            <div class="flex items-center gap-1.5 md:gap-2 shrink-0">
+                <button onclick="toggleFAQ()" class="bg-pink-100 text-pink-700 font-bold px-2.5 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-xl shadow-sm hover:bg-pink-200 transition flex items-center whitespace-nowrap">
+                    <i class="fa-solid fa-circle-question sm:mr-1 md:mr-2"></i> <span class="hidden sm:inline">FAQ</span>
                 </button>
-                <button onclick="toggleFilters()" class="bg-blue-100 text-blue-700 font-bold px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-xl shadow-sm hover:bg-blue-200 transition flex items-center whitespace-nowrap">
-                    <i class="fa-solid fa-filter mr-1 md:mr-2"></i> <span class="hidden sm:inline">Filters</span>
+                <button onclick="toggleSidebar()" class="bg-yellow-100 text-yellow-700 font-bold px-2.5 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-xl shadow-sm hover:bg-yellow-200 transition flex items-center whitespace-nowrap">
+                    <i class="fa-solid fa-star sm:mr-1 md:mr-2"></i> <span class="hidden sm:inline">My List</span>
+                </button>
+                <button onclick="toggleFilters()" class="bg-blue-100 text-blue-700 font-bold px-2.5 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-xl shadow-sm hover:bg-blue-200 transition flex items-center whitespace-nowrap">
+                    <i class="fa-solid fa-filter sm:mr-1 md:mr-2"></i> <span class="hidden sm:inline">Filters</span>
                 </button>
             </div>
         </header>
 
-        <div class="flex w-full bg-cyan-50 border-t border-cyan-100 text-[10px] sm:text-xs md:text-sm">
-            <button id="tab-scroll" onclick="switchView('scroll')" class="flex-1 py-3 font-black text-center text-blue-900 bg-cyan-200 border-b-4 border-pink-500 transition">
-                <i class="fa-solid fa-clone md:mr-1"></i> <span class="hidden sm:inline">Events/Activities</span>
+        <div class="flex w-full bg-cyan-50 border-t border-cyan-100">
+            <button id="tab-scroll" onclick="switchView('scroll')" class="flex-1 py-2 sm:py-3 font-black text-center text-blue-900 bg-cyan-200 border-b-4 border-pink-500 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                <i class="fa-solid fa-clone text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">Cards</span>
             </button>
-            <button id="tab-list" onclick="switchView('list')" class="flex-1 py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition">
-                <i class="fa-solid fa-list md:mr-1"></i> <span class="hidden sm:inline">List View</span>
+            <button id="tab-list" onclick="switchView('list')" class="flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                <i class="fa-solid fa-list text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">List</span>
             </button>
-            <button id="tab-calendar" onclick="switchView('calendar')" class="flex-1 py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition">
-                <i class="fa-regular fa-calendar md:mr-1"></i> <span class="hidden sm:inline">Calendar</span>
+            <button id="tab-calendar" onclick="switchView('calendar')" class="flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                <i class="fa-regular fa-calendar text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">Calendar</span>
             </button>
-            <button id="tab-restaurants" onclick="switchView('restaurants')" class="flex-1 py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition">
-                <i class="fa-solid fa-utensils md:mr-1"></i> <span class="hidden sm:inline">Restaurants</span>
+            <button id="tab-restaurants" onclick="switchView('restaurants')" class="flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                <i class="fa-solid fa-utensils text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">Dining</span>
+            </button>
+            <button id="tab-map" onclick="switchView('map')" class="flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                <i class="fa-solid fa-map-location-dot text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">Map</span>
             </button>
         </div>
 
@@ -86,12 +134,11 @@
                     <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
                     <input type="text" id="filter-search" placeholder="Search keywords..." class="w-full bg-gray-50 border border-gray-200 rounded-xl py-2 pl-10 pr-4 font-bold text-gray-700 focus:ring-pink-300 outline-none" onkeyup="applyFilters()">
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
                     <div>
                         <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Location</label>
                         <select id="filter-location" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-pink-300 outline-none" onchange="applyFilters()"><option value="all">All</option></select>
                     </div>
-                    
                     <div id="filter-wrap-category" class="block">
                         <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Type</label>
                         <select id="filter-category" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-pink-300 outline-none" onchange="applyFilters()">
@@ -104,15 +151,19 @@
                             <option value="all">Anytime</option><option value="month">Next 30 Days</option>
                         </select>
                     </div>
-
                     <div id="filter-wrap-rest-type" class="hidden">
                         <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Style</label>
                         <select id="filter-rest-type" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-pink-300 outline-none" onchange="applyFilters()"><option value="all">All</option></select>
                     </div>
-
                     <div>
                         <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Max: <span id="price-display" class="text-pink-500">R2000+</span></label>
                         <input type="range" id="filter-price" min="0" max="2000" step="50" value="2000" class="w-full accent-pink-500 mt-1" oninput="updatePriceLabel(); applyFilters()">
+                    </div>
+                    <div class="flex items-center justify-center pt-4">
+                        <label class="flex items-center gap-2 cursor-pointer bg-green-50 px-3 py-1.5 rounded-lg border border-green-200 w-full justify-center">
+                            <input type="checkbox" id="filter-open-now" class="accent-green-600 w-4 h-4" onchange="applyFilters()">
+                            <span class="text-xs font-black text-green-700 uppercase tracking-wider">Open Now</span>
+                        </label>
                     </div>
                 </div>
                 <div class="mt-3 flex justify-end">
@@ -131,7 +182,8 @@
                 <div class="absolute top-0 right-4 bg-yellow-400 text-yellow-950 text-[10px] font-black uppercase px-3 py-1 rounded-b-lg shadow-sm z-20"><i class="fa-solid fa-crown mr-1"></i> Featured Sponsor</div>
                 <div id="sponsored-content" class="bg-white rounded-[1.6rem] overflow-hidden relative h-44 md:h-56 flex w-full"></div>
             </div>
-            <div id="sponsored-pills" class="flex flex-wrap items-center justify-center gap-2 mt-3 px-2"></div>
+            <!-- Dot carousel -->
+            <div id="sponsored-pills" class="flex items-center justify-center gap-2 mt-4 px-2"></div>
         </div>
 
         <!-- SCROLL VIEW -->
@@ -165,34 +217,90 @@
                     <h2 id="calendar-header-text" class="text-lg md:text-2xl font-black text-gray-800 uppercase tracking-wider text-center"></h2>
                     <button onclick="changeCalDate(1)" class="w-10 h-10 flex items-center justify-center bg-white text-blue-500 rounded-full shadow hover:bg-blue-50 transition"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
-                <div id="calendar-wrapper"></div>
+                <div class="overflow-x-auto w-full pb-2 -mx-2 px-2 md:mx-0 md:px-0">
+                    <div id="calendar-wrapper" class="min-w-[600px] md:min-w-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAP VIEW -->
+        <div id="view-map" class="hidden">
+            <div class="bg-white rounded-[2rem] shadow-xl border-4 border-white overflow-hidden relative">
+                <div id="map-container" class="w-full h-[600px] z-10"></div>
+                <div class="absolute bottom-4 left-4 z-[20] bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg text-xs font-bold space-y-1 border border-gray-200">
+                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span> Normal</div>
+                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span> Saved (My List)</div>
+                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-pink-500 inline-block"></span> Sponsored</div>
+                </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-white/90 backdrop-blur-md border-t border-cyan-100 py-6 mt-auto relative z-30">
         <div class="max-w-5xl mx-auto px-4 text-center">
-            <p class="text-sm font-bold text-gray-600 mb-3">
-                Are you a local business owner? 
-                <a href="add.html" class="text-pink-500 hover:text-pink-600 font-black underline ml-1">Click here to add your listing!</a>
-            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 text-sm font-bold text-gray-600 border-b border-gray-100 pb-4">
+                <div class="text-center md:text-left">
+                    Are you a local business owner? 
+                    <a href="add.html" class="text-pink-500 hover:text-pink-600 font-black underline ml-1">Click here to add your listing!</a>
+                </div>
+                <div class="text-center md:text-right">
+                    See your listing here? 
+                    <a href="manage.html" class="text-blue-500 hover:text-blue-600 font-black underline ml-1">Please click here to edit or remove it.</a>
+                </div>
+            </div>
             <p class="text-xs font-bold text-gray-400 mb-1">&copy; <span id="current-year"></span> MBayHoliday. All rights reserved.</p>
-            <p class="text-[11px] text-gray-400">Designed & Developed by <a href="https://reederdevelopments.co.za/" target="_blank" class="text-blue-500 hover:text-pink-500 transition font-black">Reeder Developments</a></p>
+            <p class="text-[11px] text-gray-400">
+                Designed & Developed by <a href="https://reederdevelopments.co.za/" target="_blank" class="text-blue-500 hover:text-pink-500 transition font-black">Reeder Developments</a> | 
+                Brought to you by <a href="https://dumacha.co.za/" target="_blank" class="text-blue-500 hover:text-pink-500 transition font-black">Du Macha Verhurings</a>
+            </p>
         </div>
     </footer>
+
+    <!-- FAQ Modal -->
+    <div id="faq-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[80] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl p-6 relative">
+            <button onclick="toggleFAQ()" class="absolute top-4 right-4 bg-gray-100 text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 z-20"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="text-2xl font-black text-blue-600 mb-5"><i class="fa-solid fa-circle-question mr-2"></i>How to use MBayHoliday</h2>
+            <div class="space-y-5 text-sm text-gray-600">
+                <div>
+                    <h3 class="font-bold text-gray-800 text-base mb-1"><i class="fa-solid fa-star text-yellow-400 mr-1"></i> Save Your Favorites</h3>
+                    <p>Click the star icon on any activity or event to add it to 'My List'. You can view your saved itinerary anytime by clicking 'My List' at the top, and even share it with friends via WhatsApp!</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-800 text-base mb-1"><i class="fa-solid fa-filter text-blue-500 mr-1"></i> Find What You Need</h3>
+                    <p>Use the Filters button to search by location, category, date, or price. You can also filter by places that are "Open Now"!</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-800 text-base mb-1"><i class="fa-solid fa-clone text-pink-500 mr-1"></i> Switch Views</h3>
+                    <p>Use the tabs at the top to switch between visual Cards, a compact List, a Calendar layout, local Restaurants, or the interactive Map view.</p>
+                </div>
+            </div>
+            <button onclick="toggleFAQ()" class="w-full mt-6 bg-blue-100 text-blue-800 font-black py-3 rounded-xl hover:bg-blue-200 transition">Got it!</button>
+        </div>
+    </div>
 
     <!-- Popup Modal -->
     <div id="event-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[60] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
         <div class="bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative" id="modal-content-box">
-            <button onclick="closeModal()" class="absolute top-4 right-4 bg-gray-100 text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 z-20"><i class="fa-solid fa-xmark"></i></button>
             
-            <div id="modal-sponsor-badge" class="hidden bg-gradient-to-r from-yellow-400 to-pink-500 text-white font-black text-xs uppercase px-4 py-2 rounded-t-[2rem] -mx-6 -mt-6 mb-4 flex items-center justify-center gap-1 shadow-sm">
+            <!-- Top Right Action Buttons (Star + Close) -->
+            <div class="absolute top-4 right-4 z-20 flex items-center gap-2">
+                <button id="modal-star-btn" onclick="toggleStarModal(event)" class="bg-gray-100 text-gray-400 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 text-base transition-colors">
+                    <i class="fa-solid fa-star"></i>
+                </button>
+                <button onclick="closeModal()" class="bg-gray-100 text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div id="modal-sponsor-badge" class="hidden bg-gradient-to-r from-yellow-400 to-pink-500 text-white font-black text-xs uppercase px-4 py-2 rounded-t-[2rem] mb-2 flex items-center justify-center gap-1 shadow-sm">
                 <i class="fa-solid fa-crown text-yellow-200"></i> Featured Sponsor
             </div>
 
-            <div class="p-6">
-                <h2 id="modal-title" class="text-xl md:text-2xl font-black text-gray-800 mb-4 pr-8 leading-tight"></h2>
+            <div class="p-6 pt-4">
+                <h2 id="modal-title" class="text-xl md:text-2xl font-black text-gray-800 leading-tight pr-20 mb-4 mt-2"></h2>
                 
                 <div class="relative w-full md:w-3/4 mx-auto h-40 bg-gray-100 rounded-xl overflow-hidden mb-5 shadow-inner group flex items-center justify-center">
                     <i class="fa-solid fa-image text-gray-300 text-3xl absolute z-0"></i>
@@ -203,7 +311,7 @@
 
                 <p id="modal-desc" class="text-gray-600 mb-5 text-sm md:text-base leading-relaxed"></p>
                 
-                <details class="mb-6 bg-gray-50 rounded-xl border border-gray-200 overflow-hidden" id="modal-price-container">
+                <details class="mb-5 bg-gray-50 rounded-xl border border-gray-200 overflow-hidden" id="modal-price-container">
                     <summary class="font-bold text-gray-700 p-3 md:p-4 cursor-pointer outline-none select-none flex items-center justify-between">
                         <span id="modal-detail-heading"><i class="fa-solid fa-tags text-green-500 mr-2"></i> Details / Pricing</span>
                         <i class="fa-solid fa-chevron-down text-gray-400 text-xs toggle-icon transition-transform"></i>
@@ -211,10 +319,12 @@
                     <div class="p-3 md:p-4 bg-white border-t border-gray-200 text-sm space-y-3" id="modal-prices"></div>
                 </details>
                 
-                <div class="flex justify-center gap-3 md:gap-4">
-                    <a id="modal-nav" href="#" target="_blank" class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition shadow-sm text-lg"><i class="fa-solid fa-map-location-dot"></i></a>
-                    <a id="modal-phone" href="#" class="hidden w-12 h-12 items-center justify-center bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition shadow-sm text-lg"><i class="fa-solid fa-phone"></i></a>
-                    <a id="modal-web" href="#" target="_blank" class="hidden w-12 h-12 items-center justify-center bg-pink-100 text-pink-700 rounded-full hover:bg-pink-200 transition shadow-sm text-lg"><i class="fa-solid fa-globe"></i></a>
+                <div class="flex justify-center flex-wrap gap-2 md:gap-3">
+                    <button onclick="shareSingleItem()" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition shadow-sm text-lg" title="Share via WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+                    <a id="modal-cal-btn" href="#" target="_blank" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 transition shadow-sm text-lg" title="Add to Google Calendar"><i class="fa-solid fa-calendar-plus"></i></a>
+                    <a id="modal-nav" href="#" target="_blank" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition shadow-sm text-lg" title="Open Map"><i class="fa-solid fa-map-location-dot"></i></a>
+                    <a id="modal-phone" href="#" class="hidden w-10 h-10 md:w-12 md:h-12 items-center justify-center bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition shadow-sm text-lg" title="Call"><i class="fa-solid fa-phone"></i></a>
+                    <a id="modal-web" href="#" target="_blank" class="hidden w-10 h-10 md:w-12 md:h-12 items-center justify-center bg-pink-100 text-pink-700 rounded-full hover:bg-pink-200 transition shadow-sm text-lg" title="Website"><i class="fa-solid fa-globe"></i></a>
                 </div>
             </div>
         </div>
@@ -235,6 +345,7 @@
         let currentModalImages = [];
         let currentModalImgIndex = 0;
         let currentEventData = null;
+        let currentIsRestaurant = false;
         
         let starredIds = JSON.parse(localStorage.getItem('mbay_stars')) || [];
         let currentCalDate = new Date(); 
@@ -244,8 +355,24 @@
         let sponsoredItems = [];
         let currentSponsoredIndex = 0;
         let sponsoredTimer = null;
+        
+        let mapInstance = null;
+        let mapMarkers = [];
 
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Fetch Weather
+        async function fetchWeather() {
+            try {
+                // Mossel Bay Coordinates
+                const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-34.18&longitude=22.14&current_weather=true');
+                const data = await res.json();
+                if(data && data.current_weather) {
+                    document.getElementById('weather-temp').innerText = `${Math.round(data.current_weather.temperature)}°C`;
+                    document.getElementById('weather-widget').classList.remove('hidden');
+                }
+            } catch(e) { console.error("Weather load failed", e); }
+        }
 
         function addUTM(url) {
             if (!url || url === '#' || url.startsWith('tel:') || url.startsWith('mailto:')) return url;
@@ -258,8 +385,25 @@
             }
         }
 
+        // Smart Fallback Images
+        function getFallbackImage(item) {
+            const str = (item.name + " " + item.description + " " + (item.category||"") + " " + (item.type||"")).toLowerCase();
+            if (str.includes('farm') || str.includes('strawberry') || str.includes('berry') || str.includes('pick')) return 'https://images.unsplash.com/photo-1596649284241-2b04f72fae53?auto=format&fit=crop&q=80&w=600';
+            if (str.includes('water') || str.includes('pool') || str.includes('slide') || str.includes('swim')) return 'https://images.unsplash.com/photo-1582293041079-7814c2f12063?auto=format&fit=crop&q=80&w=600';
+            if (str.includes('music') || str.includes('party') || str.includes('dj') || str.includes('fest')) return 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600';
+            if (str.includes('market') || str.includes('craft') || str.includes('stall')) return 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600';
+            if (str.includes('run') || str.includes('race') || str.includes('sport') || str.includes('marathon')) return 'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600';
+            if (str.includes('wedding') || str.includes('bridal') || str.includes('marriage')) return 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600';
+            if (str.includes('safari') || str.includes('game') || str.includes('animal') || str.includes('lion')) return 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80&w=600';
+            if (str.includes('coffee') || str.includes('roast') || str.includes('cafe')) return 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=600';
+            if (str.includes('restaurant') || str.includes('braai') || str.includes('food') || str.includes('eat') || str.includes('dining')) return 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600';
+            // Default Beach
+            return 'https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&q=80&w=600';
+        }
+
         async function loadData() {
             try {
+                fetchWeather();
                 const [eventsRes, restsRes] = await Promise.all([
                     fetch('database.json').catch(() => ({ json: () => [] })),
                     fetch('restaurant_database.json').catch(() => ({ json: () => [] }))
@@ -279,6 +423,90 @@
                 applyFilters();
                 renderSidebar();
             } catch (error) { console.error("Failed to load databases:", error); }
+        }
+
+        // --- Map Logic ---
+        function initMap() {
+            if(mapInstance) {
+                mapInstance.invalidateSize();
+                updateMapMarkers();
+                return;
+            }
+            // Center around Mossel Bay
+            mapInstance = L.map('map-container').setView([-34.16, 22.12], 11);
+            
+            // Free OpenStreetMap Tile Layer (No API Key Required)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(mapInstance);
+            
+            updateMapMarkers();
+        }
+
+        function getCoords(item) {
+            if (item.latitude && item.longitude && !isNaN(item.latitude) && !isNaN(item.longitude)) {
+                return [parseFloat(item.latitude), parseFloat(item.longitude)];
+            }
+            const loc = (item.location || '').toLowerCase();
+            if (loc.includes('santos')) return [-34.1772, 22.1418];
+            if (loc.includes('goods shed')) return [-34.1802, 22.1425];
+            if (loc.includes('diaz')) return [-34.1578, 22.1122];
+            if (loc.includes('hartenbos')) return [-34.1133, 22.1178];
+            if (loc.includes('little brak') || loc.includes('botlierskop')) return [-34.0322, 22.1389];
+            if (loc.includes('geelhoutboom') || loc.includes('redberry')) return [-33.9167, 22.3833];
+            if (loc.includes('york street')) return [-33.9610, 22.4580];
+            if (loc.includes('n2, george') || loc.includes('outeniqua')) return [-33.9880, 22.4820];
+            if (loc.includes('harbour') || loc.includes('kaai')) return [-34.1790, 22.1445];
+            if (loc.includes('the point')) return [-34.1848, 22.1581];
+            if (loc.includes('bland street') || loc.includes('blue shed')) return [-34.1812, 22.1430];
+            if (loc.includes('voorbaai')) return [-34.1500, 22.1080];
+            if (loc.includes('george')) return [-33.9630, 22.4550];
+
+            const offsetLat = ((item.id % 10) - 5) * 0.002;
+            const offsetLng = (((item.id * 3) % 10) - 5) * 0.002;
+            return [-34.1833 + offsetLat, 22.1417 + offsetLng];
+        }
+
+        function updateMapMarkers() {
+            if(!mapInstance) return;
+            mapMarkers.forEach(m => mapInstance.removeLayer(m));
+            mapMarkers = [];
+
+            const allMapItems = [...filteredData, ...filteredRestaurants];
+            allMapItems.forEach(item => {
+                const coords = getCoords(item);
+                const isStarred = starredIds.includes(item.id);
+                let markerClass = 'marker-normal';
+                let iconHtml = '<i class="fa-solid fa-location-dot"></i>';
+
+                if (isStarred) {
+                    markerClass = 'marker-starred';
+                    iconHtml = '<i class="fa-solid fa-star text-[10px]"></i>';
+                } else if (item.sponsored) {
+                    markerClass = 'marker-sponsored';
+                    iconHtml = '<i class="fa-solid fa-crown text-[10px]"></i>';
+                }
+
+                const customIcon = L.divIcon({
+                    className: 'custom-map-marker ' + markerClass,
+                    iconAnchor: [0, 24],
+                    labelAnchor: [-6, 0],
+                    popupAnchor: [0, -36],
+                    html: `<span class="marker-pin"></span>${iconHtml}`
+                });
+
+                const marker = L.marker(coords, {icon: customIcon}).addTo(mapInstance);
+                const isRest = !!item.type;
+                marker.bindPopup(`
+                    <div class="text-center p-1">
+                        <h3 class="font-black text-sm mb-1">${item.name}</h3>
+                        <p class="text-xs text-gray-500 mb-2">${item.location}</p>
+                        <button onclick="openModal(${item.id}, ${isRest})" class="bg-pink-500 text-white text-[10px] px-3 py-1 rounded font-bold">View Details</button>
+                    </div>
+                `);
+                mapMarkers.push(marker);
+            });
         }
 
         // --- Sponsored Carousel Logic ---
@@ -317,12 +545,14 @@
         function renderSponsoredFrame() {
             const content = document.getElementById('sponsored-content');
             const item = sponsoredItems[currentSponsoredIndex];
-            const firstImg = (item.images && item.images.length > 0) ? item.images[0] : '';
+            
+            const cleanImages = (item.images || []).filter(img => img.trim() !== '');
+            const firstImg = cleanImages.length > 0 ? cleanImages[0] : getFallbackImage(item);
             
             content.className = "bg-white rounded-[1.6rem] overflow-hidden relative h-44 md:h-56 flex w-full fade-in-sponsored";
             content.innerHTML = `
                 <div class="w-1/3 md:w-2/5 relative">
-                    ${firstImg ? `<img src="${firstImg}" class="w-full h-full object-cover">` : `<div class="w-full h-full bg-gray-200 flex items-center justify-center"><i class="fa-solid fa-image text-gray-400 text-3xl"></i></div>`}
+                    <img src="${firstImg}" class="w-full h-full object-cover" onerror="this.src='${getFallbackImage(item)}'">
                 </div>
                 <div class="w-2/3 md:w-3/5 p-4 md:p-6 flex flex-col justify-center">
                     <span class="text-[10px] font-black uppercase text-pink-500 mb-1 tracking-wider">${item.category || item.type}</span>
@@ -341,15 +571,10 @@
             sponsoredItems.forEach((item, idx) => {
                 const isActive = idx === currentSponsoredIndex;
                 const pillClass = isActive 
-                    ? 'bg-gradient-to-r from-yellow-400 to-pink-500 text-white font-black shadow-md scale-105 ring-2 ring-yellow-300/50' 
-                    : 'bg-white/80 text-gray-600 font-bold hover:bg-white hover:text-gray-900 border border-white';
+                    ? 'bg-pink-500 w-6 h-2 rounded-full shadow-sm' 
+                    : 'bg-gray-300 hover:bg-gray-400 w-2 h-2 rounded-full';
                 
-                pillsBox.innerHTML += `
-                    <button onclick="setSponsoredIndex(${idx}, event)" class="text-xs px-3 py-1 rounded-full transition-all duration-300 flex items-center gap-1.5 ${pillClass}">
-                        <i class="fa-solid fa-crown text-[10px] ${isActive ? 'text-yellow-200' : 'text-yellow-500'}"></i>
-                        <span class="truncate max-w-[120px] md:max-w-[180px]">${item.name}</span>
-                    </button>
-                `;
+                pillsBox.innerHTML += `<button onclick="setSponsoredIndex(${idx}, event)" class="transition-all duration-300 ${pillClass}" aria-label="View sponsor ${idx + 1}"></button>`;
             });
         }
 
@@ -368,7 +593,21 @@
             return target >= start && target <= end;
         }
 
-        // --- Sidebar & Star Logic ---
+        // --- Sidebar, FAQ & Star Logic ---
+        function toggleFAQ() {
+            const modal = document.getElementById('faq-modal');
+            if (modal.classList.contains('hidden')) {
+                modal.classList.remove('hidden');
+                void modal.offsetWidth;
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+            } else {
+                modal.classList.remove('opacity-100');
+                modal.classList.add('opacity-0');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
+
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('sidebar-overlay');
@@ -389,7 +628,22 @@
             const index = starredIds.indexOf(id);
             if (index > -1) { starredIds.splice(index, 1); } else { starredIds.push(id); }
             localStorage.setItem('mbay_stars', JSON.stringify(starredIds));
-            renderScrollContent(new Date()); renderListContent(new Date()); renderCalendar(); renderSidebar();
+            renderScrollContent(new Date()); renderListContent(new Date()); renderCalendar(); renderSidebar(); updateMapMarkers();
+        }
+
+        function toggleStarModal(event) {
+            if(!currentEventData) return;
+            toggleStar(currentEventData.id, event);
+            updateModalStarIcon();
+        }
+
+        function updateModalStarIcon() {
+            const starBtn = document.getElementById('modal-star-btn');
+            if(starredIds.includes(currentEventData.id)) {
+                starBtn.className = "bg-yellow-100 text-yellow-500 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-yellow-200 text-base transition-colors";
+            } else {
+                starBtn.className = "bg-gray-100 text-gray-400 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 text-base transition-colors";
+            }
         }
 
         function renderSidebar() {
@@ -441,17 +695,23 @@
             window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
         }
 
+        function shareSingleItem() {
+            if(!currentEventData) return;
+            const text = `🌴 Check this out on MBayHoliday: *${currentEventData.name}*\n📍 ${currentEventData.location}\n\n${window.location.href}`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
         // --- View & Filter Logic ---
         function switchView(view) {
             currentView = view;
-            const tabs = ['scroll', 'list', 'calendar', 'restaurants'];
+            const tabs = ['scroll', 'list', 'calendar', 'restaurants', 'map'];
             
             tabs.forEach(t => {
-                document.getElementById(`tab-${t}`).className = "flex-1 py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition";
+                document.getElementById(`tab-${t}`).className = "flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2";
                 document.getElementById(`view-${t}`).classList.replace('block', 'hidden');
             });
 
-            document.getElementById(`tab-${view}`).className = "flex-1 py-3 font-black text-center text-blue-900 bg-cyan-200 border-b-4 border-pink-500 transition";
+            document.getElementById(`tab-${view}`).className = "flex-1 py-2 sm:py-3 font-black text-center text-blue-900 bg-cyan-200 border-b-4 border-pink-500 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2";
             document.getElementById(`view-${view}`).classList.replace('hidden', 'block');
 
             if(view === 'restaurants') {
@@ -465,6 +725,7 @@
             }
 
             if (view === 'calendar') renderCalendar();
+            if (view === 'map') setTimeout(initMap, 50);
         }
 
         function toggleFilters() { document.getElementById('filter-section').classList.toggle('hidden'); }
@@ -475,12 +736,33 @@
             document.getElementById('filter-rest-type').value = 'all';
             document.getElementById('filter-date').value = 'all';
             document.getElementById('filter-price').value = 2000;
+            document.getElementById('filter-open-now').checked = false;
             updatePriceLabel();
             applyFilters();
         }
         function updatePriceLabel() {
             const val = document.getElementById('filter-price').value;
             document.getElementById('price-display').innerText = val == 2000 ? 'R2000+' : `R${val}`;
+        }
+
+        // Smart "Open Now" logic
+        function isOpenNow(item) {
+            const timeStr = (item.time || item.opening_times || '').toLowerCase();
+            if (!timeStr) return false;
+            
+            const now = new Date();
+            const currentHour = now.getHours();
+            
+            const amMatch = timeStr.match(/(\d+)\s*(?::\d+)?\s*am/);
+            const pmMatch = timeStr.match(/(\d+)\s*(?::\d+)?\s*pm/);
+            
+            let openHour = 8;
+            let closeHour = 17;
+            
+            if(amMatch) openHour = parseInt(amMatch[1]) === 12 ? 0 : parseInt(amMatch[1]);
+            if(pmMatch) closeHour = parseInt(pmMatch[1]) === 12 ? 12 : parseInt(pmMatch[1]) + 12;
+
+            return currentHour >= openHour && currentHour < closeHour;
         }
 
         function applyFilters() {
@@ -490,6 +772,8 @@
             const dateFilter = document.getElementById('filter-date').value;
             const restTypeFilter = document.getElementById('filter-rest-type').value;
             const priceFilter = parseInt(document.getElementById('filter-price').value);
+            const openNow = document.getElementById('filter-open-now').checked;
+            
             const now = new Date();
             const nextMonth = new Date(); nextMonth.setDate(now.getDate() + 30);
 
@@ -498,6 +782,7 @@
                 if (catFilter !== 'all' && item.category !== catFilter) return false;
                 if (locFilter !== 'all' && item.location !== locFilter) return false;
                 if (priceFilter < 2000 && item.price > priceFilter) return false;
+                if (openNow && !isOpenNow(item)) return false;
                 if (dateFilter === 'month' && item.date) {
                     const eventStart = new Date(item.date);
                     const eventEnd = item.endDate ? new Date(item.endDate) : eventStart;
@@ -511,6 +796,7 @@
                 if (locFilter !== 'all' && item.location !== locFilter) return false;
                 if (restTypeFilter !== 'all' && item.type !== restTypeFilter) return false;
                 if (priceFilter < 2000 && item.price > priceFilter) return false;
+                if (openNow && !isOpenNow(item)) return false;
                 return true;
             });
 
@@ -518,9 +804,10 @@
             renderListContent(now);
             renderRestaurantsContent();
             renderCalendar();
+            updateMapMarkers();
         }
 
-        // --- Component Builders with Sponsored Badges ---
+        // --- Component Builders ---
         function buildCard(item, now) {
             let isPast = false; let dateDisplay = '';
             if (item.date) {
@@ -532,8 +819,11 @@
             }
             const isStarred = starredIds.includes(item.id);
             const displayPrice = item.price === 0 ? 'Free' : `R${item.price}`;
+            
             const cleanImages = (item.images || []).filter(img => img.trim() !== '');
-            let imageTagsHtml = cleanImages.map((imgUrl, i) => `<img src="${imgUrl}" class="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-1000 carousel-item-${item.id} ${i === 0 ? 'opacity-100' : 'opacity-0'}" onerror="this.remove()">`).join('');
+            if (cleanImages.length === 0) cleanImages.push(getFallbackImage(item));
+            
+            let imageTagsHtml = cleanImages.map((imgUrl, i) => `<img src="${imgUrl}" class="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-1000 carousel-item-${item.id} ${i === 0 ? 'opacity-100' : 'opacity-0'}" onerror="this.src='${getFallbackImage(item)}'">`).join('');
 
             const borderStyle = item.sponsored ? 'border-4 border-yellow-400 ring-2 ring-yellow-300/50' : 'border-2 border-white';
 
@@ -579,7 +869,8 @@
             }
 
             const isStarred = !isRestaurant && starredIds.includes(item.id);
-            const firstImg = (item.images && item.images.length > 0 && item.images[0].trim() !== '') ? item.images[0] : '';
+            const cleanImages = (item.images || []).filter(img => img.trim() !== '');
+            const firstImg = cleanImages.length > 0 ? cleanImages[0] : getFallbackImage(item);
             
             const mapsUrl = addUTM(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.location + ', South Africa')}`);
             const phoneUrl = item.phone ? `tel:${item.phone.replace(/\s+/g, '')}` : '#';
@@ -588,24 +879,24 @@
             const rowHighlight = item.sponsored ? 'bg-amber-50/60 border-amber-200' : 'hover:bg-gray-50';
 
             return `
-            <div class="flex flex-col md:flex-row items-start md:items-center p-4 border-b border-gray-100 transition cursor-pointer group ${rowHighlight} ${isPast ? 'opacity-60' : ''}" onclick="openModal(${item.id}, ${isRestaurant})">
-                <div class="flex items-center w-full md:w-auto mb-3 md:mb-0">
-                    ${!isRestaurant ? `<button onclick="toggleStar(${item.id}, event)" class="mr-4 text-2xl ${isStarred ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'} transition"><i class="fa-solid fa-star"></i></button>` : ''}
-                    <div class="w-16 h-16 md:w-20 md:h-20 bg-gray-200 rounded-lg overflow-hidden shrink-0 relative flex items-center justify-center">
-                        ${firstImg ? `<img src="${firstImg}" class="w-full h-full object-cover">` : `<i class="fa-solid fa-image text-gray-400"></i>`}
+            <div class="flex flex-row items-start md:items-center p-3 md:p-4 border-b border-gray-100 transition cursor-pointer group gap-3 md:gap-4 ${rowHighlight} ${isPast ? 'opacity-60' : ''}" onclick="openModal(${item.id}, ${isRestaurant})">
+                <div class="flex items-center shrink-0">
+                    ${!isRestaurant ? `<button onclick="toggleStar(${item.id}, event)" class="mr-2 md:mr-4 text-xl md:text-2xl ${isStarred ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'} transition"><i class="fa-solid fa-star"></i></button>` : ''}
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-gray-200 rounded-lg overflow-hidden relative flex items-center justify-center">
+                        <img src="${firstImg}" class="w-full h-full object-cover" onerror="this.src='${getFallbackImage(item)}'">
                     </div>
                 </div>
-                <div class="flex-1 md:px-6 w-full">
-                    <div class="flex items-center gap-2">
-                        <h3 class="text-lg font-black text-gray-800 group-hover:text-pink-600 transition leading-tight">${item.name}</h3>
-                        ${item.sponsored ? `<span class="bg-yellow-400 text-yellow-950 font-black text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider"><i class="fa-solid fa-crown mr-0.5"></i> SPONSORED</span>` : ''}
+                <div class="flex-1 min-w-0 py-1">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h3 class="text-base md:text-lg font-black text-gray-800 group-hover:text-pink-600 transition leading-tight truncate w-full sm:w-auto">${item.name}</h3>
+                        ${item.sponsored ? `<span class="bg-yellow-400 text-yellow-950 font-black text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider inline-block"><i class="fa-solid fa-crown mr-0.5"></i> SPONSORED</span>` : ''}
                     </div>
-                    ${dateDisplay && !isRestaurant ? `<p class="text-xs text-blue-500 font-bold mt-1">${dateDisplay}</p>` : ''}
+                    ${dateDisplay && !isRestaurant ? `<p class="text-[11px] md:text-xs text-blue-500 font-bold mt-1">${dateDisplay}</p>` : ''}
                     ${isRestaurant ? `<div class="mt-1">${dateDisplay}</div>` : ''}
-                    <p class="text-sm text-gray-500 mt-1 line-clamp-2 leading-snug">${item.description}</p>
-                    <p class="text-xs font-bold text-gray-400 mt-2">${priceOrTime} <span class="mx-2">•</span> <span class="text-red-400"><i class="fa-solid fa-location-dot"></i> ${item.location}</span></p>
+                    <p class="text-[11px] md:text-sm text-gray-500 mt-1 line-clamp-2 leading-snug">${item.description}</p>
+                    <p class="text-[10px] md:text-xs font-bold text-gray-400 mt-1.5 truncate">${priceOrTime} <span class="mx-1.5 md:mx-2">•</span> <span class="text-red-400"><i class="fa-solid fa-location-dot"></i> ${item.location}</span></p>
                 </div>
-                <div class="flex gap-2 mt-4 md:mt-0 w-full md:w-auto justify-end border-t border-gray-100 pt-3 md:border-t-0 md:pt-0">
+                <div class="hidden sm:flex gap-2 shrink-0">
                     <a href="${mapsUrl}" target="_blank" onclick="event.stopPropagation()" class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition" title="Maps"><i class="fa-solid fa-map-location-dot"></i></a>
                     ${item.phone ? `<a href="${phoneUrl}" onclick="event.stopPropagation()" class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition" title="Call"><i class="fa-solid fa-phone"></i></a>` : ''}
                     ${(item.website && item.website !== '#') ? `<a href="${webUrl}" target="_blank" onclick="event.stopPropagation()" class="w-10 h-10 flex items-center justify-center bg-pink-100 text-pink-700 rounded-full hover:bg-pink-200 transition" title="Website"><i class="fa-solid fa-globe"></i></a>` : ''}
@@ -687,7 +978,11 @@
                 for (let i = 0; i < firstDay; i++) { html += `<div class="bg-gray-50 rounded-xl h-24 md:h-32 border border-gray-100"></div>`; }
                 for (let day = 1; day <= daysInMonth; day++) {
                     const loopDate = new Date(year, month, day); const dayEvents = filteredData.filter(item => isDateInRange(loopDate, item.date, item.endDate));
-                    let eventsHtml = dayEvents.map(e => `<div onclick="openModal(${e.id}, false); event.stopPropagation();" class="text-[10px] md:text-xs bg-pink-100 border border-pink-200 text-pink-700 font-bold truncate px-1.5 py-1 rounded cursor-pointer hover:bg-pink-500 hover:text-white transition shadow-sm w-full text-left relative pr-4">${starredIds.includes(e.id) ? '<i class="fa-solid fa-star text-yellow-400 absolute right-1 top-1 text-[8px]"></i>' : ''}${e.time.split('-')[0]} ${e.name}</div>`).join('');
+                    let eventsHtml = dayEvents.map(e => {
+                        const isSt = starredIds.includes(e.id);
+                        const pillClass = isSt ? 'bg-yellow-100 border border-yellow-300 text-yellow-800' : 'bg-pink-100 border border-pink-200 text-pink-700';
+                        return `<div onclick="openModal(${e.id}, false); event.stopPropagation();" class="text-[10px] md:text-xs ${pillClass} font-bold truncate px-1.5 py-1 rounded cursor-pointer hover:brightness-90 transition shadow-sm w-full text-left relative pr-4">${isSt ? '<i class="fa-solid fa-star text-yellow-500 absolute right-1 top-1 text-[8px]"></i>' : ''}${e.time.split('-')[0]} ${e.name}</div>`
+                    }).join('');
                     const isToday = loopDate.toDateString() === today.toDateString();
                     html += `<div class="rounded-xl h-24 md:h-32 p-1.5 md:p-2 overflow-y-auto cal-cell ${isToday ? 'bg-blue-50 border-2 border-blue-400' : 'bg-white border border-gray-200 hover:border-pink-300 transition'}"><div class="font-black text-xs md:text-sm ${isToday ? 'bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center float-right shadow-sm' : 'text-gray-400 float-right mr-1'} mb-1">${day}</div><div class="clear-both flex flex-col gap-1">${eventsHtml}</div></div>`;
                 }
@@ -698,7 +993,11 @@
                 let html = `<div class="grid grid-cols-7 gap-1 md:gap-2 text-center text-xs md:text-sm font-black text-gray-400 mb-2 uppercase tracking-wide"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid grid-cols-7 gap-1 md:gap-2 auto-rows-fr">`;
                 for(let i=0; i<7; i++) {
                     const loopDate = new Date(startOfWeek); loopDate.setDate(startOfWeek.getDate() + i); const dayEvents = filteredData.filter(item => isDateInRange(loopDate, item.date, item.endDate));
-                    let eventsHtml = dayEvents.map(e => `<div onclick="openModal(${e.id}, false); event.stopPropagation();" class="text-[10px] md:text-xs bg-pink-100 border border-pink-200 text-pink-700 font-bold truncate px-1.5 py-1 rounded cursor-pointer hover:bg-pink-500 hover:text-white transition shadow-sm w-full text-left relative pr-4 whitespace-normal mb-1">${starredIds.includes(e.id) ? '<i class="fa-solid fa-star text-yellow-400 absolute right-1 top-1"></i>' : ''}${e.time.split('-')[0]}<br>${e.name}</div>`).join('');
+                    let eventsHtml = dayEvents.map(e => {
+                        const isSt = starredIds.includes(e.id);
+                        const pillClass = isSt ? 'bg-yellow-100 border border-yellow-300 text-yellow-800' : 'bg-pink-100 border border-pink-200 text-pink-700';
+                        return `<div onclick="openModal(${e.id}, false); event.stopPropagation();" class="text-[10px] md:text-xs ${pillClass} font-bold truncate px-1.5 py-1 rounded cursor-pointer hover:brightness-90 transition shadow-sm w-full text-left relative pr-4 whitespace-normal mb-1">${isSt ? '<i class="fa-solid fa-star text-yellow-500 absolute right-1 top-1"></i>' : ''}${e.time.split('-')[0]}<br>${e.name}</div>`
+                    }).join('');
                     const isToday = loopDate.toDateString() === today.toDateString();
                     html += `<div class="rounded-xl min-h-[150px] p-1.5 md:p-2 overflow-y-auto cal-cell ${isToday ? 'bg-blue-50 border-2 border-blue-400' : 'bg-white border border-gray-200 hover:border-pink-300 transition'}"><div class="font-black text-xs md:text-sm ${isToday ? 'bg-blue-500 text-white rounded-full w-6 h-6 flex items-center justify-center float-right shadow-sm' : 'text-gray-400 float-right mr-1'} mb-1">${loopDate.getDate()}</div><div class="clear-both flex flex-col gap-1">${eventsHtml}</div></div>`;
                 }
@@ -728,14 +1027,29 @@
         }
 
         function formatDate(date) { return date.toLocaleDateString('en-ZA', { month: 'short', day: 'numeric' }); }
+        
+        function buildGoogleCalLink(item) {
+            if(!item.date) return "#";
+            const start = new Date(item.date).toISOString().replace(/-|:|\.\d\d\d/g, "");
+            const end = item.endDate ? new Date(item.endDate).toISOString().replace(/-|:|\.\d\d\d/g, "") : start;
+            return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(item.name)}&dates=${start}/${end}&details=${encodeURIComponent(item.description)}&location=${encodeURIComponent(item.location)}`;
+        }
+
         function openLightbox() { if(currentModalImages.length === 0) return; document.getElementById('lightbox-img').src = currentModalImages[currentModalImgIndex]; document.getElementById('lightbox').classList.remove('hidden'); }
         function closeLightbox() { document.getElementById('lightbox').classList.add('hidden'); }
         function prevModalImage(e) { e.stopPropagation(); if (currentModalImages.length <= 1) return; currentModalImgIndex = (currentModalImgIndex - 1 + currentModalImages.length) % currentModalImages.length; document.getElementById('modal-img').src = currentModalImages[currentModalImgIndex]; }
         function nextModalImage(e) { e.stopPropagation(); if (currentModalImages.length <= 1) return; currentModalImgIndex = (currentModalImgIndex + 1) % currentModalImages.length; document.getElementById('modal-img').src = currentModalImages[currentModalImgIndex]; }
+        
         function updateModalImageUI() {
-            const prevBtn = document.getElementById('modal-prev-btn'); const nextBtn = document.getElementById('modal-next-btn');
-            if (currentModalImages.length > 1) { prevBtn.classList.replace('hidden', 'flex'); nextBtn.classList.replace('hidden', 'flex'); } 
-            else { prevBtn.classList.replace('flex', 'hidden'); }
+            const prevBtn = document.getElementById('modal-prev-btn'); 
+            const nextBtn = document.getElementById('modal-next-btn');
+            if (currentModalImages.length > 1) { 
+                prevBtn.classList.remove('hidden'); prevBtn.classList.add('flex');
+                nextBtn.classList.remove('hidden'); nextBtn.classList.add('flex');
+            } else { 
+                prevBtn.classList.remove('flex'); prevBtn.classList.add('hidden');
+                nextBtn.classList.remove('flex'); nextBtn.classList.add('hidden');
+            }
         }
 
         function openModal(id, isRestaurant = false) {
@@ -746,10 +1060,12 @@
 
         function renderModalDirectly(targetItem) {
             currentEventData = targetItem;
-            const isRestaurant = !!targetItem.type;
+            currentIsRestaurant = !!targetItem.type || !!targetItem.isRest;
 
             const modalBox = document.getElementById('modal-content-box');
             const sponsorBadge = document.getElementById('modal-sponsor-badge');
+            
+            updateModalStarIcon();
 
             if (currentEventData.sponsored) {
                 modalBox.className = "bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative border-4 border-yellow-400 ring-4 ring-yellow-300/40";
@@ -760,29 +1076,29 @@
             }
 
             const modalImg = document.getElementById('modal-img');
-            currentModalImages = (currentEventData.images || []).filter(img => img.trim() !== '');
+            const cleanImages = (currentEventData.images || []).filter(img => img && img.trim() !== '');
+            if (cleanImages.length === 0) cleanImages.push(getFallbackImage(currentEventData));
+            
+            currentModalImages = cleanImages;
             currentModalImgIndex = 0;
 
-            modalImg.onerror = function() {
-                currentModalImages.splice(currentModalImgIndex, 1);
-                if (currentModalImages.length > 0) {
-                    currentModalImgIndex = currentModalImgIndex >= currentModalImages.length ? 0 : currentModalImgIndex;
-                    modalImg.src = currentModalImages[currentModalImgIndex];
-                    updateModalImageUI();
-                } else { modalImg.classList.add('hidden'); updateModalImageUI(); }
-            };
+            modalImg.onerror = function() { modalImg.src = getFallbackImage(currentEventData); };
             modalImg.onload = function() { modalImg.classList.remove('hidden'); };
-            if (currentModalImages.length > 0) { modalImg.src = currentModalImages[currentModalImgIndex]; } 
-            else { modalImg.classList.add('hidden'); }
+            
+            modalImg.src = currentModalImages[currentModalImgIndex];
             updateModalImageUI();
             
             document.getElementById('modal-title').innerText = currentEventData.name;
             document.getElementById('modal-desc').innerText = currentEventData.description;
 
             const pricesContainer = document.getElementById('modal-prices'); pricesContainer.innerHTML = '';
-            if (isRestaurant) {
+            
+            const calBtn = document.getElementById('modal-cal-btn');
+            if (currentIsRestaurant) {
                 document.getElementById('modal-detail-heading').innerHTML = `<i class="fa-regular fa-clock text-blue-500 mr-2"></i> Details / Times`;
-                pricesContainer.innerHTML = `<div class="flex justify-between border-b border-gray-100 pb-2 mb-2"><span class="text-gray-600">Type</span><span class="font-bold text-gray-800 bg-gray-100 px-2 rounded uppercase text-[10px]">${currentEventData.type}</span></div><div class="flex justify-between"><span class="text-gray-600">Hours</span><span class="font-bold text-gray-800 bg-gray-100 px-2 rounded text-xs text-right">${currentEventData.opening_times}</span></div>`;
+                pricesContainer.innerHTML = `<div class="flex justify-between border-b border-gray-100 pb-2 mb-2"><span class="text-gray-600">Type</span><span class="font-bold text-gray-800 bg-gray-100 px-2 rounded uppercase text-[10px]">${currentEventData.type || 'Restaurant'}</span></div><div class="flex justify-between"><span class="text-gray-600">Hours</span><span class="font-bold text-gray-800 bg-gray-100 px-2 rounded text-xs text-right">${currentEventData.opening_times}</span></div>`;
+                calBtn.classList.add('hidden');
+                calBtn.classList.remove('flex');
             } else {
                 document.getElementById('modal-detail-heading').innerHTML = `<i class="fa-solid fa-tags text-green-500 mr-2"></i> Details / Pricing`;
                 if (currentEventData.priceDetails && currentEventData.priceDetails.length > 0) {
@@ -790,6 +1106,14 @@
                 } else {
                     const fallbackPrice = currentEventData.price === 0 ? 'Free' : `R${currentEventData.price}`;
                     pricesContainer.innerHTML = `<div class="flex justify-between"><span class="text-gray-600">Standard Entry</span><span class="font-bold text-gray-800 bg-gray-100 px-2 rounded">${fallbackPrice}</span></div>`;
+                }
+                if(currentEventData.date) {
+                    calBtn.href = buildGoogleCalLink(currentEventData);
+                    calBtn.classList.remove('hidden');
+                    calBtn.classList.add('flex');
+                } else {
+                    calBtn.classList.add('hidden');
+                    calBtn.classList.remove('flex');
                 }
             }
 
