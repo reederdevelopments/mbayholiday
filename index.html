@@ -139,6 +139,7 @@
                         <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Location</label>
                         <select id="filter-location" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-pink-300 outline-none" onchange="applyFilters()"><option value="all">All</option></select>
                     </div>
+                    
                     <div id="filter-wrap-category" class="block">
                         <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Type</label>
                         <select id="filter-category" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-pink-300 outline-none" onchange="applyFilters()">
@@ -151,14 +152,17 @@
                             <option value="all">Anytime</option><option value="month">Next 30 Days</option>
                         </select>
                     </div>
+
                     <div id="filter-wrap-rest-type" class="hidden">
                         <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Style</label>
                         <select id="filter-rest-type" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-pink-300 outline-none" onchange="applyFilters()"><option value="all">All</option></select>
                     </div>
+
                     <div>
                         <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Max: <span id="price-display" class="text-pink-500">R2000+</span></label>
                         <input type="range" id="filter-price" min="0" max="2000" step="50" value="2000" class="w-full accent-pink-500 mt-1" oninput="updatePriceLabel(); applyFilters()">
                     </div>
+
                     <div class="flex items-center justify-center pt-4">
                         <label class="flex items-center gap-2 cursor-pointer bg-green-50 px-3 py-1.5 rounded-lg border border-green-200 w-full justify-center">
                             <input type="checkbox" id="filter-open-now" class="accent-green-600 w-4 h-4" onchange="applyFilters()">
@@ -236,7 +240,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <!-- Footer -->
     <footer class="bg-white/90 backdrop-blur-md border-t border-cyan-100 py-6 mt-auto relative z-30">
         <div class="max-w-5xl mx-auto px-4 text-center">
@@ -872,7 +875,9 @@
             const cleanImages = (item.images || []).filter(img => img.trim() !== '');
             const firstImg = cleanImages.length > 0 ? cleanImages[0] : getFallbackImage(item);
             
-            const mapsUrl = addUTM(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.location + ', South Africa')}`);
+            const mapQuery = (item.latitude && item.longitude) ? `${item.latitude},${item.longitude}` : `${item.location}, South Africa`;
+            const mapsUrl = addUTM(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`);
+            
             const phoneUrl = item.phone ? `tel:${item.phone.replace(/\s+/g, '')}` : '#';
             const webUrl = (item.website && item.website !== '#') ? addUTM(item.website) : '#';
             
@@ -1117,7 +1122,9 @@
                 }
             }
 
-            document.getElementById('modal-nav').href = addUTM(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(currentEventData.location + ', South Africa')}`);
+            // SMART MAP LINK FIX
+            const mapQuery = (currentEventData.latitude && currentEventData.longitude) ? `${currentEventData.latitude},${currentEventData.longitude}` : `${currentEventData.location}, South Africa`;
+            document.getElementById('modal-nav').href = addUTM(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`);
 
             const phoneBtn = document.getElementById('modal-phone');
             if (currentEventData.phone) { phoneBtn.href = `tel:${currentEventData.phone.replace(/\s+/g, '')}`; phoneBtn.classList.replace('hidden', 'flex'); } 
