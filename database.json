@@ -5,33 +5,44 @@
     "category": "activity",
     "date": null,
     "time": "7 am to 7 pm, Mondays - Sundays",
-    "image": "images/image_4256c0.jpg",
-    "link": "tel:+27645755210",
-    "price": "From R550.00",
-    "location": "Mozambique Restaurant Parking or Santos Beach",
+    "images": [
+      "images/image_4256c0.jpg",
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27645755210",
+    "website": "https://radinn.com",
+    "price": 550,
+    "location": "Santos Beach",
     "description": "Exhilarating ride on a Radinn X Sport Jet board. Includes helmet, impact vest, safety briefing, and instructor."
   },
   {
     "id": 2,
     "name": "Mosselbay Spring Market",
     "category": "event",
-    "date": "2026-09-20T10:00:00",
+    "date": "2026-10-20T10:00:00",
     "time": "10:00 AM - 3:00 PM",
-    "image": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600",
-    "link": "#",
-    "price": "Free Entry",
-    "location": "Goods Shed, Mossel Bay",
-    "description": "Local crafts, food stalls, and live music to celebrate the start of spring."
+    "images": [
+      "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27441234567",
+    "website": "https://mosselbaytourism.com",
+    "price": 0,
+    "location": "Goods Shed",
+    "description": "Local crafts, food stalls, and live music to celebrate the season."
   },
   {
     "id": 3,
-    "name": "December Kick-off Beach Party",
+    "name": "December Beach Party",
     "category": "event",
     "date": "2026-12-05T18:00:00",
     "time": "6:00 PM - 11:00 PM",
-    "image": "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600",
-    "link": "#",
-    "price": "R150.00",
+    "images": [
+      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "website": "",
+    "price": 150,
     "location": "Santos Beach",
     "description": "Start the December holidays with our annual beach party featuring local DJs."
   },
@@ -41,22 +52,14 @@
     "category": "activity",
     "date": null,
     "time": "9:00 AM to 5:00 PM",
-    "image": "https://images.unsplash.com/photo-1582293041079-7814c2f12063?auto=format&fit=crop&q=80&w=600",
-    "link": "#",
-    "price": "R180.00",
+    "images": [
+      "https://images.unsplash.com/photo-1582293041079-7814c2f12063?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1576669801775-ff43c5bc079a?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27446928429",
+    "website": "https://diazwaterpark.co.za",
+    "price": 180,
     "location": "Diaz Beach Waterpark",
     "description": "Fun in the sun with indoor and outdoor heated pools and supertubes."
-  },
-  {
-    "id": 5,
-    "name": "Hartenbos Christmas Carols",
-    "category": "event",
-    "date": "2026-12-24T19:00:00",
-    "time": "7:00 PM - 9:00 PM",
-    "image": "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600",
-    "link": "#",
-    "price": "Free (Donations Welcome)",
-    "location": "Hartenbos Amphitheatre",
-    "description": "Join us for an evening of festive singing under the stars."
   }
 ]
