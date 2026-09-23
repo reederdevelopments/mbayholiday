@@ -42,8 +42,13 @@
                 </div>
 
                 <div id="date-container">
-                    <label class="block text-sm font-bold text-gray-600 mb-1">Date & Time for sorting</label>
+                    <label class="block text-sm font-bold text-gray-600 mb-1">Start Date & Time</label>
                     <input type="datetime-local" id="f-date" class="w-full border-2 rounded-xl p-2 font-bold text-gray-600">
+                </div>
+
+                <div id="end-date-container">
+                    <label class="block text-sm font-bold text-gray-600 mb-1">End Date (Optional for multi-day)</label>
+                    <input type="datetime-local" id="f-end-date" class="w-full border-2 rounded-xl p-2 font-bold text-gray-600">
                 </div>
 
                 <div>
@@ -51,9 +56,17 @@
                     <input type="text" id="f-time" class="w-full border-2 rounded-xl p-2 font-bold" placeholder="e.g. 10:00 AM - 3:00 PM">
                 </div>
 
+                <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-1">Sponsored Listing?</label>
+                    <select id="f-sponsored" class="w-full border-2 rounded-xl p-2 font-bold text-yellow-600">
+                        <option value="false">No (Standard)</option>
+                        <option value="true">Yes (Featured Banner)</option>
+                    </select>
+                </div>
+
                 <div class="col-span-1 md:col-span-2">
-                    <label class="block text-sm font-bold text-gray-600 mb-1">Image Filenames (Comma separated)</label>
-                    <input type="text" id="f-images" class="w-full border-2 rounded-xl p-2 font-bold text-blue-600" placeholder="images/img1.jpg, images/img2.jpg">
+                    <label class="block text-sm font-bold text-gray-600 mb-1">Image Filenames / URLs (Comma separated)</label>
+                    <input type="text" id="f-images" class="w-full border-2 rounded-xl p-2 font-bold text-blue-600" placeholder="images/img1.jpg, https://...">
                 </div>
 
                 <div>
@@ -108,27 +121,34 @@
 
         function toggleDate() {
             const cat = document.getElementById('f-category').value;
-            document.getElementById('date-container').style.display = (cat === 'activity') ? 'none' : 'block';
+            const isAct = cat === 'activity';
+            document.getElementById('date-container').style.display = isAct ? 'none' : 'block';
+            document.getElementById('end-date-container').style.display = isAct ? 'none' : 'block';
         }
 
         function generateJSON() {
             const category = document.getElementById('f-category').value;
             
             let dateVal = null;
+            let endDateVal = null;
             if (category === 'event') {
                 const rawDate = document.getElementById('f-date').value;
-                if(rawDate) dateVal = rawDate + ":00"; 
+                if(rawDate) dateVal = rawDate + ":00";
+                const rawEndDate = document.getElementById('f-end-date').value;
+                if(rawEndDate) endDateVal = rawEndDate + ":00";
             }
 
-            // Convert comma separated string to array, trimming whitespace
             const rawImages = document.getElementById('f-images').value;
             const imgArray = rawImages.split(',').map(item => item.trim()).filter(item => item);
+            const isSponsored = document.getElementById('f-sponsored').value === 'true';
 
             const newEntry = {
                 id: Math.floor(Math.random() * 1000000),
                 name: document.getElementById('f-name').value,
                 category: category,
+                sponsored: isSponsored,
                 date: dateVal,
+                endDate: endDateVal,
                 time: document.getElementById('f-time').value,
                 images: imgArray,
                 phone: document.getElementById('f-phone').value,

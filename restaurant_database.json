@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1001,
+    "name": "Kaai 4 Braai Restaurant",
+    "type": "Restaurant",
+    "sponsored": true,
+    "opening_times": "10:00 AM - 10:00 PM, Mon-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "Mossel Bay Harbour",
+    "phone": "+27446910056",
+    "website": "https://www.kaai4.co.za",
+    "description": "An authentic South African braai (BBQ) experience right on the water's edge. Enjoy traditional dishes, meat straight off the fire, and a laid-back sandy floor atmosphere."
+  },
+  {
+    "id": 1002,
+    "name": "Delfino's Restaurant",
+    "type": "Restaurant",
+    "opening_times": "7:00 AM - 10:00 PM, Mon-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "The Point, Mossel Bay",
+    "phone": "+27446905247",
+    "website": "https://www.delfinos.co.za",
+    "description": "Iconic seaside dining at The Point. Famous for their fantastic pizzas, fresh seafood, and sweeping ocean views where you can often spot dolphins."
+  },
+  {
+    "id": 1003,
+    "name": "Blue Shed Coffee Roastery",
+    "type": "Cafe",
+    "opening_times": "6:30 AM - 6:00 PM, Mon-Sun",
+    "images": [
+      "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "Bland Street, Mossel Bay",
+    "phone": "+27828236109",
+    "website": "https://blueshedroasters.co.za",
+    "description": "A quirky, vintage-styled coffee shop offering artisan roasted coffee, fresh baked goods, and a cozy atmosphere perfect for morning relaxations."
+  },
+  {
+    "id": 1004,
+    "name": "Baruch's Coffee Roastery",
+    "type": "Cafe",
+    "opening_times": "8:00 AM - 5:00 PM, Mon-Fri (Sat till 2 PM)",
+    "images": [
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=600"
+    ],
+    "location": "Voorbaai, Mossel Bay",
+    "phone": "+27446952078",
+    "website": "https://baruchscoffee.co.za",
+    "description": "Authentic Israeli-style coffee roastery and bakery. Known for their incredible middle-eastern inspired breakfasts, fresh bagels, and premium coffee blends."
+  }
+]

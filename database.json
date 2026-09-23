@@ -138,6 +138,7 @@
     "id": 8,
     "name": "Christmas Fest Mossel Bay",
     "category": "event",
+    "sponsored": true,
     "date": "2026-10-09T16:00:00",
     "time": "4:00 PM - 9:00 PM",
     "images": [
@@ -156,7 +157,9 @@
     "id": 9,
     "name": "Matriekbaai 2026",
     "category": "event",
+    "sponsored": true,
     "date": "2026-11-27T10:00:00",
+    "endDate": "2026-12-06T23:59:59",
     "time": "10:00 AM (Runs till Dec 6)",
     "images": [
       "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"

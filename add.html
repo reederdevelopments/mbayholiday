@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Listing | MBayHoliday</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Nunito', sans-serif; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 min-h-screen text-gray-800 antialiased flex flex-col justify-center py-10 px-4 relative">
+
+    <div class="max-w-3xl w-full mx-auto bg-white/90 backdrop-blur-md rounded-[2rem] shadow-2xl overflow-hidden border-4 border-white p-6 md:p-10 relative">
+        <a href="index.html" class="absolute top-6 left-6 text-gray-400 hover:text-blue-500 transition text-xl"><i class="fa-solid fa-arrow-left"></i></a>
+        
+        <div class="text-center mb-8 mt-2">
+            <img src="images/mbayholiday_logo.png" alt="MBayHoliday" class="h-16 mx-auto mb-3 rounded-xl shadow-sm">
+            <h1 class="text-3xl font-black text-pink-500 tracking-tight drop-shadow-sm mb-1">Add Your Business or Event</h1>
+            <p class="text-gray-500 font-bold text-sm">Fill in the details below. Preview how it looks, then generate an email request to our team!</p>
+        </div>
+
+        <form id="add-form" class="space-y-6" onsubmit="submitForm(event)">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="md:col-span-2">
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Business / Event Name *</label>
+                    <input type="text" id="f-name" required placeholder="e.g. Santos Beach Jet Boarding" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Category *</label>
+                    <select id="f-category" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-blue-600 focus:ring-2 focus:ring-pink-300 outline-none" onchange="handleCategoryChange()">
+                        <option value="Activity">Activity / Local To-Do</option>
+                        <option value="Event">Scheduled Event</option>
+                        <option value="Restaurant">Restaurant / Cafe / Bar</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Location / Address *</label>
+                    <input type="text" id="f-location" required placeholder="e.g. Santos Beach, Mossel Bay" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none">
+                </div>
+            </div>
+
+            <!-- Dynamic Date & Operating Hours Section -->
+            <div class="bg-blue-50/50 border border-blue-100 rounded-2xl p-4 md:p-5">
+                <div id="section-hours-text">
+                    <label class="block text-xs font-black text-blue-900 uppercase tracking-wider mb-2">Operating Hours / Days *</label>
+                    <div id="hours-list" class="space-y-2 mb-3">
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="e.g. Mon - Sun" class="w-1/2 bg-white border border-gray-200 rounded-xl p-2 text-sm font-bold h-input-day">
+                            <input type="text" placeholder="e.g. 7:00 AM - 7:00 PM" class="w-1/2 bg-white border border-gray-200 rounded-xl p-2 text-sm font-bold h-input-time">
+                        </div>
+                    </div>
+                    <button type="button" onclick="addHoursRow()" class="text-xs font-bold text-blue-600 hover:text-blue-800 transition flex items-center gap-1">
+                        <i class="fa-solid fa-plus-circle"></i> Add Another Time Slot
+                    </button>
+                </div>
+
+                <div id="section-dates-picker" class="hidden grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-black text-blue-900 uppercase tracking-wider mb-1">Start Date & Time *</label>
+                        <input type="datetime-local" id="f-start-date" class="w-full bg-white border border-gray-200 rounded-xl p-2.5 text-sm font-bold">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black text-blue-900 uppercase tracking-wider mb-1">End Date (Optional for multi-day)</label>
+                        <input type="datetime-local" id="f-end-date" class="w-full bg-white border border-gray-200 rounded-xl p-2.5 text-sm font-bold">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Pricing Options Builder -->
+            <div class="bg-green-50/50 border border-green-100 rounded-2xl p-4 md:p-5">
+                <label class="block text-xs font-black text-green-900 uppercase tracking-wider mb-2">Pricing Options / Tiers</label>
+                <div id="price-list" class="space-y-2 mb-3">
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="e.g. Adults / 1 Hour" class="w-1/2 bg-white border border-gray-200 rounded-xl p-2 text-sm font-bold p-input-item">
+                        <input type="text" placeholder="e.g. R550.00 or Free" class="w-1/2 bg-white border border-gray-200 rounded-xl p-2 text-sm font-bold p-input-cost">
+                    </div>
+                </div>
+                <button type="button" onclick="addPriceRow()" class="text-xs font-bold text-green-700 hover:text-green-900 transition flex items-center gap-1">
+                    <i class="fa-solid fa-plus-circle"></i> Add Another Price Tier
+                </button>
+            </div>
+
+            <!-- Additional Details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Contact Phone</label>
+                    <input type="text" id="f-phone" placeholder="+27..." class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Website / Booking Link</label>
+                    <input type="url" id="f-website" placeholder="https://..." class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Image URLs (Comma separated)</label>
+                    <input type="text" id="f-images" placeholder="https://..., https://..." class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Description *</label>
+                    <textarea id="f-desc" required rows="3" placeholder="Tell us what makes your offering special..." class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none"></textarea>
+                </div>
+
+                <!-- Sponsorship Option -->
+                <div class="md:col-span-2 bg-gradient-to-r from-amber-50 to-yellow-50 border border-amber-200 rounded-2xl p-4">
+                    <label class="block text-xs font-black text-amber-800 uppercase tracking-wider mb-2">
+                        <i class="fa-solid fa-crown text-yellow-500 mr-1"></i> Feature as a Sponsored Listing at the top of MBayHoliday?
+                    </label>
+                    <div class="flex items-center gap-6 mt-1">
+                        <label class="flex items-center gap-2 font-bold text-gray-700 cursor-pointer">
+                            <input type="radio" name="f-sponsor" value="Yes" class="accent-pink-500 w-4 h-4" onchange="toggleSponsorNote(true)"> Yes, feature me!
+                        </label>
+                        <label class="flex items-center gap-2 font-bold text-gray-600 cursor-pointer">
+                            <input type="radio" name="f-sponsor" value="No" checked class="accent-pink-500 w-4 h-4" onchange="toggleSponsorNote(false)"> Standard Listing
+                        </label>
+                    </div>
+                    <div id="sponsor-note" class="hidden mt-3 text-xs font-bold text-amber-900 bg-amber-100/80 p-3 rounded-xl border border-amber-200">
+                        <i class="fa-solid fa-envelope-open-text text-amber-600 mr-1"></i> Awesome! Someone from our team will contact you via email with our feature options and rates.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                <button type="button" onclick="previewModal()" class="w-full bg-blue-100 text-blue-800 font-black py-3.5 rounded-xl hover:bg-blue-200 transition flex items-center justify-center">
+                    <i class="fa-solid fa-eye mr-2"></i> Preview Popup Modal
+                </button>
+                <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-yellow-400 text-white font-black py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition transform flex items-center justify-center">
+                    Generate Email Request <i class="fa-regular fa-paper-plane ml-2"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Live Preview Modal -->
+    <div id="preview-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div id="preview-modal-box" class="bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl relative p-6">
+            <button onclick="closePreviewModal()" class="absolute top-4 right-4 bg-gray-100 text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 z-20"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div id="preview-sponsor-badge" class="hidden bg-gradient-to-r from-yellow-400 to-pink-500 text-white font-black text-xs uppercase px-4 py-1.5 rounded-t-xl -mx-6 -mt-6 mb-4 flex items-center justify-center gap-1 shadow-sm">
+                <i class="fa-solid fa-crown text-yellow-200"></i> Featured Sponsor
+            </div>
+
+            <h2 id="prev-title" class="text-xl font-black text-gray-800 mb-4 pr-8 leading-tight"></h2>
+            
+            <div class="relative w-full h-40 bg-gray-100 rounded-xl overflow-hidden mb-5 shadow-inner flex items-center justify-center">
+                <img id="prev-img" src="" class="w-full h-full object-cover hidden">
+                <i id="prev-img-placeholder" class="fa-solid fa-image text-gray-300 text-3xl"></i>
+            </div>
+
+            <p id="prev-desc" class="text-gray-600 mb-5 text-sm leading-relaxed"></p>
+            
+            <details open class="mb-6 bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+                <summary class="font-bold text-gray-700 p-3 text-sm flex items-center justify-between cursor-pointer">
+                    <span><i class="fa-solid fa-tags text-green-500 mr-2"></i> Details / Pricing</span>
+                    <i class="fa-solid fa-chevron-down text-gray-400 text-xs"></i>
+                </summary>
+                <div class="p-3 bg-white border-t border-gray-200 text-sm space-y-2" id="prev-prices"></div>
+            </details>
+            
+            <div class="flex justify-center gap-3">
+                <span class="w-12 h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-full shadow-sm"><i class="fa-solid fa-map-location-dot"></i></span>
+                <span class="w-12 h-12 flex items-center justify-center bg-green-100 text-green-700 rounded-full shadow-sm"><i class="fa-solid fa-phone"></i></span>
+                <span class="w-12 h-12 flex items-center justify-center bg-pink-100 text-pink-700 rounded-full shadow-sm"><i class="fa-solid fa-globe"></i></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSponsorNote(show) {
+            document.getElementById('sponsor-note').classList.toggle('hidden', !show);
+        }
+
+        function handleCategoryChange() {
+            const cat = document.getElementById('f-category').value;
+            const isEvent = cat === 'Event';
+            document.getElementById('section-hours-text').classList.toggle('hidden', isEvent);
+            document.getElementById('section-dates-picker').classList.toggle('hidden', !isEvent);
+            document.getElementById('section-dates-picker').classList.toggle('grid', isEvent);
+        }
+
+        function addHoursRow() {
+            const div = document.createElement('div');
+            div.className = "flex gap-2";
+            div.innerHTML = `
+                <input type="text" placeholder="e.g. Sat - Sun" class="w-1/2 bg-white border border-gray-200 rounded-xl p-2 text-sm font-bold h-input-day">
+                <input type="text" placeholder="e.g. 8:00 AM - 2:00 PM" class="w-1/2 bg-white border border-gray-200 rounded-xl p-2 text-sm font-bold h-input-time">
+            `;
+            document.getElementById('hours-list').appendChild(div);
+        }
+
+        function addPriceRow() {
+            const div = document.createElement('div');
+            div.className = "flex gap-2";
+            div.innerHTML = `
+                <input type="text" placeholder="e.g. Kids" class="w-1/2 bg-white border border-gray-200 rounded-xl p-2 text-sm font-bold p-input-item">
+                <input type="text" placeholder="e.g. R50.00" class="w-1/2 bg-white border border-gray-200 rounded-xl p-2 text-sm font-bold p-input-cost">
+            `;
+            document.getElementById('price-list').appendChild(div);
+        }
+
+        function getCollectedHours() {
+            const days = document.querySelectorAll('.h-input-day');
+            const times = document.querySelectorAll('.h-input-time');
+            let res = [];
+            days.forEach((d, i) => {
+                if (d.value.trim()) res.push(`${d.value.trim()}: ${times[i].value.trim()}`);
+            });
+            return res.join(', ') || 'See description for hours';
+        }
+
+        function getCollectedPrices() {
+            const items = document.querySelectorAll('.p-input-item');
+            const costs = document.querySelectorAll('.p-input-cost');
+            let res = [];
+            items.forEach((it, i) => {
+                if (it.value.trim()) res.push({ item: it.value.trim(), cost: costs[i].value.trim() });
+            });
+            return res;
+        }
+
+        function previewModal() {
+            const name = document.getElementById('f-name').value || 'Business Name';
+            const desc = document.getElementById('f-desc').value || 'Business description will appear here...';
+            const rawImgs = document.getElementById('f-images').value.split(',');
+            const firstImg = rawImgs[0] ? rawImgs[0].trim() : '';
+            const isSponsor = document.querySelector('input[name="f-sponsor"]:checked')?.value === 'Yes';
+            const prices = getCollectedPrices();
+
+            document.getElementById('prev-title').innerText = name;
+            document.getElementById('prev-desc').innerText = desc;
+            
+            const modalBox = document.getElementById('preview-modal-box');
+            const sponsorBadge = document.getElementById('preview-sponsor-badge');
+            
+            if (isSponsor) {
+                modalBox.className = "bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl relative p-6 border-4 border-yellow-400 ring-4 ring-yellow-300/40";
+                sponsorBadge.classList.remove('hidden');
+            } else {
+                modalBox.className = "bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl relative p-6";
+                sponsorBadge.classList.add('hidden');
+            }
+
+            const imgEl = document.getElementById('prev-img');
+            const placeholderEl = document.getElementById('prev-img-placeholder');
+            if (firstImg) {
+                imgEl.src = firstImg;
+                imgEl.classList.remove('hidden');
+                placeholderEl.classList.add('hidden');
+            } else {
+                imgEl.classList.add('hidden');
+                placeholderEl.classList.remove('hidden');
+            }
+
+            const priceContainer = document.getElementById('prev-prices');
+            priceContainer.innerHTML = '';
+            if (prices.length > 0) {
+                prices.forEach(p => {
+                    priceContainer.innerHTML += `<div class="flex justify-between border-b border-gray-100 pb-1"><span class="text-gray-600">${p.item}</span><span class="font-bold text-gray-800">${p.cost}</span></div>`;
+                });
+            } else {
+                priceContainer.innerHTML = `<div class="flex justify-between"><span class="text-gray-600">Hours / Info</span><span class="font-bold text-gray-800">${getCollectedHours()}</span></div>`;
+            }
+
+            const modal = document.getElementById('preview-modal');
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            modal.classList.add('opacity-100');
+        }
+
+        function closePreviewModal() {
+            const modal = document.getElementById('preview-modal');
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            const name = document.getElementById('f-name').value;
+            const category = document.getElementById('f-category').value;
+            const location = document.getElementById('f-location').value;
+            const phone = document.getElementById('f-phone').value || 'N/A';
+            const website = document.getElementById('f-website').value || 'N/A';
+            const desc = document.getElementById('f-desc').value;
+            const sponsorInterest = document.querySelector('input[name="f-sponsor"]:checked')?.value || 'No';
+
+            let timesOrDates = '';
+            if (category === 'Event') {
+                timesOrDates = `Start: ${document.getElementById('f-start-date').value} | End: ${document.getElementById('f-end-date').value || 'N/A'}`;
+            } else {
+                timesOrDates = getCollectedHours();
+            }
+
+            const prices = getCollectedPrices().map(p => `${p.item}: ${p.cost}`).join(' | ');
+
+            const subject = encodeURIComponent(`NEW ENTRY - ${name}`);
+            let body = `Hello MBayHoliday Team,\n\nPlease add my listing to the website. Details below:\n\n`;
+            body += `NAME: ${name}\n`;
+            body += `CATEGORY: ${category}\n`;
+            body += `LOCATION: ${location}\n`;
+            body += `TIMES / DATES: ${timesOrDates}\n`;
+            body += `PRICING TIERS: ${prices || 'N/A'}\n`;
+            body += `PHONE: ${phone}\n`;
+            body += `WEBSITE: ${website}\n`;
+            body += `SPONSORSHIP INTERESTED: ${sponsorInterest}\n\n`;
+            body += `DESCRIPTION:\n${desc}\n\n`;
+            body += `*** PLEASE FIND ATTACHED IMAGES IN THIS EMAIL ***\n`;
+
+            window.location.href = `mailto:reederdevelopments@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+</html>
