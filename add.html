@@ -44,6 +44,20 @@
                 </div>
 
                 <div>
+                    <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Town *</label>
+                    <select id="f-town" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none">
+                        <option value="Mossel Bay">Mossel Bay</option>
+                        <option value="Hartenbos">Hartenbos</option>
+                        <option value="Great Brak River">Great Brak River</option>
+                        <option value="Little Brak River">Little Brak River</option>
+                        <option value="George">George</option>
+                        <option value="Wilderness">Wilderness</option>
+                        <option value="Oudtshoorn">Oudtshoorn</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-2">
                     <label class="block text-xs font-black text-gray-400 uppercase tracking-wider mb-1">Location Name *</label>
                     <input type="text" id="f-location" required placeholder="e.g. Santos Beach, Mossel Bay" class="w-full bg-gray-50 border border-gray-200 rounded-xl p-3 font-bold text-gray-700 focus:ring-2 focus:ring-pink-300 outline-none">
                 </div>
@@ -167,7 +181,7 @@
                 <i class="fa-solid fa-crown text-yellow-200"></i> Featured Sponsor
             </div>
 
-            <h2 id="prev-title" class="text-xl font-black text-gray-800 mb-4 pr-8 leading-tight"></h2>
+            <h2 id="prev-title" class="text-xl font-black text-gray-800 mb-4 pr-8 leading-tight mt-2"></h2>
             
             <div class="relative w-full h-40 bg-gray-100 rounded-xl overflow-hidden mb-5 shadow-inner flex items-center justify-center">
                 <img id="prev-img" src="" class="w-full h-full object-cover hidden">
@@ -334,6 +348,7 @@
             e.preventDefault();
             const name = document.getElementById('f-name').value;
             const category = document.getElementById('f-category').value;
+            const town = document.getElementById('f-town').value;
             const location = document.getElementById('f-location').value;
             const lat = document.getElementById('f-lat').value || 'Not provided';
             const lng = document.getElementById('f-lng').value || 'Not provided';
@@ -355,6 +370,7 @@
             let body = `Hello MBayHoliday Team,\n\nPlease add my listing to the website. Details below:\n\n`;
             body += `NAME: ${name}\n`;
             body += `CATEGORY: ${category}\n`;
+            body += `TOWN: ${town}\n`;
             body += `LOCATION: ${location}\n`;
             body += `COORDINATES: Lat: ${lat}, Lng: ${lng}\n`;
             body += `TIMES / DATES: ${timesOrDates}\n`;

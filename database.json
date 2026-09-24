@@ -18,7 +18,8 @@
       { "item": "Group Booking (4+)", "cost": "R450.00 pp" }
     ],
     "location": "Santos Beach",
-    "latitude": -34.177,
+    "town": "Mossel Bay",
+    "latitude": -34.1770,
     "longitude": 22.1412,
     "description": "Exhilarating ride on a Radinn X Sport Jet board. Includes helmet, impact vest, safety briefing, and instructor."
   },
@@ -39,6 +40,7 @@
       { "item": "Standard Entry", "cost": "Free" }
     ],
     "location": "Goods Shed",
+    "town": "Mossel Bay",
     "latitude": -34.1802,
     "longitude": 22.1425,
     "description": "Local crafts, food stalls, and live music to celebrate the season."
@@ -52,14 +54,15 @@
     "images": [
       "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": null,
+    "phone": "",
+    "website": "",
     "price": 150,
     "priceDetails": [
       { "item": "General Admission", "cost": "R150.00" },
       { "item": "VIP Access", "cost": "R350.00" }
     ],
     "location": "Santos Beach",
+    "town": "Mossel Bay",
     "latitude": -34.1773,
     "longitude": 22.1419,
     "description": "Start the December holidays with our annual beach party featuring local DJs."
@@ -82,6 +85,7 @@
       { "item": "Half Day Pass", "cost": "R120.00" }
     ],
     "location": "Diaz Beach Waterpark",
+    "town": "Mossel Bay",
     "latitude": -34.1578,
     "longitude": 22.1122,
     "description": "Fun in the sun with indoor and outdoor heated pools and supertubes."
@@ -95,13 +99,14 @@
     "images": [
       "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "",
     "website": "https://allevents.in/mossel-bay/garden-route-wedding-expo/80002166540608",
     "price": 50,
     "priceDetails": [
       { "item": "Standard Entry", "cost": "R50.00" }
     ],
     "location": "Mossel Bay Town",
+    "town": "Mossel Bay",
     "latitude": -34.1833,
     "longitude": 22.1417,
     "description": "The premier wedding exhibition in the Garden Route showcasing top local venues, photographers, and bridal vendors."
@@ -111,19 +116,19 @@
     "name": "kykNET Buite Ekspo Suid-Kaap",
     "category": "event",
     "date": "2026-09-25T12:00:00",
-    "endDate": "2026-09-27T18:00:00",
-    "time": "12:00 PM - 6:00 PM daily",
+    "time": "12:00 PM - 6:00 PM",
     "images": [
       "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": null,
+    "phone": "",
+    "website": "",
     "price": 100,
     "priceDetails": [
       { "item": "Adults", "cost": "R100.00" },
       { "item": "Pensioners / Kids", "cost": "R50.00" }
     ],
     "location": "Mossel Bay",
+    "town": "Mossel Bay",
     "latitude": -34.1834,
     "longitude": 22.1418,
     "description": "A massive outdoor and camping exhibition featuring the latest 4x4 gear, caravans, and outdoor lifestyle products."
@@ -137,7 +142,7 @@
     "images": [
       "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "",
     "website": "https://runningcalendar.co.za/events/mosselbaai-sportfees",
     "price": 95,
     "priceDetails": [
@@ -145,6 +150,7 @@
       { "item": "4km Fun Run", "cost": "R40.00" }
     ],
     "location": "Hartenbos Library",
+    "town": "Hartenbos",
     "latitude": -34.1133,
     "longitude": 22.1178,
     "description": "Community 15km road race and 4km fun run promoting inclusive coastal running along the beautiful Hartenbos coastline."
@@ -159,13 +165,14 @@
     "images": [
       "https://images.unsplash.com/photo-1511258616111-e6e729505a76?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": null,
+    "phone": "",
+    "website": "",
     "price": 0,
     "priceDetails": [
       { "item": "Standard Entry", "cost": "Free" }
     ],
     "location": "Mossel Bay",
+    "town": "Mossel Bay",
     "latitude": -34.1832,
     "longitude": 22.1416,
     "description": "Get a head start on the festive season with this early Christmas market featuring local food, crafts, and family entertainment."
@@ -181,7 +188,7 @@
     "images": [
       "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "",
     "website": "https://www.howler.co.za/events/matriekbaai-2026-mosselbaai-2dc5",
     "price": 350,
     "priceDetails": [
@@ -189,6 +196,7 @@
       { "item": "VIP Passport", "cost": "R750.00" }
     ],
     "location": "Diaz Hotel and Resort",
+    "town": "Mossel Bay",
     "latitude": -34.1579,
     "longitude": 22.1123,
     "description": "The ultimate matric holiday festival in the Southern Cape. Join thousands of matrics for beach parties, live DJs, and massive stage productions."
@@ -202,14 +210,15 @@
     "images": [
       "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": null,
+    "phone": "",
+    "website": "",
     "price": 250,
     "priceDetails": [
       { "item": "General Admission", "cost": "R250.00" },
       { "item": "Kids under 12", "cost": "R100.00" }
     ],
     "location": "ATKV Hartenbos Amphitheatre",
+    "town": "Hartenbos",
     "latitude": -34.1134,
     "longitude": 22.1179,
     "description": "Ring in 2027 with popular South African artist Appel performing live at the iconic Hartenbos Amphitheatre."
@@ -232,6 +241,7 @@
       { "item": "Hedge Maze Entry", "cost": "R40.00" }
     ],
     "location": "Geelhoutboom, George",
+    "town": "George",
     "latitude": -33.9167,
     "longitude": 22.3833,
     "description": "A perfect family day out! Pick your own fresh strawberries, conquer the largest permanent hedge maze in the Southern Hemisphere, and enjoy artisan eateries."
@@ -245,15 +255,16 @@
     "images": [
       "https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": null,
+    "phone": "",
+    "website": "",
     "price": 0,
     "priceDetails": [
       { "item": "General Entry", "cost": "Free" }
     ],
     "location": "York Street, George",
-    "latitude": -33.961,
-    "longitude": 22.458,
+    "town": "George",
+    "latitude": -33.9610,
+    "longitude": 22.4580,
     "description": "The annual switching on of the Christmas lights! A massive street festival featuring local vendors, live music, kids entertainment, and a festive parade."
   },
   {
@@ -265,15 +276,16 @@
     "images": [
       "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "",
     "website": "https://outeniquafamilymarket.co.za/",
     "price": 0,
     "priceDetails": [
       { "item": "Entry", "cost": "Free" }
     ],
     "location": "N2, George",
-    "latitude": -33.988,
-    "longitude": 22.482,
+    "town": "George",
+    "latitude": -33.9880,
+    "longitude": 22.4820,
     "description": "The Garden Route's premier weekend market. Over 150 food and craft stalls, live local music, and plenty of seating under the trees."
   },
   {
@@ -293,6 +305,7 @@
       { "item": "Horseback Safari", "cost": "R850.00" }
     ],
     "location": "Little Brak River",
+    "town": "Little Brak River",
     "latitude": -34.0322,
     "longitude": 22.1389,
     "description": "Experience the ultimate Garden Route safari. Spot rhinos, lions, buffalo, giraffes, and elephants on a pristine 4,200-hectare private game reserve."
@@ -306,13 +319,14 @@
     "images": [
       "https://images.unsplash.com/photo-1543589077-47d81606c1bf?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": null,
+    "phone": "",
+    "website": "",
     "price": 0,
     "priceDetails": [
       { "item": "Entry", "cost": "Free" }
     ],
     "location": "ATKV Hartenbos",
+    "town": "Hartenbos",
     "latitude": -34.1132,
     "longitude": 22.1177,
     "description": "A massive festive holiday market featuring handmade gifts, traditional South African bakes, boerewors rolls, and a festive holiday atmosphere right by the beach."
@@ -333,6 +347,7 @@
       { "item": "Zipline Experience", "cost": "R800.00" }
     ],
     "location": "The Point, Mossel Bay",
+    "town": "Mossel Bay",
     "latitude": -34.1855,
     "longitude": 22.1585,
     "description": "Experience the longest over-ocean zipline in the world, spanning approximately 1.1km. Glide over the ocean and enjoy breathtaking views of the cliffs and bay."
@@ -354,8 +369,9 @@
       { "item": "Children under 12", "cost": "R140.00" }
     ],
     "location": "Mossel Bay Harbour",
+    "town": "Mossel Bay",
     "latitude": -34.1795,
-    "longitude": 22.144,
+    "longitude": 22.1440,
     "description": "Take a scenic boat trip around Seal Island, home to thousands of Cape Fur Seals. Great for family outings and marine photography."
   },
   {
@@ -375,6 +391,7 @@
       { "item": "Child Entry", "cost": "R10.00" }
     ],
     "location": "1 Market St, Mossel Bay",
+    "town": "Mossel Bay",
     "latitude": -34.1808,
     "longitude": 22.1422,
     "description": "Explore the Maritime Museum featuring a life-size replica of the Dias Caravel, visit the historic Post Office Tree, and stroll through the botanical gardens."
@@ -396,7 +413,8 @@
       { "item": "Surface Viewing", "cost": "R2500.00" }
     ],
     "location": "Mossel Bay Harbour",
-    "latitude": -34.179,
+    "town": "Mossel Bay",
+    "latitude": -34.1790,
     "longitude": 22.1446,
     "description": "Get up close and personal with Great White Sharks in their natural habitat. A thrilling, safe, and educational marine experience."
   },
@@ -416,6 +434,7 @@
       { "item": "Cave Tour (1.5 hrs)", "cost": "R350.00" }
     ],
     "location": "Pinnacle Point, Mossel Bay",
+    "town": "Mossel Bay",
     "latitude": -34.2052,
     "longitude": 22.0886,
     "description": "Journey back in time with a guided tour of the Pinnacle Point caves, revealing some of the earliest evidence for modern human behavior."
@@ -438,6 +457,7 @@
       { "item": "Handcam Video & Photos", "cost": "R900.00" }
     ],
     "location": "Mossel Bay Airfield",
+    "town": "Mossel Bay",
     "latitude": -34.1565,
     "longitude": 22.0642,
     "description": "Experience the ultimate adrenaline rush with a tandem skydive offering the best scenery in South Africa. Jump over the Indian Ocean and land right on the beach!"
@@ -458,6 +478,7 @@
       { "item": "3 Hour Sandboarding Session", "cost": "R450.00" }
     ],
     "location": "Vleesbaai, Mossel Bay",
+    "town": "Vleesbaai",
     "latitude": -34.2981,
     "longitude": 21.9054,
     "description": "Tackle the longest sandboard ride in South Africa! The famous 'Dragon Dune' is a beast of a dune offering an exhilarating 320m ride."
@@ -471,13 +492,14 @@
     "images": [
       "https://images.unsplash.com/photo-1582236896263-d143c7bca609?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": null,
+    "phone": "",
+    "website": "",
     "price": 0,
     "priceDetails": [
       { "item": "Trail Access", "cost": "Free" }
     ],
     "location": "The Point, Mossel Bay",
+    "town": "Mossel Bay",
     "latitude": -34.1865,
     "longitude": 22.1592,
     "description": "A stunning 13.5km coastal hiking trail starting at the historic St Blaize Cave. Walk along the dramatic cliff edge offering incredible whale and dolphin watching spots."
@@ -499,6 +521,7 @@
       { "item": "Kids Return Ticket", "cost": "R100.00" }
     ],
     "location": "Hartenbos Station",
+    "town": "Hartenbos",
     "latitude": -34.1154,
     "longitude": 22.1155,
     "description": "A fun family excursion on a refurbished tractor-train running along the Transnet railway line between Mossel Bay and Great Brak River right next to the ocean."
@@ -520,6 +543,7 @@
       { "item": "Golf Cart Hire", "cost": "R450.00" }
     ],
     "location": "Pinnacle Point, Mossel Bay",
+    "town": "Mossel Bay",
     "latitude": -34.2045,
     "longitude": 22.0891,
     "description": "Voted South Africa's Best Golf Course. An incredibly dramatic clifftop championship course offering ocean views from every single hole."
@@ -541,6 +565,7 @@
       { "item": "Adventure Tour (Adults)", "cost": "R240.00" }
     ],
     "location": "Oudtshoorn",
+    "town": "Oudtshoorn",
     "latitude": -33.3932,
     "longitude": 22.2145,
     "description": "A must-do day trip from Mossel Bay! Explore the spectacular underground limestone caverns. Choose the Heritage Tour for an easy walk or the Adventure Tour for tight squeezes."
@@ -563,6 +588,7 @@
       { "item": "Great White Shark Viewing (30 mins)", "cost": "R2800.00 pp" }
     ],
     "location": "Mossel Bay Airfield",
+    "town": "Mossel Bay",
     "latitude": -34.1568,
     "longitude": 22.0645,
     "description": "See the Garden Route from above! Mossel Bay Helicopters offers scenic coastal flights, mountain drops, and dedicated shark viewing flights."
@@ -576,14 +602,15 @@
     "images": [
       "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": null,
+    "phone": "",
+    "website": "",
     "price": 0,
     "priceDetails": [
       { "item": "Viewpoint Access", "cost": "Free" },
       { "item": "Paragliding (Booked Separately)", "cost": "R1100.00" }
     ],
     "location": "Wilderness heights",
+    "town": "Wilderness",
     "latitude": -33.9961,
     "longitude": 22.5612,
     "description": "A breathtaking viewpoint in Wilderness where the Kaaimans River curves around a forested hill, perfectly forming the shape of the African continent."
@@ -605,6 +632,7 @@
       { "item": "Guided Boat Tour", "cost": "R350.00 pp" }
     ],
     "location": "Wilderness National Park",
+    "town": "Wilderness",
     "latitude": -33.9925,
     "longitude": 22.6074,
     "description": "Rent a canoe and paddle up the Touw River to the Wilderness waterfall. A peaceful, stunning journey through indigenous forests."
@@ -626,6 +654,7 @@
       { "item": "Kids Entry", "cost": "R130.00" }
     ],
     "location": "Oudtshoorn",
+    "town": "Oudtshoorn",
     "latitude": -33.5681,
     "longitude": 22.2085,
     "description": "Encounter cheetahs, crocodiles, and lemurs. A highly ethical conservation facility offering guided tours and unique animal encounters."
@@ -646,6 +675,7 @@
       { "item": "General Admission", "cost": "R250.00" }
     ],
     "location": "ReedValley, Mossel Bay",
+    "town": "Mossel Bay",
     "latitude": -34.1402,
     "longitude": 22.0505,
     "description": "Live music event in the massive rustic barn at ReedValley. Enjoy premium Eden Valley wines and authentic Portuguese cuisine while you dance the night away."
@@ -667,8 +697,9 @@
       { "item": "Spectator Entry", "cost": "R40.00" }
     ],
     "location": "Hartenbos",
-    "latitude": -34.113,
-    "longitude": 22.117,
+    "town": "Hartenbos",
+    "latitude": -34.1130,
+    "longitude": 22.1170,
     "description": "A massive summer holiday bash at the Hartenbos Waterpark with live DJs, slip-and-slide competitions, and food stalls."
   },
   {
@@ -681,13 +712,14 @@
     "images": [
       "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
-    "website": null,
+    "phone": "",
+    "website": "",
     "price": 450,
     "priceDetails": [
       { "item": "Weekend Camping Stand", "cost": "R450.00" }
     ],
     "location": "Great Brak River",
+    "town": "Great Brak River",
     "latitude": -34.0415,
     "longitude": 22.2185,
     "description": "A massive family camping weekend on the banks of the Great Brak River. Includes kayaking, fishing competitions, and a massive communal potjiekos competition."
@@ -708,8 +740,9 @@
       { "item": "Casino Entry", "cost": "Free" }
     ],
     "location": "Pinnacle Point, Mossel Bay",
-    "latitude": -34.204,
-    "longitude": 22.088,
+    "town": "Mossel Bay",
+    "latitude": -34.2040,
+    "longitude": 22.0880,
     "description": "Try your luck at the slots and tables, or catch top-tier South African comedians and musicians at the Bravo Lounge."
   },
   {
@@ -721,7 +754,7 @@
     "images": [
       "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
     ],
-    "phone": null,
+    "phone": "",
     "website": "https://oysterbayreserve.co.za",
     "price": 120,
     "priceDetails": [
@@ -729,1158 +762,9 @@
       { "item": "5km Fun Walk", "cost": "R60.00" }
     ],
     "location": "Oyster Bay Reserve",
-    "latitude": -34.195,
-    "longitude": 22.115,
+    "town": "Mossel Bay",
+    "latitude": -34.1950,
+    "longitude": 22.1150,
     "description": "A beautiful and challenging community trail run through the fynbos reserves of Mossel Bay, ending with a beach cleanup initiative."
-  },
-  {
-    "id": 36,
-    "name": "AmfiHart'26 - Hartenbos ATKV Oord",
-    "category": "event",
-    "date": "2026-12-04T12:00:00",
-    "endDate": "2026-12-05T23:00:00",
-    "time": "12:00 PM Dec 4 - 11:00 PM Dec 5",
-    "images": [
-      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446017200",
-    "website": "https://www.howler.co.za/events/amfihart-26-hartenbos-atkv-oord-4-5-dec-855b",
-    "price": 175,
-    "priceDetails": [
-      { "item": "Tickets", "cost": "From R175.00" }
-    ],
-    "location": "ATKV Hartenbos Amphitheatre",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "Two-day 2026 AmfiHart festival with live artists, funfair, food stalls and market exhibitors. All ages welcome."
-  },
-  {
-    "id": 37,
-    "name": "An Evening with Amira Willighagen",
-    "category": "event",
-    "date": "2026-12-05T20:00:00",
-    "time": "8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://eventsinsa.com/western-cape/mossel-bay/an-evening-with-amira-willighagen-884101d5",
-    "price": null,
-    "priceDetails": [],
-    "location": "Pinnacle Point Clubhouse",
-    "latitude": -34.204,
-    "longitude": 22.088,
-    "description": "Live concert by Amira Willighagen at the Pinnacle Point Clubhouse in Mossel Bay."
-  },
-  {
-    "id": 38,
-    "name": "Somerson Half-Marathon Hartenbos",
-    "category": "event",
-    "date": "2026-12-12T06:00:00",
-    "time": "First start 6:00 AM; 5 km starts 6:10 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27734125440",
-    "website": "https://runningcalendar.co.za/events/somerson-half-marathon",
-    "price": null,
-    "priceDetails": [],
-    "location": "Hart & Bosch Village, Hartenbos",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "Mossel Bay Harriers road event with 21.1 km, 10 km and 5 km distances. Date, time and location are confirmed; 2026 entry fees have not yet been published."
-  },
-  {
-    "id": 39,
-    "name": "Punt in die Wind Kunste-Week - Multi-day Access",
-    "category": "event",
-    "date": "2026-12-19T00:00:00",
-    "endDate": "2026-12-26T23:59:59",
-    "time": "Multi-day access / individual show times vary",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://itickets.co.za/events/486614",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Multi-day access for Punt in die Wind Kunste-Week. iTickets currently lists shows from 19-26 December 2026; the organiser's current programme page lists the core programme from 20-26 December."
-  },
-  {
-    "id": 40,
-    "name": "Punt in die Wind Kunste-Week - Meerkat Petra",
-    "category": "event",
-    "date": "2026-12-19T20:00:00",
-    "time": "8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://itickets.co.za/events/486614",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Meerkat Petra, listed on the current iTickets multi-day programme for 19 December 2026."
-  },
-  {
-    "id": 41,
-    "name": "Punt in die Wind Kunste-Week - Marion Holm",
-    "category": "event",
-    "date": "2026-12-21T10:00:00",
-    "time": "10:00 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Marion Holm comedy performance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 42,
-    "name": "Punt in die Wind Kunste-Week - Steve Hofmeyr",
-    "category": "event",
-    "date": "2026-12-20T20:00:00",
-    "time": "8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Steve Hofmeyr music performance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 43,
-    "name": "Punt in die Wind Kunste-Week - Ouma & die ou Koeie met Margit",
-    "category": "event",
-    "date": "2026-12-21T15:00:00",
-    "time": "3:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Ouma & die ou Koeie met Margit comedy performance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 45,
-    "name": "Punt in die Wind Kunste-Week - Die Kampeerders met Wynand",
-    "category": "event",
-    "date": "2026-12-22T15:00:00",
-    "time": "3:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Die Kampeerders met Wynand comedy performance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 46,
-    "name": "Punt in die Wind Kunste-Week - Liewe Heksie Kindervertoning",
-    "category": "event",
-    "date": "2026-12-22T10:00:00",
-    "time": "10:00 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Liewe Heksie children's theatre performance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 47,
-    "name": "Punt in die Wind Kunste-Week - Mel die Storieverteller",
-    "category": "event",
-    "date": "2026-12-21T20:00:00",
-    "time": "8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Mel die Storieverteller comedy performance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 48,
-    "name": "Punt in die Wind Kunste-Week - Willem Botha",
-    "category": "event",
-    "date": "2026-12-23T11:00:00",
-    "time": "11:00 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Willem Botha Make-Up Masterclass at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 49,
-    "name": "Punt in die Wind Kunste-Week - Amanda Strydom & Je-ani Swiegelaar",
-    "category": "event",
-    "date": "2026-12-22T20:00:00",
-    "time": "8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Amanda Strydom & Je-ani Swiegelaar met Tillie / Mathilda at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 50,
-    "name": "Punt in die Wind Kunste-Week - Hannes van Wyk: Sielskos Dames Oggend",
-    "category": "event",
-    "date": "2026-12-24T10:00:00",
-    "time": "10:00 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Hannes van Wyk - Sielskos inspiration session at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 51,
-    "name": "Punt in die Wind Kunste-Week - Bobby van Jaarsveld",
-    "category": "event",
-    "date": "2026-12-23T20:00:00",
-    "time": "8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Bobby van Jaarsveld music performance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 52,
-    "name": "Punt in die Wind Kunste-Week - Magda & Erhard Louw",
-    "category": "event",
-    "date": "2026-12-24T13:00:00",
-    "time": "1:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Magda & Erhard Louw comedy performance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 53,
-    "name": "Punt in die Wind Kunste-Week - Jak de Priester",
-    "category": "event",
-    "date": "2026-12-26T11:00:00",
-    "time": "11:00 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Jak de Priester music and storytelling performance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 54,
-    "name": "Monties Cycles MTB & Trail Run Challenge",
-    "category": "event",
-    "date": "2026-12-26T06:30:00",
-    "time": "Registration 5:00-6:30 AM; race starts 6:30 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://startingline.co.za/events/monties-cycles-mtb-trail-run-challenge-a466e7dc",
-    "price": 70,
-    "priceDetails": [
-      { "item": "6 km Trail Run", "cost": "From R70" },
-      { "item": "12 km Trail Run", "cost": "From R150" },
-      { "item": "22 km MTB", "cost": "From R270" },
-      { "item": "41 km MTB", "cost": "From R350" },
-      { "item": "86 km E-Bike", "cost": "From R450" },
-      { "item": "87 km Gravel / MTB", "cost": "From R450" }
-    ],
-    "location": "Misty Valley Farm / Laminin Agora Celebration Venue",
-    "latitude": -34.112,
-    "longitude": 22.117,
-    "description": "Post-Christmas MTB, gravel, e-bike, trail-run and fun-walk event with multiple distances, plus a farm deli, gin tasting and kids' play area."
-  },
-  {
-    "id": 55,
-    "name": "GrootFees - Afrikaans is Groot Buitelug",
-    "category": "event",
-    "date": "2026-12-19T17:00:00",
-    "time": "7:00 PM-11:00 PM; gates 5:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://itickets.co.za/events/486560",
-    "price": 295,
-    "priceDetails": [
-      { "item": "General admission", "cost": "R295" },
-      { "item": "Golden Circle", "cost": "R395" },
-      { "item": "Children under 13 - General Admission", "cost": "R150" },
-      { "item": "Children under 2", "cost": "Free" },
-      { "item": "Festival table", "cost": "R700" }
-    ],
-    "location": "ATKV Hartenbos Amphitheatre, 169 Majuba Avenue, Hartenbos",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "Afrikaans is Groot Buitelug at Hartenbos GrootFees. Published performers include Demi Lee Moore, Ruhan du Toit, Ricus Nel, Jo Black, Refentse, Barto, Juanita du Plessis, JACOBUS and Juan Boucher."
-  },
-  {
-    "id": 56,
-    "name": "GrootFees - Alternatief is Groot",
-    "category": "event",
-    "date": "2026-12-29T15:00:00",
-    "time": "4:00 PM-11:00 PM; gates 3:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://itickets.co.za/events/486561",
-    "price": 295,
-    "priceDetails": [
-      { "item": "General admission", "cost": "R295" },
-      { "item": "Under 18 - General Admission", "cost": "R250" },
-      { "item": "Festival table", "cost": "R700" }
-    ],
-    "location": "ATKV Hartenbos Amphitheatre, 169 Majuba Avenue, Hartenbos",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "Alternatief is Groot at Hartenbos GrootFees. Published performers include GString, ONS, JACOBUS, Francois van Coke, Die Heuwels Fantasties and Spoegwolf."
-  },
-  {
-    "id": 57,
-    "name": "Oujaarsdraffie Hartenbos",
-    "category": "event",
-    "date": "2026-12-31T06:00:00",
-    "time": "First start 6:00 AM; prize giving 10:00 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27832942640",
-    "website": "https://runningcalendar.co.za/events/oujaarsdraffie",
-    "price": null,
-    "priceDetails": [],
-    "location": "ATKV Amphitheatre, Hartenbos",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "Year-end Hartenbos road run with 10 km and 4 km distances. Published entry limit is 1,000; organiser-confirmed details."
-  },
-  {
-    "id": 58,
-    "name": "Mega Club'26 - Mosselbaai",
-    "category": "event",
-    "date": "2026-12-26T20:00:00",
-    "endDate": "2027-01-01T23:59:59",
-    "time": "8:00 PM; runs selected nights through 1 Jan 2027",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://www.howler.co.za/events/mega-club-26-mosselbaai-main-season-198b?rep=ajm",
-    "price": 150,
-    "priceDetails": [
-      { "item": "Tickets", "cost": "From R150.00" }
-    ],
-    "location": "Langeberg Mall underground parking, Mossel Bay",
-    "latitude": -34.153,
-    "longitude": 22.108,
-    "description": "18+ pop-up nightclub from 26-31 December 2026 with selected nightly line-ups. Published line-up includes Timo ODV & Biggy (26 Dec), Jack Parow (28 Dec), Early B & Cinimin (29 Dec), Loufi & Vimo (30 Dec), and Van Pletzen, Locnville, Chunda Munki & Advent on New Year's Eve. Closed 27 Dec."
-  },
-  {
-    "id": 59,
-    "name": "Punt in die Wind Kunste-Week - Klipwerf vir 'n langarm dans",
-    "category": "event",
-    "date": "2026-12-26T20:00:00",
-    "time": "8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27861000291",
-    "website": "https://puntindiewind.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Stadsaal, 101 Marsh Street, Mossel Bay",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Klipwerf long-arm dance at Punt in die Wind Kunste-Week."
-  },
-  {
-    "id": 62,
-    "name": "GrootFees - Groot Jol",
-    "category": "event",
-    "date": "2026-12-31T17:00:00",
-    "time": "7:00 PM-11:00 PM; gates 5:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://itickets.co.za/events/486562",
-    "price": 295,
-    "priceDetails": [
-      { "item": "General admission", "cost": "R295" },
-      { "item": "Children under 13 - General Admission", "cost": "R150" },
-      { "item": "Children under 2", "cost": "Free" },
-      { "item": "Festival table", "cost": "R700" }
-    ],
-    "location": "ATKV Hartenbos Amphitheatre, 169 Majuba Avenue, Hartenbos",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "GrootFees New Year's Eve party. Published performers include Brendan Peyper, Robbie Wessels, Appel, Monique Steyn, Liezel Pieters, Chris Steyn and Danny Smoke."
-  },
-  {
-    "id": 63,
-    "name": "Romonza Sunset Sailing Trip",
-    "category": "activity",
-    "date": null,
-    "time": "2-hour trip; departure varies",
-    "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446903101",
-    "website": "https://romonza.activitar.com/products",
-    "price": 500,
-    "priceDetails": [
-      { "item": "Sunset Sailing Trip", "cost": "From R500 pp" }
-    ],
-    "location": "Mossel Bay Harbour",
-    "latitude": -34.1795,
-    "longitude": 22.144,
-    "description": "Two-hour sunset sailing trip from Mossel Bay, with onboard views of the coastline and Seal Island."
-  },
-  {
-    "id": 64,
-    "name": "Big Kahuna Family Speedboat Trip",
-    "category": "activity",
-    "date": null,
-    "time": "15 minutes; departures subject to availability",
-    "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446903101",
-    "website": "https://romonza.activitar.com/products",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay",
-    "latitude": -34.1795,
-    "longitude": 22.144,
-    "description": "Short family speedboat adventure on the Big Kahuna, a 12-seater speedboat with commentary along the route."
-  },
-  {
-    "id": 65,
-    "name": "Mossel Bay Historic Ghost Walk",
-    "category": "activity",
-    "date": null,
-    "time": "2.5 hours; year-round subject to availability",
-    "images": [
-      "https://images.unsplash.com/photo-1519069502901-70eeb6f7df26?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://romonza.activitar.com/services/17754",
-    "price": null,
-    "priceDetails": [],
-    "location": "1 Market St, Mossel Bay",
-    "latitude": -34.1808,
-    "longitude": 22.1422,
-    "description": "Night-time walking tour exploring haunted sites, local legends and stories from Mossel Bay's history. All ages welcome; weather dependent."
-  },
-  {
-    "id": 66,
-    "name": "Oystercatcher Slackpack Trail",
-    "category": "activity",
-    "date": null,
-    "time": "Multi-day guided trail; dates by booking",
-    "images": [
-      "https://images.unsplash.com/photo-1582236896263-d143c7bca609?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27609130270",
-    "website": "https://www.oystercatchertrail.co.za/",
-    "price": 11445,
-    "priceDetails": [
-      { "item": "3-day / 4-night trail, group booking 4-12", "cost": "R11,445 pp sharing (from Sep 2026)" }
-    ],
-    "location": "Mossel Bay to Gouritz River Mouth",
-    "latitude": -34.18,
-    "longitude": 22.142,
-    "description": "Guided slackpacking hike along the rugged Southern Cape coastline. The full trail covers about 46 km over three hiking days with accommodation, meals and transfers."
-  },
-  {
-    "id": 67,
-    "name": "Oystercatcher Trail - 1 Day St Blaize",
-    "category": "activity",
-    "date": null,
-    "time": "Day hike; pre-booking required",
-    "images": [
-      "https://images.unsplash.com/photo-1582236896263-d143c7bca609?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27609130270",
-    "website": "https://www.oystercatchertrail.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "St Blaize Trail, Mossel Bay",
-    "latitude": -34.1865,
-    "longitude": 22.1592,
-    "description": "Guided one-day version of the Oystercatcher experience along the St Blaize coastline, covering fynbos, marine life, birdlife, history and archaeology."
-  },
-  {
-    "id": 68,
-    "name": "Hartenbos Adventure Golf",
-    "category": "activity",
-    "date": null,
-    "time": "9:00 AM - 5:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446017200",
-    "website": "https://hartenbos.co.za/home/facilities/",
-    "price": 25,
-    "priceDetails": [
-      { "item": "18 holes", "cost": "R25" }
-    ],
-    "location": "ATKV Hartenbos",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "Family-friendly adventure mini-golf at ATKV Hartenbos."
-  },
-  {
-    "id": 69,
-    "name": "Hartenbos Padel",
-    "category": "activity",
-    "date": null,
-    "time": "Bookings required",
-    "images": [
-      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446017255",
-    "website": "https://hartenbos.co.za/home/facilities/",
-    "price": 220,
-    "priceDetails": [
-      { "item": "Court 1 - 2 people / 50 min", "cost": "R220" },
-      { "item": "Court 1 - 4 people / 50 min", "cost": "R270" },
-      { "item": "Court 2 - 2 people / 50 min", "cost": "R180" },
-      { "item": "Court 2 - 4 people / 50 min", "cost": "R230" }
-    ],
-    "location": "ATKV Hartenbos",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "Two padel courts at ATKV Hartenbos. Ball and rackets are included in the listed 50-minute court prices."
-  },
-  {
-    "id": 70,
-    "name": "Hartenbos Museum",
-    "category": "activity",
-    "date": null,
-    "time": "Mon-Fri 9:00 AM-4:00 PM; Sat 9:00 AM-12:30 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446017238",
-    "website": "https://hartenbos.co.za/home/facilities/",
-    "price": null,
-    "priceDetails": [],
-    "location": "ATKV Hartenbos",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "Local museum at ATKV Hartenbos. The published programme lists weekday and Saturday opening hours and closure on Sundays and public holidays."
-  },
-  {
-    "id": 71,
-    "name": "Iconic Heritage Mosaic Tunnel",
-    "category": "activity",
-    "date": null,
-    "time": "Access subject to security / booking",
-    "images": [
-      "https://images.unsplash.com/photo-1519069502901-70eeb6f7df26?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446065315",
-    "website": "https://pinnaclepointestate.co.za/leisure/heritage-tunnel/",
-    "price": 0,
-    "priceDetails": [
-      { "item": "Walk-through access", "cost": "Free" }
-    ],
-    "location": "Pinnacle Point, Mossel Bay",
-    "latitude": -34.205,
-    "longitude": 22.088,
-    "description": "A 55-metre tunnel with 92 mosaic panels celebrating Mossel Bay's history, heritage, natural environment and marine life. Bookings via security are required."
-  },
-  {
-    "id": 72,
-    "name": "Float Fest SA - Groot Brak 2026",
-    "category": "event",
-    "date": "2026-12-18T08:00:00",
-    "time": "From 8:00 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://www.toodoo.co.za/float-fest-groot-brak-2026/",
-    "price": 250,
-    "priceDetails": [
-      { "item": "Founding Floaters", "cost": "R180" },
-      { "item": "Early Tide Floaters", "cost": "R200" },
-      { "item": "Prime Floaters", "cost": "R250" },
-      { "item": "Riptide Rebel Floaters (ages 4-17)", "cost": "R180" },
-      { "item": "Golden Floaters", "cost": "R180" },
-      { "item": "Float Squad (8 people)", "cost": "R3000" }
-    ],
-    "location": "Suiderkruis Beach & Picnic Area, Great Brak River",
-    "latitude": -34.053,
-    "longitude": 22.203,
-    "description": "Summer river-and-beach festival with floating activities, live music, DJs, food stalls, drinks, competitions and activations."
-  },
-  {
-    "id": 73,
-    "name": "Lights & Lanterns - Great Brak River",
-    "category": "event",
-    "date": "2026-12-20T19:45:00",
-    "time": "7:45 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1512389142860-9c449e58a543?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://greatbrakriver.co.za/",
-    "price": 0,
-    "priceDetails": [],
-    "location": "Long Street opposite the Police Station, Great Brak River",
-    "latitude": -34.04,
-    "longitude": 22.22,
-    "description": "Community Lights & Lanterns event featuring floating candles on the water and messages on a maypole."
-  },
-  {
-    "id": 74,
-    "name": "GB Night Ride & Stroll",
-    "category": "event",
-    "date": "2026-12-26T19:45:00",
-    "time": "7:45 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://greatbrakriver.co.za/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Start/finish: Die Wandelpad, R102, Great Brak River",
-    "latitude": -34.04,
-    "longitude": 22.22,
-    "description": "Great Brak River festive-season community night ride and stroll."
-  },
-  {
-    "id": 75,
-    "name": "Grootbrak Grabadoo 2026",
-    "category": "event",
-    "date": "2026-12-31T08:00:00",
-    "time": "Morning / daytime",
-    "images": [
-      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://thenewspaper.co.za/festive-season-highlights-in-the-western-cape/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Grootbrak Sports Grounds, Great Brak River",
-    "latitude": -34.04,
-    "longitude": 22.22,
-    "description": "Annual family-friendly year-end run/walk and mountain-bike event. Published 2026 preview lists a 4.8 km run/walk and MTB routes from 15 km to 75 km."
-  },
-  {
-    "id": 76,
-    "name": "Trans Agulhas Challenge 2026 - Santos Beach",
-    "category": "event",
-    "date": "2026-12-28T11:15:00",
-    "time": "11:15 AM-12:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/event/trans-agulhas-challenge-2026/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Santos Beach, Mossel Bay",
-    "latitude": -34.177,
-    "longitude": 22.141,
-    "description": "Mossel Bay stop for the four-day, 700+ km Trans Agulhas inflatable-boat challenge. Mossel Bay Tourism links the official Facebook page for updates: facebook.com/transagulhas."
-  },
-  {
-    "id": 77,
-    "name": "Hartenbos ATKV Seasonal Market 2026/27",
-    "category": "event",
-    "date": "2026-12-12T09:00:00",
-    "time": "Daily, typically 9:00 AM-6:00 PM; through 9 Jan 2027",
-    "images": [
-      "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://www.oev.co.za/iea-application-form/",
-    "price": 0,
-    "priceDetails": [],
-    "location": "Joubert Park and adjacent market areas, Hartenbos",
-    "latitude": -34.11,
-    "longitude": 22.11,
-    "description": "Official IEA/OEV December holiday market period runs 12 December 2026 to 9 January 2027. Seasonal exhibitors trade in Joubert Park and other approved Mossel Bay municipal areas."
-  },
-  {
-    "id": 78,
-    "name": "Die Wit Tent - Hartenbos Festive Market",
-    "category": "event",
-    "date": "2026-11-21T09:00:00",
-    "time": "9:00 AM-6:00 PM; runs through 3 Jan 2027",
-    "images": [
-      "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://itgclothing.co.za/blogs/events",
-    "price": 0,
-    "priceDetails": [],
-    "location": "Hart & Bosch Village, R102, Hartenbos",
-    "latitude": -34.11,
-    "longitude": 22.11,
-    "description": "Festive-season market at the Wit Tent / Hart & Bosch Village, documented by participating vendors for 21 November 2026 to 3 January 2027."
-  },
-  {
-    "id": 79,
-    "name": "Kampdorp 2026 - Matriekbaai",
-    "category": "event",
-    "date": "2026-11-27T12:00:00",
-    "time": "12:00 PM 27 Nov-10:00 AM 6 Dec",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://www.howlerapp.com/events/kampdorp-f39b",
-    "price": null,
-    "priceDetails": [],
-    "location": "ATKV Hartenbos Blok F campsite, 199 Paardekraal St, Hartenbos",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "Matriekbaai accommodation village in a secured section of ATKV Hartenbos, about 200 m from the beach, with chill/eating area, tuckshop and braai facilities."
-  },
-  {
-    "id": 80,
-    "name": "Cape Saint Blaize Gin Tasting & Distillery Experience",
-    "category": "activity",
-    "date": null,
-    "time": "10:00 AM - 5:00 PM, Mon - Sat",
-    "images": [
-      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446911885",
-    "website": "https://visitmosselbay.co.za/listing/cape-saint-blaize-artisanal-distillery/",
-    "price": null,
-    "priceDetails": [],
-    "location": "7 Market Street, Mossel Bay",
-    "latitude": -34.18,
-    "longitude": 22.14,
-    "description": "Artisanal distillery offering gin tastings, gin masterclasses, factory tours, gin pairings and gifts."
-  },
-  {
-    "id": 81,
-    "name": "Southern Cape Railway Steam Train Journey",
-    "category": "activity",
-    "date": null,
-    "time": "Scheduled excursions / booking required",
-    "images": [
-      "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27878064200",
-    "website": "https://visitmosselbay.co.za/listing/southern-cape-railway/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Port Natal Avenue, Hartenbos, Mossel Bay",
-    "latitude": -34.11,
-    "longitude": 22.11,
-    "description": "Family-run Garden Route steam railway offering regular train journeys, day trips, overnight trips, golf tours and private charters."
-  },
-  {
-    "id": 82,
-    "name": "The Big Tube",
-    "category": "activity",
-    "date": null,
-    "time": "Booking / operating times vary",
-    "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446911995",
-    "website": "https://www.mosselbayboatadventures.co.za/activities/big-tube/",
-    "price": 650,
-    "priceDetails": [
-      { "item": "Big Tube Ride", "cost": "R650.00" }
-    ],
-    "location": "Quay 4, Mossel Bay Harbour",
-    "latitude": -34.177,
-    "longitude": 22.143,
-    "description": "A massive, towable spinning tube designed for pure, non-stop fun on the water. Holding up to 15 passengers, it's the ultimate shared ocean thrill."
-  },
-  {
-    "id": 83,
-    "name": "White Shark Parasailing",
-    "category": "activity",
-    "date": null,
-    "time": "Booking / weather dependent",
-    "images": [
-      "https://images.unsplash.com/photo-1560275619-4662e36fa65c?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446913796",
-    "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay",
-    "latitude": -34.18,
-    "longitude": 22.14,
-    "description": "Parasailing experience listed by Mossel Bay Tourism under adrenaline, animal encounters, guided tours and ocean adventures."
-  },
-  {
-    "id": 84,
-    "name": "Groot Brak Ferry",
-    "category": "activity",
-    "date": null,
-    "time": "Check operating schedule",
-    "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Great Brak River Waterfront",
-    "latitude": -34.04,
-    "longitude": 22.22,
-    "description": "Family-friendly ferry experience on the Great Brak River, also listed for bird watching and wheelchair-friendly access."
-  },
-  {
-    "id": 85,
-    "name": "Quadrant Golf",
-    "category": "activity",
-    "date": null,
-    "time": "Check booking schedule",
-    "images": [
-      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay",
-    "latitude": -34.18,
-    "longitude": 22.14,
-    "description": "Indoor / technology-driven golf activity listed by Mossel Bay Tourism as family entertainment and a rainy-day option."
-  },
-  {
-    "id": 86,
-    "name": "VR Game BAR Mossel Bay",
-    "category": "activity",
-    "date": null,
-    "time": "12:00 PM - 8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay",
-    "latitude": -34.18,
-    "longitude": 22.14,
-    "description": "Virtual-reality gaming venue listed by Mossel Bay Tourism as an indoor family entertainment option."
-  },
-  {
-    "id": 87,
-    "name": "Point Padel Mossel Bay",
-    "category": "activity",
-    "date": null,
-    "time": "Bookings required",
-    "images": [
-      "https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Point",
-    "latitude": -34.18,
-    "longitude": 22.14,
-    "description": "Padel facility at Mossel Bay Point, listed by Mossel Bay Tourism as a family-friendly activity."
-  },
-  {
-    "id": 88,
-    "name": "Hooked On Fishing Deep Sea Charters",
-    "category": "activity",
-    "date": null,
-    "time": "Booking required",
-    "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/listing-category/family-fun-entertainment/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay",
-    "latitude": -34.18,
-    "longitude": 22.14,
-    "description": "Deep-sea fishing charter listed by Mossel Bay Tourism under guided tours and ocean adventures."
-  },
-  {
-    "id": 89,
-    "name": "Mossel Bay War Memorial",
-    "category": "activity",
-    "date": null,
-    "time": "Open-air site",
-    "images": [
-      "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446912202",
-    "website": "https://visitmosselbay.co.za/listing/mossel-bay-war-memorial/",
-    "price": 0,
-    "priceDetails": [],
-    "location": "Point Road, Mossel Bay",
-    "latitude": -34.18,
-    "longitude": 22.14,
-    "description": "Historic war memorial at Frog Rock near the Point, commemorating local servicemen from major 20th-century conflicts."
-  },
-  {
-    "id": 90,
-    "name": "Isuzu Ironman 70.3 Mossel Bay",
-    "category": "event",
-    "date": "2026-11-22T06:00:00",
-    "time": "Morning",
-    "images": [
-      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://www.ironman.com/im703-mossel-bay",
-    "price": null,
-    "priceDetails": [],
-    "location": "De Bakke Beach, Mossel Bay",
-    "latitude": -34.172,
-    "longitude": 22.133,
-    "description": "Annual Isuzu Ironman 70.3 triathlon taking place in Mossel Bay featuring swim, bike, and run legs."
-  },
-  {
-    "id": 91,
-    "name": "MosJazz",
-    "category": "event",
-    "date": "2026-11-26T12:00:00",
-    "endDate": "2026-11-29T23:59:59",
-    "time": "Multi-day festival",
-    "images": [
-      "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/events/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Santos Beach, Mossel Bay",
-    "latitude": -34.177,
-    "longitude": 22.141,
-    "description": "Premier beachfront jazz festival right on the sand at Santos Beach."
-  },
-  {
-    "id": 92,
-    "name": "Rattle & Rust Rally",
-    "category": "event",
-    "date": "2027-04-22T08:00:00",
-    "time": "8:00 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/events/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Route R327, Bartelsfontein Farm, Mossel Bay",
-    "latitude": -34.15,
-    "longitude": 21.98,
-    "description": "A massive rally and outdoor outdoor lifestyle exhibition on Bartelsfontein Farm."
-  },
-  {
-    "id": 93,
-    "name": "JO BLACK by Reedvalley!",
-    "category": "event",
-    "date": "2026-10-10T20:00:00",
-    "time": "8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1540039155732-d692a15306dd?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446981022",
-    "website": "https://reedvalley.com",
-    "price": null,
-    "priceDetails": [],
-    "location": "ReedValley Farm, R327, Mossel Bay",
-    "latitude": -34.1405,
-    "longitude": 22.051,
-    "description": "Live music performance by popular South African artist Jo Black at ReedValley Farm."
-  },
-  {
-    "id": 94,
-    "name": "BASKET CASE - The Ultimate Green Day Experience",
-    "category": "event",
-    "date": "2026-10-03T20:00:00",
-    "time": "8:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446981022",
-    "website": "https://reedvalley.com",
-    "price": null,
-    "priceDetails": [],
-    "location": "ReedValley Farm, R327, Mossel Bay",
-    "latitude": -34.1405,
-    "longitude": 22.051,
-    "description": "A thrilling Green Day tribute show live at ReedValley Farm."
-  },
-  {
-    "id": 95,
-    "name": "Heuwelsrust Oktoberfest Hartenbos",
-    "category": "event",
-    "date": "2026-10-03T17:00:00",
-    "time": "5:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1538481199005-d4d1fb20a109?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/events/",
-    "price": null,
-    "priceDetails": [],
-    "location": "ATKV Hartenbos Amphitheatre",
-    "latitude": -34.1132,
-    "longitude": 22.1177,
-    "description": "A lively Oktoberfest celebration at the ATKV Hartenbos Amphitheatre featuring craft beer and live entertainment."
-  },
-  {
-    "id": 96,
-    "name": "The Amazing Race Mossel Bay",
-    "category": "event",
-    "date": "2026-10-02T23:00:00",
-    "time": "11:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446928400",
-    "website": "https://diazhotel.co.za",
-    "price": null,
-    "priceDetails": [],
-    "location": "Diaz Hotel & Resort",
-    "latitude": -34.1575,
-    "longitude": 22.112,
-    "description": "A fun, competitive adventure race starting at the Diaz Hotel & Resort."
-  },
-  {
-    "id": 97,
-    "name": "Crosby, Stills, Nash & Young: A Tribute",
-    "category": "event",
-    "date": "2026-10-28T10:30:00",
-    "time": "10:30 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://pinnaclepointestate.co.za",
-    "price": null,
-    "priceDetails": [],
-    "location": "Pinnacle Point",
-    "latitude": -34.2045,
-    "longitude": 22.0891,
-    "description": "Live acoustic tribute to Crosby, Stills, Nash & Young performed at Pinnacle Point."
-  },
-  {
-    "id": 98,
-    "name": "Coffee Snobs Live At Reedvalley",
-    "category": "event",
-    "date": "2026-09-25T19:00:00",
-    "time": "7:00 PM",
-    "images": [
-      "https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": "+27446981022",
-    "website": "https://reedvalley.com",
-    "price": null,
-    "priceDetails": [],
-    "location": "ReedValley Farm, R327, Mossel Bay",
-    "latitude": -34.1405,
-    "longitude": 22.051,
-    "description": "An evening of acoustic music, food, and wine with local musical duo Coffee Snobs."
-  },
-  {
-    "id": 99,
-    "name": "Damesoggend Saam Met Francois Boyce Van Hoezit",
-    "category": "event",
-    "date": "2026-10-03T10:00:00",
-    "time": "10:00 AM",
-    "images": [
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=600"
-    ],
-    "phone": null,
-    "website": "https://visitmosselbay.co.za/events/",
-    "price": null,
-    "priceDetails": [],
-    "location": "Mossel Bay Town Hall",
-    "latitude": -34.1833,
-    "longitude": 22.1417,
-    "description": "Inspirational ladies morning event featuring popular speaker Francois Boyce."
   }
 ]

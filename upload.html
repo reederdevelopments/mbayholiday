@@ -77,6 +77,20 @@
                 </div>
 
                 <div>
+                    <label class="block text-sm font-bold text-gray-600 mb-1">Town</label>
+                    <select id="f-town" class="w-full border-2 rounded-xl p-2 font-bold">
+                        <option value="Mossel Bay">Mossel Bay</option>
+                        <option value="Hartenbos">Hartenbos</option>
+                        <option value="Great Brak River">Great Brak River</option>
+                        <option value="Little Brak River">Little Brak River</option>
+                        <option value="George">George</option>
+                        <option value="Wilderness">Wilderness</option>
+                        <option value="Oudtshoorn">Oudtshoorn</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="md:col-span-2">
                     <label class="block text-sm font-bold text-gray-600 mb-1">Location Name</label>
                     <input type="text" id="f-location" class="w-full border-2 rounded-xl p-2 font-bold" placeholder="e.g. Santos Beach">
                 </div>
@@ -205,6 +219,7 @@
                 website: document.getElementById('f-website').value,
                 price: parseInt(document.getElementById('f-price').value) || 0,
                 location: document.getElementById('f-location').value,
+                town: document.getElementById('f-town').value,
                 latitude: !isNaN(latVal) ? latVal : null,
                 longitude: !isNaN(lngVal) ? lngVal : null,
                 description: document.getElementById('f-description').value
