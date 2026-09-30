@@ -766,5 +766,138 @@
     "latitude": -34.1950,
     "longitude": 22.1150,
     "description": "A beautiful and challenging community trail run through the fynbos reserves of Mossel Bay, ending with a beach cleanup initiative."
+  },
+  {
+    "id": 36,
+    "name": "Redberry Farm Market",
+    "category": "event",
+    "date": "2026-09-25T09:00:00",
+    "endDate": "2026-09-26T16:00:00",
+    "time": "09:00 AM - 4:00 PM",
+    "images": [
+      "images/WhatsApp Image 2026-09-26 at 10.11.53.jpeg",
+      "images/WhatsApp Image 2026-09-26 at 10.11.54.jpeg",
+      "images/WhatsApp Image 2026-09-26 at 10.11.54 (1).jpeg",
+      "images/WhatsApp Image 2026-09-26 at 10.11.57.jpeg",
+      "images/WhatsApp Image 2026-09-26 at 10.12.06.jpeg"
+    ],
+    "phone": "+27651419184",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      { "item": "Entrance & Parking", "cost": "Free" },
+      { "item": "Play Park Full Day Pass", "cost": "R100.00" }
+    ],
+    "location": "Redberry Farm",
+    "town": "George",
+    "latitude": -33.9485,
+    "longitude": 22.3965,
+    "description": "Family fun market featuring local gifts, sweet treats, clothing, and face painting[cite: 12]. Enjoy live music by Cole Nicholson, Janine Fourie, Glenwood, and Skye[cite: 11]. Attractions include a Play Park with jumping castles and target shooting[cite: 20], as well as Luna & Co natural pet treats[cite: 19]."
+  },
+  {
+    "id": 37,
+    "name": "Anvie Ventures Weekend & Holiday Break-aways",
+    "category": "activity",
+    "date": null,
+    "time": "Ongoing",
+    "images": [
+      "images/WhatsApp Image 2026-09-26 at 10.05.13.jpeg"
+    ],
+    "phone": "+27728922908",
+    "website": "https://www.anvieventures.co.za",
+    "price": 0,
+    "priceDetails": [],
+    "location": "Country wide",
+    "town": "Various",
+    "latitude": -34.0,
+    "longitude": 22.0,
+    "description": "More than 50 venues to choose from including lodges, bush camps, cottages, camp sites, tented camps, pet-friendly venues, and group camp venues[cite: 14]. Activities include 40+ hiking trails, mountain biking, horse riding, canoeing, fishing, and abseiling[cite: 14]."
+  },
+  {
+    "id": 38,
+    "name": "75 Years of VW: A Carnival of Memories",
+    "category": "event",
+    "date": "2026-09-26T09:00:00",
+    "endDate": "2026-09-26T12:30:00",
+    "time": "09:00 AM - 12:30 PM",
+    "images": [
+      "images/WhatsApp Image 2026-09-26 at 09.06.29.jpeg"
+    ],
+    "phone": "+27448130500",
+    "website": "https://www.tavcorvwgeorge.co.za",
+    "price": 0,
+    "priceDetails": [
+      { "item": "Standard Entry", "cost": "Free" }
+    ],
+    "location": "Tavcor VW George",
+    "town": "George",
+    "latitude": -33.9850,
+    "longitude": 22.4810,
+    "description": "Come and display your new or vintage VW to celebrate 75 years[cite: 15]. The event features a kids area, food & drinks, a photo booth, and various new & vintage VWs on display[cite: 15]."
+  },
+  {
+    "id": 39,
+    "name": "Move for a Cause: Support Breast Cancer",
+    "category": "event",
+    "date": "2026-10-03T08:00:00",
+    "time": "Starts at 08:00 AM",
+    "images": [
+      "images/WhatsApp Image 2026-09-26 at 07.30.45.jpeg"
+    ],
+    "phone": "",
+    "website": "https://www.hastagcelebrations.co.za",
+    "price": 280,
+    "priceDetails": [
+      { "item": "Entry (per person)", "cost": "R280.00" }
+    ],
+    "location": "Virgin Active George",
+    "town": "George",
+    "latitude": -33.9644,
+    "longitude": 22.4597,
+    "description": "Join hundreds for a wellness experience supporting Breast Cancer, open to beginners, seasoned pros, and relay teams[cite: 16]. Entry includes a Kauai smoothie and snack, plus a chance to win a 2-night stay at Gonnakraal Eco Cabin worth R3500[cite: 16]."
+  },
+  {
+    "id": 40,
+    "name": "Francois Boyce: Die Wildtuin & Ek",
+    "category": "event",
+    "date": "2026-10-03T10:00:00",
+    "time": "10:00 AM",
+    "images": [
+      "images/WhatsApp Image 2026-09-25 at 15.46.11.jpeg"
+    ],
+    "phone": "+27795178128",
+    "website": "",
+    "price": 220,
+    "priceDetails": [
+      { "item": "Per Dame", "cost": "R220.00" }
+    ],
+    "location": "Mosselbaai Stadsaal",
+    "town": "Mossel Bay",
+    "latitude": -34.1833,
+    "longitude": 22.1417,
+    "description": "Lag, dans & dink with Francois Boyce[cite: 17]. Bring your own picnic basket[cite: 17]. Tickets available by contacting Cindy[cite: 17]."
+  },
+  {
+    "id": 41,
+    "name": "Singing Afternoon / Sang Middag",
+    "category": "event",
+    "date": "2026-10-18T14:00:00",
+    "time": "14:00 (2:00 PM)",
+    "images": [
+      "images/WhatsApp Image 2026-09-30 at 06.52.55.jpeg"
+    ],
+    "phone": "+27606017112",
+    "website": "",
+    "price": 60,
+    "priceDetails": [
+      { "item": "Adults", "cost": "R60.00" },
+      { "item": "Children", "cost": "R30.00" },
+      { "item": "Vendor Stall", "cost": "R100.00" }
+    ],
+    "location": "Conville Civic, Pienaar Street",
+    "town": "George",
+    "latitude": -33.9800,
+    "longitude": 22.4700,
+    "description": "Hosted by the Garden Route Community Service Centre. Come and enjoy an afternoon filled with song and friendship[cite: 18]! (English version poster of the earlier listed 'Sang Middag')."
   }
 ]

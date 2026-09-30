@@ -651,7 +651,10 @@
                 container.innerHTML = `<div class="text-center text-gray-400 mt-10"><i class="fa-regular fa-star text-4xl mb-3"></i><p>No items starred yet.</p></div>`;
                 return;
             }
-            const events = starredItems.filter(i => i.category === 'event').sort((a,b) => new Date(a.date) - new Date(b.date));
+            
+            const now = new Date();
+            const events = starredItems.filter(i => i.category === 'event' && (!i.date || (i.endDate ? new Date(i.endDate).setHours(23,59,59,999) : new Date(i.date).setHours(23,59,59,999)) >= now)).sort((a,b) => new Date(a.date) - new Date(b.date));
+            
             if (events.length > 0) {
                 container.innerHTML += `<h3 class="font-black text-gray-800 uppercase tracking-wider border-b-2 border-gray-200 pb-1 mb-3">Upcoming Events</h3>`;
                 events.forEach(e => {
@@ -673,7 +676,10 @@
             const starredItems = allData.filter(item => starredIds.includes(item.id));
             if(starredItems.length === 0) { alert("Star some items first to share your itinerary!"); return; }
             let text = "🌴 *My MBayHoliday Itinerary:*\n\n";
-            const events = starredItems.filter(i => i.category === 'event').sort((a,b) => new Date(a.date) - new Date(b.date));
+            
+            const now = new Date();
+            const events = starredItems.filter(i => i.category === 'event' && (!i.date || (i.endDate ? new Date(i.endDate).setHours(23,59,59,999) : new Date(i.date).setHours(23,59,59,999)) >= now)).sort((a,b) => new Date(a.date) - new Date(b.date));
+            
             if(events.length > 0){
                 text += "📅 *EVENTS:*\n";
                 events.forEach(e => { 
@@ -789,6 +795,15 @@
                 if (locFilter !== 'all' && item.town !== locFilter) return false;
                 if (priceFilter < 2000 && (item.price || 0) > priceFilter) return false;
                 if (openNow && !isOpenNow(item)) return false;
+                
+                // --- NEW: Exclude events that ended before today ---
+                if (item.category === 'event' && item.date) {
+                    const eventEnd = item.endDate ? new Date(item.endDate) : new Date(item.date);
+                    eventEnd.setHours(23, 59, 59, 999);
+                    if (eventEnd < now) return false;
+                }
+                // --------------------------------------------------
+
                 if (dateFilter === 'month' && item.date) {
                     const eventStart = new Date(item.date);
                     const eventEnd = item.endDate ? new Date(item.endDate) : eventStart;
