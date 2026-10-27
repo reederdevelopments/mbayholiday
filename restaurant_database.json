@@ -58,8 +58,8 @@
     ],
     "location": "Voorbaai, Mossel Bay",
     "town": "Mossel Bay",
-    "latitude": -34.1350,
-    "longitude": 22.1080,
+    "latitude": -34.135,
+    "longitude": 22.108,
     "phone": "+27446952078",
     "website": "https://baruchscoffee.co.za",
     "description": "Authentic Israeli-style coffee roastery and bakery. Known for their incredible middle-eastern inspired breakfasts, fresh bagels, and premium coffee blends."
@@ -90,7 +90,7 @@
     ],
     "location": "Church Street, Mossel Bay",
     "town": "Mossel Bay",
-    "latitude": -34.1800,
+    "latitude": -34.18,
     "longitude": 22.1424,
     "phone": "+27446911885",
     "website": "https://cafegannet.co.za/",
@@ -170,8 +170,8 @@
     ],
     "location": "Point Road, Mossel Bay",
     "town": "Mossel Bay",
-    "latitude": -34.1840,
-    "longitude": 22.1560,
+    "latitude": -34.184,
+    "longitude": 22.156,
     "phone": "+27446906390",
     "website": "https://thekingfisher.co.za",
     "description": "A beloved local spot famous for its fresh seafood, excellent sushi, and panoramic views of the bay. Perfect for a relaxed lunch or dinner by the sea."
@@ -235,8 +235,8 @@
     ],
     "location": "Great Brak River",
     "town": "Great Brak River",
-    "latitude": -34.0410,
-    "longitude": 22.2180,
+    "latitude": -34.041,
+    "longitude": 22.218,
     "phone": "+27446204163",
     "website": "https://transkaroo.co.za",
     "description": "Housed in the old Great Brak railway station. An upscale dining experience focusing on elevated South African cuisine—their slow-roasted lamb neck is legendary."
@@ -284,7 +284,7 @@
     "location": "Diaz Hotel, Diaz Beach",
     "town": "Mossel Bay",
     "latitude": -34.1575,
-    "longitude": 22.1120,
+    "longitude": 22.112,
     "phone": "+27446928400",
     "website": "https://diazhotel.co.za",
     "description": "Situated inside the Diaz Hotel right on the beach, offering a massive buffet breakfast, fine dining dinners, and cocktails overlooking the waves."
@@ -300,7 +300,7 @@
     "location": "Great Brak River",
     "town": "Great Brak River",
     "latitude": -34.0418,
-    "longitude": 22.2190,
+    "longitude": 22.219,
     "phone": "+27446203081",
     "website": "",
     "description": "A highly-rated daytime spot in the heart of Great Brak known for massive, delicious cakes, traditional breakfasts, and friendly small-town service."
@@ -363,7 +363,7 @@
     ],
     "location": "The Point, Mossel Bay",
     "town": "Mossel Bay",
-    "latitude": -34.1850,
+    "latitude": -34.185,
     "longitude": 22.1582,
     "description": "Situated directly next to the St Blaize Lighthouse. Offers upscale seafood and grills with 180-degree ocean views. A fantastic spot for whale watching during dinner."
   },
@@ -426,9 +426,112 @@
     "location": "ReedValley, Mossel Bay",
     "town": "Mossel Bay",
     "latitude": -34.1405,
-    "longitude": 22.0510,
+    "longitude": 22.051,
     "phone": "+27446981022",
     "website": "https://reedvalley.com",
     "description": "Beyond their events, the daily restaurant serves massive Portuguese Espetadas and traditional pasteis de nata that pair perfectly with their export-quality wines."
+  },
+  {
+    "id": 1028,
+    "name": "AV8 Restaurant & Bar @ Mossel Bay Airfield",
+    "type": "Restaurant",
+    "opening_times": "8:00 AM - 5:00 PM, Tue-Sun",
+    "images": [
+      "images/wa-av8-saturday-special.jpg",
+      "images/wa-av8-sunday-lunch.jpg"
+    ],
+    "location": "Mossel Bay Airfield, 69 Rooikat St, Aalwyndal",
+    "town": "Mossel Bay",
+    "latitude": -34.1572,
+    "longitude": 22.0615,
+    "phone": "+27766005606",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Runway views of light aircraft and skydivers at Mossel Bay Airfield! Famous for their R105 Saturday Breakfast Special (with cappuccino) and R165 Sunday Rosemary & Wine Lamb Rib Roast."
+  },
+  {
+    "id": 1029,
+    "name": "Pollocks at Wilderness",
+    "type": "Restaurant",
+    "opening_times": "9:00 AM - 9:00 PM, Mon-Sat (Sun till 11:00 PM)",
+    "images": [
+      "images/wa-pollocks-wilderness.jpg"
+    ],
+    "location": "Milkwood Village, Wilderness",
+    "town": "Wilderness",
+    "latitude": -33.9945,
+    "longitude": 22.5748,
+    "phone": "+27448770481",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Situated beneath the ancient Milkwood trees in Wilderness Village. Beloved for crispy wood-fired pizzas, hearty grills, family-friendly vibes, and live music sessions."
+  },
+  {
+    "id": 1030,
+    "name": "Pollocks Pizza Café Blanco",
+    "type": "Restaurant",
+    "opening_times": "11:00 AM - 10:00 PM, Mon-Sun",
+    "images": [
+      "images/wa-pollocks-blanco.jpg"
+    ],
+    "location": "6 Montagu Street, Blanco, George",
+    "town": "George",
+    "latitude": -33.954,
+    "longitude": 22.422,
+    "phone": "+27448708876",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Cosy Blanco neighbourhood gem in George famous for thin-crust wood-fired pizzas, gourmet burgers, craft gin tastings, and live weekend acoustic sets."
+  },
+  {
+    "id": 1031,
+    "name": "Senators Choice Cafe",
+    "type": "Cafe",
+    "opening_times": "8:00 AM - 4:30 PM, Mon-Sat (Sun 8:30 AM - 3:00 PM)",
+    "images": [
+      "images/wa-senators-choice-grootbrak.jpg"
+    ],
+    "location": "Groot Brakrivier Waterfront, Long Street",
+    "town": "Great Brak River",
+    "latitude": -34.0435,
+    "longitude": 22.2235,
+    "phone": "+27446202409",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Tranquil waterfront café in Great Brak River serving specialty coffee, hearty breakfasts, gourmet sandwiches, and decadent homemade cakes right by the water."
+  },
+  {
+    "id": 1032,
+    "name": "Fig and Fern Restaurant",
+    "type": "Cafe",
+    "opening_times": "8:00 AM - 4:00 PM, Mon-Sat",
+    "images": [
+      "images/wa-fig-and-fern-george.jpg"
+    ],
+    "location": "Botanical / Nursery Precinct, George",
+    "town": "George",
+    "latitude": -33.9565,
+    "longitude": 22.459,
+    "phone": "+27448740045",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Lush garden sanctuary in George ideal for relaxed morning coffee, wholesome breakfasts, botanical lunches, and family catch-ups surrounded by greenery."
+  },
+  {
+    "id": 1033,
+    "name": "The Lookout Deck Restaurant",
+    "type": "Restaurant",
+    "opening_times": "8:30 AM - 10:00 PM, Mon-Sun",
+    "images": [
+      "images/wa-lookout-murder-mystery.jpg"
+    ],
+    "location": "Hill Street, Lookout Beach, Plettenberg Bay",
+    "town": "Plettenberg Bay",
+    "latitude": -34.0545,
+    "longitude": 23.3768,
+    "phone": "+27445331379",
+    "website": "https://www.lookout.co.za",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Iconic wooden deck perched right above Lookout Beach and the Keurbooms lagoon in Plettenberg Bay, offering fresh seafood, sushi, cocktails, and themed event nights."
   }
 ]

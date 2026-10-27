@@ -5,27 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-2596411121585604">
     <meta name="google-site-verification" content="QgIyntN7B1IkshgHWjAWPwkyNuYHMafYuRjia706wiA" />
-    <title>MBayHoliday ☀️ Vacation Vibes</title>
+    <title>MBayHoliday ☀️ Garden Route Events, Markets, Hidden Gems & Trip Guides</title>
+    <meta name="description" content="Discover the best events, weekend markets, family activities, hidden gems, trip itineraries, and local dining across Mossel Bay, George, Wilderness, Hartenbos, Great Brak, Sedgefield, Plett & Oudtshoorn.">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2596411121585604" crossorigin="anonymous"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Free Leaflet CSS for Map -->
+    <!-- Free Leaflet CSS & JS for Interactive Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Free Leaflet JS for Map -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <style>
         body { font-family: 'Nunito', sans-serif; }
-        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         .cal-cell::-webkit-scrollbar { width: 3px; }
         .cal-cell::-webkit-scrollbar-thumb { background: #fbcfe8; border-radius: 5px; }
         
-        /* Hide scrollbar for header */
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -35,181 +34,330 @@
 
         .fade-in-sponsored { animation: fadeIn 0.4s ease-in-out forwards; }
         @keyframes fadeIn {
-            from { opacity: 0.3; transform: scale(0.99); }
+            from { opacity: 0.35; transform: scale(0.99); }
             to { opacity: 1; transform: scale(1); }
         }
         
         /* Custom Map Marker Styles */
         .custom-map-marker { background: none; border: none; }
         .marker-pin {
-            width: 30px; height: 30px; border-radius: 50% 50% 50% 0; background: #3b82f6;
-            position: absolute; transform: rotate(-45deg); left: 50%; top: 50%; margin: -15px 0 0 -15px;
-            box-shadow: -1px 1px 4px rgba(0,0,0,0.5);
+            width: 32px; height: 32px; border-radius: 50% 50% 50% 0; background: #3b82f6;
+            position: absolute; transform: rotate(-45deg); left: 50%; top: 50%; margin: -16px 0 0 -16px;
+            box-shadow: -1px 2px 5px rgba(0,0,0,0.45);
+            border: 2px solid rgba(255,255,255,0.85);
         }
         .marker-pin::after {
-            content: ''; width: 14px; height: 14px; margin: 8px 0 0 8px; background: #fff;
+            content: ''; width: 14px; height: 14px; margin: 7px 0 0 7px; background: #fff;
             position: absolute; border-radius: 50%;
         }
         .custom-map-marker i {
-            position: absolute; width: 22px; font-size: 14px; left: 0; right: 0; margin: 10px auto;
-            text-align: center; color: #fff; z-index: 10;
+            position: absolute; width: 22px; font-size: 13px; left: 0; right: 0; margin: 9px auto;
+            text-align: center; color: #1e293b; z-index: 10;
         }
+        .marker-event .marker-pin { background: #ec4899; }
+        .marker-activity .marker-pin { background: #0284c7; }
+        .marker-restaurant .marker-pin { background: #8b5cf6; }
         .marker-starred .marker-pin { background: #eab308; }
-        .marker-sponsored .marker-pin { background: #ec4899; }
+        .marker-sponsored .marker-pin { background: #f59e0b; }
+
+        @keyframes pulseSubtle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+        }
+        .pulse-badge { animation: pulseSubtle 2.2s infinite ease-in-out; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-cyan-200 via-blue-100 to-yellow-100 min-h-screen text-gray-800 antialiased relative overflow-x-hidden flex flex-col">
+<body class="bg-gradient-to-br from-cyan-100 via-sky-50 to-amber-50 min-h-screen text-gray-800 antialiased relative overflow-x-hidden flex flex-col">
 
-    <!-- Sidebar Overlay & Pullout -->
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="fixed bottom-5 right-5 z-[110] bg-gray-900/95 text-white px-4 py-3 rounded-2xl shadow-2xl border border-white/15 flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <i id="toast-icon" class="fa-solid fa-star text-yellow-400 text-lg"></i>
+        <span id="toast-text" class="text-xs md:text-sm font-black">Saved to My List!</span>
+    </div>
+
+    <!-- Sidebar Overlay & Pullout (My List & Trip Planner) -->
     <div id="sidebar-overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black/50 z-50 hidden backdrop-blur-sm transition-opacity opacity-0"></div>
-    <div id="sidebar" class="fixed inset-y-0 left-0 w-80 max-w-[85vw] bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 flex flex-col border-r border-gray-100">
-        <div class="bg-blue-600 p-5 flex justify-between items-center text-white shadow-md">
-            <h2 class="text-xl font-black tracking-wider"><i class="fa-solid fa-star text-yellow-300 mr-2"></i>My List</h2>
-            <button onclick="toggleSidebar()" class="text-white hover:text-gray-200 text-2xl"><i class="fa-solid fa-xmark"></i></button>
+    <div id="sidebar" class="fixed inset-y-0 left-0 w-80 sm:w-96 max-w-[90vw] bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 flex flex-col border-r border-gray-100">
+        <div class="bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-500 p-5 flex justify-between items-center text-white shadow-md">
+            <div>
+                <h2 class="text-xl font-black tracking-wide flex items-center"><i class="fa-solid fa-star text-yellow-300 mr-2"></i>My Trip List</h2>
+                <p class="text-[11px] text-cyan-100 font-bold mt-0.5">Save events, activities & dining spots</p>
+            </div>
+            <button onclick="toggleSidebar()" class="text-white/90 hover:text-white bg-white/10 hover:bg-white/20 w-9 h-9 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-xl"></i></button>
         </div>
-        <div id="sidebar-content" class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-6"></div>
-        <div class="p-4 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
-            <button onclick="shareMyList()" class="w-full bg-green-500 text-white font-black py-3 rounded-xl shadow-lg hover:bg-green-600 transition flex items-center justify-center">
-                <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Share Itinerary
+
+        <!-- Trip Summary & Budget Estimator -->
+        <div id="sidebar-budget-bar" class="bg-amber-50 border-b border-amber-200/80 px-4 py-2.5 flex items-center justify-between text-xs font-bold text-amber-900 hidden">
+            <span><i class="fa-solid fa-wallet text-amber-600 mr-1.5"></i> Est. Entry Budget:</span>
+            <span id="sidebar-budget-total" class="text-sm font-black text-amber-700 bg-white px-2.5 py-0.5 rounded-lg border border-amber-200 shadow-sm">R0 / pp</span>
+        </div>
+
+        <div id="sidebar-content" class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-5"></div>
+
+        <div class="p-4 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] space-y-2">
+            <button onclick="shareMyList()" class="w-full bg-green-500 text-white font-black py-2.5 rounded-xl shadow-md hover:bg-green-600 transition flex items-center justify-center text-sm">
+                <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Share Itinerary on WhatsApp
             </button>
+            <div class="grid grid-cols-2 gap-2">
+                <button onclick="copyMyList()" class="bg-gray-100 text-gray-700 font-bold py-2 rounded-xl hover:bg-gray-200 transition text-xs flex items-center justify-center">
+                    <i class="fa-regular fa-copy mr-1.5"></i> Copy Text
+                </button>
+                <button onclick="clearMyList()" class="bg-red-50 text-red-600 font-bold py-2 rounded-xl hover:bg-red-100 transition text-xs flex items-center justify-center">
+                    <i class="fa-regular fa-trash-can mr-1.5"></i> Clear List
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- Sticky Header & Tabs -->
-    <div class="sticky top-0 z-40 bg-white/90 backdrop-blur-md shadow-sm border-b border-white/50">
-        <header class="max-w-5xl mx-auto px-4 py-2 flex flex-row items-center justify-between gap-2 overflow-x-auto scrollbar-hide">
+    <!-- Sticky Header & Navigation -->
+    <div class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-cyan-100">
+        <header class="max-w-6xl mx-auto px-3 md:px-4 py-2 flex flex-row items-center justify-between gap-2">
             
-            <div class="flex items-center shrink-0">
-                <a href="index.html" class="flex items-center">
-                    <img src="images/mbayholiday_logo.png" alt="MBayHoliday Logo" class="h-9 md:h-12 rounded-lg shadow-sm">
+            <div class="flex items-center gap-2 md:gap-3 shrink-0">
+                <a href="index.html" class="flex items-center group">
+                    <img src="images/mbayholiday_logo.png" alt="MBayHoliday Logo" class="h-9 md:h-11 rounded-lg shadow-sm group-hover:scale-105 transition">
                 </a>
                 
-                <div id="weather-widget" class="flex items-center bg-cyan-50 border border-cyan-200 rounded-lg px-2 py-1 ml-2 md:ml-4 shadow-inner hidden shrink-0">
-                    <i id="weather-icon" class="fa-solid fa-sun text-yellow-500 text-sm md:text-lg mr-1 md:mr-2"></i>
+                <div id="weather-widget" class="flex items-center bg-gradient-to-r from-cyan-50 to-sky-50 border border-cyan-200/80 rounded-xl px-2.5 py-1 shadow-inner hidden shrink-0">
+                    <i id="weather-icon" class="fa-solid fa-sun text-amber-500 text-sm md:text-base mr-1.5"></i>
                     <div class="flex flex-col">
-                        <span class="text-[8px] md:text-[10px] uppercase font-black text-cyan-800 leading-none">Mossel Bay</span>
-                        <span id="weather-temp" class="text-xs md:text-sm font-bold text-gray-700 leading-none">--°C</span>
+                        <span class="text-[8px] md:text-[9px] uppercase font-black text-cyan-800 leading-none tracking-wider">Mossel Bay</span>
+                        <span id="weather-temp" class="text-xs md:text-sm font-black text-gray-700 leading-tight">--°C</span>
                     </div>
                 </div>
             </div>
 
+            <!-- Instant Search Bar (Desktop & Tablet) -->
+            <div class="hidden md:flex flex-1 max-w-md mx-3 relative">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                <input type="text" id="quick-search-desktop" oninput="syncQuickSearch(this.value)" placeholder="Search markets, live music, towns, kids activities..." class="w-full bg-gray-100/90 hover:bg-gray-100 focus:bg-white border border-gray-200 focus:border-blue-400 rounded-full py-1.5 pl-9 pr-8 text-xs font-bold text-gray-700 outline-none transition">
+                <button id="quick-search-clear" onclick="syncQuickSearch('')" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs"><i class="fa-solid fa-circle-xmark"></i></button>
+            </div>
+
             <div class="flex items-center gap-1.5 md:gap-2 shrink-0">
-                <button onclick="toggleFAQ()" class="bg-pink-100 text-pink-700 font-bold px-2.5 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-xl shadow-sm hover:bg-pink-200 transition flex items-center whitespace-nowrap">
-                    <i class="fa-solid fa-circle-question sm:mr-1 md:mr-2"></i> <span class="hidden sm:inline">FAQ</span>
+                <button onclick="switchView('guides')" class="hidden lg:flex bg-emerald-100 text-emerald-800 font-black px-3 py-1.5 text-xs rounded-xl shadow-sm hover:bg-emerald-200 transition items-center whitespace-nowrap border border-emerald-200">
+                    <i class="fa-solid fa-route mr-1.5 text-emerald-600"></i> Weekend Guides
                 </button>
-                <button onclick="toggleSidebar()" class="bg-yellow-100 text-yellow-700 font-bold px-2.5 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-xl shadow-sm hover:bg-yellow-200 transition flex items-center whitespace-nowrap">
-                    <i class="fa-solid fa-star sm:mr-1 md:mr-2"></i> <span class="hidden sm:inline">My List</span>
+                <button onclick="toggleFAQ()" class="bg-pink-100 text-pink-700 font-bold px-2.5 py-1.5 md:px-3.5 md:py-2 text-xs md:text-sm rounded-xl shadow-sm hover:bg-pink-200 transition flex items-center whitespace-nowrap" title="How to use MBayHoliday">
+                    <i class="fa-solid fa-circle-question sm:mr-1.5"></i> <span class="hidden sm:inline">Info</span>
                 </button>
-                <button onclick="toggleFilters()" class="bg-blue-100 text-blue-700 font-bold px-2.5 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-xl shadow-sm hover:bg-blue-200 transition flex items-center whitespace-nowrap">
-                    <i class="fa-solid fa-filter sm:mr-1 md:mr-2"></i> <span class="hidden sm:inline">Filters</span>
+                <button onclick="toggleSidebar()" class="relative bg-amber-100 text-amber-800 font-black px-2.5 py-1.5 md:px-3.5 md:py-2 text-xs md:text-sm rounded-xl shadow-sm hover:bg-amber-200 transition flex items-center whitespace-nowrap">
+                    <i class="fa-solid fa-star text-amber-500 sm:mr-1.5"></i> <span class="hidden sm:inline">My List</span>
+                    <span id="header-star-count" class="ml-1 bg-amber-500 text-white text-[10px] font-black px-1.5 py-0.2 rounded-full hidden">0</span>
+                </button>
+                <button onclick="toggleFilters()" id="header-filter-btn" class="relative bg-blue-100 text-blue-700 font-black px-2.5 py-1.5 md:px-3.5 md:py-2 text-xs md:text-sm rounded-xl shadow-sm hover:bg-blue-200 transition flex items-center whitespace-nowrap">
+                    <i class="fa-solid fa-sliders sm:mr-1.5"></i> <span class="hidden sm:inline">Filters</span>
+                    <span id="header-filter-badge" class="ml-1 bg-blue-600 text-white text-[10px] font-black px-1.5 py-0.2 rounded-full hidden">0</span>
                 </button>
             </div>
         </header>
 
-        <div class="flex w-full bg-cyan-50 border-t border-cyan-100">
-            <button id="tab-scroll" onclick="switchView('scroll')" class="flex-1 py-2 sm:py-3 font-black text-center text-blue-900 bg-cyan-200 border-b-4 border-pink-500 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                <i class="fa-solid fa-clone text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">Cards</span>
+        <!-- Primary View Tabs -->
+        <div class="flex w-full bg-cyan-50/90 border-t border-cyan-100 max-w-6xl mx-auto">
+            <button id="tab-scroll" onclick="switchView('scroll')" class="flex-1 py-2 sm:py-2.5 font-black text-center text-blue-900 bg-cyan-200/80 border-b-4 border-pink-500 transition flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5">
+                <i class="fa-solid fa-clone text-sm sm:text-base"></i> <span class="text-[10px] sm:text-xs md:text-sm leading-none">Explore</span>
             </button>
-            <button id="tab-list" onclick="switchView('list')" class="flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                <i class="fa-solid fa-list text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">List</span>
+            <button id="tab-guides" onclick="switchView('guides')" class="flex-1 py-2 sm:py-2.5 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5 relative">
+                <i class="fa-solid fa-compass text-sm sm:text-base text-emerald-600"></i> <span class="text-[10px] sm:text-xs md:text-sm leading-none">Trip Guides</span>
             </button>
-            <button id="tab-calendar" onclick="switchView('calendar')" class="flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                <i class="fa-regular fa-calendar text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">Calendar</span>
+            <button id="tab-list" onclick="switchView('list')" class="flex-1 py-2 sm:py-2.5 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5">
+                <i class="fa-solid fa-list text-sm sm:text-base"></i> <span class="text-[10px] sm:text-xs md:text-sm leading-none">Compact</span>
             </button>
-            <button id="tab-restaurants" onclick="switchView('restaurants')" class="flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                <i class="fa-solid fa-utensils text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">Dining</span>
+            <button id="tab-calendar" onclick="switchView('calendar')" class="flex-1 py-2 sm:py-2.5 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5">
+                <i class="fa-regular fa-calendar-check text-sm sm:text-base"></i> <span class="text-[10px] sm:text-xs md:text-sm leading-none">Calendar</span>
             </button>
-            <button id="tab-map" onclick="switchView('map')" class="flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
-                <i class="fa-solid fa-map-location-dot text-lg sm:text-base"></i> <span class="text-[9px] sm:text-sm leading-none">Map</span>
+            <button id="tab-restaurants" onclick="switchView('restaurants')" class="flex-1 py-2 sm:py-2.5 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5">
+                <i class="fa-solid fa-utensils text-sm sm:text-base"></i> <span class="text-[10px] sm:text-xs md:text-sm leading-none">Dining</span>
+            </button>
+            <button id="tab-map" onclick="switchView('map')" class="flex-1 py-2 sm:py-2.5 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5">
+                <i class="fa-solid fa-map-location-dot text-sm sm:text-base"></i> <span class="text-[10px] sm:text-xs md:text-sm leading-none">Map</span>
             </button>
         </div>
 
-        <!-- Dynamic Collapsible Filters -->
-        <section id="filter-section" class="max-w-5xl mx-auto px-4 hidden pb-4">
-            <div class="bg-white/80 rounded-2xl p-4 shadow-inner border border-gray-100 mt-2 backdrop-blur-sm">
-                <div class="mb-4 relative">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                    <input type="text" id="filter-search" placeholder="Search keywords..." class="w-full bg-gray-50 border border-gray-200 rounded-xl py-2 pl-10 pr-4 font-bold text-gray-700 focus:ring-blue-500 outline-none">
+        <!-- Dynamic Collapsible Advanced Filters -->
+        <section id="filter-section" class="max-w-6xl mx-auto px-4 hidden pb-4">
+            <div class="bg-white rounded-2xl p-4 shadow-lg border border-cyan-100 mt-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" id="filter-search" oninput="syncQuickSearch(this.value)" placeholder="Search by name, town, activity, or keyword..." class="w-full bg-gray-50 border border-gray-200 rounded-xl py-2 pl-10 pr-4 text-sm font-bold text-gray-700 focus:ring-2 focus:ring-blue-400 outline-none">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <label class="text-[10px] uppercase font-black text-gray-400 tracking-wider shrink-0">Sort By:</label>
+                        <select id="filter-sort" onchange="applyFilters()" class="flex-1 bg-gray-50 border border-gray-200 rounded-xl p-2 text-xs md:text-sm font-bold text-gray-700 outline-none">
+                            <option value="default">Featured & Soonest First</option>
+                            <option value="price-asc">Price: Free / Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="name-asc">Name: A to Z</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+
+                <div class="grid grid-cols-2 md:grid-cols-6 gap-3">
                     <div>
                         <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Town</label>
-                        <select id="filter-location" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-blue-500 outline-none"><option value="all">All Towns</option></select>
+                        <select id="filter-location" onchange="onTownSelectChange()" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs md:text-sm font-bold text-blue-600 outline-none"><option value="all">All Towns</option></select>
                     </div>
                     <div id="filter-wrap-category" class="block">
-                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Type</label>
-                        <select id="filter-category" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-blue-500 outline-none">
-                            <option value="all">All Types</option><option value="event">Events</option><option value="activity">To-Dos</option>
+                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Category</label>
+                        <select id="filter-category" onchange="applyFilters()" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs md:text-sm font-bold text-blue-600 outline-none">
+                            <option value="all">All Types</option>
+                            <option value="event">Scheduled Events</option>
+                            <option value="activity">Activities & Markets</option>
                         </select>
                     </div>
                     <div id="filter-wrap-date" class="block">
-                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Timeframe</label>
-                        <select id="filter-date" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-blue-500 outline-none">
-                            <option value="all">Anytime</option><option value="month">Next 30 Days</option>
+                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">When</label>
+                        <select id="filter-date" onchange="applyFilters()" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs md:text-sm font-bold text-blue-600 outline-none">
+                            <option value="all">Any Upcoming Date</option>
+                            <option value="weekend">This Weekend</option>
+                            <option value="week">Next 7 Days</option>
+                            <option value="month">Next 30 Days</option>
                         </select>
                     </div>
                     <div id="filter-wrap-rest-type" class="hidden">
-                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Style</label>
-                        <select id="filter-rest-type" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-sm font-bold text-blue-600 focus:ring-blue-500 outline-none"><option value="all">All Styles</option></select>
+                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Dining Style</label>
+                        <select id="filter-rest-type" onchange="applyFilters()" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs md:text-sm font-bold text-blue-600 outline-none"><option value="all">All Styles</option></select>
                     </div>
                     <div>
-                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Max Price: <span id="price-display" class="text-blue-600">R2000+</span></label>
-                        <input type="range" id="filter-price" min="0" max="2000" step="50" value="2000" class="w-full accent-blue-600 mt-1" oninput="updatePriceLabel()">
+                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Weather / Setting</label>
+                        <select id="filter-weather" onchange="applyFilters()" class="w-full bg-gray-50 border border-gray-200 rounded-lg p-2 text-xs md:text-sm font-bold text-blue-600 outline-none">
+                            <option value="all">Indoor & Outdoor</option>
+                            <option value="Outdoor">☀️ Outdoor</option>
+                            <option value="Indoor">☔ Indoor / Rain-Safe</option>
+                        </select>
                     </div>
-                    <div class="flex items-center justify-center pt-4">
-                        <label class="flex items-center gap-2 cursor-pointer bg-green-50 px-3 py-1.5 rounded-lg border border-green-200 w-full justify-center hover:bg-green-100 transition">
-                            <input type="checkbox" id="filter-open-now" class="accent-green-600 w-4 h-4">
-                            <span class="text-xs font-black text-green-700 uppercase tracking-wider">Open Now</span>
+                    <div>
+                        <label class="block text-[10px] uppercase font-black text-gray-400 mb-1 tracking-wider">Max Price: <span id="price-display" class="text-blue-600">Any Price</span></label>
+                        <input type="range" id="filter-price" min="0" max="3500" step="50" value="3500" class="w-full accent-blue-600 mt-1.5" oninput="updatePriceLabel(); applyFilters();">
+                    </div>
+                    <div class="flex flex-col justify-end gap-1.5">
+                        <label class="flex items-center gap-1.5 cursor-pointer bg-green-50 px-2.5 py-1.5 rounded-lg border border-green-200 w-full hover:bg-green-100 transition">
+                            <input type="checkbox" id="filter-open-now" onchange="applyFilters()" class="accent-green-600 w-3.5 h-3.5">
+                            <span class="text-[11px] font-black text-green-700 uppercase tracking-wider">Open Now</span>
+                        </label>
+                        <label class="flex items-center gap-1.5 cursor-pointer bg-gray-50 px-2.5 py-1 rounded-lg border border-gray-200 w-full hover:bg-gray-100 transition">
+                            <input type="checkbox" id="filter-show-past" onchange="applyFilters()" class="accent-pink-600 w-3.5 h-3.5">
+                            <span class="text-[10px] font-bold text-gray-600 uppercase tracking-wider">Show Past Events</span>
                         </label>
                     </div>
                 </div>
                 
-                <div class="mt-5 flex justify-between items-center border-t border-gray-100 pt-4">
-                    <button onclick="clearFilters()" class="text-xs font-bold text-gray-400 hover:text-red-500 transition uppercase tracking-wider">Clear Filters <i class="fa-solid fa-xmark"></i></button>
-                    <button onclick="applyFiltersAndClose()" class="bg-blue-600 text-white font-black px-6 py-2.5 rounded-xl hover:bg-blue-700 transition shadow-md flex items-center">Apply Filters <i class="fa-solid fa-magnifying-glass ml-2"></i></button>
+                <div class="mt-4 flex justify-between items-center border-t border-gray-100 pt-3">
+                    <button onclick="clearFilters()" class="text-xs font-black text-gray-400 hover:text-red-500 transition uppercase tracking-wider"><i class="fa-solid fa-rotate-left mr-1"></i> Reset All Filters</button>
+                    <button onclick="applyFiltersAndClose()" class="bg-blue-600 text-white font-black px-5 py-2 rounded-xl hover:bg-blue-700 transition shadow-md text-xs md:text-sm flex items-center">Done <i class="fa-solid fa-check ml-2"></i></button>
                 </div>
             </div>
         </section>
     </div>
 
     <!-- Main Content -->
-    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-6 md:py-8 pb-12">
+    <main class="flex-grow w-full max-w-6xl mx-auto px-3 sm:px-4 py-4 md:py-6 pb-14">
+
+        <!-- Mobile Instant Search -->
+        <div class="md:hidden mb-3 relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+            <input type="text" id="quick-search-mobile" oninput="syncQuickSearch(this.value)" placeholder="Search events, markets, towns, dining..." class="w-full bg-white/95 border border-cyan-200 rounded-2xl py-2.5 pl-9 pr-9 text-xs font-bold text-gray-700 shadow-sm outline-none focus:ring-2 focus:ring-blue-400">
+            <button id="quick-search-clear-mobile" onclick="syncQuickSearch('')" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs"><i class="fa-solid fa-circle-xmark"></i></button>
+        </div>
+
+        <!-- Interactive Vibe & Category Quick-Pills -->
+        <div id="vibe-bar-wrapper" class="mb-3">
+            <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide py-1" id="vibe-pills-container">
+                <button onclick="setVibeFilter('all')" data-vibe="all" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-blue-600 text-white">✨ All Vibes</button>
+                <button onclick="setVibeFilter('weekend')" data-vibe="weekend" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-white/90 text-gray-700 hover:bg-pink-50 border border-white">🔥 This Weekend</button>
+                <button onclick="setVibeFilter('whatsapp')" data-vibe="whatsapp" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200"><i class="fa-brands fa-whatsapp text-emerald-600 mr-1"></i>Community Gems</button>
+                <button onclick="setVibeFilter('free')" data-vibe="free" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-white/90 text-gray-700 hover:bg-green-50 border border-white">🆓 Free Entry</button>
+                <button onclick="setVibeFilter('markets')" data-vibe="markets" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-white/90 text-gray-700 hover:bg-amber-50 border border-white">🛍️ Markets</button>
+                <button onclick="setVibeFilter('family')" data-vibe="family" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-white/90 text-gray-700 hover:bg-blue-50 border border-white">👨‍👩‍👧‍👦 Family & Kids</button>
+                <button onclick="setVibeFilter('music')" data-vibe="music" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-white/90 text-gray-700 hover:bg-purple-50 border border-white">🎸 Live Music & Fest</button>
+                <button onclick="setVibeFilter('nature')" data-vibe="nature" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-white/90 text-gray-700 hover:bg-teal-50 border border-white">🌿 Nature & Adventure</button>
+                <button onclick="setVibeFilter('food')" data-vibe="food" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-white/90 text-gray-700 hover:bg-rose-50 border border-white">🍷 Food, Wine & Craft</button>
+                <button onclick="setVibeFilter('rainy')" data-vibe="rainy" class="vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-white/90 text-gray-700 hover:bg-indigo-50 border border-white">☔ Rainy Day / Indoor</button>
+            </div>
+
+            <!-- Town Quick-Pills -->
+            <div class="flex items-center gap-1.5 overflow-x-auto scrollbar-hide py-1 mt-1" id="town-pills-container"></div>
+        </div>
+
+        <!-- Active Filter Summary Bar -->
+        <div id="active-filter-banner" class="hidden mb-4 bg-blue-50/90 border border-blue-200 rounded-2xl px-4 py-2 flex items-center justify-between text-xs font-bold text-blue-900 shadow-sm">
+            <div class="flex items-center gap-2 flex-wrap" id="active-filter-tags"></div>
+            <button onclick="clearFilters()" class="text-blue-600 hover:text-pink-600 font-black whitespace-nowrap ml-3"><i class="fa-solid fa-xmark mr-1"></i>Reset</button>
+        </div>
         
         <!-- Sponsored Carousel Banner -->
-        <div id="sponsored-container" class="hidden mb-8">
-            <div class="relative rounded-3xl p-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-blue-500 shadow-xl cursor-pointer transform hover:-translate-y-1 transition duration-300 select-none" onclick="openSponsoredModal()">
+        <div id="sponsored-container" class="hidden mb-6">
+            <div class="relative rounded-3xl p-1 bg-gradient-to-r from-yellow-400 via-pink-500 to-blue-500 shadow-xl cursor-pointer transform hover:-translate-y-0.5 transition duration-300 select-none" onclick="openSponsoredModal()">
                 <div class="absolute top-0 right-4 bg-yellow-400 text-yellow-950 text-[10px] font-black uppercase px-3 py-1 rounded-b-lg shadow-sm z-20"><i class="fa-solid fa-crown mr-1"></i> Featured Sponsor</div>
-                <div id="sponsored-content" class="bg-white rounded-[1.6rem] overflow-hidden relative h-44 md:h-56 flex w-full"></div>
+                <button onclick="prevSponsored(event)" class="hidden md:flex absolute left-3 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-gray-800 w-8 h-8 rounded-full items-center justify-center shadow-md transition"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                <button onclick="nextSponsored(event)" class="hidden md:flex absolute right-3 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-gray-800 w-8 h-8 rounded-full items-center justify-center shadow-md transition"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                <div id="sponsored-content" class="bg-white rounded-[1.4rem] overflow-hidden relative h-44 md:h-52 flex w-full"></div>
             </div>
-            <div id="sponsored-pills" class="flex items-center justify-center gap-2 mt-4 px-2"></div>
+            <div id="sponsored-pills" class="flex items-center justify-center gap-2 mt-2.5 px-2"></div>
         </div>
 
-        <!-- SCROLL VIEW -->
+        <!-- EXPLORE / CARDS VIEW -->
         <div id="view-scroll" class="block">
             <div id="content-container"></div>
-            <div id="no-results-scroll" class="hidden flex-col items-center justify-center mt-12 opacity-70"></div>
+            <div id="no-results-scroll" class="hidden flex-col items-center justify-center mt-12 opacity-80 bg-white/80 rounded-3xl p-8 shadow-sm border border-white max-w-lg mx-auto"></div>
         </div>
 
-        <!-- LIST VIEW -->
-        <div id="view-list" class="hidden"><div id="list-container" class="bg-white/80 rounded-[2rem] shadow-xl p-4 md:p-6 border-4 border-white backdrop-blur-sm"></div></div>
+        <!-- CURATED TRIP GUIDES & ITINERARIES VIEW -->
+        <div id="view-guides" class="hidden">
+            <div class="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 rounded-[2rem] p-6 md:p-8 text-white shadow-xl mb-6 relative overflow-hidden">
+                <div class="relative z-10 max-w-2xl">
+                    <span class="bg-white/20 backdrop-blur-sm text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full inline-flex items-center gap-1.5 mb-3"><i class="fa-brands fa-whatsapp text-emerald-200"></i> Curated with Garden Route Weekend Trips</span>
+                    <h1 class="text-2xl md:text-4xl font-black leading-tight mb-2">Garden Route Trip Guides & Ready-Made Itineraries</h1>
+                    <p class="text-xs md:text-sm text-emerald-50 font-bold leading-relaxed">Hand-picked routes combining iconic coastal experiences, forest walks, Saturday boeremarkte, and hidden community gems. Click any stop for details or add an entire route to your Trip List in one tap!</p>
+                </div>
+                <i class="fa-solid fa-map-location-dot text-white/10 text-9xl absolute -right-4 -bottom-4 transform -rotate-12 pointer-events-none"></i>
+            </div>
+            <div id="guides-container" class="grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
+        </div>
 
-        <!-- RESTAURANTS VIEW -->
-        <div id="view-restaurants" class="hidden"><div id="restaurants-container" class="bg-white/80 rounded-[2rem] shadow-xl p-4 md:p-6 border-4 border-white backdrop-blur-sm"></div></div>
+        <!-- COMPACT LIST VIEW -->
+        <div id="view-list" class="hidden">
+            <div id="list-container" class="bg-white/85 rounded-[2rem] shadow-xl p-4 md:p-6 border-4 border-white backdrop-blur-sm"></div>
+        </div>
+
+        <!-- RESTAURANTS / DINING VIEW -->
+        <div id="view-restaurants" class="hidden">
+            <div class="bg-white/85 rounded-[2rem] shadow-xl p-4 md:p-6 border-4 border-white backdrop-blur-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 border-b border-gray-100 pb-3">
+                    <div>
+                        <h2 class="text-xl md:text-2xl font-black text-gray-800 flex items-center gap-2">🍽️ Local Dining, Cafes & Sunset Bars <span id="dining-count-badge" class="bg-purple-100 text-purple-700 text-xs px-2.5 py-0.5 rounded-full font-black"></span></h2>
+                        <p class="text-xs text-gray-500 font-bold mt-0.5">Oceanfront seafood, airfield plane-spotting cafes, woodland coffee roasteries & wood-fired pizza</p>
+                    </div>
+                    <div class="flex items-center gap-1 bg-gray-100 p-1 rounded-xl self-start sm:self-auto shrink-0">
+                        <button id="dining-mode-cards" onclick="setDiningDisplayMode('cards')" class="px-3 py-1.5 rounded-lg text-xs font-black bg-white text-purple-700 shadow-sm transition"><i class="fa-solid fa-grip mr-1"></i>Cards</button>
+                        <button id="dining-mode-list" onclick="setDiningDisplayMode('list')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 hover:text-gray-800 transition"><i class="fa-solid fa-list mr-1"></i>List</button>
+                    </div>
+                </div>
+                <!-- Quick Cuisine Filter Pills -->
+                <div id="dining-style-pills" class="flex items-center gap-1.5 overflow-x-auto scrollbar-hide pb-3 mb-2"></div>
+                <div id="restaurants-container"></div>
+            </div>
+        </div>
 
         <!-- CALENDAR VIEW -->
         <div id="view-calendar" class="hidden">
             <div class="bg-white rounded-[2rem] shadow-xl p-4 md:p-6 border-4 border-white">
-                <div class="flex justify-center mb-4">
-                    <div class="bg-gray-100 p-1 rounded-xl inline-flex text-sm font-bold shadow-inner">
-                        <button id="cal-mode-day" onclick="setCalMode('day')" class="px-4 py-1.5 rounded-lg text-gray-500 transition hover:bg-gray-200">Day</button>
-                        <button id="cal-mode-week" onclick="setCalMode('week')" class="px-4 py-1.5 rounded-lg text-gray-500 transition hover:bg-gray-200">Week</button>
-                        <button id="cal-mode-month" onclick="setCalMode('month')" class="px-4 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm font-black transition">Month</button>
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div class="bg-gray-100 p-1 rounded-xl inline-flex text-xs md:text-sm font-bold shadow-inner">
+                        <button id="cal-mode-day" onclick="setCalMode('day')" class="px-3.5 py-1.5 rounded-lg text-gray-500 transition hover:bg-gray-200">Day</button>
+                        <button id="cal-mode-week" onclick="setCalMode('week')" class="px-3.5 py-1.5 rounded-lg text-gray-500 transition hover:bg-gray-200">Week</button>
+                        <button id="cal-mode-month" onclick="setCalMode('month')" class="px-3.5 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm font-black transition">Month</button>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <button onclick="jumpCalToday()" class="bg-blue-50 hover:bg-blue-100 text-blue-700 font-black text-xs px-3 py-1.5 rounded-xl border border-blue-200 transition">Today</button>
+                        <button onclick="jumpCalHalloweenWeekend()" class="bg-pink-50 hover:bg-pink-100 text-pink-700 font-black text-xs px-3 py-1.5 rounded-xl border border-pink-200 transition">🔥 30 Oct – 1 Nov Weekend</button>
                     </div>
                 </div>
-                <div class="flex justify-between items-center mb-4 md:mb-6 bg-cyan-50 p-2 md:p-4 rounded-2xl">
-                    <button onclick="changeCalDate(-1)" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-white text-blue-500 rounded-full shadow hover:bg-blue-50 transition"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="flex justify-between items-center mb-4 md:mb-6 bg-cyan-50 p-2.5 md:p-4 rounded-2xl border border-cyan-100">
+                    <button onclick="changeCalDate(-1)" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-white text-blue-600 rounded-full shadow hover:bg-blue-50 transition"><i class="fa-solid fa-chevron-left"></i></button>
                     <h2 id="calendar-header-text" class="text-base md:text-2xl font-black text-gray-800 uppercase tracking-wider text-center"></h2>
-                    <button onclick="changeCalDate(1)" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-white text-blue-500 rounded-full shadow hover:bg-blue-50 transition"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button onclick="changeCalDate(1)" class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-white text-blue-600 rounded-full shadow hover:bg-blue-50 transition"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="w-full max-w-full overflow-hidden px-1">
                     <div id="calendar-wrapper" class="w-full"></div>
@@ -220,22 +368,37 @@
         <!-- MAP VIEW -->
         <div id="view-map" class="hidden">
             <div class="bg-white rounded-[2rem] shadow-xl border-4 border-white overflow-hidden relative">
-                <div id="map-container" class="w-full h-[600px] z-10"></div>
-                <div class="absolute bottom-4 left-4 z-[20] bg-white/90 backdrop-blur-sm p-3 rounded-xl shadow-lg text-xs font-bold space-y-1 border border-gray-200 pointer-events-none">
-                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-blue-500 inline-block"></span> Normal</div>
+                <!-- Map Quick Town Jump Bar -->
+                <div class="bg-cyan-50/90 border-b border-cyan-100 px-3 py-2 flex items-center gap-1.5 overflow-x-auto scrollbar-hide">
+                    <span class="text-[10px] font-black uppercase text-cyan-800 mr-1 shrink-0"><i class="fa-solid fa-compass mr-1"></i>Jump to:</span>
+                    <button onclick="flyToTown(-34.05, 22.35, 10)" class="shrink-0 bg-white hover:bg-blue-50 text-gray-700 font-bold text-xs px-2.5 py-1 rounded-lg border border-gray-200 shadow-sm">Full Garden Route</button>
+                    <button onclick="flyToTown(-34.183, 22.146, 13)" class="shrink-0 bg-white hover:bg-blue-50 text-gray-700 font-bold text-xs px-2.5 py-1 rounded-lg border border-gray-200 shadow-sm">Mossel Bay</button>
+                    <button onclick="flyToTown(-34.124, 22.106, 14)" class="shrink-0 bg-white hover:bg-blue-50 text-gray-700 font-bold text-xs px-2.5 py-1 rounded-lg border border-gray-200 shadow-sm">Hartenbos</button>
+                    <button onclick="flyToTown(-34.036, 22.222, 13)" class="shrink-0 bg-white hover:bg-blue-50 text-gray-700 font-bold text-xs px-2.5 py-1 rounded-lg border border-gray-200 shadow-sm">Great Brak</button>
+                    <button onclick="flyToTown(-33.963, 22.461, 12)" class="shrink-0 bg-white hover:bg-blue-50 text-gray-700 font-bold text-xs px-2.5 py-1 rounded-lg border border-gray-200 shadow-sm">George</button>
+                    <button onclick="flyToTown(-33.994, 22.575, 13)" class="shrink-0 bg-white hover:bg-blue-50 text-gray-700 font-bold text-xs px-2.5 py-1 rounded-lg border border-gray-200 shadow-sm">Wilderness</button>
+                    <button onclick="flyToTown(-34.018, 22.798, 13)" class="shrink-0 bg-white hover:bg-blue-50 text-gray-700 font-bold text-xs px-2.5 py-1 rounded-lg border border-gray-200 shadow-sm">Sedgefield</button>
+                    <button onclick="flyToTown(-34.052, 23.371, 13)" class="shrink-0 bg-white hover:bg-blue-50 text-gray-700 font-bold text-xs px-2.5 py-1 rounded-lg border border-gray-200 shadow-sm">Plettenberg Bay</button>
+                    <button onclick="flyToTown(-33.590, 22.201, 11)" class="shrink-0 bg-white hover:bg-blue-50 text-gray-700 font-bold text-xs px-2.5 py-1 rounded-lg border border-gray-200 shadow-sm">Oudtshoorn</button>
+                    <button onclick="locateUserOnMap()" class="shrink-0 bg-blue-600 hover:bg-blue-700 text-white font-black text-xs px-3 py-1 rounded-lg shadow-sm ml-auto"><i class="fa-solid fa-location-crosshairs mr-1"></i>Near Me</button>
+                </div>
+                <div id="map-container" class="w-full h-[580px] z-10"></div>
+                <div class="absolute bottom-4 left-4 z-[20] bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-lg text-xs font-bold space-y-1.5 border border-gray-200 pointer-events-none">
+                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-pink-500 inline-block"></span> Event</div>
+                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-sky-600 inline-block"></span> Activity / Market</div>
+                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-purple-500 inline-block"></span> Dining Spot</div>
                     <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span> Saved (My List)</div>
-                    <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-pink-500 inline-block"></span> Sponsored</div>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white/90 backdrop-blur-md border-t border-cyan-100 py-6 mt-auto relative z-30">
-        <div class="max-w-5xl mx-auto px-4 text-center">
+    <footer class="bg-white/95 backdrop-blur-md border-t border-cyan-100 py-6 mt-auto relative z-30">
+        <div class="max-w-6xl mx-auto px-4 text-center">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 text-sm font-bold text-gray-600 border-b border-gray-100 pb-4">
                 <div class="text-center md:text-left">
-                    Are you a local business owner? 
+                    Are you a local business owner or event organizer? 
                     <a href="add.html" class="text-pink-500 hover:text-pink-600 font-black underline ml-1">Click here to add your listing!</a>
                 </div>
                 <div class="text-center md:text-right">
@@ -251,92 +414,103 @@
         </div>
     </footer>
 
-    <!-- FAQ Modal -->
+    <!-- FAQ / Info Modal -->
     <div id="faq-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[80] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
-        <div class="bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl p-6 relative">
+        <div class="bg-white rounded-[2rem] w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl p-6 relative">
             <button onclick="toggleFAQ()" class="absolute top-4 right-4 bg-gray-100 text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 z-20"><i class="fa-solid fa-xmark"></i></button>
-            <h2 class="text-2xl font-black text-blue-600 mb-5"><i class="fa-solid fa-circle-question mr-2"></i>How to use MBayHoliday</h2>
-            <div class="space-y-5 text-sm text-gray-600">
-                <div>
-                    <h3 class="font-bold text-gray-800 text-base mb-1"><i class="fa-solid fa-star text-yellow-400 mr-1"></i> Save Your Favorites</h3>
-                    <p>Click the star icon on any activity or event to add it to 'My List'. You can view your saved itinerary anytime by clicking 'My List' at the top, and even share it with friends via WhatsApp!</p>
+            <h2 class="text-2xl font-black text-blue-600 mb-4"><i class="fa-solid fa-sun text-amber-400 mr-2"></i>Welcome to MBayHoliday</h2>
+            <div class="space-y-4 text-sm text-gray-600">
+                <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-3.5">
+                    <h3 class="font-black text-emerald-900 text-sm mb-1"><i class="fa-brands fa-whatsapp text-emerald-600 mr-1.5"></i> Powered by Local Community Gems</h3>
+                    <p class="text-xs text-emerald-800 leading-relaxed">Includes live events, weekend markets, nature trails, and hidden gems shared by local hosts in the <b>Garden Route Weekend Trips, Adventures & Hidden Gems</b> community!</p>
                 </div>
                 <div>
-                    <h3 class="font-bold text-gray-800 text-base mb-1"><i class="fa-solid fa-filter text-blue-500 mr-1"></i> Find What You Need</h3>
-                    <p>Use the Filters button to search by town, category, date, or price. You can also filter by places that are "Open Now". Once you enter your preferences, click <b>Apply Filters</b> to update.</p>
+                    <h3 class="font-bold text-gray-800 text-base mb-1"><i class="fa-solid fa-compass text-emerald-600 mr-1.5"></i> Curated Trip Guides</h3>
+                    <p>Switch to the <b>Trip Guides</b> tab for ready-made full-day and weekend itineraries with insider tips, cost estimates, and one-click saving to your Trip List.</p>
                 </div>
                 <div>
-                    <h3 class="font-bold text-gray-800 text-base mb-1"><i class="fa-solid fa-clone text-pink-500 mr-1"></i> Switch Views</h3>
-                    <p>Use the tabs at the top to switch between visual Cards, a compact List, a Calendar layout, local Dining spots, or the interactive Map view.</p>
+                    <h3 class="font-bold text-gray-800 text-base mb-1"><i class="fa-solid fa-star text-yellow-400 mr-1.5"></i> Build & Share Your Itinerary</h3>
+                    <p>Tap the star icon on any event, activity, or restaurant to save it to <b>My List</b>. We automatically estimate your entry budget per person and let you share your full trip plan on WhatsApp!</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-gray-800 text-base mb-1"><i class="fa-solid fa-sliders text-blue-500 mr-1.5"></i> Smart Vibe & Weather Filters</h3>
+                    <p>Use the one-tap Vibe pills at the top (like <i>This Weekend</i>, <i>Free Entry</i>, <i>Markets</i>, or <i>Rainy Day / Indoor</i>) or open <b>Filters</b> to narrow by town and price.</p>
                 </div>
             </div>
-            <button onclick="toggleFAQ()" class="w-full mt-6 bg-blue-100 text-blue-800 font-black py-3 rounded-xl hover:bg-blue-200 transition">Got it!</button>
+            <button onclick="toggleFAQ()" class="w-full mt-6 bg-blue-600 text-white font-black py-3 rounded-xl hover:bg-blue-700 transition shadow-md">Start Exploring!</button>
         </div>
     </div>
 
-    <!-- Daily Calendar View Modal (Google Cal Style) -->
+    <!-- Daily Calendar View Modal -->
     <div id="daily-cal-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[70] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
         <div class="bg-white rounded-[2rem] w-full max-w-md h-[80vh] shadow-2xl flex flex-col relative overflow-hidden transform scale-95 transition-transform duration-300" id="daily-cal-box">
             <div class="p-5 border-b border-gray-200 flex justify-between items-center bg-gray-50 shrink-0">
-                <h2 id="daily-cal-date-title" class="text-xl font-black text-blue-600"></h2>
+                <div>
+                    <h2 id="daily-cal-date-title" class="text-xl font-black text-blue-600"></h2>
+                    <p id="daily-cal-subtitle" class="text-xs font-bold text-gray-500"></p>
+                </div>
                 <button onclick="closeDailyCal()" class="bg-white text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div id="daily-cal-content" class="flex-1 overflow-y-auto bg-gray-50 relative"></div>
+            <div id="daily-cal-content" class="flex-1 overflow-y-auto bg-gray-50 p-3 space-y-2 relative"></div>
         </div>
     </div>
 
-    <!-- Main Event/Restaurant Popup Modal -->
-    <div id="event-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[90] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
-        <div class="bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative" id="modal-content-box">
+    <!-- Main Event / Activity / Restaurant Popup Modal -->
+    <div id="event-modal" class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-[90] flex items-center justify-center p-4 opacity-0 transition-opacity duration-300" onclick="if(event.target === this) closeModal()">
+        <div class="bg-white rounded-[2rem] w-full max-w-lg max-h-[92vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative" id="modal-content-box">
             
-            <div class="absolute top-4 right-4 z-20 flex items-center gap-2">
-                <button id="modal-star-btn" onclick="toggleStarModal(event)" class="bg-gray-100 text-gray-400 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 text-base transition-colors">
+            <div class="absolute top-4 right-4 z-30 flex items-center gap-2">
+                <button id="modal-star-btn" onclick="toggleStarModal(event)" class="bg-white/95 text-gray-400 rounded-full w-9 h-9 flex items-center justify-center shadow-md hover:bg-white text-base transition-colors">
                     <i class="fa-solid fa-star"></i>
                 </button>
-                <button onclick="closeModal()" class="bg-gray-100 text-gray-800 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200">
+                <button onclick="closeModal()" class="bg-white/95 text-gray-800 rounded-full w-9 h-9 flex items-center justify-center shadow-md hover:bg-white">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             
-            <div id="modal-sponsor-badge" class="hidden bg-gradient-to-r from-yellow-400 to-pink-500 text-white font-black text-xs uppercase px-4 py-2 rounded-t-[2rem] mb-2 flex items-center justify-center gap-1 shadow-sm">
+            <div id="modal-sponsor-badge" class="hidden bg-gradient-to-r from-yellow-400 to-pink-500 text-white font-black text-xs uppercase px-4 py-2 rounded-t-[1.8rem] flex items-center justify-center gap-1 shadow-sm">
                 <i class="fa-solid fa-crown text-yellow-200"></i> Featured Sponsor
             </div>
 
-            <div class="p-6 pt-4">
-                <h2 id="modal-title" class="text-xl md:text-2xl font-black text-gray-800 leading-tight pr-20 mb-4 mt-2"></h2>
+            <div class="p-5 md:p-6">
+                <div id="modal-badges" class="flex flex-wrap items-center gap-1.5 pr-20 mb-2"></div>
+                <h2 id="modal-title" class="text-xl md:text-2xl font-black text-gray-800 leading-tight pr-16 mb-2"></h2>
+                <div id="modal-meta-bar" class="text-xs font-bold text-gray-500 space-y-1 mb-4"></div>
                 
-                <div class="relative w-full md:w-3/4 mx-auto h-40 bg-gray-100 rounded-xl overflow-hidden mb-5 shadow-inner group flex items-center justify-center">
+                <div class="relative w-full h-52 sm:h-60 bg-gray-100 rounded-2xl overflow-hidden mb-4 shadow-inner group flex items-center justify-center">
                     <i class="fa-solid fa-image text-gray-300 text-3xl absolute z-0"></i>
-                    <img id="modal-img" src="" class="w-full h-full object-cover relative z-10 cursor-pointer hidden" onclick="openLightbox()">
+                    <img id="modal-img" src="" class="w-full h-full object-cover relative z-10 cursor-zoom-in hidden" onclick="openLightbox()">
+                    <span class="absolute bottom-2 right-2 z-20 bg-black/60 text-white text-[10px] font-bold px-2.5 py-1 rounded-full pointer-events-none"><i class="fa-solid fa-magnifying-glass-plus mr-1"></i>Tap poster to zoom</span>
                     <button id="modal-prev-btn" onclick="prevModalImage(event)" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/90 text-gray-800 w-8 h-8 rounded-full z-20 hidden items-center justify-center shadow hover:bg-white"><i class="fa-solid fa-chevron-left text-sm"></i></button>
                     <button id="modal-next-btn" onclick="nextModalImage(event)" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/90 text-gray-800 w-8 h-8 rounded-full z-20 hidden items-center justify-center shadow hover:bg-white"><i class="fa-solid fa-chevron-right text-sm"></i></button>
                 </div>
 
                 <p id="modal-desc" class="text-gray-600 mb-5 text-sm md:text-base leading-relaxed"></p>
                 
-                <details class="mb-5 bg-gray-50 rounded-xl border border-gray-200 overflow-hidden" id="modal-price-container">
-                    <summary class="font-bold text-gray-700 p-3 md:p-4 cursor-pointer outline-none select-none flex items-center justify-between">
-                        <span id="modal-detail-heading"><i class="fa-solid fa-tags text-green-500 mr-2"></i> Details / Pricing</span>
+                <details open class="mb-5 bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden" id="modal-price-container">
+                    <summary class="font-black text-gray-700 p-3.5 cursor-pointer outline-none select-none flex items-center justify-between text-sm">
+                        <span id="modal-detail-heading"><i class="fa-solid fa-tags text-green-500 mr-2"></i> Details & Pricing</span>
                         <i class="fa-solid fa-chevron-down text-gray-400 text-xs toggle-icon transition-transform"></i>
                     </summary>
-                    <div class="p-3 md:p-4 bg-white border-t border-gray-200 text-sm space-y-3" id="modal-prices"></div>
+                    <div class="p-3.5 bg-white border-t border-gray-200 text-xs md:text-sm space-y-2.5" id="modal-prices"></div>
                 </details>
                 
-                <div class="flex justify-center flex-wrap gap-2 md:gap-3">
-                    <button onclick="shareSingleItem()" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition shadow-sm text-lg" title="Share via WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
-                    <a id="modal-cal-btn" href="#" target="_blank" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 transition shadow-sm text-lg" title="Add to Google Calendar"><i class="fa-solid fa-calendar-plus"></i></a>
-                    <a id="modal-nav" href="#" target="_blank" class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition shadow-sm text-lg" title="Open Map"><i class="fa-solid fa-map-location-dot"></i></a>
-                    <a id="modal-phone" href="#" class="hidden w-10 h-10 md:w-12 md:h-12 items-center justify-center bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition shadow-sm text-lg" title="Call"><i class="fa-solid fa-phone"></i></a>
-                    <a id="modal-web" href="#" target="_blank" class="hidden w-10 h-10 md:w-12 md:h-12 items-center justify-center bg-pink-100 text-pink-700 rounded-full hover:bg-pink-200 transition shadow-sm text-lg" title="Website"><i class="fa-solid fa-globe"></i></a>
+                <div class="flex justify-center flex-wrap gap-2.5 pt-1">
+                    <a id="modal-wa-direct" href="#" target="_blank" class="hidden px-4 h-11 items-center justify-center bg-emerald-500 text-white font-black text-xs rounded-full hover:bg-emerald-600 transition shadow-md gap-1.5" title="Chat / Book on WhatsApp"><i class="fa-brands fa-whatsapp text-base"></i> WhatsApp Host</a>
+                    <button onclick="shareSingleItem()" class="w-11 h-11 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition shadow-sm text-lg" title="Share with Friends"><i class="fa-solid fa-share-nodes"></i></button>
+                    <a id="modal-cal-btn" href="#" target="_blank" class="w-11 h-11 flex items-center justify-center bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 transition shadow-sm text-lg" title="Add to Google Calendar"><i class="fa-solid fa-calendar-plus"></i></a>
+                    <a id="modal-nav" href="#" target="_blank" class="w-11 h-11 flex items-center justify-center bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition shadow-sm text-lg" title="Open in Google Maps"><i class="fa-solid fa-map-location-dot"></i></a>
+                    <a id="modal-phone" href="#" class="hidden w-11 h-11 items-center justify-center bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition shadow-sm text-lg" title="Call Now"><i class="fa-solid fa-phone"></i></a>
+                    <a id="modal-web" href="#" target="_blank" class="hidden w-11 h-11 items-center justify-center bg-pink-100 text-pink-700 rounded-full hover:bg-pink-200 transition shadow-sm text-lg" title="Visit Website"><i class="fa-solid fa-globe"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Fullscreen Lightbox -->
+    <!-- Fullscreen Poster Lightbox -->
     <div id="lightbox" class="hidden fixed inset-0 bg-black/95 z-[100] flex items-center justify-center p-4 transition-opacity" onclick="closeLightbox()">
         <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-3xl z-50"><i class="fa-solid fa-xmark"></i></button>
-        <img id="lightbox-img" src="" class="max-w-full max-h-[90vh] object-contain shadow-2xl rounded-lg" onclick="event.stopPropagation()">
+        <img id="lightbox-img" src="" class="max-w-full max-h-[92vh] object-contain shadow-2xl rounded-lg" onclick="event.stopPropagation()">
     </div>
 
     <script>
@@ -354,6 +528,9 @@
         let currentCalDate = new Date(); 
         let calendarMode = 'month';
         let currentView = 'scroll';
+        let currentVibeFilter = 'all';
+        let diningDisplayMode = 'cards';
+        let currentDiningCuisine = 'all';
 
         let sponsoredItems = [];
         let currentSponsoredIndex = 0;
@@ -361,24 +538,119 @@
         
         let mapInstance = null;
         let mapMarkers = [];
+        let userMarker = null;
+        let toastTimer = null;
 
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Helper: Format Date consistently across the application (Missing previously)
+        // Curated Garden Route Weekend Trip Guides & Insider Itineraries
+        const CURATED_GUIDES = [
+            {
+                id: 'guide-halloween-nov',
+                title: '🎃 Halloween & First-Weekend-of-Nov Mega Trail',
+                badge: 'Featured Weekend (30 Oct – 1 Nov)',
+                badgeColor: 'bg-pink-100 text-pink-800 border-pink-200',
+                duration: 'Fri 30 Oct – Sun 1 Nov',
+                towns: 'Mossel Bay • Hartenbos • George',
+                estCost: 'Free – R300 pp',
+                tip: 'Start Friday at Hartenbos Straatmark (from 10am), hit ReedValley Dia de los Muertos or Spoekasem Spookhuis on Friday night, and hop between the Saturday morning markets & Halloween specials!',
+                stopIds: [42, 43, 47, 51, 52, 48, 49, 44]
+            },
+            {
+                id: 'guide-market-hop',
+                title: '🛍️ Ultimate Garden Route Market Hop',
+                badge: 'Foodie & Craft Favorite',
+                badgeColor: 'bg-amber-100 text-amber-800 border-amber-200',
+                duration: 'Friday PM – Sunday AM',
+                towns: 'Mossel Bay • George • Wilderness • Sedgefield',
+                estCost: 'Free Entry (Pay for treats)',
+                tip: 'Kick off Friday evening at the Milkwood Sunset Market in Wilderness, spend Saturday morning at Outeniqua Family Market or Wild Oats in Sedgefield, and browse the Goodshed Flea Market on Sunday.',
+                stopIds: [66, 22, 69, 64, 67, 65, 29]
+            },
+            {
+                id: 'guide-mosselbay-icons',
+                title: '🌊 48 Hours in Mossel Bay: Icons, Surf & Sunset Drinks',
+                badge: 'Classic Coastal Bucket List',
+                badgeColor: 'bg-cyan-100 text-cyan-800 border-cyan-200',
+                duration: '2 Full Days',
+                towns: 'Mossel Bay Point • Diaz • Santos',
+                estCost: 'R150 – R950 pp',
+                tip: 'Walk the St Blaize cliff trail early morning to spot whales & dolphins, cool off in the Inner Pool tidal pool, visit the famous Post Office Tree at Diaz Museum, and grab seafood on the harbour wall at Kaai 4 or Sea Gypsy.',
+                stopIds: [39, 36, 17, 15, 62, 1004, 1002, 1028]
+            },
+            {
+                id: 'guide-wilderness-hoekwil',
+                title: '🌿 Wilderness Forest, Lakes & Donkey Sanctuary Escape',
+                badge: 'Community Hidden Gem',
+                badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+                duration: 'Full Day Trip',
+                towns: 'Wilderness • Hoekwil • George',
+                estCost: 'R150 – R400 pp',
+                tip: 'Book the 11am guided tour at Outeniqua Moon Percheron Stud & Donkey Sanctuary (R150 incl. carrot bucket!), hike the Half Collared Kingfisher Waterfall trail, and stop at Hoekwil Country Cafe for their legendary baked cheesecake.',
+                stopIds: [59, 40, 41, 1021, 1029, 1009]
+            },
+            {
+                id: 'guide-family-kids',
+                title: '👨‍👩‍👧‍👦 Ultimate Family & Kids Holiday Bucket List',
+                badge: 'Kid-Approved Fun',
+                badgeColor: 'bg-blue-100 text-blue-800 border-blue-200',
+                duration: 'Multi-Day Family Picks',
+                towns: 'George • Mossel Bay • Plett • Oudtshoorn',
+                estCost: 'R50 – R350 pp',
+                tip: 'Don’t miss the R100 Garden Route Locals Special at Knysna Elephant Park (valid until 15 Dec — bring proof of address!), strawberry picking & hedge maze at Redberry Farm, and plane spotting at AV8 Airfield Cafe.',
+                stopIds: [60, 21, 16, 20, 61, 1028, 1031]
+            },
+            {
+                id: 'guide-rainy-day',
+                title: '☔ Rainy Day Rescues on the Garden Route',
+                badge: '100% Weather-Proof',
+                badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+                duration: 'Anytime It Rains',
+                towns: 'Mossel Bay • Great Brak • George',
+                estCost: 'Free – R200 pp',
+                tip: 'Cloudy or rainy coastal day? Head indoors for the life-size Bartolomeu Dias caravel ship museum, tenpin bowling & arcade games in Voorbaai, pottery painting, indoor markets, and specialty coffee roasteries.',
+                stopIds: [17, 61, 67, 65, 32, 1018, 1019, 1032]
+            }
+        ];
+
+        function showToast(message, iconClass = 'fa-solid fa-star text-yellow-400') {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-text').innerText = message;
+            document.getElementById('toast-icon').className = `${iconClass} text-lg`;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            if (toastTimer) clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2400);
+        }
+
         function formatDate(d) {
             if (!(d instanceof Date) || isNaN(d.getTime())) return '';
             const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
             return `${d.getDate()} ${months[d.getMonth()]}`;
         }
 
-        // Fetch Weather
+        function formatDayAndDate(d) {
+            if (!(d instanceof Date) || isNaN(d.getTime())) return '';
+            const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+            const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            return `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]}`;
+        }
+
         async function fetchWeather() {
             try {
                 const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-34.18&longitude=22.14&current_weather=true');
                 if (!res.ok) return;
                 const data = await res.json();
                 if(data && data.current_weather) {
-                    document.getElementById('weather-temp').innerText = `${Math.round(data.current_weather.temperature)}°C`;
+                    const temp = Math.round(data.current_weather.temperature);
+                    const code = data.current_weather.weathercode;
+                    let icon = 'fa-sun text-amber-500';
+                    if (code >= 1 && code <= 3) icon = 'fa-cloud-sun text-amber-500';
+                    else if (code >= 45 && code <= 48) icon = 'fa-smog text-gray-400';
+                    else if (code >= 51 && code <= 82) icon = 'fa-cloud-rain text-blue-500';
+                    document.getElementById('weather-icon').className = `fa-solid ${icon} text-sm md:text-base mr-1.5`;
+                    document.getElementById('weather-temp').innerText = `${temp}°C`;
                     document.getElementById('weather-widget').classList.remove('hidden');
                 }
             } catch(e) { console.error("Weather load failed", e); }
@@ -422,7 +694,6 @@
             allData = await fetchJSON('database.json');
             allRestaurants = await fetchJSON('restaurant_database.json');
             
-            // Populate Town Filter - Strictly extracting from "town"
             const towns = [...new Set([...allData, ...allRestaurants].map(item => item.town).filter(t => t && t.trim() !== ''))];
             const locSelect = document.getElementById('filter-location');
             towns.sort().forEach(t => { locSelect.innerHTML += `<option value="${t}">${t}</option>`; });
@@ -431,9 +702,46 @@
             const rSelect = document.getElementById('filter-rest-type');
             rTypes.sort().forEach(t => { rSelect.innerHTML += `<option value="${t}">${t}</option>`; });
 
+            renderTownPills();
+            renderDiningStylePills();
             initSponsoredCarousel();
+            renderGuides();
             applyFilters();
             renderSidebar();
+        }
+
+        function renderTownPills() {
+            const container = document.getElementById('town-pills-container');
+            if (!container) return;
+            const currentTown = document.getElementById('filter-location').value;
+            const preferredOrder = ['Mossel Bay', 'George', 'Wilderness', 'Hartenbos', 'Great Brak River', 'Sedgefield', 'Plettenberg Bay', 'Oudtshoorn', 'Little Brak River'];
+            const allTowns = [...new Set([...allData, ...allRestaurants].map(i => i.town).filter(Boolean))];
+            allTowns.sort((a, b) => {
+                const ia = preferredOrder.indexOf(a);
+                const ib = preferredOrder.indexOf(b);
+                if (ia !== -1 && ib !== -1) return ia - ib;
+                if (ia !== -1) return -1;
+                if (ib !== -1) return 1;
+                return a.localeCompare(b);
+            });
+
+            let html = `<button onclick="selectTownPill('all')" class="shrink-0 px-3 py-1 rounded-xl text-[11px] font-black transition ${currentTown === 'all' ? 'bg-cyan-700 text-white shadow-sm' : 'bg-white/75 text-cyan-900 hover:bg-white border border-cyan-200/70'}"><i class="fa-solid fa-location-dot mr-1"></i>All Towns</button>`;
+            allTowns.forEach(t => {
+                const active = currentTown === t;
+                html += `<button onclick="selectTownPill('${t.replace(/'/g, "\\'")}')" class="shrink-0 px-3 py-1 rounded-xl text-[11px] font-bold transition ${active ? 'bg-cyan-700 text-white font-black shadow-sm' : 'bg-white/75 text-gray-600 hover:bg-white border border-cyan-200/60'}">${t}</button>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function selectTownPill(town) {
+            document.getElementById('filter-location').value = town;
+            renderTownPills();
+            applyFilters();
+        }
+
+        function onTownSelectChange() {
+            renderTownPills();
+            applyFilters();
         }
 
         // --- Map Logic ---
@@ -443,13 +751,41 @@
                 updateMapMarkers();
                 return;
             }
-            mapInstance = L.map('map-container').setView([-34.16, 22.12], 11);
+            mapInstance = L.map('map-container').setView([-34.08, 22.28], 10);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 maxZoom: 19,
                 attribution: '&copy; OpenStreetMap'
             }).addTo(mapInstance);
             
             updateMapMarkers();
+        }
+
+        function flyToTown(lat, lng, zoom) {
+            if (!mapInstance) initMap();
+            mapInstance.flyTo([lat, lng], zoom, { duration: 0.9 });
+        }
+
+        function locateUserOnMap() {
+            if (!navigator.geolocation) {
+                showToast("Geolocation is not supported by your browser", "fa-solid fa-circle-exclamation text-red-400");
+                return;
+            }
+            navigator.geolocation.getCurrentPosition(pos => {
+                const { latitude, longitude } = pos.coords;
+                if (!mapInstance) initMap();
+                if (userMarker) mapInstance.removeLayer(userMarker);
+                userMarker = L.circleMarker([latitude, longitude], {
+                    radius: 9,
+                    fillColor: '#2563eb',
+                    color: '#ffffff',
+                    weight: 3,
+                    opacity: 1,
+                    fillOpacity: 0.9
+                }).addTo(mapInstance).bindPopup("<b>📍 You are here</b>").openPopup();
+                mapInstance.flyTo([latitude, longitude], 13);
+            }, () => {
+                showToast("Could not get your location — check permissions", "fa-solid fa-location-crosshairs text-amber-400");
+            });
         }
 
         function getCoords(item) {
@@ -470,8 +806,9 @@
             allMapItems.forEach(item => {
                 const coords = getCoords(item);
                 const isStarred = starredIds.includes(item.id);
-                let markerClass = 'marker-normal';
-                let iconHtml = '<i class="fa-solid fa-location-dot"></i>';
+                const isRest = !!item.type;
+                let markerClass = isRest ? 'marker-restaurant' : (item.category === 'event' ? 'marker-event' : 'marker-activity');
+                let iconHtml = isRest ? '<i class="fa-solid fa-utensils text-[10px]"></i>' : (item.category === 'event' ? '<i class="fa-regular fa-calendar text-[10px]"></i>' : '<i class="fa-solid fa-person-hiking text-[10px]"></i>');
 
                 if (isStarred) {
                     markerClass = 'marker-starred';
@@ -490,24 +827,38 @@
                 });
 
                 const marker = L.marker(coords, {icon: customIcon}).addTo(mapInstance);
-                const isRest = !!item.type;
+                const subInfo = isRest ? (item.type || 'Dining') : (item.date ? formatDate(new Date(item.date)) : 'Activity');
                 marker.bindPopup(`
-                    <div class="text-center p-1">
-                        <h3 class="font-black text-sm mb-1">${item.name || ''}</h3>
-                        <p class="text-xs text-gray-500 mb-2">${item.location || ''}</p>
-                        <button onclick="openModal(${item.id}, ${isRest})" class="bg-pink-500 text-white text-[10px] px-3 py-1 rounded font-bold">View Details</button>
+                    <div class="text-center p-1 min-w-[160px]">
+                        <span class="text-[9px] font-black uppercase px-2 py-0.5 rounded bg-gray-100 text-gray-600">${subInfo}</span>
+                        <h3 class="font-black text-sm mt-1 mb-0.5 text-gray-800">${item.name || ''}</h3>
+                        <p class="text-[11px] text-gray-500 mb-2">${item.location || ''}</p>
+                        <button onclick="openModal(${item.id}, ${isRest})" class="bg-blue-600 hover:bg-blue-700 text-white text-[11px] px-3 py-1 rounded-lg font-black shadow-sm">View Details</button>
                     </div>
                 `);
                 mapMarkers.push(marker);
             });
         }
 
-        // --- Sponsored Carousel Logic ---
+        // --- Sponsored Carousel Logic (Excludes Ended Past Events) ---
         let touchstartX = 0;
         let touchendX = 0;
 
         function initSponsoredCarousel() {
-            sponsoredItems = [...allData.map(i => ({...i, isRest: false})), ...allRestaurants.map(i => ({...i, isRest: true}))].filter(item => item.sponsored);
+            const now = new Date();
+            sponsoredItems = [
+                ...allData.map(i => ({...i, isRest: false})),
+                ...allRestaurants.map(i => ({...i, isRest: true}))
+            ].filter(item => {
+                if (!item.sponsored) return false;
+                if (item.category === 'event' && item.date) {
+                    const eventEnd = item.endDate ? new Date(item.endDate) : new Date(item.date);
+                    eventEnd.setHours(23, 59, 59, 999);
+                    if (eventEnd < now) return false;
+                }
+                return true;
+            });
+
             const container = document.getElementById('sponsored-container');
             if(sponsoredItems.length === 0) {
                 container.classList.add('hidden');
@@ -522,9 +873,21 @@
             sponsorContent.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; }, {passive: true});
             sponsorContent.addEventListener('touchend', e => {
                 touchendX = e.changedTouches[0].screenX;
-                if (touchstartX - touchendX > 40) { setSponsoredIndex((currentSponsoredIndex + 1) % sponsoredItems.length); }
-                if (touchendX - touchstartX > 40) { setSponsoredIndex((currentSponsoredIndex - 1 + sponsoredItems.length) % sponsoredItems.length); }
+                if (touchstartX - touchendX > 40) nextSponsored();
+                if (touchendX - touchstartX > 40) prevSponsored();
             }, {passive: true});
+        }
+
+        function prevSponsored(e) {
+            if (e) e.stopPropagation();
+            if (sponsoredItems.length <= 1) return;
+            setSponsoredIndex((currentSponsoredIndex - 1 + sponsoredItems.length) % sponsoredItems.length);
+        }
+
+        function nextSponsored(e) {
+            if (e) e.stopPropagation();
+            if (sponsoredItems.length <= 1) return;
+            setSponsoredIndex((currentSponsoredIndex + 1) % sponsoredItems.length);
         }
 
         function startSponsoredTimer() {
@@ -534,7 +897,7 @@
                     currentSponsoredIndex = (currentSponsoredIndex + 1) % sponsoredItems.length;
                     renderSponsoredFrame();
                     renderSponsoredPills();
-                }, 5000);
+                }, 5500);
             }
         }
 
@@ -549,19 +912,27 @@
         function renderSponsoredFrame() {
             const content = document.getElementById('sponsored-content');
             const item = sponsoredItems[currentSponsoredIndex];
+            if (!item) return;
             const cleanImages = (item.images || []).filter(img => img && typeof img === 'string' && img.trim() !== '');
             const firstImg = cleanImages.length > 0 ? cleanImages[0] : getFallbackImage(item);
+            let dateBadge = '';
+            if (item.date) {
+                dateBadge = `<span class="bg-pink-100 text-pink-700 text-[10px] font-black px-2 py-0.5 rounded-md ml-2"><i class="fa-regular fa-calendar mr-1"></i>${formatDate(new Date(item.date))}${item.endDate ? ' - ' + formatDate(new Date(item.endDate)) : ''}</span>`;
+            }
             
-            content.className = "bg-white rounded-[1.6rem] overflow-hidden relative h-44 md:h-56 flex w-full fade-in-sponsored";
+            content.className = "bg-white rounded-[1.4rem] overflow-hidden relative h-44 md:h-52 flex w-full fade-in-sponsored";
             content.innerHTML = `
-                <div class="w-1/3 md:w-2/5 relative">
+                <div class="w-2/5 md:w-2/5 relative bg-gray-100">
                     <img src="${firstImg}" class="w-full h-full object-cover" onerror="this.src='${getFallbackImage(item)}'">
                 </div>
-                <div class="w-2/3 md:w-3/5 p-4 md:p-6 flex flex-col justify-center">
-                    <span class="text-[10px] font-black uppercase text-pink-500 mb-1 tracking-wider">${item.category || item.type || ''}</span>
-                    <h3 class="text-xl md:text-3xl font-black text-gray-800 leading-tight mb-2 line-clamp-2">${item.name || ''}</h3>
+                <div class="w-3/5 md:w-3/5 p-4 md:p-6 flex flex-col justify-center">
+                    <div class="flex items-center flex-wrap mb-1">
+                        <span class="text-[10px] font-black uppercase text-pink-600 tracking-wider">${item.category || item.type || 'Featured'}</span>
+                        ${dateBadge}
+                    </div>
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-black text-gray-800 leading-tight mb-1.5 line-clamp-2">${item.name || ''}</h3>
                     <p class="text-xs md:text-sm text-gray-500 line-clamp-2">${item.description || ''}</p>
-                    <p class="text-[10px] md:text-xs font-bold text-gray-400 mt-2"><i class="fa-solid fa-location-dot text-red-400"></i> ${item.location || ''}</p>
+                    <p class="text-[11px] md:text-xs font-bold text-gray-400 mt-2 truncate"><i class="fa-solid fa-location-dot text-red-400 mr-1"></i> ${item.location || ''}</p>
                 </div>
             `;
         }
@@ -593,7 +964,7 @@
             return target >= start && target <= end;
         }
 
-        // --- Sidebar, FAQ & Star Logic ---
+        // --- Sidebar, FAQ & Star Logic (Supports Events, Activities & Dining) ---
         function toggleFAQ() {
             const modal = document.getElementById('faq-modal');
             if (modal.classList.contains('hidden')) {
@@ -620,12 +991,74 @@
             }
         }
 
+        function updateHeaderStarBadge() {
+            const badge = document.getElementById('header-star-count');
+            if (!badge) return;
+            if (starredIds.length > 0) {
+                badge.innerText = starredIds.length;
+                badge.classList.remove('hidden');
+            } else {
+                badge.classList.add('hidden');
+            }
+        }
+
         function toggleStar(id, event) {
             if(event) event.stopPropagation();
             const index = starredIds.indexOf(id);
-            if (index > -1) { starredIds.splice(index, 1); } else { starredIds.push(id); }
+            let added = false;
+            if (index > -1) {
+                starredIds.splice(index, 1);
+            } else {
+                starredIds.push(id);
+                added = true;
+            }
             localStorage.setItem('mbay_stars', JSON.stringify(starredIds));
-            renderScrollContent(new Date()); renderListContent(new Date()); renderCalendar(); renderSidebar(); updateMapMarkers();
+            updateHeaderStarBadge();
+            showToast(added ? "Added to My Trip List!" : "Removed from My Trip List", added ? "fa-solid fa-star text-yellow-400" : "fa-regular fa-star text-gray-300");
+            renderScrollContent(new Date());
+            renderListContent(new Date());
+            renderRestaurantsContent();
+            renderGuides();
+            renderCalendar();
+            renderSidebar();
+            updateMapMarkers();
+        }
+
+        function addGuideToMyList(guideId) {
+            const guide = CURATED_GUIDES.find(g => g.id === guideId);
+            if (!guide) return;
+            let addedCount = 0;
+            guide.stopIds.forEach(id => {
+                if (!starredIds.includes(id)) {
+                    starredIds.push(id);
+                    addedCount++;
+                }
+            });
+            localStorage.setItem('mbay_stars', JSON.stringify(starredIds));
+            updateHeaderStarBadge();
+            renderScrollContent(new Date());
+            renderListContent(new Date());
+            renderRestaurantsContent();
+            renderGuides();
+            renderSidebar();
+            updateMapMarkers();
+            showToast(`Added ${addedCount > 0 ? addedCount + ' stops' : 'trip'} to My List!`, "fa-solid fa-route text-emerald-400");
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('-translate-x-full')) toggleSidebar();
+        }
+
+        function clearMyList() {
+            if (starredIds.length === 0) return;
+            starredIds = [];
+            localStorage.setItem('mbay_stars', JSON.stringify(starredIds));
+            updateHeaderStarBadge();
+            renderScrollContent(new Date());
+            renderListContent(new Date());
+            renderRestaurantsContent();
+            renderGuides();
+            renderSidebar();
+            updateMapMarkers();
+            showToast("Cleared My Trip List", "fa-regular fa-trash-can text-gray-300");
         }
 
         function toggleStarModal(event) {
@@ -636,137 +1069,252 @@
 
         function updateModalStarIcon() {
             const starBtn = document.getElementById('modal-star-btn');
-            if(starredIds.includes(currentEventData.id)) {
-                starBtn.className = "bg-yellow-100 text-yellow-500 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-yellow-200 text-base transition-colors shrink-0";
+            if(currentEventData && starredIds.includes(currentEventData.id)) {
+                starBtn.className = "bg-yellow-100 text-yellow-500 rounded-full w-9 h-9 flex items-center justify-center shadow-md hover:bg-yellow-200 text-base transition-colors shrink-0";
             } else {
-                starBtn.className = "bg-gray-100 text-gray-400 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 text-base transition-colors shrink-0";
+                starBtn.className = "bg-white/95 text-gray-400 rounded-full w-9 h-9 flex items-center justify-center shadow-md hover:bg-white text-base transition-colors shrink-0";
             }
         }
 
         function renderSidebar() {
+            updateHeaderStarBadge();
             const container = document.getElementById('sidebar-content');
+            const budgetBar = document.getElementById('sidebar-budget-bar');
+            const budgetTotalEl = document.getElementById('sidebar-budget-total');
             container.innerHTML = '';
-            const starredItems = allData.filter(item => starredIds.includes(item.id));
-            if (starredItems.length === 0) {
-                container.innerHTML = `<div class="text-center text-gray-400 mt-10"><i class="fa-regular fa-star text-4xl mb-3"></i><p>No items starred yet.</p></div>`;
+
+            const starredEventsAndActs = allData.filter(item => starredIds.includes(item.id));
+            const starredDining = allRestaurants.filter(item => starredIds.includes(item.id));
+
+            if (starredEventsAndActs.length === 0 && starredDining.length === 0) {
+                budgetBar.classList.add('hidden');
+                container.innerHTML = `
+                    <div class="text-center text-gray-400 mt-10 px-4">
+                        <div class="w-16 h-16 bg-amber-50 text-amber-400 rounded-full flex items-center justify-center mx-auto mb-3 shadow-inner">
+                            <i class="fa-regular fa-star text-3xl"></i>
+                        </div>
+                        <p class="font-black text-gray-600 text-sm mb-1">Your Trip List is empty</p>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-4">Tap the <i class="fa-solid fa-star text-yellow-400"></i> on any event, market, activity, or restaurant — or pick a ready-made route in <b>Trip Guides</b>!</p>
+                        <button onclick="toggleSidebar(); switchView('guides');" class="bg-emerald-100 text-emerald-800 font-black text-xs px-4 py-2 rounded-xl hover:bg-emerald-200 transition"><i class="fa-solid fa-compass mr-1"></i> Browse Trip Guides</button>
+                    </div>`;
                 return;
             }
+
+            // Calculate estimated entry budget
+            const totalBudget = starredEventsAndActs.reduce((acc, item) => acc + (parseInt(item.price) || 0), 0);
+            budgetBar.classList.remove('hidden');
+            budgetTotalEl.innerText = totalBudget === 0 ? 'Free Entry!' : `~R${totalBudget} / pp`;
             
-            const now = new Date();
-            const events = starredItems.filter(i => i.category === 'event' && (!i.date || (i.endDate ? new Date(i.endDate).setHours(23,59,59,999) : new Date(i.date).setHours(23,59,59,999)) >= now)).sort((a,b) => new Date(a.date) - new Date(b.date));
-            
+            const events = starredEventsAndActs.filter(i => i.category === 'event').sort((a,b) => new Date(a.date || 0) - new Date(b.date || 0));
+            const activities = starredEventsAndActs.filter(i => i.category === 'activity');
+
             if (events.length > 0) {
-                container.innerHTML += `<h3 class="font-black text-gray-800 uppercase tracking-wider border-b-2 border-gray-200 pb-1 mb-3">Upcoming Events</h3>`;
+                container.innerHTML += `<h3 class="font-black text-xs text-pink-600 uppercase tracking-wider border-b border-pink-100 pb-1 mb-2 flex items-center justify-between"><span>📅 Saved Events (${events.length})</span></h3>`;
                 events.forEach(e => {
-                    let dateDisplay = formatDate(new Date(e.date));
-                    if (e.endDate) { dateDisplay += ' - ' + formatDate(new Date(e.endDate)); }
-                    container.innerHTML += `<div onclick="openModal(${e.id}, false)" class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-3 cursor-pointer hover:border-pink-300 transition group relative"><button onclick="toggleStar(${e.id}, event)" class="absolute top-2 right-2 text-yellow-400"><i class="fa-solid fa-star"></i></button><p class="text-[10px] text-blue-500 font-bold mb-1 leading-tight">${dateDisplay} <br> ${e.time ? String(e.time).split('-')[0] : ''}</p><p class="font-black text-gray-800 group-hover:text-pink-600 transition truncate pr-6">${e.name}</p></div>`;
+                    let dateDisplay = e.date ? formatDate(new Date(e.date)) : '';
+                    if (e.endDate) dateDisplay += ' - ' + formatDate(new Date(e.endDate));
+                    const priceText = (!e.price || e.price === 0) ? 'Free' : `R${e.price}`;
+                    container.innerHTML += `
+                        <div onclick="openModal(${e.id}, false)" class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-2.5 cursor-pointer hover:border-pink-300 transition group relative">
+                            <button onclick="toggleStar(${e.id}, event)" class="absolute top-2.5 right-2.5 text-yellow-400 hover:text-gray-300"><i class="fa-solid fa-star"></i></button>
+                            <p class="text-[10px] text-pink-600 font-black mb-0.5">${dateDisplay} ${e.time ? '• ' + String(e.time).split('-')[0] : ''}</p>
+                            <p class="font-black text-sm text-gray-800 group-hover:text-pink-600 transition truncate pr-6">${e.name}</p>
+                            <p class="text-[11px] text-gray-400 font-bold mt-0.5 truncate"><i class="fa-solid fa-location-dot text-red-400 mr-1"></i>${e.town || e.location} • <span class="text-emerald-600">${priceText}</span></p>
+                        </div>`;
                 });
             }
-            const activities = starredItems.filter(i => i.category === 'activity');
+
             if (activities.length > 0) {
-                container.innerHTML += `<h3 class="font-black text-gray-800 uppercase tracking-wider border-b-2 border-gray-200 pb-1 mb-3 mt-6">Things To Do</h3>`;
+                container.innerHTML += `<h3 class="font-black text-xs text-blue-600 uppercase tracking-wider border-b border-blue-100 pb-1 mb-2 mt-4 flex items-center justify-between"><span>🏄 Activities & Markets (${activities.length})</span></h3>`;
                 activities.forEach(a => {
-                    container.innerHTML += `<div onclick="openModal(${a.id}, false)" class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-3 cursor-pointer hover:border-pink-300 transition group relative"><button onclick="toggleStar(${a.id}, event)" class="absolute top-2 right-2 text-yellow-400"><i class="fa-solid fa-star"></i></button><p class="font-black text-gray-800 group-hover:text-pink-600 transition truncate pr-6">${a.name}</p><p class="text-xs text-gray-500 mt-1 truncate">${a.location}</p></div>`;
+                    const priceText = (!a.price || a.price === 0) ? 'Free' : `R${a.price}`;
+                    container.innerHTML += `
+                        <div onclick="openModal(${a.id}, false)" class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-2.5 cursor-pointer hover:border-blue-300 transition group relative">
+                            <button onclick="toggleStar(${a.id}, event)" class="absolute top-2.5 right-2.5 text-yellow-400 hover:text-gray-300"><i class="fa-solid fa-star"></i></button>
+                            <p class="font-black text-sm text-gray-800 group-hover:text-blue-600 transition truncate pr-6">${a.name}</p>
+                            <p class="text-[11px] text-gray-400 font-bold mt-0.5 truncate"><i class="fa-solid fa-location-dot text-red-400 mr-1"></i>${a.town || a.location} • <span class="text-emerald-600">${priceText}</span></p>
+                        </div>`;
+                });
+            }
+
+            if (starredDining.length > 0) {
+                container.innerHTML += `<h3 class="font-black text-xs text-purple-600 uppercase tracking-wider border-b border-purple-100 pb-1 mb-2 mt-4 flex items-center justify-between"><span>🍽️ Saved Dining (${starredDining.length})</span></h3>`;
+                starredDining.forEach(r => {
+                    container.innerHTML += `
+                        <div onclick="openModal(${r.id}, true)" class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 mb-2.5 cursor-pointer hover:border-purple-300 transition group relative">
+                            <button onclick="toggleStar(${r.id}, event)" class="absolute top-2.5 right-2.5 text-yellow-400 hover:text-gray-300"><i class="fa-solid fa-star"></i></button>
+                            <span class="text-[9px] uppercase font-black bg-purple-50 text-purple-700 px-1.5 py-0.5 rounded">${r.type || 'Dining'}</span>
+                            <p class="font-black text-sm text-gray-800 group-hover:text-purple-600 transition truncate pr-6 mt-0.5">${r.name}</p>
+                            <p class="text-[11px] text-gray-400 font-bold mt-0.5 truncate"><i class="fa-solid fa-location-dot text-red-400 mr-1"></i>${r.location}</p>
+                        </div>`;
                 });
             }
         }
 
-        function shareMyList() {
-            const starredItems = allData.filter(item => starredIds.includes(item.id));
-            if(starredItems.length === 0) { alert("Star some items first to share your itinerary!"); return; }
-            let text = "🌴 *My MBayHoliday Itinerary:*\n\n";
-            
-            const now = new Date();
-            const events = starredItems.filter(i => i.category === 'event' && (!i.date || (i.endDate ? new Date(i.endDate).setHours(23,59,59,999) : new Date(i.date).setHours(23,59,59,999)) >= now)).sort((a,b) => new Date(a.date) - new Date(b.date));
-            
-            if(events.length > 0){
-                text += "📅 *EVENTS:*\n";
-                events.forEach(e => { 
-                    let dateDisplay = formatDate(new Date(e.date));
-                    if (e.endDate) { dateDisplay += ' - ' + formatDate(new Date(e.endDate)); }
-                    text += `• ${dateDisplay} (${e.time ? String(e.time).split('-')[0].trim() : ''}) - ${e.name}\n`; 
+        function buildItineraryText() {
+            const starredEventsAndActs = allData.filter(item => starredIds.includes(item.id));
+            const starredDining = allRestaurants.filter(item => starredIds.includes(item.id));
+            if (starredEventsAndActs.length === 0 && starredDining.length === 0) return '';
+
+            let text = "🌴 *My Garden Route & MBayHoliday Itinerary:*\n\n";
+            const events = starredEventsAndActs.filter(i => i.category === 'event').sort((a,b) => new Date(a.date || 0) - new Date(b.date || 0));
+            const activities = starredEventsAndActs.filter(i => i.category === 'activity');
+
+            if (events.length > 0) {
+                text += "📅 *UPCOMING EVENTS:*\n";
+                events.forEach(e => {
+                    let dateDisplay = e.date ? formatDate(new Date(e.date)) : '';
+                    if (e.endDate) dateDisplay += ' - ' + formatDate(new Date(e.endDate));
+                    text += `• ${dateDisplay} - *${e.name}* (${e.town || e.location})\n`;
                 });
                 text += "\n";
             }
-            const activities = starredItems.filter(i => i.category === 'activity');
-            if(activities.length > 0){
-                text += "🏄 *ACTIVITIES:*\n";
-                activities.forEach(a => { text += `• ${a.name} (${a.location})\n`; });
+            if (activities.length > 0) {
+                text += "🏄 *ACTIVITIES & MARKETS:*\n";
+                activities.forEach(a => {
+                    const p = (!a.price || a.price === 0) ? 'Free' : `R${a.price}`;
+                    text += `• *${a.name}* - ${a.location} (${p})\n`;
+                });
+                text += "\n";
             }
-            text += `\nCheck them out at: ${window.location.href}`;
+            if (starredDining.length > 0) {
+                text += "🍽️ *FOOD & DINING:*\n";
+                starredDining.forEach(r => {
+                    text += `• *${r.name}* (${r.type}) - ${r.location}\n`;
+                });
+                text += "\n";
+            }
+            text += `Explore more at: ${window.location.origin}${window.location.pathname}`;
+            return text;
+        }
+
+        function shareMyList() {
+            const text = buildItineraryText();
+            if (!text) { showToast("Star some items first to share your itinerary!", "fa-solid fa-circle-info text-blue-400"); return; }
             window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function copyMyList() {
+            const text = buildItineraryText();
+            if (!text) { showToast("Star some items first to copy your itinerary!", "fa-solid fa-circle-info text-blue-400"); return; }
+            navigator.clipboard.writeText(text.replace(/\*/g, '')).then(() => {
+                showToast("Itinerary copied to clipboard!", "fa-solid fa-check text-emerald-400");
+            });
         }
 
         function shareSingleItem() {
             if(!currentEventData) return;
-            const text = `🌴 Check this out on MBayHoliday: *${currentEventData.name}*\n📍 ${currentEventData.location}\n\n${window.location.href}`;
+            const datePart = currentEventData.date ? `\n🗓️ ${formatDate(new Date(currentEventData.date))}` : '';
+            const text = `🌴 Check this out on MBayHoliday: *${currentEventData.name}*${datePart}\n📍 ${currentEventData.location}\n\n${window.location.origin}${window.location.pathname}`;
             window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
         }
 
-        // --- View & Filter Logic ---
+        // --- View, Vibe & Filter Logic ---
         function switchView(view) {
             currentView = view;
-            const tabs = ['scroll', 'list', 'calendar', 'restaurants', 'map'];
+            const tabs = ['scroll', 'guides', 'list', 'calendar', 'restaurants', 'map'];
             tabs.forEach(t => {
-                document.getElementById(`tab-${t}`).className = "flex-1 py-2 sm:py-3 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2";
-                document.getElementById(`view-${t}`).classList.add('hidden');
-                document.getElementById(`view-${t}`).classList.remove('block');
+                const tabEl = document.getElementById(`tab-${t}`);
+                const viewEl = document.getElementById(`view-${t}`);
+                if (tabEl) tabEl.className = "flex-1 py-2 sm:py-2.5 font-black text-center text-gray-500 border-b-4 border-transparent hover:bg-cyan-100 hover:text-blue-900 transition flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5";
+                if (viewEl) { viewEl.classList.add('hidden'); viewEl.classList.remove('block'); }
             });
             
-            document.getElementById(`tab-${view}`).className = "flex-1 py-2 sm:py-3 font-black text-center text-blue-900 bg-cyan-200 border-b-4 border-pink-500 transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2";
-            document.getElementById(`view-${view}`).classList.remove('hidden');
-            document.getElementById(`view-${view}`).classList.add('block');
+            const activeTab = document.getElementById(`tab-${view}`);
+            const activeView = document.getElementById(`view-${view}`);
+            if (activeTab) activeTab.className = "flex-1 py-2 sm:py-2.5 font-black text-center text-blue-900 bg-cyan-200/80 border-b-4 border-pink-500 transition flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1.5";
+            if (activeView) { activeView.classList.remove('hidden'); activeView.classList.add('block'); }
+
+            const vibeWrapper = document.getElementById('vibe-bar-wrapper');
+            if (view === 'guides') {
+                vibeWrapper.classList.add('hidden');
+            } else {
+                vibeWrapper.classList.remove('hidden');
+            }
 
             if(view === 'restaurants') {
                 document.getElementById('filter-wrap-category').classList.add('hidden');
-                document.getElementById('filter-wrap-category').classList.remove('block');
                 document.getElementById('filter-wrap-date').classList.add('hidden');
-                document.getElementById('filter-wrap-date').classList.remove('block');
                 document.getElementById('filter-wrap-rest-type').classList.remove('hidden');
-                document.getElementById('filter-wrap-rest-type').classList.add('block');
             } else {
                 document.getElementById('filter-wrap-category').classList.remove('hidden');
-                document.getElementById('filter-wrap-category').classList.add('block');
                 document.getElementById('filter-wrap-date').classList.remove('hidden');
-                document.getElementById('filter-wrap-date').classList.add('block');
                 document.getElementById('filter-wrap-rest-type').classList.add('hidden');
-                document.getElementById('filter-wrap-rest-type').classList.remove('block');
             }
             if (view === 'calendar') renderCalendar();
+            if (view === 'guides') renderGuides();
             if (view === 'map') setTimeout(initMap, 50);
+        }
+
+        function setVibeFilter(vibe) {
+            currentVibeFilter = vibe;
+            document.querySelectorAll('.vibe-pill').forEach(btn => {
+                if (btn.dataset.vibe === vibe) {
+                    btn.className = "vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-md bg-blue-600 text-white scale-105";
+                } else if (btn.dataset.vibe === 'whatsapp') {
+                    btn.className = "vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border border-emerald-200";
+                } else {
+                    btn.className = "vibe-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-black transition shadow-sm bg-white/90 text-gray-700 hover:bg-blue-50 border border-white";
+                }
+            });
+            if (currentView === 'guides' || currentView === 'restaurants') {
+                switchView('scroll');
+            }
+            applyFilters();
+        }
+
+        function syncQuickSearch(val) {
+            const fSearch = document.getElementById('filter-search');
+            const qDesk = document.getElementById('quick-search-desktop');
+            const qMob = document.getElementById('quick-search-mobile');
+            if (fSearch && fSearch.value !== val) fSearch.value = val;
+            if (qDesk && qDesk.value !== val) qDesk.value = val;
+            if (qMob && qMob.value !== val) qMob.value = val;
+
+            const clearDesk = document.getElementById('quick-search-clear');
+            const clearMob = document.getElementById('quick-search-clear-mobile');
+            if (clearDesk) clearDesk.classList.toggle('hidden', !val);
+            if (clearMob) clearMob.classList.toggle('hidden', !val);
+
+            applyFilters();
         }
 
         function toggleFilters() { document.getElementById('filter-section').classList.toggle('hidden'); }
         
         function applyFiltersAndClose() { 
             applyFilters(); 
-            const filterSection = document.getElementById('filter-section');
-            if(!filterSection.classList.contains('hidden')) {
-                toggleFilters();
-            }
+            document.getElementById('filter-section').classList.add('hidden');
         }
         
         function clearFilters() {
-            document.getElementById('filter-search').value = '';
+            syncQuickSearch('');
             document.getElementById('filter-location').value = 'all';
             document.getElementById('filter-category').value = 'all';
             document.getElementById('filter-rest-type').value = 'all';
             document.getElementById('filter-date').value = 'all';
-            document.getElementById('filter-price').value = 2000;
+            document.getElementById('filter-weather').value = 'all';
+            document.getElementById('filter-sort').value = 'default';
+            document.getElementById('filter-price').value = 3500;
             document.getElementById('filter-open-now').checked = false;
+            document.getElementById('filter-show-past').checked = false;
+            currentVibeFilter = 'all';
+            currentDiningCuisine = 'all';
+            setVibeFilter('all');
+            renderTownPills();
+            renderDiningStylePills();
             updatePriceLabel();
             applyFilters();
         }
 
         function updatePriceLabel() {
-            const val = document.getElementById('filter-price').value;
-            document.getElementById('price-display').innerText = val == 2000 ? 'R2000+' : `R${val}`;
+            const val = parseInt(document.getElementById('filter-price').value);
+            document.getElementById('price-display').innerText = val >= 3500 ? 'Any Price' : (val === 0 ? 'Free Only' : `Up to R${val}`);
         }
 
         function isOpenNow(item) {
             const timeStr = (item.time || item.opening_times || '').toLowerCase();
             if (!timeStr) return false;
+            if (timeStr.includes('24 hours')) return true;
             const now = new Date();
             const currentHour = now.getHours();
             const amMatch = timeStr.match(/(\d+)\s*(?::\d+)?\s*am/);
@@ -777,60 +1325,148 @@
             return currentHour >= openHour && currentHour < closeHour;
         }
 
+        function matchesVibe(item, vibe, now) {
+            if (vibe === 'all') return true;
+            const text = `${item.name || ''} ${item.description || ''} ${item.vibe || ''} ${item.audience || ''}`.toLowerCase();
+            if (vibe === 'whatsapp') return item.communitySource === 'Garden Route Weekend Trips';
+            if (vibe === 'free') return !item.price || item.price === 0;
+            if (vibe === 'markets') return text.includes('market') || text.includes('mark') || text.includes('boeremark') || text.includes('straatmark') || text.includes('koffiekroeg');
+            if (vibe === 'family') return (item.audience && item.audience.toLowerCase().includes('family')) || text.includes('kids') || text.includes('family') || text.includes('water park') || text.includes('farm') || text.includes('elephant') || text.includes('donkey');
+            if (vibe === 'music') return text.includes('music') || text.includes('live') || text.includes('fest') || text.includes('concert') || text.includes('party') || text.includes('halloween') || text.includes('muertos') || text.includes('spookhuis');
+            if (vibe === 'nature') return text.includes('trail') || text.includes('hike') || text.includes('nature') || text.includes('beach') || text.includes('tidal') || text.includes('safari') || text.includes('whale') || text.includes('kayak') || text.includes('zipline') || text.includes('surf');
+            if (vibe === 'food') return text.includes('wine') || text.includes('food') || text.includes('gin') || text.includes('coffee') || text.includes('tasting') || text.includes('strawberry') || text.includes('potjiekos');
+            if (vibe === 'rainy') return (item.weather && item.weather.toLowerCase().includes('indoor')) || text.includes('indoor') || text.includes('museum') || text.includes('bowling') || text.includes('pottery');
+            if (vibe === 'weekend') {
+                // Next Friday through Sunday window (or recurring weekend markets)
+                if (item.category === 'activity') {
+                    const t = (item.time || '').toLowerCase();
+                    return t.includes('fri') || t.includes('sat') || t.includes('sun') || text.includes('weekend');
+                }
+                if (item.date) {
+                    const start = new Date(item.date);
+                    const end = item.endDate ? new Date(item.endDate) : start;
+                    const diffDays = (start - now) / (1000 * 60 * 60 * 24);
+                    return (end >= now && diffDays <= 6);
+                }
+                return false;
+            }
+            return true;
+        }
+
         function applyFilters() {
-            const searchTerm = document.getElementById('filter-search').value.toLowerCase();
+            const searchTerm = (document.getElementById('filter-search').value || '').trim().toLowerCase();
             const catFilter = document.getElementById('filter-category').value;
             const locFilter = document.getElementById('filter-location').value;
             const dateFilter = document.getElementById('filter-date').value;
+            const weatherFilter = document.getElementById('filter-weather').value;
+            const sortMode = document.getElementById('filter-sort').value;
             const restTypeFilter = document.getElementById('filter-rest-type').value;
             const priceFilter = parseInt(document.getElementById('filter-price').value);
             const openNow = document.getElementById('filter-open-now').checked;
+            const showPast = document.getElementById('filter-show-past').checked;
             
             const now = new Date();
+            const nextWeek = new Date(); nextWeek.setDate(now.getDate() + 7);
             const nextMonth = new Date(); nextMonth.setDate(now.getDate() + 30);
 
             filteredData = allData.filter(item => {
-                if (searchTerm) { const textContent = `${item.name} ${item.description}`.toLowerCase(); if (!textContent.includes(searchTerm)) return false; }
+                if (searchTerm) {
+                    const textContent = `${item.name || ''} ${item.description || ''} ${item.town || ''} ${item.location || ''} ${item.vibe || ''}`.toLowerCase();
+                    if (!textContent.includes(searchTerm)) return false;
+                }
                 if (catFilter !== 'all' && item.category !== catFilter) return false;
                 if (locFilter !== 'all' && item.town !== locFilter) return false;
-                if (priceFilter < 2000 && (item.price || 0) > priceFilter) return false;
+                if (priceFilter < 3500 && (item.price || 0) > priceFilter) return false;
+                if (weatherFilter !== 'all' && item.weather && item.weather !== 'Both' && item.weather !== weatherFilter) return false;
                 if (openNow && !isOpenNow(item)) return false;
+                if (!matchesVibe(item, currentVibeFilter, now)) return false;
                 
-                // --- NEW: Exclude events that ended before today ---
-                if (item.category === 'event' && item.date) {
+                if (!showPast && item.category === 'event' && item.date) {
                     const eventEnd = item.endDate ? new Date(item.endDate) : new Date(item.date);
                     eventEnd.setHours(23, 59, 59, 999);
                     if (eventEnd < now) return false;
                 }
-                // --------------------------------------------------
 
-                if (dateFilter === 'month' && item.date) {
+                if (dateFilter !== 'all' && item.date) {
                     const eventStart = new Date(item.date);
                     const eventEnd = item.endDate ? new Date(item.endDate) : eventStart;
-                    if (eventEnd < now || eventStart > nextMonth) return false;
+                    if (dateFilter === 'weekend') {
+                        const diffDays = (eventStart - now) / (1000 * 60 * 60 * 24);
+                        if (eventEnd < now || diffDays > 6) return false;
+                    } else if (dateFilter === 'week') {
+                        if (eventEnd < now || eventStart > nextWeek) return false;
+                    } else if (dateFilter === 'month') {
+                        if (eventEnd < now || eventStart > nextMonth) return false;
+                    }
+                } else if (dateFilter !== 'all' && !item.date) {
+                    // When a specific date range is selected, keep recurring weekend markets only if 'weekend' is chosen
+                    if (dateFilter === 'weekend') {
+                        const t = (item.time || '').toLowerCase();
+                        if (!t.includes('fri') && !t.includes('sat') && !t.includes('sun')) return false;
+                    }
                 }
                 return true;
             });
 
+            // Sort filteredData
+            filteredData.sort((a, b) => {
+                if (sortMode === 'price-asc') return (a.price || 0) - (b.price || 0);
+                if (sortMode === 'price-desc') return (b.price || 0) - (a.price || 0);
+                if (sortMode === 'name-asc') return (a.name || '').localeCompare(b.name || '');
+                // default: sponsored first for activities, soonest date for events
+                if (a.category === 'event' && b.category === 'event') {
+                    return new Date(a.date || 0) - new Date(b.date || 0);
+                }
+                if (a.sponsored !== b.sponsored) return a.sponsored ? -1 : 1;
+                return (a.name || '').localeCompare(b.name || '');
+            });
+
             filteredRestaurants = allRestaurants.filter(item => {
-                if (searchTerm) { const textContent = `${item.name} ${item.description} ${item.type}`.toLowerCase(); if (!textContent.includes(searchTerm)) return false; }
+                if (searchTerm) {
+                    const textContent = `${item.name || ''} ${item.description || ''} ${item.type || ''} ${item.town || ''} ${item.location || ''}`.toLowerCase();
+                    if (!textContent.includes(searchTerm)) return false;
+                }
                 if (locFilter !== 'all' && item.town !== locFilter) return false;
                 if (restTypeFilter !== 'all' && item.type !== restTypeFilter) return false;
-                if (priceFilter < 2000 && (item.price || 0) > priceFilter) return false;
+                if (currentDiningCuisine !== 'all' && item.type !== currentDiningCuisine) return false;
                 if (openNow && !isOpenNow(item)) return false;
+                if (currentVibeFilter === 'whatsapp' && item.communitySource !== 'Garden Route Weekend Trips') return false;
                 return true;
             });
 
+            updateActiveFilterIndicators(searchTerm, locFilter, catFilter, dateFilter, weatherFilter, priceFilter, openNow, showPast);
             renderScrollContent(now);
             renderListContent(now);
             renderRestaurantsContent();
             renderCalendar();
             updateMapMarkers();
+        }
 
-            // Check if results are completely empty and auto-close filter
-            const hasResults = (currentView === 'restaurants') ? filteredRestaurants.length > 0 : filteredData.length > 0;
-            if (!hasResults) {
-                document.getElementById('filter-section').classList.add('hidden');
+        function updateActiveFilterIndicators(searchTerm, locFilter, catFilter, dateFilter, weatherFilter, priceFilter, openNow, showPast) {
+            const tags = [];
+            if (searchTerm) tags.push(`Search: "${searchTerm}"`);
+            if (locFilter !== 'all') tags.push(`Town: ${locFilter}`);
+            if (currentVibeFilter !== 'all') tags.push(`Vibe: ${currentVibeFilter.toUpperCase()}`);
+            if (catFilter !== 'all') tags.push(`Type: ${catFilter}`);
+            if (dateFilter !== 'all') tags.push(`Timeframe: ${dateFilter}`);
+            if (weatherFilter !== 'all') tags.push(`${weatherFilter}`);
+            if (priceFilter < 3500) tags.push(priceFilter === 0 ? 'Free Only' : `Max R${priceFilter}`);
+            if (openNow) tags.push('Open Now');
+            if (showPast) tags.push('Including Past Events');
+
+            const banner = document.getElementById('active-filter-banner');
+            const tagsBox = document.getElementById('active-filter-tags');
+            const badge = document.getElementById('header-filter-badge');
+
+            if (tags.length > 0) {
+                banner.classList.remove('hidden');
+                tagsBox.innerHTML = `<span class="text-blue-700 font-black mr-1"><i class="fa-solid fa-filter mr-1"></i>Showing (${filteredData.length} activities/events, ${filteredRestaurants.length} dining):</span>` +
+                    tags.map(t => `<span class="bg-white text-blue-800 border border-blue-200 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold shadow-sm">${t}</span>`).join('');
+                badge.innerText = tags.length;
+                badge.classList.remove('hidden');
+            } else {
+                banner.classList.add('hidden');
+                badge.classList.add('hidden');
             }
         }
 
@@ -838,42 +1474,86 @@
         function buildCard(item, now) {
             let isPast = false; let dateDisplay = '';
             if (item.date) {
-                dateDisplay = formatDate(new Date(item.date));
+                dateDisplay = formatDayAndDate(new Date(item.date));
                 const endDateToCheck = item.endDate ? new Date(item.endDate) : new Date(item.date);
+                endDateToCheck.setHours(23, 59, 59, 999);
                 isPast = endDateToCheck < now;
-                if (item.endDate) { dateDisplay += ' - ' + formatDate(new Date(item.endDate)); }
-                dateDisplay += ' • ';
+                if (item.endDate) { dateDisplay += ' – ' + formatDate(new Date(item.endDate)); }
+                if (item.time) dateDisplay += ' • ';
             }
-            if (item.time) dateDisplay += String(item.time).split('-')[0];
+            if (item.time) dateDisplay += String(item.time).split('-')[0].trim();
             
             const isStarred = starredIds.includes(item.id);
-            const displayPrice = (!item.price || item.price === 0) ? 'Free' : `R${item.price}`;
+            const displayPrice = (!item.price || item.price === 0) ? 'Free Entry' : `From R${item.price}`;
             
             const cleanImages = (item.images || []).filter(img => img && typeof img === 'string' && img.trim() !== '');
             if (cleanImages.length === 0) cleanImages.push(getFallbackImage(item));
             
-            let imageTagsHtml = cleanImages.map((imgUrl, i) => `<img src="${imgUrl}" class="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-1000 carousel-item-${item.id} ${i === 0 ? 'opacity-100' : 'opacity-0'}" onerror="this.src='${getFallbackImage(item)}'">`).join('');
+            let imageTagsHtml = cleanImages.map((imgUrl, i) => `<img src="${imgUrl}" loading="lazy" class="absolute inset-0 w-full h-full object-cover z-10 transition-opacity duration-1000 carousel-item-${item.id} ${i === 0 ? 'opacity-100' : 'opacity-0'}" onerror="this.src='${getFallbackImage(item)}'">`).join('');
 
             const borderStyle = item.sponsored ? 'border-4 border-yellow-400 ring-2 ring-yellow-300/50' : 'border-2 border-white';
+            const isCommunity = item.communitySource === 'Garden Route Weekend Trips';
+            const catColor = item.category === 'event' ? 'bg-pink-600 text-white' : 'bg-blue-600 text-white';
 
             return `
-                <div class="bg-white rounded-[2rem] shadow-lg ${borderStyle} overflow-hidden cursor-pointer transform transition duration-300 hover:-translate-y-1 hover:shadow-xl ${isPast ? 'opacity-60' : ''} relative" onclick="openModal(${item.id}, false)">
-                    <button onclick="toggleStar(${item.id}, event)" class="absolute top-4 right-4 z-40 bg-white/90 ${isStarred ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'} w-10 h-10 rounded-full flex items-center justify-center shadow-md transition text-lg"><i class="fa-solid fa-star"></i></button>
-                    <div class="relative h-48 md:h-56 bg-gray-100 flex items-center justify-center">
+                <div class="bg-white rounded-[1.8rem] shadow-lg ${borderStyle} overflow-hidden cursor-pointer transform transition duration-300 hover:-translate-y-1 hover:shadow-xl ${isPast ? 'opacity-60' : ''} relative flex flex-col" onclick="openModal(${item.id}, false)">
+                    <button onclick="toggleStar(${item.id}, event)" class="absolute top-3.5 right-3.5 z-40 bg-white/95 ${isStarred ? 'text-yellow-400 scale-110' : 'text-gray-300 hover:text-yellow-400'} w-10 h-10 rounded-full flex items-center justify-center shadow-md transition text-lg" title="Save to My Trip List"><i class="fa-solid fa-star"></i></button>
+                    <div class="relative h-48 md:h-56 bg-gray-100 flex items-center justify-center shrink-0">
                         <i class="fa-solid fa-image text-gray-300 text-4xl absolute z-0"></i>
                         ${imageTagsHtml}
                         ${isPast ? '<div class="absolute inset-0 bg-white/60 backdrop-blur-[2px] z-30 flex items-center justify-center"><span class="bg-red-500 text-white font-black px-4 py-1 rounded-full shadow-lg tracking-wider text-sm">ENDED</span></div>' : ''}
-                        <div class="absolute top-4 left-4 z-30 flex gap-2">
-                            <span class="bg-white/95 text-pink-600 font-bold px-3 py-1 rounded-xl text-xs shadow-sm uppercase tracking-wide">${item.category || ''}</span>
-                            ${item.sponsored ? '<span class="bg-yellow-400 text-yellow-950 font-black px-3 py-1 rounded-xl text-xs shadow-sm uppercase tracking-wide"><i class="fa-solid fa-crown mr-1"></i> SPONSORED</span>' : ''}
+                        <div class="absolute top-3.5 left-3.5 z-30 flex flex-wrap gap-1.5 pr-12">
+                            <span class="${catColor} font-black px-2.5 py-1 rounded-xl text-[10px] shadow-sm uppercase tracking-wider">${item.category || ''}</span>
+                            ${item.town ? `<span class="bg-white/95 text-gray-800 font-black px-2.5 py-1 rounded-xl text-[10px] shadow-sm">${item.town}</span>` : ''}
+                            ${item.sponsored ? '<span class="bg-yellow-400 text-yellow-950 font-black px-2.5 py-1 rounded-xl text-[10px] shadow-sm uppercase tracking-wide"><i class="fa-solid fa-crown mr-1"></i> SPONSORED</span>' : ''}
+                        </div>
+                        <div class="absolute bottom-3 left-3.5 right-3.5 z-30 flex items-center justify-between gap-2 pointer-events-none">
+                            <span class="bg-gray-900/85 backdrop-blur-sm text-white font-black px-3 py-1 rounded-xl text-xs shadow">${displayPrice}</span>
+                            ${isCommunity ? `<span class="bg-emerald-600/95 backdrop-blur-sm text-white font-black px-2.5 py-1 rounded-xl text-[10px] shadow flex items-center gap-1"><i class="fa-brands fa-whatsapp"></i> Community Gem</span>` : ''}
                         </div>
                     </div>
-                    <div class="p-5 md:p-6 relative z-30 bg-white">
-                        <h2 class="text-xl md:text-2xl font-black text-gray-800 mb-3 leading-tight pr-8 line-clamp-1">${item.name || ''}</h2>
-                        <div class="space-y-2 text-xs md:text-sm font-bold text-gray-500">
-                            <p class="truncate"><i class="fa-regular fa-clock w-5 text-blue-400"></i> ${dateDisplay}</p>
-                            <p class="truncate"><i class="fa-solid fa-location-dot w-5 text-red-400"></i> ${item.location || ''}</p>
-                            <p><i class="fa-solid fa-tag w-5 text-green-400"></i> ${displayPrice}</p>
+                    <div class="p-4 md:p-5 relative z-30 bg-white flex-1 flex flex-col justify-between">
+                        <div>
+                            <h2 class="text-lg md:text-xl font-black text-gray-800 mb-1.5 leading-snug line-clamp-1">${item.name || ''}</h2>
+                            <p class="text-xs text-gray-500 line-clamp-2 mb-3 leading-relaxed">${item.description || ''}</p>
+                        </div>
+                        <div class="space-y-1.5 text-xs font-bold text-gray-500 border-t border-gray-100 pt-2.5">
+                            ${dateDisplay ? `<p class="truncate text-blue-600 font-extrabold"><i class="fa-regular fa-clock w-4 text-blue-500"></i> ${dateDisplay}</p>` : ''}
+                            <p class="truncate"><i class="fa-solid fa-location-dot w-4 text-red-400"></i> ${item.location || ''}</p>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        function buildDiningCard(item) {
+            const isStarred = starredIds.includes(item.id);
+            const cleanImages = (item.images || []).filter(img => img && typeof img === 'string' && img.trim() !== '');
+            const firstImg = cleanImages.length > 0 ? cleanImages[0] : getFallbackImage(item);
+            const isCommunity = item.communitySource === 'Garden Route Weekend Trips';
+            const openNow = isOpenNow(item);
+
+            return `
+                <div class="bg-white rounded-[1.6rem] shadow-md border border-gray-100 overflow-hidden cursor-pointer transform transition duration-300 hover:-translate-y-1 hover:shadow-xl relative flex flex-col" onclick="openModal(${item.id}, true)">
+                    <button onclick="toggleStar(${item.id}, event)" class="absolute top-3 right-3 z-30 bg-white/95 ${isStarred ? 'text-yellow-400 scale-110' : 'text-gray-300 hover:text-yellow-400'} w-9 h-9 rounded-full flex items-center justify-center shadow-md transition text-base" title="Save to My Trip List"><i class="fa-solid fa-star"></i></button>
+                    <div class="relative h-44 bg-gray-100 overflow-hidden">
+                        <img src="${firstImg}" loading="lazy" class="w-full h-full object-cover transition duration-500 hover:scale-105" onerror="this.src='${getFallbackImage(item)}'">
+                        <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 pr-10">
+                            <span class="bg-purple-600 text-white font-black px-2.5 py-0.5 rounded-lg text-[10px] uppercase tracking-wider shadow-sm">${item.type || 'Restaurant'}</span>
+                            ${item.town ? `<span class="bg-white/95 text-gray-800 font-black px-2.5 py-0.5 rounded-lg text-[10px] shadow-sm">${item.town}</span>` : ''}
+                        </div>
+                        <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between">
+                            ${openNow ? `<span class="bg-green-500/95 text-white font-black text-[10px] px-2 py-0.5 rounded-md shadow-sm">● Open Now</span>` : `<span></span>`}
+                            ${isCommunity ? `<span class="bg-emerald-600/95 text-white font-black text-[10px] px-2 py-0.5 rounded-md shadow-sm"><i class="fa-brands fa-whatsapp mr-1"></i>Local Pick</span>` : ''}
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-base md:text-lg font-black text-gray-800 mb-1 line-clamp-1">${item.name || ''}</h3>
+                            <p class="text-xs text-gray-500 line-clamp-2 mb-3 leading-relaxed">${item.description || ''}</p>
+                        </div>
+                        <div class="text-[11px] font-bold text-gray-500 space-y-1 border-t border-gray-100 pt-2">
+                            <p class="truncate text-blue-600"><i class="fa-regular fa-clock w-4"></i> ${item.opening_times || 'Check hours'}</p>
+                            <p class="truncate"><i class="fa-solid fa-location-dot w-4 text-red-400"></i> ${item.location || ''}</p>
                         </div>
                     </div>
                 </div>`;
@@ -888,16 +1568,19 @@
             } else {
                 if(item.date) {
                     const endDateToCheck = item.endDate ? new Date(item.endDate) : new Date(item.date);
+                    endDateToCheck.setHours(23, 59, 59, 999);
                     isPast = endDateToCheck < now;
-                    dateDisplay = formatDate(new Date(item.date));
+                    dateDisplay = formatDayAndDate(new Date(item.date));
                     if(item.endDate) dateDisplay += ` - ${formatDate(new Date(item.endDate))}`;
                     if(item.time) dateDisplay += ` • ${String(item.time).split('-')[0]}`;
+                } else if (item.time) {
+                    dateDisplay = item.time;
                 }
                 const displayPrice = (!item.price || item.price === 0) ? 'Free' : `R${item.price}`;
-                priceOrTime = `<span class="text-green-500"><i class="fa-solid fa-tags"></i> ${displayPrice}</span>`;
+                priceOrTime = `<span class="text-emerald-600 font-black"><i class="fa-solid fa-tags"></i> ${displayPrice}</span>`;
             }
 
-            const isStarred = !isRestaurant && starredIds.includes(item.id);
+            const isStarred = starredIds.includes(item.id);
             const cleanImages = (item.images || []).filter(img => img && typeof img === 'string' && img.trim() !== '');
             const firstImg = cleanImages.length > 0 ? cleanImages[0] : getFallbackImage(item);
             
@@ -907,36 +1590,97 @@
             const phoneStr = item.phone ? String(item.phone).replace(/\s+/g, '') : '';
             const phoneUrl = phoneStr ? `tel:${phoneStr}` : '#';
             const webUrl = (item.website && item.website !== '#') ? addUTM(item.website) : '#';
+            const isCommunity = item.communitySource === 'Garden Route Weekend Trips';
             
             const rowHighlight = item.sponsored ? 'bg-amber-50/60 border-amber-200' : 'hover:bg-gray-50';
 
             return `
             <div class="flex flex-row items-start md:items-center p-3 md:p-4 border-b border-gray-100 transition cursor-pointer group gap-3 md:gap-4 ${rowHighlight} ${isPast ? 'opacity-60' : ''}" onclick="openModal(${item.id}, ${isRestaurant})">
                 <div class="flex items-center shrink-0">
-                    ${!isRestaurant ? `<button onclick="toggleStar(${item.id}, event)" class="mr-2 md:mr-4 text-xl md:text-2xl ${isStarred ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'} transition"><i class="fa-solid fa-star"></i></button>` : ''}
-                    <div class="w-20 h-20 md:w-24 md:h-24 bg-gray-200 rounded-lg overflow-hidden relative flex items-center justify-center">
-                        <img src="${firstImg}" class="w-full h-full object-cover" onerror="this.src='${getFallbackImage(item)}'">
+                    <button onclick="toggleStar(${item.id}, event)" class="mr-2 md:mr-3 text-xl md:text-2xl ${isStarred ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'} transition" title="Save to My Trip List"><i class="fa-solid fa-star"></i></button>
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-gray-200 rounded-xl overflow-hidden relative flex items-center justify-center shrink-0">
+                        <img src="${firstImg}" loading="lazy" class="w-full h-full object-cover" onerror="this.src='${getFallbackImage(item)}'">
                     </div>
                 </div>
-                <div class="flex-1 min-w-0 py-1">
-                    <div class="flex items-center gap-2 flex-wrap">
+                <div class="flex-1 min-w-0 py-0.5">
+                    <div class="flex items-center gap-1.5 flex-wrap">
                         <h3 class="text-base md:text-lg font-black text-gray-800 group-hover:text-pink-600 transition leading-tight truncate w-full sm:w-auto">${item.name || ''}</h3>
+                        ${item.town ? `<span class="bg-gray-100 text-gray-600 font-bold text-[10px] px-2 py-0.5 rounded-md">${item.town}</span>` : ''}
+                        ${isCommunity ? `<span class="bg-emerald-50 text-emerald-700 border border-emerald-200 font-black text-[9px] px-2 py-0.5 rounded-full"><i class="fa-brands fa-whatsapp mr-0.5"></i>Community Gem</span>` : ''}
                         ${item.sponsored ? `<span class="bg-yellow-400 text-yellow-950 font-black text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider inline-block"><i class="fa-solid fa-crown mr-0.5"></i> SPONSORED</span>` : ''}
                     </div>
-                    ${dateDisplay && !isRestaurant ? `<p class="text-[11px] md:text-xs text-blue-500 font-bold mt-1">${dateDisplay}</p>` : ''}
+                    ${dateDisplay && !isRestaurant ? `<p class="text-[11px] md:text-xs text-blue-600 font-extrabold mt-1">${dateDisplay}</p>` : ''}
                     ${isRestaurant ? `<div class="mt-1">${dateDisplay}</div>` : ''}
                     <p class="text-[11px] md:text-sm text-gray-500 mt-1 line-clamp-2 leading-snug">${item.description || ''}</p>
-                    <p class="text-[10px] md:text-xs font-bold text-gray-400 mt-1.5 truncate">${priceOrTime} <span class="mx-1.5 md:mx-2">•</span> <span class="text-red-400"><i class="fa-solid fa-location-dot"></i> ${item.location || ''}</span></p>
+                    <p class="text-[10px] md:text-xs font-bold text-gray-400 mt-1.5 truncate">${priceOrTime} <span class="mx-1.5">•</span> <span class="text-red-400"><i class="fa-solid fa-location-dot"></i> ${item.location || ''}</span></p>
                 </div>
                 <div class="hidden sm:flex gap-2 shrink-0">
-                    <a href="${mapsUrl}" target="_blank" onclick="event.stopPropagation()" class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition" title="Maps"><i class="fa-solid fa-map-location-dot"></i></a>
-                    ${phoneStr ? `<a href="${phoneUrl}" onclick="event.stopPropagation()" class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition" title="Call"><i class="fa-solid fa-phone"></i></a>` : ''}
-                    ${(item.website && item.website !== '#') ? `<a href="${webUrl}" target="_blank" onclick="event.stopPropagation()" class="w-10 h-10 flex items-center justify-center bg-pink-100 text-pink-700 rounded-full hover:bg-pink-200 transition" title="Website"><i class="fa-solid fa-globe"></i></a>` : ''}
+                    <a href="${mapsUrl}" target="_blank" onclick="event.stopPropagation()" class="w-9 h-9 flex items-center justify-center bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition" title="Maps"><i class="fa-solid fa-map-location-dot text-sm"></i></a>
+                    ${phoneStr ? `<a href="${phoneUrl}" onclick="event.stopPropagation()" class="w-9 h-9 flex items-center justify-center bg-green-100 text-green-700 rounded-full hover:bg-green-200 transition" title="Call"><i class="fa-solid fa-phone text-sm"></i></a>` : ''}
+                    ${(item.website && item.website !== '#') ? `<a href="${webUrl}" target="_blank" onclick="event.stopPropagation()" class="w-9 h-9 flex items-center justify-center bg-pink-100 text-pink-700 rounded-full hover:bg-pink-200 transition" title="Website"><i class="fa-solid fa-globe text-sm"></i></a>` : ''}
                 </div>
             </div>`;
         }
 
         // --- Renderers ---
+        function renderGuides() {
+            const container = document.getElementById('guides-container');
+            if (!container) return;
+            let html = '';
+            CURATED_GUIDES.forEach(guide => {
+                const stops = guide.stopIds.map(id => {
+                    return allData.find(d => d.id === id) || allRestaurants.find(r => r.id === id);
+                }).filter(Boolean);
+
+                const allStarred = stops.length > 0 && stops.every(s => starredIds.includes(s.id));
+
+                let stopsHtml = stops.map((stop, idx) => {
+                    const isRest = !!stop.type;
+                    const isSaved = starredIds.includes(stop.id);
+                    const cleanImgs = (stop.images || []).filter(Boolean);
+                    const img = cleanImgs.length > 0 ? cleanImgs[0] : getFallbackImage(stop);
+                    const meta = isRest ? stop.type : (stop.date ? formatDate(new Date(stop.date)) : (stop.price === 0 ? 'Free' : `R${stop.price}`));
+                    return `
+                        <div onclick="openModal(${stop.id}, ${isRest})" class="flex items-center gap-3 p-2.5 rounded-2xl bg-gray-50 hover:bg-cyan-50/70 border border-gray-100 hover:border-cyan-200 transition cursor-pointer group">
+                            <span class="w-6 h-6 rounded-full bg-emerald-600 text-white font-black text-xs flex items-center justify-center shrink-0">${idx + 1}</span>
+                            <img src="${img}" loading="lazy" class="w-12 h-12 rounded-xl object-cover shrink-0 bg-gray-200" onerror="this.src='${getFallbackImage(stop)}'">
+                            <div class="flex-1 min-w-0">
+                                <p class="font-black text-xs md:text-sm text-gray-800 group-hover:text-emerald-700 truncate">${stop.name}</p>
+                                <p class="text-[11px] font-bold text-gray-400 truncate">${stop.town || stop.location} • <span class="text-emerald-600">${meta}</span></p>
+                            </div>
+                            <button onclick="toggleStar(${stop.id}, event)" class="${isSaved ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-400'} px-2"><i class="fa-solid fa-star"></i></button>
+                        </div>`;
+                }).join('');
+
+                html += `
+                    <div class="bg-white rounded-[2rem] shadow-lg border-2 border-white p-5 md:p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 flex-wrap mb-2">
+                                <span class="text-[10px] font-black uppercase px-3 py-1 rounded-full border ${guide.badgeColor}">${guide.badge}</span>
+                                <span class="text-xs font-black text-gray-500"><i class="fa-regular fa-clock text-emerald-500 mr-1"></i>${guide.duration}</span>
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-black text-gray-800 mb-1 leading-snug">${guide.title}</h2>
+                            <p class="text-xs font-bold text-gray-400 mb-3"><i class="fa-solid fa-location-dot text-red-400 mr-1"></i>${guide.towns} &nbsp;•&nbsp; <i class="fa-solid fa-wallet text-amber-500 mr-1"></i>${guide.estCost}</p>
+                            
+                            <div class="bg-amber-50/80 border border-amber-200/80 rounded-2xl p-3 mb-4 text-xs text-amber-900 leading-relaxed">
+                                <span class="font-black uppercase text-[10px] text-amber-700 block mb-0.5"><i class="fa-solid fa-lightbulb text-amber-500 mr-1"></i>Insider Tip</span>
+                                ${guide.tip}
+                            </div>
+
+                            <div class="space-y-2 mb-5">
+                                ${stopsHtml}
+                            </div>
+                        </div>
+
+                        <button onclick="addGuideToMyList('${guide.id}')" class="w-full py-3 rounded-xl font-black text-xs md:text-sm shadow-md transition flex items-center justify-center gap-2 ${allStarred ? 'bg-amber-100 text-amber-800 hover:bg-amber-200' : 'bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white'}">
+                            <i class="fa-solid fa-star ${allStarred ? 'text-amber-500' : 'text-yellow-300'}"></i>
+                            ${allStarred ? 'All Stops Saved in My Trip List!' : `Save All ${stops.length} Stops to My Trip List`}
+                        </button>
+                    </div>`;
+            });
+            container.innerHTML = html;
+        }
+
         function renderScrollContent(now) {
             const container = document.getElementById('content-container');
             const noResults = document.getElementById('no-results-scroll');
@@ -947,9 +1691,10 @@
                 const loc = document.getElementById('filter-location').value;
                 const townText = loc !== 'all' ? ` in ${loc}` : '';
                 noResults.innerHTML = `
-                    <i class="fa-solid fa-face-frown text-5xl text-gray-400 mb-4"></i>
-                    <p class="text-center text-xl font-bold text-gray-500">No events or activities found${townText}.</p>
-                    <button onclick="clearFilters()" class="mt-4 bg-white text-blue-600 font-bold px-6 py-2 rounded-xl shadow border border-gray-200 hover:bg-gray-50 transition">Reset Filters</button>
+                    <i class="fa-solid fa-compass text-5xl text-cyan-400 mb-3"></i>
+                    <p class="text-center text-lg font-black text-gray-700">No matching events or activities found${townText}.</p>
+                    <p class="text-center text-xs text-gray-500 mt-1">Try switching towns or resetting your vibe filter.</p>
+                    <button onclick="clearFilters()" class="mt-4 bg-blue-600 text-white font-black px-6 py-2.5 rounded-xl shadow hover:bg-blue-700 transition text-xs">Reset All Filters</button>
                 `;
                 noResults.classList.remove('hidden'); 
                 noResults.classList.add('flex'); 
@@ -958,16 +1703,54 @@
             noResults.classList.remove('flex'); 
             noResults.classList.add('hidden');
 
-            const events = filteredData.filter(i => i.category === 'event').sort((a, b) => new Date(a.date) - new Date(b.date));
-            const activities = filteredData.filter(i => i.category === 'activity').sort((a, b) => a.name.localeCompare(b.name));
+            const events = filteredData.filter(i => i.category === 'event');
+            const activities = filteredData.filter(i => i.category === 'activity');
+
+            // Highlight "Happening Next 7 Days" when viewing default/all
+            const soonEvents = events.filter(e => {
+                if (!e.date) return false;
+                const start = new Date(e.date);
+                const end = e.endDate ? new Date(e.endDate) : start;
+                const diffDays = (start - now) / (1000 * 60 * 60 * 24);
+                return end >= now && diffDays <= 6;
+            });
+
+            if (soonEvents.length > 0 && currentVibeFilter === 'all' && !document.getElementById('filter-search').value) {
+                let html = `
+                    <details open class="mb-8 group">
+                        <summary class="text-lg md:text-2xl font-black text-gray-800 mb-4 cursor-pointer outline-none select-none flex items-center justify-between border-b-4 border-amber-400 pb-2">
+                            <span class="flex items-center gap-2">🔥 Happening This Week & Weekend <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-0.5 rounded-full font-black">${soonEvents.length}</span></span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 toggle-icon transition-transform"></i>
+                        </summary>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mt-4">`;
+                soonEvents.forEach(e => html += buildCard(e, now));
+                html += `</div></details>`;
+                container.innerHTML += html;
+            }
 
             if (events.length > 0) {
-                let html = `<details open class="mb-8 group"><summary class="text-xl md:text-2xl font-black text-gray-800 mb-4 cursor-pointer outline-none select-none flex items-center justify-between border-b-4 border-pink-500 pb-2"><span>📅 Upcoming Events</span><i class="fa-solid fa-chevron-down text-gray-400 toggle-icon transition-transform"></i></summary><div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-4">`;
-                events.forEach(e => html += buildCard(e, now)); html += `</div></details>`; container.innerHTML += html;
+                let html = `
+                    <details open class="mb-8 group">
+                        <summary class="text-lg md:text-2xl font-black text-gray-800 mb-4 cursor-pointer outline-none select-none flex items-center justify-between border-b-4 border-pink-500 pb-2">
+                            <span class="flex items-center gap-2">📅 All Upcoming Events <span class="bg-pink-100 text-pink-700 text-xs px-2.5 py-0.5 rounded-full font-black">${events.length}</span></span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 toggle-icon transition-transform"></i>
+                        </summary>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mt-4">`;
+                events.forEach(e => html += buildCard(e, now));
+                html += `</div></details>`;
+                container.innerHTML += html;
             }
             if (activities.length > 0) {
-                let html = `<details open class="mb-8 group"><summary class="text-xl md:text-2xl font-black text-gray-800 mb-4 cursor-pointer outline-none select-none flex items-center justify-between border-b-4 border-blue-500 pb-2"><span>🏄 Local To-Dos</span><i class="fa-solid fa-chevron-down text-gray-400 toggle-icon transition-transform"></i></summary><div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-4">`;
-                activities.forEach(a => html += buildCard(a, now)); html += `</div></details>`; container.innerHTML += html;
+                let html = `
+                    <details open class="mb-8 group">
+                        <summary class="text-lg md:text-2xl font-black text-gray-800 mb-4 cursor-pointer outline-none select-none flex items-center justify-between border-b-4 border-blue-500 pb-2">
+                            <span class="flex items-center gap-2">🏄 Activities, Markets & Hidden Gems <span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-0.5 rounded-full font-black">${activities.length}</span></span>
+                            <i class="fa-solid fa-chevron-down text-gray-400 toggle-icon transition-transform"></i>
+                        </summary>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mt-4">`;
+                activities.forEach(a => html += buildCard(a, now));
+                html += `</div></details>`;
+                container.innerHTML += html;
             }
             setTimeout(() => { startCarousels(filteredData); }, 1000);
         }
@@ -981,35 +1764,89 @@
                 return; 
             }
 
-            const events = filteredData.filter(i => i.category === 'event').sort((a, b) => new Date(a.date) - new Date(b.date));
-            const activities = filteredData.filter(i => i.category === 'activity').sort((a, b) => a.name.localeCompare(b.name));
+            const events = filteredData.filter(i => i.category === 'event');
+            const activities = filteredData.filter(i => i.category === 'activity');
 
             if (events.length > 0) {
-                let html = `<details open class="mb-6 group"><summary class="text-xl font-black text-gray-800 mb-4 cursor-pointer outline-none select-none flex items-center justify-between border-b-4 border-pink-500 pb-2"><span>📅 Upcoming Events</span><i class="fa-solid fa-chevron-down text-gray-400 toggle-icon transition-transform"></i></summary><div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm mt-4">`;
+                let html = `<details open class="mb-6 group"><summary class="text-xl font-black text-gray-800 mb-4 cursor-pointer outline-none select-none flex items-center justify-between border-b-4 border-pink-500 pb-2"><span>📅 Upcoming Events (${events.length})</span><i class="fa-solid fa-chevron-down text-gray-400 toggle-icon transition-transform"></i></summary><div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm mt-4">`;
                 events.forEach(e => html += buildListRow(e, now)); html += `</div></details>`; container.innerHTML += html;
             }
             if (activities.length > 0) {
-                let html = `<details open class="mb-6 group"><summary class="text-xl font-black text-gray-800 mb-4 cursor-pointer outline-none select-none flex items-center justify-between border-b-4 border-blue-500 pb-2"><span>🏄 Local To-Dos</span><i class="fa-solid fa-chevron-down text-gray-400 toggle-icon transition-transform"></i></summary><div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm mt-4">`;
+                let html = `<details open class="mb-6 group"><summary class="text-xl font-black text-gray-800 mb-4 cursor-pointer outline-none select-none flex items-center justify-between border-b-4 border-blue-500 pb-2"><span>🏄 Local To-Dos & Markets (${activities.length})</span><i class="fa-solid fa-chevron-down text-gray-400 toggle-icon transition-transform"></i></summary><div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm mt-4">`;
                 activities.forEach(a => html += buildListRow(a, now)); html += `</div></details>`; container.innerHTML += html;
             }
         }
 
+        function setDiningDisplayMode(mode) {
+            diningDisplayMode = mode;
+            const cBtn = document.getElementById('dining-mode-cards');
+            const lBtn = document.getElementById('dining-mode-list');
+            if (mode === 'cards') {
+                cBtn.className = "px-3 py-1.5 rounded-lg text-xs font-black bg-white text-purple-700 shadow-sm transition";
+                lBtn.className = "px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 hover:text-gray-800 transition";
+            } else {
+                lBtn.className = "px-3 py-1.5 rounded-lg text-xs font-black bg-white text-purple-700 shadow-sm transition";
+                cBtn.className = "px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 hover:text-gray-800 transition";
+            }
+            renderRestaurantsContent();
+        }
+
+        function renderDiningStylePills() {
+            const box = document.getElementById('dining-style-pills');
+            if (!box) return;
+            const styles = ['all', ...new Set(allRestaurants.map(r => r.type).filter(Boolean))];
+            box.innerHTML = styles.map(s => {
+                const active = currentDiningCuisine === s;
+                const label = s === 'all' ? '🍴 All Dining' : s;
+                return `<button onclick="selectDiningCuisine('${s.replace(/'/g, "\\'")}')" class="shrink-0 px-3 py-1 rounded-full text-xs font-bold transition ${active ? 'bg-purple-600 text-white font-black shadow-sm' : 'bg-gray-100 text-gray-600 hover:bg-purple-50'}">${label}</button>`;
+            }).join('');
+        }
+
+        function selectDiningCuisine(style) {
+            currentDiningCuisine = style;
+            renderDiningStylePills();
+            applyFilters();
+        }
+
         function renderRestaurantsContent() {
-            const container = document.getElementById('restaurants-container'); container.innerHTML = '';
+            const container = document.getElementById('restaurants-container');
+            const countBadge = document.getElementById('dining-count-badge');
+            if (countBadge) countBadge.innerText = filteredRestaurants.length;
+            container.innerHTML = '';
             if (filteredRestaurants.length === 0) { 
                 const loc = document.getElementById('filter-location').value;
                 const townText = loc !== 'all' ? ` in ${loc}` : '';
-                container.innerHTML = `<div class="text-center py-10 opacity-70"><i class="fa-solid fa-face-frown text-5xl text-gray-400 mb-4"></i><p class="text-xl font-bold text-gray-500">No restaurants found${townText}.</p><button onclick="clearFilters()" class="mt-4 bg-white text-blue-600 font-bold px-6 py-2 rounded-xl shadow border border-gray-200 hover:bg-gray-50 transition">Reset Filters</button></div>`; 
+                container.innerHTML = `<div class="text-center py-10 opacity-70"><i class="fa-solid fa-utensils text-5xl text-gray-300 mb-4"></i><p class="text-xl font-bold text-gray-500">No restaurants found${townText}.</p><button onclick="clearFilters()" class="mt-4 bg-white text-blue-600 font-bold px-6 py-2 rounded-xl shadow border border-gray-200 hover:bg-gray-50 transition">Reset Filters</button></div>`; 
                 return; 
             }
-            let html = `<h2 class="text-xl font-black text-gray-800 mb-4 border-b-4 border-purple-500 pb-2 inline-block">🍽️ Local Eats</h2><div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm mt-2">`;
-            filteredRestaurants.forEach(r => html += buildListRow(r, new Date(), true)); html += `</div>`; container.innerHTML = html;
+            if (diningDisplayMode === 'cards') {
+                let html = `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">`;
+                filteredRestaurants.forEach(r => html += buildDiningCard(r));
+                html += `</div>`;
+                container.innerHTML = html;
+            } else {
+                let html = `<div class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm mt-2">`;
+                filteredRestaurants.forEach(r => html += buildListRow(r, new Date(), true));
+                html += `</div>`;
+                container.innerHTML = html;
+            }
         }
 
+        // --- Calendar Logic ---
         function setCalMode(mode) {
             calendarMode = mode;
-            ['day','week','month'].forEach(m => document.getElementById('cal-mode-'+m).className = "px-4 py-1.5 rounded-lg text-gray-500 transition hover:bg-gray-200");
-            document.getElementById('cal-mode-'+mode).className = "px-4 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm font-black transition";
+            ['day','week','month'].forEach(m => document.getElementById('cal-mode-'+m).className = "px-3.5 py-1.5 rounded-lg text-gray-500 transition hover:bg-gray-200");
+            document.getElementById('cal-mode-'+mode).className = "px-3.5 py-1.5 rounded-lg bg-white text-blue-600 shadow-sm font-black transition";
+            renderCalendar();
+        }
+
+        function jumpCalToday() {
+            currentCalDate = new Date();
+            renderCalendar();
+        }
+
+        function jumpCalHalloweenWeekend() {
+            currentCalDate = new Date('2026-10-31T10:00:00');
             renderCalendar();
         }
 
@@ -1021,7 +1858,6 @@
         }
 
         function getStartHour(item) {
-            if (item.date) return new Date(item.date).getHours();
             const timeStr = item.time ? String(item.time) : "";
             const match = timeStr.match(/(\d+)(?::\d+)?\s*(am|pm)/i);
             if (match) {
@@ -1030,28 +1866,39 @@
                 if (match[2].toLowerCase() === 'am' && h === 12) h = 0;
                 return h;
             }
-            return 8; 
+            if (item.date) {
+                const h = new Date(item.date).getHours();
+                if (h > 0) return h;
+            }
+            return 9; 
         }
 
         function openDailyCal(dateString) {
             const targetDate = new Date(dateString);
             const dayEvents = filteredData.filter(item => isDateInRange(targetDate, item.date, item.endDate));
             
-            let html = `<div class="bg-gray-50 border border-gray-200 rounded-xl overflow-hidden shadow-inner flex flex-col h-[500px] overflow-y-auto relative">`;
-            for(let h=6; h<=23; h++) {
-                const hourStr = h.toString().padStart(2, '0') + ':00';
-                const evs = dayEvents.filter(e => getStartHour(e) === h);
-                let evHtml = evs.map(e => `<div onclick="openModal(${e.id}, false)" class="bg-blue-500 text-white p-2 rounded-lg text-xs mb-1 cursor-pointer hover:bg-blue-600 shadow-md"><b>${e.name}</b><br><span class="opacity-80">${e.time}</span></div>`).join('');
-                
-                html += `<div class="flex border-b border-gray-200 min-h-[60px]">
-                    <div class="w-14 md:w-16 text-center py-2 text-[10px] md:text-xs text-gray-500 font-bold border-r border-gray-200 bg-white shrink-0">${hourStr}</div>
-                    <div class="flex-1 p-1 bg-white/50">${evHtml}</div>
-                </div>`;
+            document.getElementById('daily-cal-date-title').innerText = formatDayAndDate(targetDate);
+            document.getElementById('daily-cal-subtitle').innerText = `${dayEvents.length} scheduled event${dayEvents.length === 1 ? '' : 's'}`;
+
+            let html = '';
+            if (dayEvents.length === 0) {
+                html = `<div class="text-center py-12 text-gray-400"><i class="fa-regular fa-calendar text-4xl mb-2"></i><p class="font-bold text-sm">No scheduled events on this date.</p></div>`;
+            } else {
+                dayEvents.sort((a, b) => getStartHour(a) - getStartHour(b)).forEach(e => {
+                    const priceText = (!e.price || e.price === 0) ? 'Free' : `R${e.price}`;
+                    html += `
+                        <div onclick="openModal(${e.id}, false)" class="bg-white p-3.5 rounded-2xl border border-gray-200 hover:border-pink-400 shadow-sm cursor-pointer transition flex items-center justify-between gap-3">
+                            <div class="min-w-0">
+                                <span class="text-[10px] font-black uppercase bg-pink-100 text-pink-700 px-2 py-0.5 rounded-md">${e.time || 'All Day'}</span>
+                                <h4 class="font-black text-sm text-gray-800 mt-1 truncate">${e.name}</h4>
+                                <p class="text-xs text-gray-500 truncate"><i class="fa-solid fa-location-dot text-red-400 mr-1"></i>${e.location} • <span class="text-emerald-600 font-bold">${priceText}</span></p>
+                            </div>
+                            <i class="fa-solid fa-chevron-right text-gray-300 text-xs shrink-0"></i>
+                        </div>`;
+                });
             }
-            html += `</div>`;
             
             document.getElementById('daily-cal-content').innerHTML = html;
-            document.getElementById('daily-cal-date-title').innerText = formatDate(targetDate);
             
             const modal = document.getElementById('daily-cal-modal');
             const box = document.getElementById('daily-cal-box');
@@ -1079,36 +1926,41 @@
             if (calendarMode === 'month') {
                 header.innerText = `${monthNames[month]} ${year}`;
                 const firstDay = new Date(year, month, 1).getDay(); const daysInMonth = new Date(year, month + 1, 0).getDate();
-                let html = `<div class="grid grid-cols-7 gap-1 md:gap-2 text-center text-[10px] md:text-sm font-black text-gray-400 mb-2 uppercase tracking-wide"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid grid-cols-7 gap-1 md:gap-2 auto-rows-fr">`;
-                for (let i = 0; i < firstDay; i++) { html += `<div class="bg-gray-50 rounded-xl h-14 md:h-32 border border-gray-100"></div>`; }
+                let html = `<div class="grid grid-cols-7 gap-1 md:gap-2 text-center text-[10px] md:text-xs font-black text-gray-400 mb-2 uppercase tracking-wide"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid grid-cols-7 gap-1 md:gap-2 auto-rows-fr">`;
+                for (let i = 0; i < firstDay; i++) { html += `<div class="bg-gray-50/70 rounded-xl h-16 md:h-32 border border-gray-100"></div>`; }
                 for (let day = 1; day <= daysInMonth; day++) {
                     const loopDate = new Date(year, month, day); const dayEvents = filteredData.filter(item => isDateInRange(loopDate, item.date, item.endDate));
                     
                     let cellContent = '';
                     if (dayEvents.length > 0) {
-                        cellContent = `<div class="mt-1 md:mt-4 text-center bg-pink-500 text-white rounded-md md:rounded-full text-[9px] md:text-xs font-bold py-0.5 md:py-1 px-1 shadow-sm w-full hover:bg-pink-600 transition leading-none truncate">${dayEvents.length} <span class="hidden md:inline">Events</span></div>`;
+                        const desktopPills = dayEvents.slice(0, 2).map(ev => `<div class="hidden md:block text-left bg-pink-50 text-pink-700 border border-pink-200 rounded px-1.5 py-0.5 text-[10px] font-extrabold truncate w-full mb-1">${ev.name}</div>`).join('');
+                        const moreBadge = dayEvents.length > 2 ? `<div class="hidden md:block text-center bg-pink-500 text-white rounded text-[9px] font-black py-0.5 px-1 w-full">+${dayEvents.length - 2} more</div>` : '';
+                        const mobileBadge = `<div class="md:hidden mt-1 text-center bg-pink-500 text-white rounded-full text-[9px] font-black py-0.5 px-1.5 shadow-sm">${dayEvents.length}</div>`;
+                        cellContent = `<div class="w-full mt-1 overflow-hidden">${desktopPills}${moreBadge}${mobileBadge}</div>`;
                     }
                     const isToday = loopDate.toDateString() === today.toDateString();
-                    html += `<div onclick="openDailyCal('${loopDate.toISOString()}')" class="rounded-lg md:rounded-xl h-14 md:h-32 p-1 md:p-2 cal-cell cursor-pointer ${isToday ? 'bg-blue-50 border-2 border-blue-400' : 'bg-white border border-gray-200 hover:border-pink-300 transition'} flex flex-col items-center md:items-end"><div class="font-black text-[10px] md:text-sm ${isToday ? 'bg-blue-500 text-white rounded-full w-4 h-4 md:w-6 md:h-6 flex items-center justify-center shadow-sm' : 'text-gray-400'}">${day}</div>${cellContent}</div>`;
+                    html += `<div onclick="openDailyCal('${loopDate.toISOString()}')" class="rounded-lg md:rounded-xl h-16 md:h-32 p-1 md:p-2 cal-cell cursor-pointer ${isToday ? 'bg-blue-50 border-2 border-blue-400' : 'bg-white border border-gray-200 hover:border-pink-300 transition'} flex flex-col items-center md:items-end overflow-hidden"><div class="font-black text-[10px] md:text-xs ${isToday ? 'bg-blue-600 text-white rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center shadow-sm' : 'text-gray-500'} shrink-0">${day}</div>${cellContent}</div>`;
                 }
                 wrapper.innerHTML = html + `</div>`;
             } else if (calendarMode === 'week') {
                 const currentDayOfWeek = currentCalDate.getDay(); const startOfWeek = new Date(currentCalDate); startOfWeek.setDate(date - currentDayOfWeek); const endOfWeek = new Date(startOfWeek); endOfWeek.setDate(startOfWeek.getDate() + 6);
                 header.innerText = `${startOfWeek.getDate()} ${monthNames[startOfWeek.getMonth()]} - ${endOfWeek.getDate()} ${monthNames[endOfWeek.getMonth()]}`;
-                let html = `<div class="grid grid-cols-7 gap-1 md:gap-2 text-center text-[10px] md:text-sm font-black text-gray-400 mb-2 uppercase tracking-wide"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid grid-cols-7 gap-1 md:gap-2 auto-rows-fr">`;
+                let html = `<div class="grid grid-cols-7 gap-1 md:gap-2 text-center text-[10px] md:text-xs font-black text-gray-400 mb-2 uppercase tracking-wide"><div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div></div><div class="grid grid-cols-7 gap-1 md:gap-2 auto-rows-fr">`;
                 for(let i=0; i<7; i++) {
                     const loopDate = new Date(startOfWeek); loopDate.setDate(startOfWeek.getDate() + i); const dayEvents = filteredData.filter(item => isDateInRange(loopDate, item.date, item.endDate));
                     
                     let cellContent = '';
                     if (dayEvents.length > 0) {
-                        cellContent = `<div class="mt-1 md:mt-4 text-center bg-pink-500 text-white rounded-md md:rounded-full text-[9px] md:text-xs font-bold py-0.5 md:py-1 px-1 shadow-sm w-full hover:bg-pink-600 transition leading-none truncate">${dayEvents.length} <span class="hidden md:inline">Events</span></div>`;
+                        const pills = dayEvents.slice(0, 3).map(ev => `<div class="hidden md:block text-left bg-pink-50 text-pink-700 border border-pink-200 rounded px-1.5 py-0.5 text-[10px] font-extrabold truncate w-full mb-1">${ev.name}</div>`).join('');
+                        const mobileBadge = `<div class="md:hidden mt-1 text-center bg-pink-500 text-white rounded-full text-[9px] font-black py-0.5 px-1.5 shadow-sm">${dayEvents.length}</div>`;
+                        cellContent = `<div class="w-full mt-1 overflow-hidden">${pills}${mobileBadge}</div>`;
                     }
                     const isToday = loopDate.toDateString() === today.toDateString();
-                    html += `<div onclick="openDailyCal('${loopDate.toISOString()}')" class="rounded-lg md:rounded-xl h-14 md:h-32 p-1 md:p-2 cal-cell cursor-pointer ${isToday ? 'bg-blue-50 border-2 border-blue-400' : 'bg-white border border-gray-200 hover:border-pink-300 transition'} flex flex-col items-center md:items-end"><div class="font-black text-[10px] md:text-sm ${isToday ? 'bg-blue-500 text-white rounded-full w-4 h-4 md:w-6 md:h-6 flex items-center justify-center shadow-sm' : 'text-gray-400'}">${loopDate.getDate()}</div>${cellContent}</div>`;
+                    html += `<div onclick="openDailyCal('${loopDate.toISOString()}')" class="rounded-lg md:rounded-xl h-20 md:h-40 p-1 md:p-2 cal-cell cursor-pointer ${isToday ? 'bg-blue-50 border-2 border-blue-400' : 'bg-white border border-gray-200 hover:border-pink-300 transition'} flex flex-col items-center md:items-end overflow-hidden"><div class="font-black text-[10px] md:text-xs ${isToday ? 'bg-blue-600 text-white rounded-full w-5 h-5 md:w-6 md:h-6 flex items-center justify-center shadow-sm' : 'text-gray-500'}">${loopDate.getDate()}</div>${cellContent}</div>`;
                 }
                 wrapper.innerHTML = html + `</div>`;
             } else if (calendarMode === 'day') {
-                header.innerText = `${formatDate(currentCalDate)} ${year}`; 
+                header.innerText = `${formatDayAndDate(currentCalDate)} ${year}`; 
                 openDailyCal(currentCalDate.toISOString());
             }
         }
@@ -1156,6 +2008,15 @@
             if (targetItem) renderModalDirectly(targetItem);
         }
 
+        function formatWhatsAppNumber(raw) {
+            if (!raw) return '';
+            let digits = String(raw).replace(/\D/g, '');
+            if (digits.startsWith('0') && digits.length === 10) {
+                digits = '27' + digits.substring(1);
+            }
+            return digits.length >= 10 ? digits : '';
+        }
+
         function renderModalDirectly(targetItem) {
             currentEventData = targetItem;
             currentIsRestaurant = !!targetItem.type || !!targetItem.isRest;
@@ -1166,12 +2027,47 @@
             updateModalStarIcon();
 
             if (currentEventData.sponsored) {
-                modalBox.className = "bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative border-4 border-yellow-400 ring-4 ring-yellow-300/40";
+                modalBox.className = "bg-white rounded-[2rem] w-full max-w-lg max-h-[92vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative border-4 border-yellow-400 ring-4 ring-yellow-300/40";
                 sponsorBadge.classList.remove('hidden');
             } else {
-                modalBox.className = "bg-white rounded-[2rem] w-full max-w-md max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative";
+                modalBox.className = "bg-white rounded-[2rem] w-full max-w-lg max-h-[92vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative";
                 sponsorBadge.classList.add('hidden');
             }
+
+            // Populate rich badges
+            const badgesBox = document.getElementById('modal-badges');
+            let badgesHtml = '';
+            if (currentIsRestaurant) {
+                badgesHtml += `<span class="bg-purple-100 text-purple-700 font-black text-[10px] uppercase px-2.5 py-0.5 rounded-full">${currentEventData.type || 'Dining'}</span>`;
+            } else {
+                const catClass = currentEventData.category === 'event' ? 'bg-pink-100 text-pink-700' : 'bg-blue-100 text-blue-700';
+                badgesHtml += `<span class="${catClass} font-black text-[10px] uppercase px-2.5 py-0.5 rounded-full">${currentEventData.category || 'Activity'}</span>`;
+            }
+            if (currentEventData.town) {
+                badgesHtml += `<span class="bg-cyan-50 text-cyan-800 border border-cyan-200 font-black text-[10px] px-2.5 py-0.5 rounded-full">${currentEventData.town}</span>`;
+            }
+            if (currentEventData.weather) {
+                badgesHtml += `<span class="bg-amber-50 text-amber-800 font-bold text-[10px] px-2.5 py-0.5 rounded-full">${currentEventData.weather === 'Indoor' ? '☔ Indoor' : (currentEventData.weather === 'Outdoor' ? '☀️ Outdoor' : '🌤️ Indoor & Outdoor')}</span>`;
+            }
+            if (currentEventData.communitySource === 'Garden Route Weekend Trips') {
+                badgesHtml += `<span class="bg-emerald-100 text-emerald-800 font-black text-[10px] px-2.5 py-0.5 rounded-full flex items-center gap-1"><i class="fa-brands fa-whatsapp text-emerald-600"></i> Garden Route Weekend Trips</span>`;
+            }
+            badgesBox.innerHTML = badgesHtml;
+
+            // Populate Meta Bar (Date, Time, Location)
+            const metaBar = document.getElementById('modal-meta-bar');
+            let metaHtml = '';
+            if (!currentIsRestaurant && currentEventData.date) {
+                let dStr = formatDayAndDate(new Date(currentEventData.date));
+                if (currentEventData.endDate) dStr += ' – ' + formatDayAndDate(new Date(currentEventData.endDate));
+                metaHtml += `<p class="text-pink-600 font-black"><i class="fa-regular fa-calendar-check w-4"></i> ${dStr} ${currentEventData.time ? ' • ' + currentEventData.time : ''}</p>`;
+            } else if (currentEventData.time || currentEventData.opening_times) {
+                metaHtml += `<p class="text-blue-600 font-extrabold"><i class="fa-regular fa-clock w-4"></i> ${currentEventData.time || currentEventData.opening_times}</p>`;
+            }
+            if (currentEventData.location) {
+                metaHtml += `<p class="text-gray-500"><i class="fa-solid fa-location-dot w-4 text-red-400"></i> ${currentEventData.location}</p>`;
+            }
+            metaBar.innerHTML = metaHtml;
 
             const modalImg = document.getElementById('modal-img');
             const cleanImages = (currentEventData.images || []).filter(img => img && typeof img === 'string' && img.trim() !== '');
@@ -1193,16 +2089,20 @@
             
             const calBtn = document.getElementById('modal-cal-btn');
             if (currentIsRestaurant) {
-                document.getElementById('modal-detail-heading').innerHTML = `<i class="fa-regular fa-clock text-blue-500 mr-2"></i> Details / Times`;
-                pricesContainer.innerHTML = `<div class="flex justify-between border-b border-gray-100 pb-2 mb-2"><span class="text-gray-600">Type</span><span class="font-bold text-gray-800 bg-gray-100 px-2 rounded uppercase text-[10px]">${currentEventData.type || 'Restaurant'}</span></div><div class="flex justify-between"><span class="text-gray-600">Hours</span><span class="font-bold text-gray-800 bg-gray-100 px-2 rounded text-xs text-right">${currentEventData.opening_times || ''}</span></div>`;
+                document.getElementById('modal-detail-heading').innerHTML = `<i class="fa-regular fa-clock text-purple-500 mr-2"></i> Hours & Dining Info`;
+                pricesContainer.innerHTML = `
+                    <div class="flex justify-between border-b border-gray-100 pb-2 mb-2"><span class="text-gray-500 font-bold">Style</span><span class="font-black text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded uppercase text-[10px]">${currentEventData.type || 'Restaurant'}</span></div>
+                    <div class="flex justify-between gap-4"><span class="text-gray-500 font-bold shrink-0">Opening Hours</span><span class="font-bold text-gray-800 text-right">${currentEventData.opening_times || 'Contact venue for hours'}</span></div>`;
                 calBtn.classList.add('hidden'); calBtn.classList.remove('flex');
             } else {
-                document.getElementById('modal-detail-heading').innerHTML = `<i class="fa-solid fa-tags text-green-500 mr-2"></i> Details / Pricing`;
+                document.getElementById('modal-detail-heading').innerHTML = `<i class="fa-solid fa-tags text-green-500 mr-2"></i> Pricing & Entry Details`;
                 if (currentEventData.priceDetails && currentEventData.priceDetails.length > 0) {
-                    currentEventData.priceDetails.forEach(p => { pricesContainer.innerHTML += `<div class="flex justify-between border-b border-gray-100 pb-2 mb-2 last:border-0 last:pb-0 last:mb-0"><span class="text-gray-600">${p.item}</span><span class="font-bold text-gray-800 bg-gray-100 px-2 rounded">${p.cost}</span></div>`; });
+                    currentEventData.priceDetails.forEach(p => {
+                        pricesContainer.innerHTML += `<div class="flex justify-between items-center border-b border-gray-100 pb-2 mb-2 last:border-0 last:pb-0 last:mb-0"><span class="text-gray-600 font-bold">${p.item}</span><span class="font-black text-gray-800 bg-gray-100 px-2.5 py-0.5 rounded-lg">${p.cost}</span></div>`;
+                    });
                 } else {
-                    const fallbackPrice = (!currentEventData.price || currentEventData.price === 0) ? 'Free' : `R${currentEventData.price}`;
-                    pricesContainer.innerHTML = `<div class="flex justify-between"><span class="text-gray-600">Standard Entry</span><span class="font-bold text-gray-800 bg-gray-100 px-2 rounded">${fallbackPrice}</span></div>`;
+                    const fallbackPrice = (!currentEventData.price || currentEventData.price === 0) ? 'Free Entry' : `R${currentEventData.price}`;
+                    pricesContainer.innerHTML = `<div class="flex justify-between items-center"><span class="text-gray-600 font-bold">Standard Entry</span><span class="font-black text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-lg">${fallbackPrice}</span></div>`;
                 }
                 if(currentEventData.date) {
                     calBtn.href = buildGoogleCalLink(currentEventData);
@@ -1219,6 +2119,17 @@
             const phoneStr = currentEventData.phone ? String(currentEventData.phone).replace(/\s+/g, '') : '';
             if (phoneStr) { phoneBtn.href = `tel:${phoneStr}`; phoneBtn.classList.replace('hidden', 'flex'); } 
             else { phoneBtn.classList.replace('flex', 'hidden'); }
+
+            // Direct WhatsApp Host Button
+            const waDirectBtn = document.getElementById('modal-wa-direct');
+            const waNum = formatWhatsAppNumber(currentEventData.whatsapp || '');
+            if (waNum) {
+                const msg = `Hi! I saw *${currentEventData.name}* on MBayHoliday and would love more info.`;
+                waDirectBtn.href = `https://wa.me/${waNum}?text=${encodeURIComponent(msg)}`;
+                waDirectBtn.classList.replace('hidden', 'flex');
+            } else {
+                waDirectBtn.classList.replace('flex', 'hidden');
+            }
 
             const webBtn = document.getElementById('modal-web');
             if (currentEventData.website && currentEventData.website !== "#" && currentEventData.website !== "") { webBtn.href = addUTM(currentEventData.website); webBtn.classList.replace('hidden', 'flex'); } 
