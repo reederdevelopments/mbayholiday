@@ -533,5 +533,107 @@
     "website": "https://www.lookout.co.za",
     "communitySource": "Garden Route Weekend Trips",
     "description": "Iconic wooden deck perched right above Lookout Beach and the Keurbooms lagoon in Plettenberg Bay, offering fresh seafood, sushi, cocktails, and themed event nights."
+  },
+  {
+    "id": 1034,
+    "name": "Hoeka Toeka Pub & Diner",
+    "type": "Restaurant & Pub",
+    "opening_times": "10:00 AM - 9:00 PM, Tue-Sun",
+    "images": [
+      "images/wa-doodling-hoeka-toeka.jpg"
+    ],
+    "location": "Kerk Street, Hoekwil, Wilderness",
+    "town": "Wilderness",
+    "latitude": -33.9725,
+    "longitude": 22.6168,
+    "phone": "+27448501160",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Quirky, welcoming country pub and family diner in picturesque Hoekwil above Wilderness, famous for hearty burgers, wood-fired meals, and hosting Saturday morning community doodling for the Wilderness Arts Festival."
+  },
+  {
+    "id": 1035,
+    "name": "De Dekke Restaurant & Bar",
+    "type": "Restaurant",
+    "opening_times": "8:00 AM - 10:00 PM, Mon-Sun",
+    "images": [
+      "images/wa-pieter-mohr-de-dekke.jpg"
+    ],
+    "location": "R102, Great Brak River",
+    "town": "Great Brak River",
+    "latitude": -34.0485,
+    "longitude": 22.219,
+    "phone": "+27843590745",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Popular family restaurant and live entertainment venue in Great Brak River serving generous South African grills, seafood, breakfasts, and hosting regular live music nights."
+  },
+  {
+    "id": 1036,
+    "name": "The Stage Coach Restaurant & Theatre",
+    "type": "Restaurant & Supper Theatre",
+    "opening_times": "11:00 AM - 10:00 PM, Tue-Sun",
+    "images": [
+      "images/wa-desire-gardner-magda-louw.jpg"
+    ],
+    "location": "Historic Centre, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.1825,
+    "longitude": 22.1445,
+    "phone": "+27446911995",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Intimate dining and live performance venue in Mossel Bay hosting touring South African theatre productions, comedy shows, and live music alongside hearty dinners."
+  },
+  {
+    "id": 1037,
+    "name": "Tiger's Milk Kitchen & Bar George",
+    "type": "Restaurant & Bar",
+    "opening_times": "11:00 AM - 11:00 PM, Mon-Sun",
+    "images": [
+      "images/wa-christmas-resin-tigers-milk.jpg"
+    ],
+    "location": "23 Courtenay Street, George Central, George",
+    "town": "George",
+    "latitude": -33.9592,
+    "longitude": 22.4565,
+    "phone": "+27441500045",
+    "website": "https://tigersmilk.co.za",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Trendy social kitchen and bar on Courtenay Street in George serving gourmet burgers, artisan pizzas, grills, craft beers, and hosting creative weekend community workshops."
+  },
+  {
+    "id": 1038,
+    "name": "Bridgehouse Coffee Shop & Garden Market",
+    "type": "Coffee Shop",
+    "opening_times": "8:30 AM - 4:30 PM, Mon-Sat (Friday Night Markets till 8:00 PM)",
+    "images": [
+      "images/wa-bridgehouse-night-market.jpg"
+    ],
+    "location": "73 Hope Street, George",
+    "town": "George",
+    "latitude": -33.9542,
+    "longitude": 22.456,
+    "phone": "+27769050808",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Charming garden coffee shop and nursery at 73 Hope Street in George offering light bites, homemade cakes, plant shopping, local craft shelves ('Itsi Van Alles'), and monthly Friday Night Markets."
+  },
+  {
+    "id": 1039,
+    "name": "Twin Trees Restaurant & Pub",
+    "type": "Restaurant & Pub",
+    "opening_times": "9:00 AM - 9:00 PM, Tue-Sun",
+    "images": [
+      "images/wa-colours-sunday-twin-trees.jpg"
+    ],
+    "location": "Long Street, Great Brak River",
+    "town": "Great Brak River",
+    "latitude": -34.0442,
+    "longitude": 22.221,
+    "phone": "+27446202345",
+    "website": "",
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Favourite biker-friendly and family country stop in Great Brak River known for Sunday breakfast runs, hearty pub lunches, and shaded outdoor seating."
   }
 ]

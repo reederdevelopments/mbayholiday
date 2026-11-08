@@ -1471,10 +1471,11 @@
     "name": "Mysteries, Mayhem, Crimes & Ghosts of Mossel Bay (Night Walk)",
     "category": "event",
     "vibe": "Arts & Culture, Outdoor & Adventure",
-    "date": "2026-10-31T19:00:00",
+    "date": "2026-11-13T19:00:00",
     "endDate": null,
     "time": "7:00 PM - 9:00 PM",
     "images": [
+      "images/wa-mossel-bay-ghost-walk-nov13.jpg",
       "images/wa-mossel-bay-ghost-walk.jpg",
       "images/wa-mossel-bay-ghost-walk-2.jpg"
     ],
@@ -1500,18 +1501,19 @@
     "audience": "Adults & Older Teens",
     "sponsored": true,
     "communitySource": "Garden Route Weekend Trips",
-    "description": "As night falls on Halloween, discover the shadowy side of Mossel Bay where history, mystery, shipwrecks, crimes, and eerie untold ghost stories come to life on a guided lantern walk. Not suitable for small children or the faint of heart! Pre-booking via WhatsApp essential."
+    "description": "As night falls, discover the shadowy side of Mossel Bay where history, mystery, shipwrecks, crimes, and eerie untold ghost stories come to life on a guided lantern walk! Next scheduled walk: Friday 13 November 2026. Not suitable for small children or the faint of heart — pre-booking via WhatsApp essential."
   },
   {
     "id": 53,
     "name": "The Sunday Social Market at Trail Kiosk",
     "category": "event",
     "vibe": "Markets & Community, Food & Drink, Family & Kids",
-    "date": "2026-11-01T09:00:00",
+    "date": "2026-12-06T09:00:00",
     "endDate": null,
     "time": "9:00 AM - 2:00 PM (Also 6 Dec & 3 Jan)",
     "images": [
-      "images/wa-sunday-social-market.jpg"
+      "images/wa-sunday-social-market.jpg",
+      "images/wa-sunday-social-market-dec6.jpg"
     ],
     "phone": "+27834830480",
     "whatsapp": "27834830480",
@@ -1535,32 +1537,33 @@
     "audience": "All Ages, Family, Trail Runners & Cyclists",
     "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Relax under the trees at Trail Kiosk on Arbour Road in George for The Sunday Social Market (held on the first Sunday of the month: 1 Nov, 6 Dec & 3 Jan). Browse artisanal stalls including Root & Relish homemade chilli relishes, sip specialty coffee after your forest trail walk, and let the kids enjoy the jumping castle."
+    "description": "A relaxed first-Sunday-of-the-month outdoor social market at Trail Kiosk in Wilderness (next editions: Sunday 6 December 2026 & Sunday 3 January 2027), bringing together artisan food trucks, speciality coffee, local makers, acoustic music, and trail runners."
   },
   {
     "id": 54,
     "name": "Donkey Forest Walks Car Boot Sale & Rescue Farm Day",
     "category": "event",
     "vibe": "Markets & Community, Nature & Wildlife, Family & Kids",
-    "date": "2026-11-01T09:00:00",
+    "date": "2026-11-08T09:00:00",
     "endDate": null,
     "time": "9:00 AM - 3:00 PM",
     "images": [
+      "images/wa-donkey-car-boot-nov8.jpg",
       "images/wa-donkey-car-boot-sale.jpg",
       "images/wa-donkey-forest-walks.jpg"
     ],
     "phone": "+27629639363",
     "whatsapp": "27629639363",
     "website": "",
-    "price": 50,
+    "price": 10,
     "priceDetails": [
       {
-        "item": "Household Entry (Animal Welfare Fundraiser)",
-        "cost": "R50.00 per household"
+        "item": "Entry Fee",
+        "cost": "Free Entry / R10.00 per household"
       },
       {
-        "item": "Donkey Feeding Tip",
-        "cost": "Bring your own carrots for the donkeys!"
+        "item": "Donkey Feeding",
+        "cost": "Bring your own carrots (other animal feed provided)"
       }
     ],
     "location": "245 Whites Road, Wilderness Heights",
@@ -1571,7 +1574,7 @@
     "audience": "All Ages, Family, Animal Lovers",
     "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Animal Welfare, People & Community! Join Donkey Forest Walks at 245 Whites Road in Wilderness Heights for a special Car Boot Sale and farm open day. Browse farm milk, cheese & dairy, clothes, bangles & earrings, and homemade food & drinks. Pet and hold the lambs, feed the rescue donkeys (bring your own carrots!), and meet the farm cows, sheep, and goats."
+    "description": "Happening Sunday 8 November 2026! Support animal welfare and the local community at the Donkey Forest Walks Car Boot Sale in Wilderness Heights. Browse farm cheese, dairy, clothing, bangles, food & drinks, plus cuddle lambs, feed rescued donkeys, and meet sheep, cows, and goats!"
   },
   {
     "id": 55,
@@ -1930,7 +1933,8 @@
     "endDate": null,
     "time": "9:00 AM - 2:00 PM, Every Saturday",
     "images": [
-      "images/wa-midbrak-mark.jpg"
+      "images/wa-midbrak-mark.jpg",
+      "images/wa-midbrak-thrift-shop.jpg"
     ],
     "phone": "+27640285863",
     "whatsapp": "27640285863",
@@ -1998,7 +2002,8 @@
     "time": "8:30 AM - 5:00 PM, Mon-Sun",
     "images": [
       "images/wa-maple-ranch-ebikes.jpg",
-      "images/wa-maple-ranch-activities.jpg"
+      "images/wa-maple-ranch-activities.jpg",
+      "images/wa-maple-ranch-survivor-games.jpg"
     ],
     "phone": "+27650542562",
     "whatsapp": "27650542562",
@@ -2065,7 +2070,9 @@
     "time": "8:30 AM - 4:00 PM, Sat & Sun",
     "images": [
       "images/wa-av8-sunday-lunch.jpg",
-      "images/wa-av8-saturday-special.jpg"
+      "images/wa-av8-saturday-special.jpg",
+      "images/wa-av8-sunday-lamb-roast.jpg",
+      "images/wa-av8-sunday-beef-roast.jpg"
     ],
     "phone": "+27766005606",
     "whatsapp": "27766005606",
@@ -2094,5 +2101,1226 @@
     "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "Watch light aircraft and skydivers take off and land right in front of your table at Mossel Bay Airfield! Enjoy the famous R105 Saturday Airfield Breakfast (including cappuccino) or book for the traditional R165 Sunday Lamb Rib Roast with pumpkin fritters and creamy spiced milk tart."
+  },
+  {
+    "id": 70,
+    "name": "Mossel Bay Heritage Tour (Guided Historical Walk)",
+    "category": "event",
+    "vibe": "Arts & Culture, Outdoor & Adventure, Sightseeing",
+    "date": "2026-11-14T09:00:00",
+    "endDate": null,
+    "time": "9:00 AM - 1:00 PM",
+    "images": [
+      "images/wa-mossel-bay-heritage-tour.jpg"
+    ],
+    "phone": "+27662276485",
+    "whatsapp": "27662276485",
+    "website": "https://SouthCapePromotions.co.za",
+    "price": 320,
+    "priceDetails": [
+      {
+        "item": "Guided 4-Hour Heritage Walk",
+        "cost": "R320.00 pp"
+      },
+      {
+        "item": "Booking",
+        "cost": "Limited space - WhatsApp booking essential"
+      }
+    ],
+    "location": "Historic Town Centre & Goods Shed Precinct, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.1832,
+    "longitude": 22.1465,
+    "weather": "Outdoor",
+    "audience": "Adults, Families, History Lovers",
+    "sponsored": true,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Step back in time on a 4-hour guided morning walking tour through historic Mossel Bay with South Cape Promotions. Discover the town's maritime heritage, sandstone architecture, early explorers, and fascinating local stories."
+  },
+  {
+    "id": 71,
+    "name": "Anton Gemmer Live at Groot Brakrivier Waterfront",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Food & Drink, Family & Kids",
+    "date": "2026-11-14T12:00:00",
+    "endDate": null,
+    "time": "12:00 PM - 3:00 PM",
+    "images": [
+      "images/wa-anton-gemmer-grootbrak.jpg"
+    ],
+    "phone": "+27726128632",
+    "whatsapp": "27726128632",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Live Music Deck Admission",
+        "cost": "Free Entry"
+      }
+    ],
+    "location": "Groot Brakrivier Waterfront Deck (Next to Senators Choice Cafe)",
+    "town": "Great Brak River",
+    "latitude": -34.0412,
+    "longitude": 22.2225,
+    "weather": "Outdoor",
+    "audience": "All Ages, Family",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Enjoy a relaxed Saturday afternoon of live acoustic music by Anton Gemmer right on the water's edge at the Groot Brakrivier Waterfront from 12:00 PM to 3:00 PM, paired with great coffee, lunches, and artisanal treats."
+  },
+  {
+    "id": 72,
+    "name": "Secret Sunset Sedgefield: Fabulous Festive Fun",
+    "category": "event",
+    "vibe": "Outdoor & Adventure, Live Music & Entertainment, Family & Kids",
+    "date": "2026-11-14T18:15:00",
+    "endDate": null,
+    "time": "6:15 PM - 7:15 PM (Headphone Collection from 5:45 PM)",
+    "images": [
+      "images/wa-secret-sunset-sedgefield.jpg"
+    ],
+    "phone": "+27824115678",
+    "whatsapp": "",
+    "website": "https://www.quicket.co.za",
+    "price": 180,
+    "priceDetails": [
+      {
+        "item": "Adult Silent Disco Sunset Session",
+        "cost": "R180.00 pp"
+      },
+      {
+        "item": "Children (Under 12)",
+        "cost": "R100.00 pp"
+      }
+    ],
+    "location": "Myoli Beach, Sedgefield",
+    "town": "Sedgefield",
+    "latitude": -34.0275,
+    "longitude": 22.7962,
+    "weather": "Outdoor",
+    "audience": "All Ages, Families, Dance & Sunset Lovers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Slip on wireless headphones and dance barefoot on the sand at Myoli Beach as the sun sets over the Indian Ocean! Secret Sunset Sedgefield's 'Fabulous Festive Fun' edition combines guided movement, feel-good festive beats, and ocean air."
+  },
+  {
+    "id": 73,
+    "name": "Demi Lee Moore Live on Stage in George",
+    "category": "event",
+    "vibe": "Live Music & Entertainment",
+    "date": "2026-11-14T19:30:00",
+    "endDate": null,
+    "time": "7:30 PM - 10:00 PM",
+    "images": [
+      "images/wa-demi-lee-moore-george.jpg"
+    ],
+    "phone": "+27448743142",
+    "whatsapp": "",
+    "website": "https://www.webtickets.co.za",
+    "price": 200,
+    "priceDetails": [
+      {
+        "item": "General Concert Admission (Webtickets)",
+        "cost": "R200.00 pp"
+      }
+    ],
+    "location": "George Civic / Auditorium Venue, George",
+    "town": "George",
+    "latitude": -33.9581,
+    "longitude": 22.459,
+    "weather": "Indoor",
+    "audience": "All Ages, Afrikaans & Country Music Fans",
+    "sponsored": true,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Award-winning South African vocalist Demi Lee Moore brings her powerhouse vocals and chart-topping Afrikaans and country hits live to George on Saturday 14 November. Tickets available via Webtickets."
+  },
+  {
+    "id": 74,
+    "name": "Knysna Music Society: Celebratory Final Concert of the Year",
+    "category": "event",
+    "vibe": "Arts & Culture, Live Music & Entertainment",
+    "date": "2026-11-16T19:00:00",
+    "endDate": null,
+    "time": "7:00 PM (Complimentary Bubbly & Mince Pies from 6:30 PM)",
+    "images": [
+      "images/wa-knysna-music-society-concert.jpg"
+    ],
+    "phone": "+27443825235",
+    "whatsapp": "",
+    "website": "https://www.quicket.co.za",
+    "price": 200,
+    "priceDetails": [
+      {
+        "item": "Adult Ticket (Quicket or Door)",
+        "cost": "R200.00 pp"
+      },
+      {
+        "item": "Scholars",
+        "cost": "R50.00 pp"
+      },
+      {
+        "item": "Pre-Concert Refreshments (6:30 PM)",
+        "cost": "Complimentary bubbly & mince pies"
+      }
+    ],
+    "location": "Dutch Reformed Church Hall, Fichat Street, Knysna",
+    "town": "Knysna",
+    "latitude": -34.0356,
+    "longitude": 23.0485,
+    "weather": "Indoor",
+    "audience": "Classical Music & Arts Lovers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Celebrate the close of the concert season with the Knysna Music Society featuring acclaimed duo Catherine Foxcroft (Piano) and Danré Strydom (Clarinet). Enjoy complimentary bubbly and mince pies from 6:30 PM before the recital begins at 7:00 PM."
+  },
+  {
+    "id": 75,
+    "name": "Ancient History of the Robberg Coastal Corridor Talk",
+    "category": "event",
+    "vibe": "Arts & Culture, Nature & Conservation",
+    "date": "2026-11-19T18:00:00",
+    "endDate": null,
+    "time": "6:00 PM - 7:30 PM",
+    "images": [
+      "images/wa-robberg-coastal-corridor-talk.jpg"
+    ],
+    "phone": "+27443822095",
+    "whatsapp": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Conservation & Archaeology Talk",
+        "cost": "Free / Donation towards Corridor Conservation"
+      }
+    ],
+    "location": "Knysna / Plettenberg Bay Conservation Venue",
+    "town": "Knysna",
+    "latitude": -34.0365,
+    "longitude": 23.0472,
+    "weather": "Indoor",
+    "audience": "Nature, Archaeology & History Enthusiasts",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Fascinating evening talk exploring the ancient Middle Stone Age archaeology, coastal caves, and biodiversity of the Robberg Coastal Corridor Protected Environment linking Robberg and Harkerville."
+  },
+  {
+    "id": 76,
+    "name": "Desiré Gardner: 'Magda Louw en die Kar se Sleutel...' Live",
+    "category": "event",
+    "vibe": "Arts & Culture, Live Music & Entertainment, Food & Drink",
+    "date": "2026-11-19T19:00:00",
+    "endDate": "2026-11-20T21:30:00",
+    "time": "7:00 PM (Two Nights: 19 & 20 November)",
+    "images": [
+      "images/wa-desire-gardner-magda-louw.jpg"
+    ],
+    "phone": "+27446911995",
+    "whatsapp": "",
+    "website": "https://www.quicket.co.za",
+    "price": 180,
+    "priceDetails": [
+      {
+        "item": "Theatre Ticket (Quicket or 044 691 1995)",
+        "cost": "R180.00 pp"
+      }
+    ],
+    "location": "The Stage Coach Restaurant & Theatre, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.1825,
+    "longitude": 22.1445,
+    "weather": "Indoor",
+    "audience": "Adults, Afrikaans Comedy & Theatre Fans",
+    "sponsored": true,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Beloved Afrikaans actress and comedienne Desiré Gardner brings everyone's favourite tannie, Magda Louw, to The Stage Coach in Mossel Bay for two hilarious evenings on 19 & 20 November 2026!"
+  },
+  {
+    "id": 77,
+    "name": "RockSteady's Ultimate 80s Experience at The White House Theatre",
+    "category": "event",
+    "vibe": "Live Music & Entertainment",
+    "date": "2026-11-20T19:30:00",
+    "endDate": null,
+    "time": "7:30 PM - 10:00 PM",
+    "images": [
+      "images/wa-rocksteady-80s-plett.jpg"
+    ],
+    "phone": "+27445332010",
+    "whatsapp": "",
+    "website": "https://www.quicket.co.za",
+    "price": 200,
+    "priceDetails": [
+      {
+        "item": "Show Ticket",
+        "cost": "R200.00 pp"
+      }
+    ],
+    "location": "The White House Theatre, Plettenberg Bay",
+    "town": "Plettenberg Bay",
+    "latitude": -34.0528,
+    "longitude": 23.3724,
+    "weather": "Indoor",
+    "audience": "All Ages, 80s Rock & Pop Fans",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Get ready for a high-voltage nostalgia trip as Cape Town party band RockSteady brings 'The Ultimate 80s Experience' to The White House Theatre in Plettenberg Bay on Friday 20 November!"
+  },
+  {
+    "id": 78,
+    "name": "Guns N' Roses MCC Day Jol (George)",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Markets & Community",
+    "date": "2026-11-21T12:00:00",
+    "endDate": null,
+    "time": "12:00 PM till Late",
+    "images": [
+      "images/wa-guns-n-roses-day-jol.jpg"
+    ],
+    "phone": "+27820000000",
+    "whatsapp": "",
+    "website": "",
+    "price": 80,
+    "priceDetails": [
+      {
+        "item": "Adult Entry (Includes Cloth/Sticker Badge)",
+        "cost": "R80.00 pp"
+      },
+      {
+        "item": "Kids 12+",
+        "cost": "R50.00 pp"
+      }
+    ],
+    "location": "Clubhouse Grounds, George",
+    "town": "George",
+    "latitude": -33.9685,
+    "longitude": 22.4542,
+    "weather": "Outdoor",
+    "audience": "Bikers, Rock Music Fans & Community",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Rev up for the Guns N' Roses MCC Day Jol in George on Saturday 21 November from 12:00 PM till late! Enjoy biker camaraderie, music, food stalls, lucky draws, and cold refreshments."
+  },
+  {
+    "id": 79,
+    "name": "Helen O'Grady Drama Academy Garden Route Year-End Production",
+    "category": "event",
+    "vibe": "Arts & Culture, Family & Kids",
+    "date": "2026-11-21T14:00:00",
+    "endDate": null,
+    "time": "2:00 PM - 8:00 PM",
+    "images": [
+      "images/wa-helen-ogrady-drama-george.jpg"
+    ],
+    "phone": "+27448734207",
+    "whatsapp": "",
+    "website": "",
+    "price": 100,
+    "priceDetails": [
+      {
+        "item": "Theatre Admission",
+        "cost": "R100.00 pp"
+      }
+    ],
+    "location": "George Arts Theatre, 125 York Street, George",
+    "town": "George",
+    "latitude": -33.9562,
+    "longitude": 22.4578,
+    "weather": "Indoor",
+    "audience": "Families, Parents & Drama Supporters",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Support young local talent across the Garden Route as students of the Helen O'Grady Drama Academy take the stage at the historic George Arts Theatre for their vibrant year-end theatrical showcase."
+  },
+  {
+    "id": 80,
+    "name": "Tuiniqua se Kerseté met Michael Lindt",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Food & Drink, Markets & Community",
+    "date": "2026-11-26T18:00:00",
+    "endDate": null,
+    "time": "6:00 PM - 9:30 PM",
+    "images": [
+      "images/wa-tuiniqua-kersete-michael-lindt.jpg"
+    ],
+    "phone": "+27440504729",
+    "whatsapp": "",
+    "website": "https://www.quicket.co.za",
+    "price": 200,
+    "priceDetails": [
+      {
+        "item": "Festive Christmas Dinner & Michael Lindt Live Show",
+        "cost": "R200.00 pp"
+      }
+    ],
+    "location": "Tuiniqua Sentrum, Kerkstraat 13, George",
+    "town": "George",
+    "latitude": -33.9612,
+    "longitude": 22.4648,
+    "weather": "Indoor",
+    "audience": "All Ages, Families & Seniors",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Celebrate the start of the festive season at Tuiniqua Sentrum in George with a heart-warming Christmas dinner ('Kerseté') and live music by popular singer Michael Lindt. Bookings via Quicket or 044 050 4729."
+  },
+  {
+    "id": 81,
+    "name": "Garden Route Toy Run 2026",
+    "category": "event",
+    "vibe": "Markets & Community, Family & Kids, Outdoor & Adventure",
+    "date": "2026-11-29T10:30:00",
+    "endDate": null,
+    "time": "10:30 AM Kickstands Up (Mass Ride to Outeniqua Shellhole)",
+    "images": [
+      "images/wa-garden-route-toy-run-2026.jpg"
+    ],
+    "phone": "+27824415511",
+    "whatsapp": "",
+    "website": "https://www.toyrun.org.za",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Entry Fee",
+        "cost": "Free — Just Bring Toys for Children in Need!"
+      }
+    ],
+    "location": "Rally Point: Boulevard Shopping Centre (Checkers Parking, York St) to Outeniqua Shellhole, Loerie Park, George",
+    "town": "George",
+    "latitude": -33.9675,
+    "longitude": 22.452,
+    "weather": "Outdoor",
+    "audience": "All Ages, Bikers, Cyclists, Families & Community",
+    "sponsored": true,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Join hundreds of bikers, car enthusiasts, cyclists, and families for the annual Garden Route Toy Run! Meet at the Checkers parking lot on York Street (kickstands up 10:30–10:45 AM) for the mass charity convoy to Outeniqua Shellhole in Loerie Park. Entry is simple: just bring a toy to brighten a child's Christmas!"
+  },
+  {
+    "id": 82,
+    "name": "Christmas Resin Gift & Decor Workshop at Tiger's Milk George",
+    "category": "event",
+    "vibe": "Arts & Culture, Food & Drink",
+    "date": "2026-11-29T12:00:00",
+    "endDate": null,
+    "time": "12:00 PM - 3:00 PM",
+    "images": [
+      "images/wa-christmas-resin-tigers-milk.jpg"
+    ],
+    "phone": "+27795362818",
+    "whatsapp": "27795362818",
+    "website": "",
+    "price": 580,
+    "priceDetails": [
+      {
+        "item": "3-Hour Guided Resin Workshop (All UV & Epoxy Resin Materials Included)",
+        "cost": "R580.00 pp"
+      }
+    ],
+    "location": "Tiger's Milk Kitchen & Bar, 23 Courtenay Street, George Central",
+    "town": "George",
+    "latitude": -33.9592,
+    "longitude": 22.4565,
+    "weather": "Indoor",
+    "audience": "Adults & Teens, Creative Crafters",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Create your own bespoke resin Christmas ornaments, coasters, or gifts at this hands-on 3-hour UV & epoxy resin workshop hosted at Tiger's Milk in George! All materials are included; WhatsApp 079 536 2818 to reserve your seat."
+  },
+  {
+    "id": 83,
+    "name": "Dotsure George Tens Rugby & Netball Festival 2026",
+    "category": "event",
+    "vibe": "Sports & Fitness, Live Music & Entertainment, Family & Kids",
+    "date": "2026-12-11T08:00:00",
+    "endDate": "2026-12-13T22:00:00",
+    "time": "8:00 AM - 10:00 PM (3-Day Summer Festival: 11–13 Dec)",
+    "images": [
+      "images/wa-dotsure-george-tens-2026.jpg"
+    ],
+    "phone": "+27832254726",
+    "whatsapp": "27832254726",
+    "website": "https://georgetens.co.za",
+    "price": 100,
+    "priceDetails": [
+      {
+        "item": "Day Spectator & Beer Tent Pass",
+        "cost": "R100.00 pp"
+      },
+      {
+        "item": "Netball Team Entry",
+        "cost": "R2,500 per team"
+      },
+      {
+        "item": "Rugby 10s Team Entry",
+        "cost": "R5,000 per team"
+      }
+    ],
+    "location": "Outeniqua Park Stadium, George",
+    "town": "George",
+    "latitude": -33.9585,
+    "longitude": 22.4682,
+    "weather": "Outdoor",
+    "audience": "All Ages, Sports Fans, Families & Holidaymakers",
+    "sponsored": true,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "One of the Garden Route's biggest December summer festivals! The Dotsure George Tens returns to Outeniqua Park Stadium from 11–13 December 2026 with social and competitive Rugby 10s, Fast-5s Netball, massive beer tent entertainment, food villages, and kiddies zones."
+  },
+  {
+    "id": 84,
+    "name": "Festive Family Christmas Market at St Thomas Methodist Church Plett",
+    "category": "event",
+    "vibe": "Markets & Community, Family & Kids, Food & Drink",
+    "date": "2026-12-15T09:00:00",
+    "endDate": null,
+    "time": "9:00 AM - 3:00 PM",
+    "images": [
+      "images/wa-st-thomas-christmas-market-plett.jpg"
+    ],
+    "phone": "+27445332620",
+    "whatsapp": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Market Entry",
+        "cost": "Free"
+      }
+    ],
+    "location": "St Thomas Methodist Church, 1 Muller Street, Plettenberg Bay",
+    "town": "Plettenberg Bay",
+    "latitude": -34.0532,
+    "longitude": 23.3712,
+    "weather": "Both",
+    "audience": "All Ages, Families & Holidaymakers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Celebrate the public holiday week in Plettenberg Bay at the Festive Family Christmas Market on Tuesday 15 December! Stock up on handmade Christmas gifts, home-baked treats, coastal crafts, pancakes, and family fun."
+  },
+  {
+    "id": 85,
+    "name": "Cheese and Wine Day Festival at Hart & Bosch Village Farm",
+    "category": "event",
+    "vibe": "Food & Drink, Live Music & Entertainment, Markets & Community",
+    "date": "2027-05-01T10:00:00",
+    "endDate": null,
+    "time": "10:00 AM - 5:00 PM (Official Rescheduled Date: 1 May 2027)",
+    "images": [
+      "images/wa-hart-bosch-cheese-wine-2027.jpg"
+    ],
+    "phone": "+27824915522",
+    "whatsapp": "",
+    "website": "",
+    "price": 150,
+    "priceDetails": [
+      {
+        "item": "Festival Pass & Wine Glass",
+        "cost": "R150.00 pp"
+      }
+    ],
+    "location": "Hart & Bosch Village Farm, R102, Hartenbos",
+    "town": "Hartenbos",
+    "latitude": -34.1225,
+    "longitude": 22.1085,
+    "weather": "Outdoor",
+    "audience": "Food & Wine Lovers, Families",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Save the new date! The Hart & Bosch Village Farm Cheese & Wine Day Festival has officially been rescheduled to Saturday 1 May 2027 (Workers' Day long weekend), promising boutique Cape wine estates, artisanal cheeses, live music, and country hospitality."
+  },
+  {
+    "id": 86,
+    "name": "Hooked On Pleasure: Sunset & Sunrise Ocean Cruises",
+    "category": "activity",
+    "vibe": "Outdoor & Adventure, Sightseeing",
+    "date": null,
+    "endDate": null,
+    "time": "Daily Sunrise & Sunset Departures (Weather Permitting)",
+    "images": [
+      "images/wa-hooked-on-pleasure-cruises.jpg"
+    ],
+    "phone": "+27624612933",
+    "whatsapp": "27624612933",
+    "website": "",
+    "price": 450,
+    "priceDetails": [
+      {
+        "item": "Adult Sunset / Sunrise Cruise",
+        "cost": "R450.00 pp"
+      },
+      {
+        "item": "Kids Under 12",
+        "cost": "R250.00 pp"
+      }
+    ],
+    "location": "Mossel Bay Waterfront Harbour",
+    "town": "Mossel Bay",
+    "latitude": -34.1795,
+    "longitude": 22.1455,
+    "weather": "Outdoor",
+    "audience": "Couples, Families, Ocean Lovers",
+    "sponsored": true,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Set sail from Mossel Bay Harbour aboard Hooked On Pleasure for unforgettable sunrise and sunset ocean cruises along the bay! Spot dolphins, seals, and seasonal whales while soaking in panoramic views of the Outeniqua Mountains."
+  },
+  {
+    "id": 87,
+    "name": "The Goods Shed Indoor Market & Car Boot Days",
+    "category": "activity",
+    "vibe": "Markets & Community, Shopping, Food & Drink",
+    "date": null,
+    "endDate": null,
+    "time": "Tue-Sat 9:00 AM - 5:00 PM, Sun 9:00 AM - 2:00 PM (7 Days in Peak Season)",
+    "images": [
+      "images/wa-goods-shed-mossel-bay.jpg",
+      "images/wa-goods-shed-carboot.jpg"
+    ],
+    "phone": "+27728378803",
+    "whatsapp": "27728378803",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Market Entry",
+        "cost": "Free Entry"
+      }
+    ],
+    "location": "Bland Street, Historic Railway Precinct, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.1818,
+    "longitude": 22.1432,
+    "weather": "Indoor",
+    "audience": "All Ages, Families, Rainy Day Favourite",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "The biggest indoor market in the Southern Cape! Housed in a historic sandstone railway shed in Mossel Bay, The Goods Shed features dozens of permanent stalls selling antiques, home-baked treats, crafts, clothing, books, coffee, and monthly outdoor Car Boot sales."
+  },
+  {
+    "id": 88,
+    "name": "Brinkleys Shed Country Market & Farm Shop",
+    "category": "activity",
+    "vibe": "Markets & Community, Food & Drink, Family & Kids",
+    "date": null,
+    "endDate": null,
+    "time": "Wed-Fri 9:00 AM - 3:00 PM & Saturday Market 9:00 AM - 2:00 PM",
+    "images": [
+      "images/wa-brinkleys-shed-market.jpg"
+    ],
+    "phone": "+27828813305",
+    "whatsapp": "27828813305",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Farm Market Admission",
+        "cost": "Free"
+      }
+    ],
+    "location": "R102, Klein Brakrivier (Little Brak River)",
+    "town": "Little Brak River",
+    "latitude": -34.0885,
+    "longitude": 22.1442,
+    "weather": "Both",
+    "audience": "All Ages, Families, Pet Friendly",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "A charming country farm market and padstal along the scenic R102 in Klein Brakrivier. Visit Wednesday to Friday for farm-fresh produce, preserves, and coffee, or join the lively Saturday Market from 9:00 AM to 2:00 PM."
+  },
+  {
+    "id": 89,
+    "name": "Dana Bay Monthly Farmer's Market & Conservancy Day",
+    "category": "activity",
+    "vibe": "Markets & Community, Food & Drink, Nature & Conservation",
+    "date": null,
+    "endDate": null,
+    "time": "9:00 AM - 2:00 PM, Last Saturday of Every Month",
+    "images": [
+      "images/wa-dana-bay-farmers-market.jpg",
+      "images/wa-dana-bay-market-2.jpg"
+    ],
+    "phone": "+27824681295",
+    "whatsapp": "27824681295",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Market Entry",
+        "cost": "Free"
+      }
+    ],
+    "location": "NG Church Grounds, Dana Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.1955,
+    "longitude": 22.0492,
+    "weather": "Outdoor",
+    "audience": "All Ages, Families & Locals",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Held on the last Saturday of every month in the heart of the Dana Bay eco-conservancy! Stock up on farm-fresh vegetables, roosterkoek, homemade bakes, coastal art, plants, and neighbourly hospitality."
+  },
+  {
+    "id": 90,
+    "name": "Hartenbos Boeremark at Joubertpark",
+    "category": "activity",
+    "vibe": "Markets & Community, Food & Drink",
+    "date": null,
+    "endDate": null,
+    "time": "8:00 AM - 2:00 PM, Select Saturdays",
+    "images": [
+      "images/wa-hartenbos-boeremark.jpg"
+    ],
+    "phone": "+27834547692",
+    "whatsapp": "27834547692",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Market Entry",
+        "cost": "Free"
+      }
+    ],
+    "location": "Joubertpark, Hartenbos",
+    "town": "Hartenbos",
+    "latitude": -34.1265,
+    "longitude": 22.1145,
+    "weather": "Outdoor",
+    "audience": "All Ages, Families",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Traditional coastal Boeremark at Joubertpark in Hartenbos featuring home-cooked Afrikaans delicacies, biltong, fresh farm produce, handmade woodwork, needlework, and kids' treats from 8:00 AM to 2:00 PM."
+  },
+  {
+    "id": 91,
+    "name": "Groot Brakrivier Waterfront Saturday 5km Fun Walk/Run",
+    "category": "activity",
+    "vibe": "Sports & Fitness, Outdoor & Adventure, Markets & Community",
+    "date": null,
+    "endDate": null,
+    "time": "8:00 AM Start, Every Saturday Morning",
+    "images": [
+      "images/wa-grootbrak-waterfront-5km.jpg"
+    ],
+    "phone": "+27726128632",
+    "whatsapp": "27726128632",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Weekly 5km Community Fun Walk/Run",
+        "cost": "Free"
+      }
+    ],
+    "location": "Groot Brakrivier Waterfront & Senators Choice Cafe",
+    "town": "Great Brak River",
+    "latitude": -34.0412,
+    "longitude": 22.2225,
+    "weather": "Outdoor",
+    "audience": "Walkers, Runners, Families & Strollers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Start your Saturday morning on an active note at the scenic Groot Brakrivier Waterfront! Join the free weekly 5km community fun walk or run at 8:00 AM along the lagoon, followed by artisan coffee and breakfast at Senators Choice Cafe."
+  },
+  {
+    "id": 92,
+    "name": "Die Wandelpad Market & Night Market Venue (Tergniet)",
+    "category": "activity",
+    "vibe": "Markets & Community, Food & Drink, Shopping",
+    "date": null,
+    "endDate": null,
+    "time": "Saturdays 9:00 AM - 2:00 PM & Monthly Night Markets",
+    "images": [
+      "images/wa-die-wandelpad-market.jpg"
+    ],
+    "phone": "+27679825341",
+    "whatsapp": "27679825341",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Market Entry",
+        "cost": "Free"
+      }
+    ],
+    "location": "Corner R102 & Sorgfontein Road, Tergniet",
+    "town": "Great Brak River",
+    "latitude": -34.0695,
+    "longitude": 22.182,
+    "weather": "Outdoor",
+    "audience": "All Ages, Families",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Located at the corner of the R102 and Sorgfontein Road in Tergniet between Little Brak and Great Brak River, Die Wandelpad hosts regular weekend pop-up markets, factory clothing stalls, food vendors, and festive night markets."
+  },
+  {
+    "id": 93,
+    "name": "Rosedalia Padstal & Saturday Market Days (Oudtshoorn)",
+    "category": "activity",
+    "vibe": "Markets & Community, Food & Drink, Family & Kids",
+    "date": null,
+    "endDate": null,
+    "time": "Daily Padstal & Saturday Market Days 9:00 AM - 2:00 PM",
+    "images": [
+      "images/wa-rosedalia-padstal-oudtshoorn.jpg"
+    ],
+    "phone": "+27787018333",
+    "whatsapp": "27787018333",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Entry",
+        "cost": "Free"
+      }
+    ],
+    "location": "Rosedalia Farm Padstal, Oudtshoorn",
+    "town": "Oudtshoorn",
+    "latitude": -33.6015,
+    "longitude": 22.212,
+    "weather": "Outdoor",
+    "audience": "Families, Karoo Roadtrippers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "A Klein Karoo gem in Oudtshoorn! Rosedalia Padstal welcomes road-trippers with authentic Karoo farmstall preserves, roosterkoek, shaded gardens, kids' play areas, and vibrant Saturday market days."
+  },
+  {
+    "id": 94,
+    "name": "Saturday Morning Doodling at Hoeka Toeka (Night of 1000 Drawings)",
+    "category": "activity",
+    "vibe": "Arts & Culture, Food & Drink, Markets & Community",
+    "date": null,
+    "endDate": null,
+    "time": "10:00 AM - 12:30 PM, Saturdays",
+    "images": [
+      "images/wa-doodling-hoeka-toeka.jpg"
+    ],
+    "phone": "+27825551234",
+    "whatsapp": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Community Art & Doodling Session",
+        "cost": "Free (Art materials shared for charity)"
+      },
+      {
+        "item": "Cause",
+        "cost": "Wilderness Arts Festival 'Night of 1000 Drawings' Charity Initiative"
+      }
+    ],
+    "location": "Hoeka Toeka Pub & Diner, Kerk Street, Hoekwil (Wilderness)",
+    "town": "Wilderness",
+    "latitude": -33.9725,
+    "longitude": 22.6168,
+    "weather": "Both",
+    "audience": "All Ages, Artists, Doodlers & Families",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Join local creatives and families every Saturday morning at 10:00 AM at Hoeka Toeka Pub & Diner in Hoekwil to sketch, paint, and doodle A5 artworks for the Wilderness Arts Festival's 'Night of 1000 Drawings' charity drive!"
+  },
+  {
+    "id": 95,
+    "name": "Timberlake Organic Village, Craft Studios & Fairy Trail",
+    "category": "activity",
+    "vibe": "Markets & Community, Family & Kids, Food & Drink, Outdoor & Adventure",
+    "date": null,
+    "endDate": null,
+    "time": "9:00 AM - 4:30 PM Daily (Plus Seasonal Twilight Markets)",
+    "images": [
+      "images/wa-timberlake-organic-village.jpg"
+    ],
+    "phone": "+27448821143",
+    "whatsapp": "",
+    "website": "https://www.timberlakeorganic.co.za",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Village Entry & Playground",
+        "cost": "Free"
+      }
+    ],
+    "location": "N2 Highway between Wilderness and Sedgefield",
+    "town": "Wilderness",
+    "latitude": -34.0002,
+    "longitude": 22.7115,
+    "weather": "Outdoor",
+    "audience": "All Ages, Families, Foodies & Crafters",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Nestled in the countryside along the N2 between Wilderness and Sedgefield, Timberlake Organic Village is a beloved stop featuring wooden studios, organic delis, artisanal cheese, coffee roasteries, mohair, a magical forest fairy trail, playground, and seasonal Twilight Markets."
+  },
+  {
+    "id": 96,
+    "name": "Bridgehouse Coffee Shop, Itsi Van Alles & Friday Night Markets",
+    "category": "activity",
+    "vibe": "Markets & Community, Shopping, Food & Drink",
+    "date": null,
+    "endDate": null,
+    "time": "Mon-Sat 8:30 AM - 4:30 PM (Plus Monthly Friday Night Markets 4:00 PM - 8:00 PM)",
+    "images": [
+      "images/wa-bridgehouse-night-market.jpg",
+      "images/wa-itsi-van-alles-bridgehouse.jpg"
+    ],
+    "phone": "+27769050808",
+    "whatsapp": "27769050808",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Garden Shop & Market Entry",
+        "cost": "Free"
+      }
+    ],
+    "location": "73 Hope Street, George",
+    "town": "George",
+    "latitude": -33.9542,
+    "longitude": 22.456,
+    "weather": "Both",
+    "audience": "All Ages, Plant Lovers, Gift Shoppers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Located at 73 Hope Street in George, Bridgehouse combines a fairy-lit garden nursery, cozy coffee shop serving light bites and sweet treats, the 'Itsi Van Alles' local maker gift emporium, and magical Friday Night Markets."
+  },
+  {
+    "id": 97,
+    "name": "Touws River 9km Canoe & Boardwalk Circuit (Wilderness)",
+    "category": "activity",
+    "vibe": "Outdoor & Adventure, Sports & Fitness, Nature & Conservation",
+    "date": null,
+    "endDate": null,
+    "time": "8:00 AM - 4:00 PM Daily",
+    "images": [
+      "images/wa-touws-9km-hike-row.jpg"
+    ],
+    "phone": "+27448771197",
+    "whatsapp": "",
+    "website": "https://www.sanparks.org",
+    "price": 180,
+    "priceDetails": [
+      {
+        "item": "Canoe Hire & SANParks Trail Conservation Permit",
+        "cost": "From R180.00 pp"
+      }
+    ],
+    "location": "Wilderness Section, Garden Route National Park, Wilderness",
+    "town": "Wilderness",
+    "latitude": -33.9912,
+    "longitude": 22.5815,
+    "weather": "Outdoor",
+    "audience": "Hikers, Paddlers, Nature & Birding Lovers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "One of the Garden Route's most iconic eco-adventures! Paddle up the tranquil Touws River by kayak or canoe before tying up at the jetty and following the indigenous forest boardwalk trail to a crystal-clear rock pool waterfall."
+  },
+  {
+    "id": 98,
+    "name": "Love Life 10km Road Race & 5km Fun Run (Wilderness)",
+    "category": "event",
+    "vibe": "Sports & Fitness, Outdoor & Adventure",
+    "date": "2026-11-04T17:30:00",
+    "endDate": null,
+    "time": "5:30 PM Start",
+    "images": [
+      "images/wa-love-life-10km-wilderness.jpg"
+    ],
+    "phone": "+27833767414",
+    "whatsapp": "",
+    "website": "",
+    "price": 50,
+    "priceDetails": [
+      {
+        "item": "5km / 10km Race Entry",
+        "cost": "From R50.00"
+      }
+    ],
+    "location": "Wilderness Common, Wilderness",
+    "town": "Wilderness",
+    "latitude": -33.994,
+    "longitude": 22.575,
+    "weather": "Outdoor",
+    "audience": "Runners, Walkers & Families",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Scenic twilight 10km road race and 5km fun run starting from the Wilderness Common."
+  },
+  {
+    "id": 99,
+    "name": "Pieter Mohr & Vernon Barnard Live at De Dekke Restaurant",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Food & Drink",
+    "date": "2026-11-06T19:00:00",
+    "endDate": null,
+    "time": "7:00 PM - 10:00 PM",
+    "images": [
+      "images/wa-pieter-mohr-de-dekke.jpg"
+    ],
+    "phone": "+27843590745",
+    "whatsapp": "27843590745",
+    "website": "",
+    "price": 150,
+    "priceDetails": [
+      {
+        "item": "Show Ticket",
+        "cost": "R150.00 pp"
+      }
+    ],
+    "location": "De Dekke Restaurant, Great Brak River",
+    "town": "Great Brak River",
+    "latitude": -34.0485,
+    "longitude": 22.219,
+    "weather": "Indoor",
+    "audience": "Music Lovers & Families",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Soulful live music evening with Pieter Mohr and The Voice SA favourite Vernon Barnard at De Dekke Restaurant in Great Brak River."
+  },
+  {
+    "id": 100,
+    "name": "Bring Your Pet to the Movies at The Blue Shed Coffee Roastery",
+    "category": "event",
+    "vibe": "Arts & Culture, Family & Kids, Food & Drink",
+    "date": "2026-11-06T18:30:00",
+    "endDate": null,
+    "time": "6:30 PM - 9:00 PM",
+    "images": [
+      "images/wa-pet-movies-blue-shed.jpg"
+    ],
+    "phone": "+27446910007",
+    "whatsapp": "",
+    "website": "https://www.quicket.co.za",
+    "price": 90,
+    "priceDetails": [
+      {
+        "item": "Movie Ticket (Quicket)",
+        "cost": "R90.00 Online / R100.00 Door"
+      }
+    ],
+    "location": "The Blue Shed Coffee Roastery, Bland Street, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.182,
+    "longitude": 22.144,
+    "weather": "Indoor",
+    "audience": "Pet Owners, Families & Movie Lovers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Open Plan Pictures presents a special pet-friendly cinema screening at the world-famous Blue Shed Coffee Roastery in Mossel Bay!"
+  },
+  {
+    "id": 101,
+    "name": "Dirk van der Westhuizen Live at ReedValley",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Food & Drink",
+    "date": "2026-11-06T20:00:00",
+    "endDate": null,
+    "time": "8:00 PM (Doors Open 6:00 PM)",
+    "images": [
+      "images/wa-dirk-vd-westhuizen-reedvalley.jpg"
+    ],
+    "phone": "+27446981022",
+    "whatsapp": "",
+    "website": "https://www.reedvalley.com",
+    "price": 180,
+    "priceDetails": [
+      {
+        "item": "Concert Ticket",
+        "cost": "R180.00 pp"
+      }
+    ],
+    "location": "ReedValley Wine Estate, R327, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.1725,
+    "longitude": 22.025,
+    "weather": "Indoor",
+    "audience": "Adults, Afrikaans Party Music Fans",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "High-energy Afrikaans party night with hitmaker Dirk van der Westhuizen live at ReedValley Wine Estate."
+  },
+  {
+    "id": 102,
+    "name": "Diana Fouche Live at Pollocks Wilderness",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Food & Drink",
+    "date": "2026-11-06T18:30:00",
+    "endDate": null,
+    "time": "6:30 PM - 9:30 PM",
+    "images": [
+      "images/wa-diana-fouche-pollocks.jpg"
+    ],
+    "phone": "+27448770015",
+    "whatsapp": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Live Music Entry",
+        "cost": "Free Entry"
+      }
+    ],
+    "location": "Pollocks at Wilderness, Milkwood Village, Wilderness",
+    "town": "Wilderness",
+    "latitude": -33.9945,
+    "longitude": 22.5748,
+    "weather": "Both",
+    "audience": "All Ages, Diners & Music Lovers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Friday night live vocals with Diana Fouche at Pollocks in Wilderness alongside wood-fired pizzas and craft drinks."
+  },
+  {
+    "id": 103,
+    "name": "George Used Car Parts Road Race (21.1km, 10km & 5km)",
+    "category": "event",
+    "vibe": "Sports & Fitness, Outdoor & Adventure",
+    "date": "2026-11-07T06:00:00",
+    "endDate": null,
+    "time": "6:00 AM Start",
+    "images": [
+      "images/wa-george-used-car-parts-race.jpg"
+    ],
+    "phone": "+27833767414",
+    "whatsapp": "",
+    "website": "https://www.aswd.co.za",
+    "price": 60,
+    "priceDetails": [
+      {
+        "item": "5km / 10km / 21.1km Entry",
+        "cost": "From R60.00"
+      }
+    ],
+    "location": "Blanco Community Hall, Blanco, George",
+    "town": "George",
+    "latitude": -33.951,
+    "longitude": 22.419,
+    "weather": "Outdoor",
+    "audience": "Runners, Walkers & Athletics Clubs",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Popular ASWD half-marathon (21.1km), 10km road race, and 5km fun run through scenic Blanco at the foot of the Outeniqua Mountains."
+  },
+  {
+    "id": 104,
+    "name": "Lekker in die Laan Markie at Doneraile Square",
+    "category": "event",
+    "vibe": "Markets & Community, Shopping, Food & Drink",
+    "date": "2026-11-07T09:00:00",
+    "endDate": null,
+    "time": "9:00 AM - 1:00 PM",
+    "images": [
+      "images/wa-lekker-in-die-laan-markie.jpg"
+    ],
+    "phone": "+27827813392",
+    "whatsapp": "27827813392",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Market Entry",
+        "cost": "Free"
+      }
+    ],
+    "location": "Doneraile Square (Markplein), George",
+    "town": "George",
+    "latitude": -33.9575,
+    "longitude": 22.461,
+    "weather": "Outdoor",
+    "audience": "All Ages, Families & Local Shoppers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Heart-of-George Saturday market at Doneraile Square featuring handmade crafts, art, garden decor, jewellery, clothing, coffee, and live entertainment."
+  },
+  {
+    "id": 105,
+    "name": "George Open Gardens Weekend 2026",
+    "category": "event",
+    "vibe": "Nature & Conservation, Outdoor & Adventure, Markets & Community",
+    "date": "2026-11-07T09:00:00",
+    "endDate": "2026-11-08T16:00:00",
+    "time": "9:00 AM - 4:00 PM",
+    "images": [
+      "images/wa-george-open-gardens-2026.jpg"
+    ],
+    "phone": "+27448745188",
+    "whatsapp": "",
+    "website": "",
+    "price": 50,
+    "priceDetails": [
+      {
+        "item": "Garden Route Pass",
+        "cost": "R50.00 Charity Ticket"
+      }
+    ],
+    "location": "Select Private Gardens Across George",
+    "town": "George",
+    "latitude": -33.9555,
+    "longitude": 22.465,
+    "weather": "Outdoor",
+    "audience": "Gardeners, Families & Nature Lovers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Explore spectacular private country and town gardens in full spring bloom across George, complete with tea gardens and plant sales in aid of local charities."
+  },
+  {
+    "id": 106,
+    "name": "NG Kerk Denneoord Basaar (George)",
+    "category": "event",
+    "vibe": "Markets & Community, Food & Drink, Family & Kids",
+    "date": "2026-11-07T08:00:00",
+    "endDate": null,
+    "time": "8:00 AM - 1:00 PM",
+    "images": [
+      "images/wa-ng-kerk-denneoord-basaar.jpg"
+    ],
+    "phone": "+27448742524",
+    "whatsapp": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Bazaar Entry",
+        "cost": "Free"
+      }
+    ],
+    "location": "NG Kerk Denneoord, George",
+    "town": "George",
+    "latitude": -33.9465,
+    "longitude": 22.4785,
+    "weather": "Outdoor",
+    "audience": "All Ages, Families",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Traditional community church bazaar in Denneoord, George with pannekoek, roosterkoek, puddings, meat tables, games, and tea garden."
+  },
+  {
+    "id": 107,
+    "name": "4-Aside Volleyball Tournament at YWAM George",
+    "category": "event",
+    "vibe": "Sports & Fitness, Family & Kids",
+    "date": "2026-11-07T11:00:00",
+    "endDate": null,
+    "time": "11:00 AM - 4:00 PM",
+    "images": [
+      "images/wa-ywam-volleyball-tournament.jpg"
+    ],
+    "phone": "+27849419577",
+    "whatsapp": "27849419577",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Spectators",
+        "cost": "Free"
+      },
+      {
+        "item": "Team Entry (4-Aside, U/14 & Older)",
+        "cost": "R200.00 per team"
+      }
+    ],
+    "location": "YWAM Campus, George",
+    "town": "George",
+    "latitude": -33.964,
+    "longitude": 22.448,
+    "weather": "Outdoor",
+    "audience": "Youth, Sports Teams & Families",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Action-packed 4-aside volleyball tournament at YWAM George with prizes for 1st, 2nd, and 3rd place, food & drinks for sale, and braai fires."
   }
 ]
