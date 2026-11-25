@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | MBayHoliday</title>
+    <meta name="description" content="Get in touch with the MBayHoliday team in Mossel Bay for event submissions, listing updates, sponsorship inquiries, or general Garden Route travel questions.">
+    <link rel="canonical" href="https://mbayholiday.co.za/contact.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Nunito', sans-serif; }</style>
+</head>
+<body class="bg-gradient-to-br from-cyan-100 via-sky-50 to-amber-50 min-h-screen text-gray-800 antialiased flex flex-col">
+
+    <!-- Top Navigation -->
+    <div class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-cyan-100">
+        <header class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="images/mbayholiday_logo.png" alt="MBayHoliday Logo" class="h-10 rounded-lg shadow-sm group-hover:scale-105 transition">
+                <div>
+                    <span class="font-black text-lg text-blue-900 block leading-none">MBayHoliday</span>
+                    <span class="text-[10px] font-bold text-cyan-700 uppercase tracking-wider">Garden Route Travel Guide</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-5 text-xs font-black text-gray-600">
+                <a href="index.html" class="hover:text-blue-600 transition"><i class="fa-solid fa-compass mr-1 text-pink-500"></i>Events & Directory</a>
+                <a href="guides.html" class="hover:text-blue-600 transition"><i class="fa-solid fa-book-open mr-1 text-emerald-600"></i>Town & Travel Guides</a>
+                <a href="about.html" class="hover:text-blue-600 transition">About Us</a>
+                <a href="contact.html" class="text-blue-600 border-b-2 border-blue-600 pb-0.5">Contact</a>
+                <a href="add.html" class="bg-pink-500 hover:bg-pink-600 text-white px-3.5 py-1.5 rounded-xl shadow-sm transition">+ Submit Listing</a>
+            </nav>
+            <a href="index.html" class="md:hidden bg-blue-600 text-white font-black text-xs px-3.5 py-2 rounded-xl shadow-sm"><i class="fa-solid fa-arrow-left mr-1"></i> Directory</a>
+        </header>
+    </div>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-grow w-full">
+        <div class="bg-white rounded-[2rem] shadow-xl border-4 border-white p-6 md:p-10">
+            <div class="border-b border-gray-100 pb-5 mb-6">
+                <span class="bg-pink-100 text-pink-700 text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">Get in Touch</span>
+                <h1 class="text-3xl md:text-4xl font-black text-gray-800 mt-2">Contact MBayHoliday</h1>
+                <p class="text-sm md:text-base text-gray-500 font-bold mt-1">Have a question, event tip, sponsorship inquiry, or feedback? We'd love to hear from you.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-cyan-50/70 border border-cyan-100 rounded-2xl p-5 space-y-3">
+                    <h2 class="font-black text-blue-900 text-base flex items-center gap-2"><i class="fa-solid fa-envelope-open-text text-cyan-600"></i> Direct Contact Details</h2>
+                    <p class="text-xs text-gray-600 leading-relaxed">Our team is based in the Mossel Bay &amp; Garden Route region of the Western Cape, South Africa.</p>
+                    <div class="space-y-2 text-sm font-bold text-gray-700 pt-1">
+                        <p><i class="fa-regular fa-envelope text-blue-600 w-5"></i> <a href="mailto:reederdevelopments@gmail.com" class="text-blue-600 hover:underline">reederdevelopments@gmail.com</a></p>
+                        <p><i class="fa-solid fa-location-dot text-red-500 w-5"></i> Mossel Bay, Garden Route, Western Cape, 6500, South Africa</p>
+                        <p><i class="fa-regular fa-clock text-emerald-600 w-5"></i> Response Time: Within 24–48 business hours</p>
+                    </div>
+                </div>
+
+                <div class="bg-amber-50/70 border border-amber-100 rounded-2xl p-5 space-y-3">
+                    <h2 class="font-black text-amber-900 text-base flex items-center gap-2"><i class="fa-solid fa-bolt text-amber-500"></i> Quick Self-Service Portals</h2>
+                    <p class="text-xs text-gray-600 leading-relaxed">Want to add a new event or update an existing business listing right away?</p>
+                    <div class="space-y-2.5 pt-1">
+                        <a href="add.html" class="flex items-center justify-between bg-white hover:bg-pink-50 p-3 rounded-xl border border-amber-200 transition text-xs font-black text-gray-800">
+                            <span><i class="fa-solid fa-plus-circle text-pink-500 mr-1.5"></i> Add a New Business, Market or Event</span>
+                            <i class="fa-solid fa-chevron-right text-gray-400"></i>
+                        </a>
+                        <a href="manage.html" class="flex items-center justify-between bg-white hover:bg-blue-50 p-3 rounded-xl border border-amber-200 transition text-xs font-black text-gray-800">
+                            <span><i class="fa-solid fa-pen-to-square text-blue-500 mr-1.5"></i> Edit, Remove or Sponsor an Existing Listing</span>
+                            <i class="fa-solid fa-chevron-right text-gray-400"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Direct Message Form -->
+            <form onsubmit="sendContactEmail(event)" class="space-y-4 bg-gray-50 p-6 rounded-2xl border border-gray-200">
+                <h2 class="font-black text-gray-800 text-lg">Send Us a Message</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-black text-gray-500 uppercase tracking-wider mb-1">Your Name *</label>
+                        <input type="text" id="c-name" required placeholder="Jane Doe" class="w-full bg-white border border-gray-200 rounded-xl p-3 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-blue-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black text-gray-500 uppercase tracking-wider mb-1">Your Email *</label>
+                        <input type="email" id="c-email" required placeholder="jane@example.com" class="w-full bg-white border border-gray-200 rounded-xl p-3 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-blue-400">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-black text-gray-500 uppercase tracking-wider mb-1">Topic *</label>
+                    <select id="c-topic" class="w-full bg-white border border-gray-200 rounded-xl p-3 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-blue-400">
+                        <option value="General Inquiry">General Travel / Website Inquiry</option>
+                        <option value="Event / Listing Submission">Event or Business Listing Question</option>
+                        <option value="Sponsorship / Advertising">Featured Sponsorship & Advertising</option>
+                        <option value="Correction / Feedback">Report Outdated Info or Correction</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-black text-gray-500 uppercase tracking-wider mb-1">Message *</label>
+                    <textarea id="c-message" rows="4" required placeholder="How can we help you?" class="w-full bg-white border border-gray-200 rounded-xl p-3 text-sm font-bold text-gray-700 outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-black px-6 py-3.5 rounded-xl shadow-md transition text-sm flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-paper-plane"></i> Send Message via Email
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function sendContactEmail(e) {
+            e.preventDefault();
+            const name = document.getElementById('c-name').value.trim();
+            const email = document.getElementById('c-email').value.trim();
+            const topic = document.getElementById('c-topic').value;
+            const msg = document.getElementById('c-message').value.trim();
+            const subject = encodeURIComponent(`MBayHoliday Contact: ${topic} (${name})`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\nMessage:\n${msg}`);
+            window.location.href = `mailto:reederdevelopments@gmail.com?subject=${subject}&body=${body}`;
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-cyan-100 py-8 mt-auto">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6 text-left border-b border-gray-100 pb-6">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2.5 mb-2">
+                        <img src="images/mbayholiday_logo.png" alt="MBayHoliday" class="h-8 rounded-lg">
+                        <span class="font-black text-gray-800 text-base">MBayHoliday</span>
+                    </div>
+                    <p class="text-xs text-gray-500 leading-relaxed max-w-md">
+                        MBayHoliday is an independent local tourism guide and community event directory covering South Africa's Garden Route &amp; Klein Karoo.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-black text-xs uppercase tracking-wider text-gray-800 mb-2.5">Explore & Guides</h4>
+                    <ul class="space-y-1.5 text-xs font-bold text-gray-500">
+                        <li><a href="index.html" class="hover:text-blue-600 transition">Interactive Event & Activity Directory</a></li>
+                        <li><a href="guides.html" class="hover:text-blue-600 transition">Garden Route Town & Travel Guides</a></li>
+                        <li><a href="add.html" class="hover:text-pink-600 transition">Submit a Business or Event</a></li>
+                        <li><a href="manage.html" class="hover:text-blue-600 transition">Edit or Manage a Listing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-black text-xs uppercase tracking-wider text-gray-800 mb-2.5">Information & Policies</h4>
+                    <ul class="space-y-1.5 text-xs font-bold text-gray-500">
+                        <li><a href="about.html" class="hover:text-blue-600 transition">About Us & Editorial Policy</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-600 transition">Contact Us</a></li>
+                        <li><a href="privacy.html" class="hover:text-blue-600 transition">Privacy Policy & Cookie Notice</a></li>
+                        <li><a href="terms.html" class="hover:text-blue-600 transition">Terms of Service & Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-400 font-bold">
+                <p>&copy; 2026 MBayHoliday. All rights reserved.</p>
+                <p>Designed &amp; Developed by <a href="https://reederdevelopments.co.za/" target="_blank" rel="noopener" class="text-blue-500 hover:text-pink-500 transition font-black">Reeder Developments</a> | Brought to you by <a href="https://dumacha.co.za/" target="_blank" rel="noopener" class="text-blue-500 hover:text-pink-500 transition font-black">Du Macha Verhurings</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

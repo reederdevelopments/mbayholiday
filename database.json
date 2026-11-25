@@ -30,7 +30,8 @@
     "town": "Mossel Bay",
     "latitude": -34.177,
     "longitude": 22.1412,
-    "description": "Exhilarating ride on a Radinn X Sport Jet board. Includes helmet, impact vest, safety briefing, and instructor."
+    "description": "Exhilarating ride on a Radinn X Sport Jet board. Includes helmet, impact vest, safety briefing, and instructor.",
+    "sponsored": false
   },
   {
     "id": 2,
@@ -55,7 +56,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1802,
     "longitude": 22.1425,
-    "description": "Local crafts, food stalls, and live music to celebrate the season."
+    "description": "Local crafts, food stalls, and live music to celebrate the season.",
+    "sponsored": false
   },
   {
     "id": 3,
@@ -83,7 +85,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1773,
     "longitude": 22.1419,
-    "description": "Start the December holidays with our annual beach party featuring local DJs."
+    "description": "Start the December holidays with our annual beach party featuring local DJs.",
+    "sponsored": false
   },
   {
     "id": 4,
@@ -112,7 +115,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1578,
     "longitude": 22.1122,
-    "description": "Fun in the sun with indoor and outdoor heated pools and supertubes."
+    "description": "Fun in the sun with indoor and outdoor heated pools and supertubes.",
+    "sponsored": false
   },
   {
     "id": 5,
@@ -136,7 +140,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1833,
     "longitude": 22.1417,
-    "description": "The premier wedding exhibition in the Garden Route showcasing top local venues, photographers, and bridal vendors."
+    "description": "The premier wedding exhibition in the Garden Route showcasing top local venues, photographers, and bridal vendors.",
+    "sponsored": false
   },
   {
     "id": 6,
@@ -164,7 +169,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1834,
     "longitude": 22.1418,
-    "description": "A massive outdoor and camping exhibition featuring the latest 4x4 gear, caravans, and outdoor lifestyle products."
+    "description": "A massive outdoor and camping exhibition featuring the latest 4x4 gear, caravans, and outdoor lifestyle products.",
+    "sponsored": false
   },
   {
     "id": 7,
@@ -192,13 +198,14 @@
     "town": "Hartenbos",
     "latitude": -34.1133,
     "longitude": 22.1178,
-    "description": "Community 15km road race and 4km fun run promoting inclusive coastal running along the beautiful Hartenbos coastline."
+    "description": "Community 15km road race and 4km fun run promoting inclusive coastal running along the beautiful Hartenbos coastline.",
+    "sponsored": false
   },
   {
     "id": 8,
     "name": "Christmas Fest Mossel Bay",
     "category": "event",
-    "sponsored": true,
+    "sponsored": false,
     "date": "2026-10-09T16:00:00",
     "time": "4:00 PM - 9:00 PM",
     "images": [
@@ -223,7 +230,7 @@
     "id": 9,
     "name": "Matriekbaai 2026",
     "category": "event",
-    "sponsored": true,
+    "sponsored": false,
     "date": "2026-11-27T10:00:00",
     "endDate": "2026-12-06T23:59:59",
     "time": "10:00 AM (Runs till Dec 6)",
@@ -275,7 +282,8 @@
     "town": "Hartenbos",
     "latitude": -34.1134,
     "longitude": 22.1179,
-    "description": "Ring in 2027 with popular South African artist Appel performing live at the iconic Hartenbos Amphitheatre."
+    "description": "Ring in 2027 with popular South African artist Appel performing live at the iconic Hartenbos Amphitheatre.",
+    "sponsored": false
   },
   {
     "id": 11,
@@ -307,7 +315,8 @@
     "town": "George",
     "latitude": -33.9167,
     "longitude": 22.3833,
-    "description": "A perfect family day out! Pick your own fresh strawberries, conquer the largest permanent hedge maze in the Southern Hemisphere, and enjoy artisan eateries."
+    "description": "A perfect family day out! Pick your own fresh strawberries, conquer the largest permanent hedge maze in the Southern Hemisphere, and enjoy artisan eateries.",
+    "sponsored": false
   },
   {
     "id": 12,
@@ -331,7 +340,8 @@
     "town": "George",
     "latitude": -33.961,
     "longitude": 22.458,
-    "description": "The annual switching on of the Christmas lights! A massive street festival featuring local vendors, live music, kids entertainment, and a festive parade."
+    "description": "The annual switching on of the Christmas lights! A massive street festival featuring local vendors, live music, kids entertainment, and a festive parade.",
+    "sponsored": false
   },
   {
     "id": 13,
@@ -355,7 +365,8 @@
     "town": "George",
     "latitude": -33.988,
     "longitude": 22.482,
-    "description": "The Garden Route's premier weekend market. Over 150 food and craft stalls, live local music, and plenty of seating under the trees."
+    "description": "The Garden Route's premier weekend market. Over 150 food and craft stalls, live local music, and plenty of seating under the trees.",
+    "sponsored": false
   },
   {
     "id": 14,
@@ -383,7 +394,8 @@
     "town": "Little Brak River",
     "latitude": -34.0322,
     "longitude": 22.1389,
-    "description": "Experience the ultimate Garden Route safari. Spot rhinos, lions, buffalo, giraffes, and elephants on a pristine 4,200-hectare private game reserve."
+    "description": "Experience the ultimate Garden Route safari. Spot rhinos, lions, buffalo, giraffes, and elephants on a pristine 4,200-hectare private game reserve.",
+    "sponsored": false
   },
   {
     "id": 15,
@@ -407,7 +419,8 @@
     "town": "Hartenbos",
     "latitude": -34.1132,
     "longitude": 22.1177,
-    "description": "A massive festive holiday market featuring handmade gifts, traditional South African bakes, boerewors rolls, and a festive holiday atmosphere right by the beach."
+    "description": "A massive festive holiday market featuring handmade gifts, traditional South African bakes, boerewors rolls, and a festive holiday atmosphere right by the beach.",
+    "sponsored": false
   },
   {
     "id": 16,
@@ -431,7 +444,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1855,
     "longitude": 22.1585,
-    "description": "Experience the longest over-ocean zipline in the world, spanning approximately 1.1km. Glide over the ocean and enjoy breathtaking views of the cliffs and bay."
+    "description": "Experience the longest over-ocean zipline in the world, spanning approximately 1.1km. Glide over the ocean and enjoy breathtaking views of the cliffs and bay.",
+    "sponsored": false
   },
   {
     "id": 17,
@@ -459,7 +473,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1795,
     "longitude": 22.144,
-    "description": "Take a scenic boat trip around Seal Island, home to thousands of Cape Fur Seals. Great for family outings and marine photography."
+    "description": "Take a scenic boat trip around Seal Island, home to thousands of Cape Fur Seals. Great for family outings and marine photography.",
+    "sponsored": false
   },
   {
     "id": 18,
@@ -487,7 +502,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1808,
     "longitude": 22.1422,
-    "description": "Explore the Maritime Museum featuring a life-size replica of the Dias Caravel, visit the historic Post Office Tree, and stroll through the botanical gardens."
+    "description": "Explore the Maritime Museum featuring a life-size replica of the Dias Caravel, visit the historic Post Office Tree, and stroll through the botanical gardens.",
+    "sponsored": false
   },
   {
     "id": 19,
@@ -515,7 +531,8 @@
     "town": "Mossel Bay",
     "latitude": -34.179,
     "longitude": 22.1446,
-    "description": "Get up close and personal with Great White Sharks in their natural habitat. A thrilling, safe, and educational marine experience."
+    "description": "Get up close and personal with Great White Sharks in their natural habitat. A thrilling, safe, and educational marine experience.",
+    "sponsored": false
   },
   {
     "id": 20,
@@ -539,7 +556,8 @@
     "town": "Mossel Bay",
     "latitude": -34.2052,
     "longitude": 22.0886,
-    "description": "Journey back in time with a guided tour of the Pinnacle Point caves, revealing some of the earliest evidence for modern human behavior."
+    "description": "Journey back in time with a guided tour of the Pinnacle Point caves, revealing some of the earliest evidence for modern human behavior.",
+    "sponsored": false
   },
   {
     "id": 21,
@@ -571,7 +589,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1565,
     "longitude": 22.0642,
-    "description": "Experience the ultimate adrenaline rush with a tandem skydive offering the best scenery in South Africa. Jump over the Indian Ocean and land right on the beach!"
+    "description": "Experience the ultimate adrenaline rush with a tandem skydive offering the best scenery in South Africa. Jump over the Indian Ocean and land right on the beach!",
+    "sponsored": false
   },
   {
     "id": 22,
@@ -595,7 +614,8 @@
     "town": "Vleesbaai",
     "latitude": -34.2981,
     "longitude": 21.9054,
-    "description": "Tackle the longest sandboard ride in South Africa! The famous 'Dragon Dune' is a beast of a dune offering an exhilarating 320m ride."
+    "description": "Tackle the longest sandboard ride in South Africa! The famous 'Dragon Dune' is a beast of a dune offering an exhilarating 320m ride.",
+    "sponsored": false
   },
   {
     "id": 23,
@@ -619,7 +639,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1865,
     "longitude": 22.1592,
-    "description": "A stunning 13.5km coastal hiking trail starting at the historic St Blaize Cave. Walk along the dramatic cliff edge offering incredible whale and dolphin watching spots."
+    "description": "A stunning 13.5km coastal hiking trail starting at the historic St Blaize Cave. Walk along the dramatic cliff edge offering incredible whale and dolphin watching spots.",
+    "sponsored": false
   },
   {
     "id": 24,
@@ -647,7 +668,8 @@
     "town": "Hartenbos",
     "latitude": -34.1154,
     "longitude": 22.1155,
-    "description": "A fun family excursion on a refurbished tractor-train running along the Transnet railway line between Mossel Bay and Great Brak River right next to the ocean."
+    "description": "A fun family excursion on a refurbished tractor-train running along the Transnet railway line between Mossel Bay and Great Brak River right next to the ocean.",
+    "sponsored": false
   },
   {
     "id": 25,
@@ -675,7 +697,8 @@
     "town": "Mossel Bay",
     "latitude": -34.2045,
     "longitude": 22.0891,
-    "description": "Voted South Africa's Best Golf Course. An incredibly dramatic clifftop championship course offering ocean views from every single hole."
+    "description": "Voted South Africa's Best Golf Course. An incredibly dramatic clifftop championship course offering ocean views from every single hole.",
+    "sponsored": false
   },
   {
     "id": 26,
@@ -703,13 +726,14 @@
     "town": "Oudtshoorn",
     "latitude": -33.3932,
     "longitude": 22.2145,
-    "description": "A must-do day trip from Mossel Bay! Explore the spectacular underground limestone caverns. Choose the Heritage Tour for an easy walk or the Adventure Tour for tight squeezes."
+    "description": "A must-do day trip from Mossel Bay! Explore the spectacular underground limestone caverns. Choose the Heritage Tour for an easy walk or the Adventure Tour for tight squeezes.",
+    "sponsored": false
   },
   {
     "id": 27,
     "name": "Mossel Bay Helicopters",
     "category": "activity",
-    "sponsored": true,
+    "sponsored": false,
     "date": null,
     "time": "8:00 AM - 5:00 PM",
     "images": [
@@ -760,7 +784,8 @@
     "town": "Wilderness",
     "latitude": -33.9961,
     "longitude": 22.5612,
-    "description": "A breathtaking viewpoint in Wilderness where the Kaaimans River curves around a forested hill, perfectly forming the shape of the African continent."
+    "description": "A breathtaking viewpoint in Wilderness where the Kaaimans River curves around a forested hill, perfectly forming the shape of the African continent.",
+    "sponsored": false
   },
   {
     "id": 29,
@@ -788,7 +813,8 @@
     "town": "Wilderness",
     "latitude": -33.9925,
     "longitude": 22.6074,
-    "description": "Rent a canoe and paddle up the Touw River to the Wilderness waterfall. A peaceful, stunning journey through indigenous forests."
+    "description": "Rent a canoe and paddle up the Touw River to the Wilderness waterfall. A peaceful, stunning journey through indigenous forests.",
+    "sponsored": false
   },
   {
     "id": 30,
@@ -816,7 +842,8 @@
     "town": "Oudtshoorn",
     "latitude": -33.5681,
     "longitude": 22.2085,
-    "description": "Encounter cheetahs, crocodiles, and lemurs. A highly ethical conservation facility offering guided tours and unique animal encounters."
+    "description": "Encounter cheetahs, crocodiles, and lemurs. A highly ethical conservation facility offering guided tours and unique animal encounters.",
+    "sponsored": false
   },
   {
     "id": 31,
@@ -840,7 +867,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1402,
     "longitude": 22.0505,
-    "description": "Live music event in the massive rustic barn at ReedValley. Enjoy premium Eden Valley wines and authentic Portuguese cuisine while you dance the night away."
+    "description": "Live music event in the massive rustic barn at ReedValley. Enjoy premium Eden Valley wines and authentic Portuguese cuisine while you dance the night away.",
+    "sponsored": false
   },
   {
     "id": 32,
@@ -868,7 +896,8 @@
     "town": "Hartenbos",
     "latitude": -34.113,
     "longitude": 22.117,
-    "description": "A massive summer holiday bash at the Hartenbos Waterpark with live DJs, slip-and-slide competitions, and food stalls."
+    "description": "A massive summer holiday bash at the Hartenbos Waterpark with live DJs, slip-and-slide competitions, and food stalls.",
+    "sponsored": false
   },
   {
     "id": 33,
@@ -893,7 +922,8 @@
     "town": "Great Brak River",
     "latitude": -34.0415,
     "longitude": 22.2185,
-    "description": "A massive family camping weekend on the banks of the Great Brak River. Includes kayaking, fishing competitions, and a massive communal potjiekos competition."
+    "description": "A massive family camping weekend on the banks of the Great Brak River. Includes kayaking, fishing competitions, and a massive communal potjiekos competition.",
+    "sponsored": false
   },
   {
     "id": 34,
@@ -917,7 +947,8 @@
     "town": "Mossel Bay",
     "latitude": -34.204,
     "longitude": 22.088,
-    "description": "Try your luck at the slots and tables, or catch top-tier South African comedians and musicians at the Bravo Lounge."
+    "description": "Try your luck at the slots and tables, or catch top-tier South African comedians and musicians at the Bravo Lounge.",
+    "sponsored": false
   },
   {
     "id": 35,
@@ -945,7 +976,8 @@
     "town": "Mossel Bay",
     "latitude": -34.195,
     "longitude": 22.115,
-    "description": "A beautiful and challenging community trail run through the fynbos reserves of Mossel Bay, ending with a beach cleanup initiative."
+    "description": "A beautiful and challenging community trail run through the fynbos reserves of Mossel Bay, ending with a beach cleanup initiative.",
+    "sponsored": false
   },
   {
     "id": 36,
@@ -978,7 +1010,8 @@
     "town": "George",
     "latitude": -33.9485,
     "longitude": 22.3965,
-    "description": "Family fun market featuring local gifts, sweet treats, clothing, and face painting. Enjoy live music by Cole Nicholson, Janine Fourie, Glenwood, and Skye. Attractions include a Play Park with jumping castles and target shooting, as well as Luna & Co natural pet treats."
+    "description": "Family fun market featuring local gifts, sweet treats, clothing, and face painting. Enjoy live music by Cole Nicholson, Janine Fourie, Glenwood, and Skye. Attractions include a Play Park with jumping castles and target shooting, as well as Luna & Co natural pet treats.",
+    "sponsored": false
   },
   {
     "id": 37,
@@ -997,7 +1030,8 @@
     "town": "Various",
     "latitude": -34.0,
     "longitude": 22.0,
-    "description": "More than 50 venues to choose from including lodges, bush camps, cottages, camp sites, tented camps, pet-friendly venues, and group camp venues. Activities include 40+ hiking trails, mountain biking, horse riding, canoeing, fishing, and abseiling."
+    "description": "More than 50 venues to choose from including lodges, bush camps, cottages, camp sites, tented camps, pet-friendly venues, and group camp venues. Activities include 40+ hiking trails, mountain biking, horse riding, canoeing, fishing, and abseiling.",
+    "sponsored": false
   },
   {
     "id": 38,
@@ -1022,7 +1056,8 @@
     "town": "George",
     "latitude": -33.985,
     "longitude": 22.481,
-    "description": "Come and display your new or vintage VW to celebrate 75 years. The event features a kids area, food & drinks, a photo booth, and various new & vintage VWs on display."
+    "description": "Come and display your new or vintage VW to celebrate 75 years. The event features a kids area, food & drinks, a photo booth, and various new & vintage VWs on display.",
+    "sponsored": false
   },
   {
     "id": 39,
@@ -1046,7 +1081,8 @@
     "town": "George",
     "latitude": -33.9644,
     "longitude": 22.4597,
-    "description": "Join hundreds for a wellness experience supporting Breast Cancer, open to beginners, seasoned pros, and relay teams. Entry includes a Kauai smoothie and snack, plus a chance to win a 2-night stay at Gonnakraal Eco Cabin worth R3500."
+    "description": "Join hundreds for a wellness experience supporting Breast Cancer, open to beginners, seasoned pros, and relay teams. Entry includes a Kauai smoothie and snack, plus a chance to win a 2-night stay at Gonnakraal Eco Cabin worth R3500.",
+    "sponsored": false
   },
   {
     "id": 40,
@@ -1070,7 +1106,8 @@
     "town": "Mossel Bay",
     "latitude": -34.1833,
     "longitude": 22.1417,
-    "description": "Lag, dans & dink with Francois Boyce. Bring your own picnic basket. Tickets available by contacting Cindy."
+    "description": "Lag, dans & dink with Francois Boyce. Bring your own picnic basket. Tickets available by contacting Cindy.",
+    "sponsored": false
   },
   {
     "id": 41,
@@ -1102,7 +1139,8 @@
     "town": "George",
     "latitude": -33.98,
     "longitude": 22.47,
-    "description": "Hosted by the Garden Route Community Service Centre. Come and enjoy an afternoon filled with song and friendship! (English version poster of the earlier listed 'Sang Middag')."
+    "description": "Hosted by the Garden Route Community Service Centre. Come and enjoy an afternoon filled with song and friendship! (English version poster of the earlier listed 'Sang Middag').",
+    "sponsored": false
   },
   {
     "id": 42,
@@ -1209,7 +1247,7 @@
     "longitude": 22.025,
     "weather": "Indoor",
     "audience": "All Ages, Music Lovers",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "United in Rhythm! Join Cape Town's legendary reggae band The Rivertones at ReedValley Wine Estate for an electrifying tribute to Bob Marley, UB40, and Eddy Grant. Expect infectious island grooves, estate wines, delicious Portuguese-inspired dining, and a packed dancefloor."
   },
@@ -1471,7 +1509,7 @@
     "name": "Mysteries, Mayhem, Crimes & Ghosts of Mossel Bay (Night Walk)",
     "category": "event",
     "vibe": "Arts & Culture, Outdoor & Adventure",
-    "date": "2026-11-13T19:00:00",
+    "date": "2026-11-27T19:00:00",
     "endDate": null,
     "time": "7:00 PM - 9:00 PM",
     "images": [
@@ -1499,9 +1537,9 @@
     "longitude": 22.148,
     "weather": "Outdoor",
     "audience": "Adults & Older Teens",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
-    "description": "As night falls, discover the shadowy side of Mossel Bay where history, mystery, shipwrecks, crimes, and eerie untold ghost stories come to life on a guided lantern walk! Next scheduled walk: Friday 13 November 2026. Not suitable for small children or the faint of heart — pre-booking via WhatsApp essential."
+    "description": "As night falls, discover the shadowy side of Mossel Bay where history, mystery, shipwrecks, crimes, and eerie untold ghost stories come to life on a guided lantern walk! Next scheduled walk: Friday 27 November 2026. Not suitable for small children or those faint of heart — pre-booking via WhatsApp (066 227 6485) essential."
   },
   {
     "id": 53,
@@ -1607,7 +1645,7 @@
     "longitude": 22.1095,
     "weather": "Outdoor",
     "audience": "All Ages, Family",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "Kom kuier saam by Hart & Bosch Village se gesellige Markaand! Snuffel tussen meer as 40 stalletjies met wood-fired pizzas, pasteie, wraps, gevulde pannekoeke, bubble waffles, milkshakes en biltong. Die kinders kan veilig speel by die Play Haus terwyl grootmense na grootskerm-rugby by Glenhoff Brauhaus kyk."
   },
@@ -1713,7 +1751,7 @@
     "longitude": 22.025,
     "weather": "Outdoor",
     "audience": "All Ages, Family",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "A massive family celebration at ReedValley Wine Farm! Browse 50+ local market stalls (including laser-cut crafts, raw honey from Southern Cape beekeepers, and gourmet food), attend the bee conservation seminar with guest speaker Ruan Veldtman, and enjoy live music, face painting, a kids scavenger hunt, and jumping castles."
   },
@@ -1859,9 +1897,9 @@
     "name": "Uncle George Christmas Party at the Magical Castle",
     "category": "event",
     "vibe": "Family & Kids, Markets & Community, Live Music & Entertainment",
-    "date": "2026-12-04T17:00:00",
+    "date": "2026-12-05T17:00:00",
     "endDate": "2026-12-20T21:00:00",
-    "time": "5:00 PM - 9:00 PM Nightly",
+    "time": "5:00 PM - 9:00 PM Nightly (5 – 20 Dec)",
     "images": [
       "images/wa-uncle-george-christmas.jpg"
     ],
@@ -1889,9 +1927,9 @@
     "longitude": 22.418,
     "weather": "Outdoor",
     "audience": "Family, Kids, All Ages",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
-    "description": "A magical Garden Route festive tradition! Bring the whole family to Step Aside Farm in Blanco, George to meet Santa, the Fairy, and all their friends inside an illuminated fairytale castle. Features night-market food stalls, Christmas craft stalls, and brand-new surprises for 2026."
+    "description": "Moms and Dads—book now for a fun-filled family evening out at Step Aside Farm in George! Meet Santa, the Fairy, and all their friends inside a magical illuminated castle from 5 to 20 December (5pm–9pm). Entry R20–R40 pp; limited seats per night!"
   },
   {
     "id": 64,
@@ -2067,7 +2105,7 @@
     "vibe": "Food & Drink, Family & Kids",
     "date": null,
     "endDate": null,
-    "time": "8:30 AM - 4:00 PM, Sat & Sun",
+    "time": "Mon-Sun 8:00 AM - 4:00 PM (Live Music Weekends & Daily Specials)",
     "images": [
       "images/wa-av8-sunday-lunch.jpg",
       "images/wa-av8-saturday-special.jpg",
@@ -2077,19 +2115,23 @@
     "phone": "+27766005606",
     "whatsapp": "27766005606",
     "website": "",
-    "price": 105,
+    "price": 80,
     "priceDetails": [
+      {
+        "item": "Mon & Fri Early Bird Breakfast + Cappuccino",
+        "cost": "R80.00"
+      },
       {
         "item": "Saturday Airfield Breakfast + Cappuccino",
         "cost": "R105.00"
       },
       {
-        "item": "Sunday Lamb Rib Roast Lunch (From 1 PM)",
-        "cost": "R165.00"
+        "item": "Wednesday Bacon, Cheese & Pepper Omelette + Cappuccino",
+        "cost": "R125.00"
       },
       {
-        "item": "Traditional Creamy Spiced Milk Tart",
-        "cost": "R35.00"
+        "item": "Sunday Lamb Rib Roast Lunch (From 1 PM)",
+        "cost": "R165.00"
       }
     ],
     "location": "AV8 Restaurant & Bar, Mossel Bay Airfield, 69 Rooikat St",
@@ -2100,14 +2142,14 @@
     "audience": "All Ages, Family, Aviation Enthusiasts",
     "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Watch light aircraft and skydivers take off and land right in front of your table at Mossel Bay Airfield! Enjoy the famous R105 Saturday Airfield Breakfast (including cappuccino) or book for the traditional R165 Sunday Lamb Rib Roast with pumpkin fritters and creamy spiced milk tart."
+    "description": "Watch light aircraft and skydivers take off and land right in front of your table at Mossel Bay Airfield! Enjoy R80 Mon/Fri Early Bird Breakfasts, R125 Wednesday Omelette Specials, R105 Saturday Breakfasts, R165 Sunday Roasts, and live weekend music!"
   },
   {
     "id": 70,
     "name": "Mossel Bay Heritage Tour (Guided Historical Walk)",
     "category": "event",
     "vibe": "Arts & Culture, Outdoor & Adventure, Sightseeing",
-    "date": "2026-11-14T09:00:00",
+    "date": "2026-11-28T09:00:00",
     "endDate": null,
     "time": "9:00 AM - 1:00 PM",
     "images": [
@@ -2133,9 +2175,9 @@
     "longitude": 22.1465,
     "weather": "Outdoor",
     "audience": "Adults, Families, History Lovers",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Step back in time on a 4-hour guided morning walking tour through historic Mossel Bay with South Cape Promotions. Discover the town's maritime heritage, sandstone architecture, early explorers, and fascinating local stories."
+    "description": "Discover one of South Africa's oldest towns through its historic sandstone buildings, maritime heritage, coastal views, and fascinating stories from the past. Next guided walk: Saturday 28 November 2026 (R320 pp). Moderate walking; book via WhatsApp on 066 227 6485."
   },
   {
     "id": 71,
@@ -2230,7 +2272,7 @@
     "longitude": 22.459,
     "weather": "Indoor",
     "audience": "All Ages, Afrikaans & Country Music Fans",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "Award-winning South African vocalist Demi Lee Moore brings her powerhouse vocals and chart-topping Afrikaans and country hits live to George on Saturday 14 November. Tickets available via Webtickets."
   },
@@ -2331,7 +2373,7 @@
     "longitude": 22.1445,
     "weather": "Indoor",
     "audience": "Adults, Afrikaans Comedy & Theatre Fans",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "Beloved Afrikaans actress and comedienne Desiré Gardner brings everyone's favourite tannie, Magda Louw, to The Stage Coach in Mossel Bay for two hilarious evenings on 19 & 20 November 2026!"
   },
@@ -2490,7 +2532,7 @@
     "longitude": 22.452,
     "weather": "Outdoor",
     "audience": "All Ages, Bikers, Cyclists, Families & Community",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "Join hundreds of bikers, car enthusiasts, cyclists, and families for the annual Garden Route Toy Run! Meet at the Checkers parking lot on York Street (kickstands up 10:30–10:45 AM) for the mass charity convoy to Outeniqua Shellhole in Loerie Park. Entry is simple: just bring a toy to brighten a child's Christmas!"
   },
@@ -2560,7 +2602,7 @@
     "longitude": 22.4682,
     "weather": "Outdoor",
     "audience": "All Ages, Sports Fans, Families & Holidaymakers",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "One of the Garden Route's biggest December summer festivals! The Dotsure George Tens returns to Outeniqua Park Stadium from 11–13 December 2026 with social and competitive Rugby 10s, Fast-5s Netball, massive beer tent entertainment, food villages, and kiddies zones."
   },
@@ -2657,7 +2699,7 @@
     "longitude": 22.1455,
     "weather": "Outdoor",
     "audience": "Couples, Families, Ocean Lovers",
-    "sponsored": true,
+    "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "Set sail from Mossel Bay Harbour aboard Hooked On Pleasure for unforgettable sunrise and sunset ocean cruises along the bay! Spot dolphins, seals, and seasonal whales while soaking in panoramic views of the Outeniqua Mountains."
   },
@@ -2794,12 +2836,12 @@
     "vibe": "Sports & Fitness, Outdoor & Adventure, Markets & Community",
     "date": null,
     "endDate": null,
-    "time": "8:00 AM Start, Every Saturday Morning",
+    "time": "7:30 AM Start, Every Saturday Morning",
     "images": [
       "images/wa-grootbrak-waterfront-5km.jpg"
     ],
-    "phone": "+27726128632",
-    "whatsapp": "27726128632",
+    "phone": "+27832440361",
+    "whatsapp": "27832440361",
     "website": "",
     "price": 0,
     "priceDetails": [
@@ -2816,7 +2858,7 @@
     "audience": "Walkers, Runners, Families & Strollers",
     "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Start your Saturday morning on an active note at the scenic Groot Brakrivier Waterfront! Join the free weekly 5km community fun walk or run at 8:00 AM along the lagoon, followed by artisan coffee and breakfast at Senators Choice Cafe."
+    "description": "Join locals and visitors every Saturday morning at 7:30 AM at the Groot Brakrivier Waterfront (starting at Senators Choice Café) for a free 5km Fun Walk/Run! Walk, run, or stroll in the fresh lagoon air followed by specialty coffee and breakfast."
   },
   {
     "id": 92,
@@ -3322,5 +3364,749 @@
     "sponsored": false,
     "communitySource": "Garden Route Weekend Trips",
     "description": "Action-packed 4-aside volleyball tournament at YWAM George with prizes for 1st, 2nd, and 3rd place, food & drinks for sale, and braai fires."
+  },
+  {
+    "id": 108,
+    "name": "Koos Kombuis Live at ReedValley Wine Estate",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Food & Drink",
+    "date": "2026-11-28T20:00:00",
+    "endDate": null,
+    "time": "8:00 PM (Doors Open 6:00 PM)",
+    "images": [
+      "images/wa-rivertones-reedvalley.jpg"
+    ],
+    "phone": "+27446981022",
+    "whatsapp": "27729719867",
+    "website": "https://www.reedvalley.com/shows/",
+    "price": 200,
+    "priceDetails": [
+      {
+        "item": "Concert Ticket",
+        "cost": "R200.00 pp"
+      },
+      {
+        "item": "Dining & Wine",
+        "cost": "À la carte menu & estate wines available"
+      }
+    ],
+    "location": "ReedValley Wine Farm, R327, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.162,
+    "longitude": 22.025,
+    "weather": "Indoor",
+    "audience": "Adults, Afrikaans & Acoustic Music Fans",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Legendary South African singer-songwriter and storyteller Koos Kombuis performs live at ReedValley Wine Farm in Mossel Bay on Saturday 28 November at 20:00! Book online at reedvalley.com or call 044 698 1022."
+  },
+  {
+    "id": 109,
+    "name": "AV8 Weekend Live Music: Hannah & Live Band Alan & Shelley",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Food & Drink, Family & Kids",
+    "date": "2026-11-28T13:00:00",
+    "endDate": "2026-11-29T15:00:00",
+    "time": "Sat 28 Nov (1:00–4:00 PM) & Sun 29 Nov (12:00–3:00 PM)",
+    "images": [
+      "images/wa-av8-sunday-lunch.jpg",
+      "images/wa-av8-saturday-special.jpg"
+    ],
+    "phone": "+27766005606",
+    "whatsapp": "27766005606",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Live Music Entry",
+        "cost": "Free for Diners (Bookings Essential)"
+      },
+      {
+        "item": "Sat 1–4 PM",
+        "cost": "Hannah Live"
+      },
+      {
+        "item": "Sun 12–3 PM",
+        "cost": "Alan & Shelley Live Band"
+      }
+    ],
+    "location": "AV8 Restaurant & Bar @ Mossel Bay Airfield, 69 Rooikat St",
+    "town": "Mossel Bay",
+    "latitude": -34.1572,
+    "longitude": 22.0615,
+    "weather": "Both",
+    "audience": "All Ages, Families, Aviation & Music Lovers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Enjoy runway views and live weekend music at AV8 Restaurant & Bar at Mossel Bay Airfield! Hannah performs live on Saturday 28 November (1:00–4:00 PM), followed by Live Band Alan & Shelley on Sunday 29 November (12:00–3:00 PM)."
+  },
+  {
+    "id": 110,
+    "name": "Steak Ete en Dans by Saxon Plaas",
+    "category": "event",
+    "vibe": "Food & Drink, Live Music & Entertainment, Markets & Community",
+    "date": "2026-11-28T19:00:00",
+    "endDate": null,
+    "time": "7:00 PM till Late",
+    "images": [
+      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27827455400",
+    "whatsapp": "27827455400",
+    "website": "",
+    "price": 250,
+    "priceDetails": [
+      {
+        "item": "Steak Dinner & Barn Dance (Per Person)",
+        "cost": "R250.00 pp"
+      },
+      {
+        "item": "Table of 8 Special",
+        "cost": "R1,800.00"
+      },
+      {
+        "item": "Includes",
+        "cost": "Steak, chips, onion rings & salad (Bring own drinks & glasses)"
+      }
+    ],
+    "location": "Saxon Plaas, Mossel Bay / Great Brak",
+    "town": "Mossel Bay",
+    "latitude": -34.095,
+    "longitude": 22.145,
+    "weather": "Indoor",
+    "audience": "All Ages, Sokkie & Country Dance Fans",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Hartlike plattelandse Steak Ete en Dans by Saxon Plaas om ons manne wat in Amerika werk terug te verwelkom! Sluit steak, tjips, uieringe en slaai in (R250 pp of R1,800 vir 'n tafel van 8). Bring eie drankgoed en glase — bespreek by Irma op 082 745 5400."
+  },
+  {
+    "id": 111,
+    "name": "Bridgehouse Friday Night Market",
+    "category": "event",
+    "vibe": "Markets & Community, Food & Drink, Shopping",
+    "date": "2026-11-27T16:00:00",
+    "endDate": null,
+    "time": "4:00 PM - 7:00 PM",
+    "images": [
+      "images/wa-bridgehouse-night-market.jpg",
+      "images/wa-itsi-van-alles-bridgehouse.jpg"
+    ],
+    "phone": "+27769050808",
+    "whatsapp": "27769050808",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Night Market Entry",
+        "cost": "Free Entry"
+      }
+    ],
+    "location": "Bridgehouse Coffee Shop & Nursery, 73 Hope Street, George",
+    "town": "George",
+    "latitude": -33.9542,
+    "longitude": 22.456,
+    "weather": "Both",
+    "audience": "All Ages, Families, Plant & Craft Shoppers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Spend a magical Friday evening under the fairy lights at the Bridgehouse Night Market (Friday 27 November, 4:00–7:00 PM)! Enjoy local craft shopping, nursery plants, homemade treats, coffee, and great community company."
+  },
+  {
+    "id": 112,
+    "name": "Sounds of the Season: Carpe Musicam! Pops Band Benefit Concert",
+    "category": "event",
+    "vibe": "Arts & Culture, Live Music & Entertainment, Family & Kids",
+    "date": "2026-11-29T15:30:00",
+    "endDate": null,
+    "time": "3:30 PM Start",
+    "images": [
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27733258033",
+    "whatsapp": "27733258033",
+    "website": "https://carpemusicam.co.za",
+    "price": 150,
+    "priceDetails": [
+      {
+        "item": "Benefit Concert Ticket",
+        "cost": "Book online at carpemusicam.co.za"
+      },
+      {
+        "item": "Beneficiary",
+        "cost": "In aid of the Great Brak River Conservancy"
+      }
+    ],
+    "location": "Bartolomeu Dias Maritime Museum (Caravel Hall), Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.1808,
+    "longitude": 22.1422,
+    "weather": "Indoor",
+    "audience": "All Ages, Music & Conservation Supporters",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Celebrate the festive season alongside the full Carpe Musicam! Pops Band inside the historic Dias Maritime Museum in Mossel Bay on Sunday 29 November at 15:30. All proceeds support the environmental work of the Great Brak River Conservancy."
+  },
+  {
+    "id": 113,
+    "name": "George Sixes Sport, Culture & Live Music Festival 2026",
+    "category": "event",
+    "vibe": "Sports & Fitness, Live Music & Entertainment, Family & Kids",
+    "date": "2026-11-27T10:00:00",
+    "endDate": "2026-11-29T22:00:00",
+    "time": "27 – 29 Nov (Sat Talent Show 10 AM & Live Music from 5 PM)",
+    "images": [
+      "images/wa-sixes-golf-george.jpg"
+    ],
+    "phone": "+27716722873",
+    "whatsapp": "27716722873",
+    "website": "https://sixes.howler.co.za/events/george-sixes-2026-38cf/tickets",
+    "price": 50,
+    "priceDetails": [
+      {
+        "item": "Festival & Talent Entry",
+        "cost": "From R50.00 (Tickets via Howler)"
+      },
+      {
+        "item": "Sat 10 AM & 1 PM",
+        "cost": "Young Rising Stars (8–16) & Open Stage (17+) Talent Show"
+      },
+      {
+        "item": "Sat from 5 PM",
+        "cost": "Live Music: Skye Gypsy, Schwabie, Janine Fourie & Rhino & The Rasta"
+      }
+    ],
+    "location": "York High School / Quarry Sport Fields, George",
+    "town": "George",
+    "latitude": -33.9615,
+    "longitude": 22.4545,
+    "weather": "Outdoor",
+    "audience": "All Ages, Families, Sports & Live Music Fans",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Four sports, one massive weekend festival in George! Enjoy three days of social sports, food stalls, Saturday's Young Rising Stars & Open Stage Talent Show, and Saturday Night Live Music featuring Skye Gypsy, Schwabie, Janine Fourie, and Rhino & The Rasta."
+  },
+  {
+    "id": 114,
+    "name": "NQtac Fresh Pasta & Artisanal Sauces Masterclass",
+    "category": "event",
+    "vibe": "Food & Drink, Arts & Culture",
+    "date": "2026-11-27T18:00:00",
+    "endDate": null,
+    "time": "6:00 PM - 8:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/nqtac-fresh-pasta-masterclass/",
+    "price": 450,
+    "priceDetails": [
+      {
+        "item": "2-Hour Hands-On Culinary Masterclass",
+        "cost": "See Official Booking Page"
+      }
+    ],
+    "location": "NQtac Hotel School, George",
+    "town": "George",
+    "latitude": -33.9595,
+    "longitude": 22.462,
+    "weather": "Indoor",
+    "audience": "Adults, Foodies & Aspiring Home Chefs",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Master the art of handmade Italian pasta from scratch at NQtac Hotel School in George! A hands-on Friday evening culinary workshop guiding you through fresh pasta dough techniques and three classic accompanying sauces."
+  },
+  {
+    "id": 115,
+    "name": "Cooking with Chefs Class: Festive Flair at François Ferreira Academy",
+    "category": "event",
+    "vibe": "Food & Drink, Arts & Culture",
+    "date": "2026-11-28T09:00:00",
+    "endDate": null,
+    "time": "9:00 AM - 1:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/cooking-with-chefs-class-festive-flair/",
+    "price": 800,
+    "priceDetails": [
+      {
+        "item": "Hands-On Festive Baking & Gift Class",
+        "cost": "R800.00 pp"
+      }
+    ],
+    "location": "François Ferreira Academy, George",
+    "town": "George",
+    "latitude": -33.956,
+    "longitude": 22.464,
+    "weather": "Indoor",
+    "audience": "Adults, Bakers & Festive Crafters",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "A creative festive cooking morning at the renowned François Ferreira Academy in George! Join Tanya Kuhn and resident chefs to craft a stunning festive cupcake bouquet, homemade gourmet fudge, and artisan holiday granola gifts."
+  },
+  {
+    "id": 116,
+    "name": "Clay, Pizza & Festive Fun (\"Kom Kuier Clay Café\") at Blend Knysna",
+    "category": "event",
+    "vibe": "Arts & Culture, Food & Drink, Family & Kids",
+    "date": "2026-11-27T14:00:00",
+    "endDate": null,
+    "time": "2:00 PM - 5:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27722238189",
+    "whatsapp": "27722238189",
+    "website": "",
+    "price": 280,
+    "priceDetails": [
+      {
+        "item": "Clay Crafting Workshop + Wood-Fired Pizza",
+        "cost": "R280.00 pp (All Included!)"
+      },
+      {
+        "item": "Bookings Essential",
+        "cost": "Contact Sharon on 072 223 8189 or Blend 044 384 0493"
+      }
+    ],
+    "location": "Blend Country Restaurant, George Rex Drive, Knysna",
+    "town": "Knysna",
+    "latitude": -34.0585,
+    "longitude": 23.0645,
+    "weather": "Both",
+    "audience": "All Ages, Families, Teens & Creatives",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Get creative under the trees at Blend Country Restaurant in Knysna! Hand-build and paint your own Christmas angels, cheeky gnomes, or festive mugs (including a Teen Clay Challenge), with a delicious wood-fired pizza included in your R280 ticket."
+  },
+  {
+    "id": 117,
+    "name": "Bring Your Pet to Movie Night: The Secret Life of Pets (Old Nick Plett)",
+    "category": "event",
+    "vibe": "Family & Kids, Nature & Wildlife, Outdoor & Adventure",
+    "date": "2026-11-28T17:00:00",
+    "endDate": null,
+    "time": "Doors 5:00 PM | Movie Starts 7:00 PM",
+    "images": [
+      "images/wa-pet-movies-blue-shed.jpg"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/bring-your-pet-to-movie-night-presents-secret-life-of-pets-old-nick-plett/",
+    "price": 140,
+    "priceDetails": [
+      {
+        "item": "General Admission (Includes Free Doggie Bandana)",
+        "cost": "R140 Online / R150 Door"
+      },
+      {
+        "item": "VIP Package (Blanket, Popcorn, Water, Chocolate & Front Row)",
+        "cost": "R240 Online"
+      },
+      {
+        "item": "Charity Support",
+        "cost": "R50 from every ticket supports local animal welfare"
+      }
+    ],
+    "location": "Old Nick Village Gardens, N2, Plettenberg Bay",
+    "town": "Plettenberg Bay",
+    "latitude": -34.032,
+    "longitude": 23.381,
+    "weather": "Outdoor",
+    "audience": "Families, Kids & Friendly Dogs on Leads",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Bring the family—and your four-legged best friend—for an outdoor cinema screening of The Secret Life of Pets in the gardens of Old Nick Village in Plettenberg Bay! Every ticket includes a complimentary doggie bandana and R50 donated to charity."
+  },
+  {
+    "id": 118,
+    "name": "Garden Route Reggae Day at DankiPa Eco Estate",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Outdoor & Adventure",
+    "date": "2026-11-28T09:00:00",
+    "endDate": null,
+    "time": "From 9:00 AM till Late",
+    "images": [
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/garden-route-reggae-day/",
+    "price": 150,
+    "priceDetails": [
+      {
+        "item": "Full Day Festival Pass",
+        "cost": "See Official Event Page"
+      }
+    ],
+    "location": "The CannaClub, DankiPa Eco Estate, Plettenberg Bay",
+    "town": "Plettenberg Bay",
+    "latitude": -34.015,
+    "longitude": 23.395,
+    "weather": "Outdoor",
+    "audience": "Adults, Reggae & Live Music Lovers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "A full day of roots reggae, island rhythms, live bands, and selectors in Plettenberg Bay! Lineup features Wiseman and Sons, Lasco Band, Exodjs, Mamma Firekey, Ras Bee, DJ Bobbo, Sakman Levi, Empress Big Be, and Big Don."
+  },
+  {
+    "id": 119,
+    "name": "Wolwedans Dam 8km Guided Hike & Dam Wall Picnic",
+    "category": "event",
+    "vibe": "Outdoor & Adventure, Nature & Conservation, Sports & Fitness",
+    "date": "2026-12-02T08:00:00",
+    "endDate": null,
+    "time": "8:00 AM - 12:00 PM (~4 Hours)",
+    "images": [
+      "images/wa-touws-9km-hike-row.jpg"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/wolwedans-dam-8km-hike/",
+    "price": 100,
+    "priceDetails": [
+      {
+        "item": "Guided 8km Hike (271m Elevation Gain)",
+        "cost": "R100.00 pp"
+      }
+    ],
+    "location": "Wolwedans Dam, Great Brak River",
+    "town": "Great Brak River",
+    "latitude": -34.0225,
+    "longitude": 22.2285,
+    "weather": "Outdoor",
+    "audience": "Hikers & Nature Enthusiasts",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Explore the scenic fynbos hills and water vistas above Great Brak River on this 8km guided hike around Wolwedans Dam on Wednesday 2 December at 8:00 AM. Includes ~271m elevation gain over four hours and concludes with a scenic picnic at the dam wall."
+  },
+  {
+    "id": 120,
+    "name": "Wild Mongoo Charity Fashion Show & Shaza Live at Fancourt",
+    "category": "event",
+    "vibe": "Arts & Culture, Live Music & Entertainment, Food & Drink",
+    "date": "2026-12-02T18:30:00",
+    "endDate": null,
+    "time": "6:30 PM for 7:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/wild-mongoo-fashion-show/",
+    "price": 350,
+    "priceDetails": [
+      {
+        "item": "Adult Ticket (Welcome Drinks, Snacks & Goodie Bag Included)",
+        "cost": "R350.00 pp"
+      },
+      {
+        "item": "Group Bookings (10+)",
+        "cost": "Discounted Table Rates Available"
+      }
+    ],
+    "location": "Fancourt Estate, Montagu Street, Blanco, George",
+    "town": "George",
+    "latitude": -33.9515,
+    "longitude": 22.4065,
+    "weather": "Indoor",
+    "audience": "Adults, Fashion & Live Entertainment Lovers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "An inspiring evening of fashion, live music by local star Shaza, and women's empowerment at Fancourt in George! Showcases collections from Wild Mongoo and Sam's Clothing, complete with welcome drinks, canapés, goodie bags, and lucky draws."
+  },
+  {
+    "id": 121,
+    "name": "Plett Surfers Ball 2026 at Central Beach",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Outdoor & Adventure",
+    "date": "2026-12-04T17:30:00",
+    "endDate": null,
+    "time": "5:30 PM till Late",
+    "images": [
+      "https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/surfers-ball-2026/",
+    "price": 200,
+    "priceDetails": [
+      {
+        "item": "Adult Entry (Dress Code: Surf Sophisticate)",
+        "cost": "R200.00 pp"
+      },
+      {
+        "item": "Beneficiaries",
+        "cost": "Supports Plett Shark Spotters & Adopt a Surfer"
+      }
+    ],
+    "location": "Bikini Beach Tent, Central Beach, Plettenberg Bay",
+    "town": "Plettenberg Bay",
+    "latitude": -34.0588,
+    "longitude": 23.3772,
+    "weather": "Both",
+    "audience": "Adults, Surfers & Ocean Conservation Supporters",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Beachside glamour meets ocean conservation at the Bikini Beach Tent on Central Beach, Plettenberg Bay! Dress \"Surf Sophisticate\" and enjoy live music, coastal food, and a vibrant party raising funds for Plett Shark Spotters and Adopt a Surfer."
+  },
+  {
+    "id": 122,
+    "name": "The Festive Boma Market at ReedValley (December Edition)",
+    "category": "event",
+    "vibe": "Markets & Community, Food & Drink, Family & Kids",
+    "date": "2026-12-05T09:00:00",
+    "endDate": null,
+    "time": "9:00 AM - 3:00 PM",
+    "images": [
+      "images/wa-boma-market-nov7.jpg"
+    ],
+    "phone": "+27446981022",
+    "whatsapp": "27729719867",
+    "website": "https://www.reedvalley.com",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Market Entry",
+        "cost": "Free Entry"
+      },
+      {
+        "item": "Festive Lucky Draw Tickets",
+        "cost": "R20.00"
+      }
+    ],
+    "location": "ReedValley Wine Farm, R327, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.162,
+    "longitude": 22.025,
+    "weather": "Outdoor",
+    "audience": "All Ages, Families & Festive Shoppers",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "The Boma Market is back at ReedValley Wine Farm on Saturday 5 December (9:00 AM – 3:00 PM) for a festive summer celebration! Browse dozens of local artisan stalls, handmade Christmas gifts, gourmet food, estate wines, and live music."
+  },
+  {
+    "id": 123,
+    "name": "Vine & Voyage Knysna: Hop-On Hop-Off Boat Wine Tasting",
+    "category": "event",
+    "vibe": "Food & Drink, Outdoor & Adventure",
+    "date": "2026-12-05T11:00:00",
+    "endDate": null,
+    "time": "11:00 AM - 5:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/vine-voyage-knysna/",
+    "price": 450,
+    "priceDetails": [
+      {
+        "item": "Boat Transfers & Wine Tasting Pass (Strictly 18+)",
+        "cost": "See Official Ticketing"
+      }
+    ],
+    "location": "Thesen Islands Waterways, Knysna",
+    "town": "Knysna",
+    "latitude": -34.0485,
+    "longitude": 23.0482,
+    "weather": "Outdoor",
+    "audience": "Adults (18+), Wine & Boating Enthusiasts",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Experience Knysna's waterways with a luxury twist! Hop on and off boats travelling between selected private waterfront homes and tasting stations across Thesen Islands, sampling premier South African wine estates."
+  },
+  {
+    "id": 124,
+    "name": "2nd Annual George Musical Festival: Fill Up Thembalethu",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Markets & Community",
+    "date": "2026-12-06T10:00:00",
+    "endDate": null,
+    "time": "10:00 AM - 11:00 PM",
+    "images": [
+      "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/2nd-annual-george-musical-festival-fill-up-thembalethu/",
+    "price": 100,
+    "priceDetails": [
+      {
+        "item": "Festival Pass",
+        "cost": "See Official Programme"
+      }
+    ],
+    "location": "Thembalethu Stadium, George",
+    "town": "George",
+    "latitude": -33.9985,
+    "longitude": 22.4765,
+    "weather": "Outdoor",
+    "audience": "All Ages, Live Music Fans",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "A full 13-hour summer celebration of live music, local artists, and community unity at Thembalethu Stadium in George on Sunday 6 December 2026."
+  },
+  {
+    "id": 125,
+    "name": "Movies vs Music – The Show! (Angeline's Dance Academy)",
+    "category": "event",
+    "vibe": "Arts & Culture, Family & Kids, Live Music & Entertainment",
+    "date": "2026-12-07T16:00:00",
+    "endDate": "2026-12-08T19:00:00",
+    "time": "4:00 PM (Mon 7 Dec & Tue 8 Dec)",
+    "images": [
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/movies-vs-music-the-show/",
+    "price": 100,
+    "priceDetails": [
+      {
+        "item": "Show Admission",
+        "cost": "Two Days: 7 & 8 December at 4:00 PM"
+      }
+    ],
+    "location": "Mossel Bay Town Hall (Stadsaal), Marsh Street, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.1833,
+    "longitude": 22.1417,
+    "weather": "Indoor",
+    "audience": "All Ages, Families & Dance Supporters",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Two days of movie magic and chart-topping choreography at Mossel Bay Town Hall! Angeline's Dance Academy performers aged 3 to 18 bring iconic cinema scenes and hit soundtracks to life on 7 & 8 December at 4:00 PM."
+  },
+  {
+    "id": 126,
+    "name": "Riaan Smit (Crimson House) Live in Wilderness + Open Mic Night",
+    "category": "event",
+    "vibe": "Live Music & Entertainment, Food & Drink",
+    "date": "2026-12-10T19:00:00",
+    "endDate": null,
+    "time": "7:00 PM till Late",
+    "images": [
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/riaan-smit-crimson-house-live-in-wilderness/",
+    "price": 120,
+    "priceDetails": [
+      {
+        "item": "Live Show & Open Mic Competition",
+        "cost": "See Venue Details"
+      }
+    ],
+    "location": "Wilderness Beach House Backpackers Lodge, Wilderness",
+    "town": "Wilderness",
+    "latitude": -33.9938,
+    "longitude": 22.5715,
+    "weather": "Indoor",
+    "audience": "Adults, Blues, Ska & Roots Music Fans",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Frontman Riaan Smit of Crimson House brings his electrifying blend of gravel-voiced blues, swing, ska, cabaret, and roots music to Wilderness Beach House Backpackers on Thursday 10 December, complete with an Open Mic competition for local performers!"
+  },
+  {
+    "id": 127,
+    "name": "George Padel Festival 2026 at Virgin Active Padel Club",
+    "category": "event",
+    "vibe": "Sports & Fitness, Outdoor & Adventure",
+    "date": "2026-12-12T08:00:00",
+    "endDate": null,
+    "time": "8:00 AM (Beginners), 10:00 AM (Intermediate) & 12:00 PM (Mix Doubles)",
+    "images": [
+      "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "https://www.toodoo.co.za/george-padel-festival-2026/",
+    "price": 350,
+    "priceDetails": [
+      {
+        "item": "Player Tournament Entry",
+        "cost": "R350.00 per player"
+      },
+      {
+        "item": "Spectators",
+        "cost": "Free Entry"
+      }
+    ],
+    "location": "Virgin Active Padel Club, 27 York Street, George",
+    "town": "George",
+    "latitude": -33.9644,
+    "longitude": 22.4597,
+    "weather": "Outdoor",
+    "audience": "Padel Players, Sports Fans & Families",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Play. Connect. Enjoy! Part of the George Culture, Art & Sport Festival 2026, the George Padel Festival hosts Beginners Mix Americano (08:00), Intermediate Mix Americano (10:00), and Intermediate Mix Doubles (12:00) at Virgin Active Padel Club."
+  },
+  {
+    "id": 128,
+    "name": "Wine & Petals Creative Sip & Paint at Redberry Farm",
+    "category": "activity",
+    "vibe": "Arts & Culture, Food & Drink",
+    "date": null,
+    "endDate": null,
+    "time": "Afternoon Creative Sessions (By Booking)",
+    "images": [
+      "https://images.unsplash.com/photo-1596649284241-2b04f72fae53?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "+27716722873",
+    "whatsapp": "27716722873",
+    "website": "https://hernetworksa.co.za/event-calendar",
+    "price": 350,
+    "priceDetails": [
+      {
+        "item": "Guided Wine Bottle Decorating, Snacks & Drinks",
+        "cost": "Book via 071 672 2873"
+      }
+    ],
+    "location": "Redberry Farm, Geelhoutboom Road, George",
+    "town": "George",
+    "latitude": -33.9167,
+    "longitude": 22.3833,
+    "weather": "Indoor",
+    "audience": "Ladies, Friends & Creative Groups",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Spend an inspiring afternoon at Redberry Farm in George where you'll sip, paint, and decorate your own bespoke floral wine bottle while enjoying snacks, drinks, and great company."
+  },
+  {
+    "id": 129,
+    "name": "Wednesday Morning 60+ Social Bingo at The Inky Notebook",
+    "category": "activity",
+    "vibe": "Markets & Community, Food & Drink",
+    "date": null,
+    "endDate": null,
+    "time": "11:00 AM, Every Wednesday Morning",
+    "images": [
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=600"
+    ],
+    "phone": "",
+    "whatsapp": "",
+    "website": "",
+    "price": 0,
+    "priceDetails": [
+      {
+        "item": "Bingo Entry (Ages 60+)",
+        "cost": "Free / Coffee & Cake Available"
+      }
+    ],
+    "location": "The Inky Notebook, Dana Bay, Mossel Bay",
+    "town": "Mossel Bay",
+    "latitude": -34.195,
+    "longitude": 22.051,
+    "weather": "Indoor",
+    "audience": "Seniors (60+) & Local Community",
+    "sponsored": false,
+    "communitySource": "Garden Route Weekend Trips",
+    "description": "Looking for a friendly mid-week morning out in Dana Bay? Everyone over 60 is invited to join Wednesday Morning Bingo at 11:00 AM at The Inky Notebook, with fresh coffee and homemade cake on offer."
   }
 ]

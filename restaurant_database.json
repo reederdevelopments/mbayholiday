@@ -3,7 +3,7 @@
     "id": 1001,
     "name": "Kaai 4 Braai Restaurant",
     "type": "Restaurant",
-    "sponsored": true,
+    "sponsored": false,
     "opening_times": "10:00 AM - 10:00 PM, Mon-Sun",
     "images": [
       "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=600"
@@ -30,7 +30,8 @@
     "longitude": 22.1566,
     "phone": "+27446905247",
     "website": "https://www.delfinos.co.za",
-    "description": "Iconic seaside dining at The Point. Famous for their fantastic pizzas, fresh seafood, and sweeping ocean views where you can often spot dolphins."
+    "description": "Iconic seaside dining at The Point. Famous for their fantastic pizzas, fresh seafood, and sweeping ocean views where you can often spot dolphins.",
+    "sponsored": false
   },
   {
     "id": 1003,
@@ -46,7 +47,8 @@
     "longitude": 22.1433,
     "phone": "+27828236109",
     "website": "https://blueshedroasters.co.za",
-    "description": "A quirky, vintage-styled coffee shop offering artisan roasted coffee, fresh baked goods, and a cozy atmosphere perfect for morning relaxations."
+    "description": "A quirky, vintage-styled coffee shop offering artisan roasted coffee, fresh baked goods, and a cozy atmosphere perfect for morning relaxations.",
+    "sponsored": false
   },
   {
     "id": 1004,
@@ -62,7 +64,8 @@
     "longitude": 22.108,
     "phone": "+27446952078",
     "website": "https://baruchscoffee.co.za",
-    "description": "Authentic Israeli-style coffee roastery and bakery. Known for their incredible middle-eastern inspired breakfasts, fresh bagels, and premium coffee blends."
+    "description": "Authentic Israeli-style coffee roastery and bakery. Known for their incredible middle-eastern inspired breakfasts, fresh bagels, and premium coffee blends.",
+    "sponsored": false
   },
   {
     "id": 1005,
@@ -78,7 +81,8 @@
     "longitude": 22.1437,
     "phone": "+27446905496",
     "website": "https://seagypsy.co.za/",
-    "description": "A rustic, legendary seafood spot right on the harbour edge. Famous for their massive seafood platters, casual vibe, and views of the boats coming and going."
+    "description": "A rustic, legendary seafood spot right on the harbour edge. Famous for their massive seafood platters, casual vibe, and views of the boats coming and going.",
+    "sponsored": false
   },
   {
     "id": 1006,
@@ -94,7 +98,8 @@
     "longitude": 22.1424,
     "phone": "+27446911885",
     "website": "https://cafegannet.co.za/",
-    "description": "Known as Mossel Bay's seafood house, offering a slightly more upscale dining experience. Excellent oysters, fresh line fish, and a beautiful outdoor seating area."
+    "description": "Known as Mossel Bay's seafood house, offering a slightly more upscale dining experience. Excellent oysters, fresh line fish, and a beautiful outdoor seating area.",
+    "sponsored": false
   },
   {
     "id": 1007,
@@ -110,7 +115,8 @@
     "longitude": 22.1578,
     "phone": "+27446912010",
     "website": "https://bigblu.co.za/",
-    "description": "Right on the rocks at The Point! Enjoy tapas, cocktails, and pizzas while the ocean waves literally crash against the rocks below the deck."
+    "description": "Right on the rocks at The Point! Enjoy tapas, cocktails, and pizzas while the ocean waves literally crash against the rocks below the deck.",
+    "sponsored": false
   },
   {
     "id": 1008,
@@ -126,7 +132,8 @@
     "longitude": 22.1416,
     "phone": "+27446904336",
     "website": "https://thejackal.co.za/",
-    "description": "Housed in the historic Santos Pavilion right on the sand. Offers craft beer, great steaks, and sushi with unbeatable views of Santos Beach."
+    "description": "Housed in the historic Santos Pavilion right on the sand. Offers craft beer, great steaks, and sushi with unbeatable views of Santos Beach.",
+    "sponsored": false
   },
   {
     "id": 1009,
@@ -142,7 +149,8 @@
     "longitude": 22.1422,
     "phone": "+27722730303",
     "website": "https://www.facebook.com/carolaanns/",
-    "description": "A healthy, Mediterranean-inspired cafe serving arguably the most beautifully plated breakfasts and lunches in town. Great coffee and vegan-friendly options."
+    "description": "A healthy, Mediterranean-inspired cafe serving arguably the most beautifully plated breakfasts and lunches in town. Great coffee and vegan-friendly options.",
+    "sponsored": false
   },
   {
     "id": 1010,
@@ -158,7 +166,8 @@
     "longitude": 22.1425,
     "phone": "+27446910057",
     "website": "https://route57.co.za",
-    "description": "Co-owned by local golfing legend Louis Oosthuizen, Route 57 offers a premium dining experience with a menu featuring traditional South African flavors elevated with a modern twist."
+    "description": "Co-owned by local golfing legend Louis Oosthuizen, Route 57 offers a premium dining experience with a menu featuring traditional South African flavors elevated with a modern twist.",
+    "sponsored": false
   },
   {
     "id": 1011,
@@ -174,7 +183,8 @@
     "longitude": 22.156,
     "phone": "+27446906390",
     "website": "https://thekingfisher.co.za",
-    "description": "A beloved local spot famous for its fresh seafood, excellent sushi, and panoramic views of the bay. Perfect for a relaxed lunch or dinner by the sea."
+    "description": "A beloved local spot famous for its fresh seafood, excellent sushi, and panoramic views of the bay. Perfect for a relaxed lunch or dinner by the sea.",
+    "sponsored": false
   },
   {
     "id": 1012,
@@ -190,7 +200,8 @@
     "longitude": 22.1432,
     "phone": "+27446903045",
     "website": "https://starsmb.co.za",
-    "description": "A vibrant venue offering hearty meals, fantastic pizzas, and a great atmosphere to catch live sports on the big screens with a cold drink."
+    "description": "A vibrant venue offering hearty meals, fantastic pizzas, and a great atmosphere to catch live sports on the big screens with a cold drink.",
+    "sponsored": false
   },
   {
     "id": 1013,
@@ -206,13 +217,14 @@
     "longitude": 22.1573,
     "phone": "+27446903333",
     "website": "https://pizaevino.co.za",
-    "description": "Authentic wood-fired Neapolitan pizzas and fresh pastas served right on the water's edge at The Point. Fantastic cocktails and a vibrant sunset atmosphere."
+    "description": "Authentic wood-fired Neapolitan pizzas and fresh pastas served right on the water's edge at The Point. Fantastic cocktails and a vibrant sunset atmosphere.",
+    "sponsored": false
   },
   {
     "id": 1014,
     "name": "Jakkalsvlei Private Cellar",
     "type": "Restaurant / Winery",
-    "sponsored": true,
+    "sponsored": false,
     "opening_times": "10:00 AM - 4:00 PM, Mon-Sun",
     "images": [
       "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&q=80&w=600"
@@ -239,7 +251,8 @@
     "longitude": 22.218,
     "phone": "+27446204163",
     "website": "https://transkaroo.co.za",
-    "description": "Housed in the old Great Brak railway station. An upscale dining experience focusing on elevated South African cuisine—their slow-roasted lamb neck is legendary."
+    "description": "Housed in the old Great Brak railway station. An upscale dining experience focusing on elevated South African cuisine—their slow-roasted lamb neck is legendary.",
+    "sponsored": false
   },
   {
     "id": 1016,
@@ -255,7 +268,8 @@
     "longitude": 22.1431,
     "phone": "+27606010001",
     "website": "https://themerchantcoffee.co.za",
-    "description": "A trendy, minimalist specialty coffee shop focusing on micro-lot roasts, incredible pastries, and fast, free Wi-Fi for remote workers."
+    "description": "A trendy, minimalist specialty coffee shop focusing on micro-lot roasts, incredible pastries, and fast, free Wi-Fi for remote workers.",
+    "sponsored": false
   },
   {
     "id": 1017,
@@ -271,7 +285,8 @@
     "longitude": 22.2178,
     "phone": "+27446203003",
     "website": "",
-    "description": "A brilliant local craft beer hub offering a massive selection of local brews on tap, epic smash burgers, and live music on weekends."
+    "description": "A brilliant local craft beer hub offering a massive selection of local brews on tap, epic smash burgers, and live music on weekends.",
+    "sponsored": false
   },
   {
     "id": 1018,
@@ -287,7 +302,8 @@
     "longitude": 22.112,
     "phone": "+27446928400",
     "website": "https://diazhotel.co.za",
-    "description": "Situated inside the Diaz Hotel right on the beach, offering a massive buffet breakfast, fine dining dinners, and cocktails overlooking the waves."
+    "description": "Situated inside the Diaz Hotel right on the beach, offering a massive buffet breakfast, fine dining dinners, and cocktails overlooking the waves.",
+    "sponsored": false
   },
   {
     "id": 1019,
@@ -303,7 +319,8 @@
     "longitude": 22.219,
     "phone": "+27446203081",
     "website": "",
-    "description": "A highly-rated daytime spot in the heart of Great Brak known for massive, delicious cakes, traditional breakfasts, and friendly small-town service."
+    "description": "A highly-rated daytime spot in the heart of Great Brak known for massive, delicious cakes, traditional breakfasts, and friendly small-town service.",
+    "sponsored": false
   },
   {
     "id": 1020,
@@ -319,7 +336,8 @@
     "longitude": 22.1585,
     "phone": "+27446905574",
     "website": "https://pontomosselbay.co.za",
-    "description": "Authentic Portuguese cuisine and spectacular seafood platters. Their peri-peri chicken and espetadas are famous along the entire Garden Route."
+    "description": "Authentic Portuguese cuisine and spectacular seafood platters. Their peri-peri chicken and espetadas are famous along the entire Garden Route.",
+    "sponsored": false
   },
   {
     "id": 1021,
@@ -335,7 +353,8 @@
     "longitude": 22.1438,
     "phone": "+27446903322",
     "website": "",
-    "description": "A hidden gem offering quiet, relaxed dining with Portuguese flair. Excellent trinchado, calamari, and panoramic views of the entire bay area from the balcony."
+    "description": "A hidden gem offering quiet, relaxed dining with Portuguese flair. Excellent trinchado, calamari, and panoramic views of the entire bay area from the balcony.",
+    "sponsored": false
   },
   {
     "id": 1022,
@@ -351,7 +370,8 @@
     "longitude": 22.1176,
     "phone": "+27446951234",
     "website": "",
-    "description": "A very popular breakfast and lunch spot for locals in Hartenbos. Big portions, excellent coffee, and a safe play area for the kids."
+    "description": "A very popular breakfast and lunch spot for locals in Hartenbos. Big portions, excellent coffee, and a safe play area for the kids.",
+    "sponsored": false
   },
   {
     "id": 1023,
@@ -365,7 +385,8 @@
     "town": "Mossel Bay",
     "latitude": -34.185,
     "longitude": 22.1582,
-    "description": "Situated directly next to the St Blaize Lighthouse. Offers upscale seafood and grills with 180-degree ocean views. A fantastic spot for whale watching during dinner."
+    "description": "Situated directly next to the St Blaize Lighthouse. Offers upscale seafood and grills with 180-degree ocean views. A fantastic spot for whale watching during dinner.",
+    "sponsored": false
   },
   {
     "id": 1024,
@@ -381,7 +402,8 @@
     "longitude": 22.1428,
     "phone": "+27828236111",
     "website": "",
-    "description": "The center of Mossel Bay's nightlife! A Cuban-themed cigar lounge and bar offering excellent cocktails, late-night pizzas, and a great party atmosphere."
+    "description": "The center of Mossel Bay's nightlife! A Cuban-themed cigar lounge and bar offering excellent cocktails, late-night pizzas, and a great party atmosphere.",
+    "sponsored": false
   },
   {
     "id": 1025,
@@ -397,7 +419,8 @@
     "longitude": 22.2182,
     "phone": "+27446202578",
     "website": "https://searlesvillage.co.za",
-    "description": "A uniquely eclectic dining experience in Great Brak. Dine among vintage cars and antiques while enjoying hearty South African pub fare and wood-fired pizzas."
+    "description": "A uniquely eclectic dining experience in Great Brak. Dine among vintage cars and antiques while enjoying hearty South African pub fare and wood-fired pizzas.",
+    "sponsored": false
   },
   {
     "id": 1026,
@@ -413,7 +436,8 @@
     "longitude": 22.1425,
     "phone": "",
     "website": "",
-    "description": "A very casual, barefoot-on-the-beach setup. Known for serving some of the best fresh fish and chips in Mossel Bay in a totally unpretentious setting."
+    "description": "A very casual, barefoot-on-the-beach setup. Known for serving some of the best fresh fish and chips in Mossel Bay in a totally unpretentious setting.",
+    "sponsored": false
   },
   {
     "id": 1027,
@@ -429,7 +453,8 @@
     "longitude": 22.051,
     "phone": "+27446981022",
     "website": "https://reedvalley.com",
-    "description": "Beyond their events, the daily restaurant serves massive Portuguese Espetadas and traditional pasteis de nata that pair perfectly with their export-quality wines."
+    "description": "Beyond their events, the daily restaurant serves massive Portuguese Espetadas and traditional pasteis de nata that pair perfectly with their export-quality wines.",
+    "sponsored": false
   },
   {
     "id": 1028,
@@ -447,7 +472,8 @@
     "phone": "+27766005606",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Runway views of light aircraft and skydivers at Mossel Bay Airfield! Famous for their R105 Saturday Breakfast Special (with cappuccino) and R165 Sunday Rosemary & Wine Lamb Rib Roast."
+    "description": "Runway views of light aircraft and skydivers at Mossel Bay Airfield! Famous for R80 Mon/Fri Early Bird Breakfasts (with cappuccino), R125 Wednesday Omelettes, R105 Saturday Breakfasts, R165 Sunday Roast lunches, and live weekend bands.",
+    "sponsored": false
   },
   {
     "id": 1029,
@@ -464,7 +490,8 @@
     "phone": "+27448770481",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Situated beneath the ancient Milkwood trees in Wilderness Village. Beloved for crispy wood-fired pizzas, hearty grills, family-friendly vibes, and live music sessions."
+    "description": "Situated beneath the ancient Milkwood trees in Wilderness Village. Beloved for crispy wood-fired pizzas, hearty grills, family-friendly vibes, and live music sessions.",
+    "sponsored": false
   },
   {
     "id": 1030,
@@ -481,7 +508,8 @@
     "phone": "+27448708876",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Cosy Blanco neighbourhood gem in George famous for thin-crust wood-fired pizzas, gourmet burgers, craft gin tastings, and live weekend acoustic sets."
+    "description": "Cosy Blanco neighbourhood gem in George famous for thin-crust wood-fired pizzas, gourmet burgers, craft gin tastings, and live weekend acoustic sets.",
+    "sponsored": false
   },
   {
     "id": 1031,
@@ -498,7 +526,8 @@
     "phone": "+27446202409",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Tranquil waterfront café in Great Brak River serving specialty coffee, hearty breakfasts, gourmet sandwiches, and decadent homemade cakes right by the water."
+    "description": "Tranquil waterfront café in Great Brak River serving specialty coffee, hearty breakfasts, gourmet sandwiches, and decadent homemade cakes right by the water.",
+    "sponsored": false
   },
   {
     "id": 1032,
@@ -515,7 +544,8 @@
     "phone": "+27448740045",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Lush garden sanctuary in George ideal for relaxed morning coffee, wholesome breakfasts, botanical lunches, and family catch-ups surrounded by greenery."
+    "description": "Lush garden sanctuary in George ideal for relaxed morning coffee, wholesome breakfasts, botanical lunches, and family catch-ups surrounded by greenery.",
+    "sponsored": false
   },
   {
     "id": 1033,
@@ -532,7 +562,8 @@
     "phone": "+27445331379",
     "website": "https://www.lookout.co.za",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Iconic wooden deck perched right above Lookout Beach and the Keurbooms lagoon in Plettenberg Bay, offering fresh seafood, sushi, cocktails, and themed event nights."
+    "description": "Iconic wooden deck perched right above Lookout Beach and the Keurbooms lagoon in Plettenberg Bay, offering fresh seafood, sushi, cocktails, and themed event nights.",
+    "sponsored": false
   },
   {
     "id": 1034,
@@ -549,7 +580,8 @@
     "phone": "+27448501160",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Quirky, welcoming country pub and family diner in picturesque Hoekwil above Wilderness, famous for hearty burgers, wood-fired meals, and hosting Saturday morning community doodling for the Wilderness Arts Festival."
+    "description": "Quirky, welcoming country pub and family diner in picturesque Hoekwil above Wilderness, famous for hearty burgers, wood-fired meals, and hosting Saturday morning community doodling for the Wilderness Arts Festival.",
+    "sponsored": false
   },
   {
     "id": 1035,
@@ -566,7 +598,8 @@
     "phone": "+27843590745",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Popular family restaurant and live entertainment venue in Great Brak River serving generous South African grills, seafood, breakfasts, and hosting regular live music nights."
+    "description": "Popular family restaurant and live entertainment venue in Great Brak River serving generous South African grills, seafood, breakfasts, and hosting regular live music nights.",
+    "sponsored": false
   },
   {
     "id": 1036,
@@ -583,7 +616,8 @@
     "phone": "+27446911995",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Intimate dining and live performance venue in Mossel Bay hosting touring South African theatre productions, comedy shows, and live music alongside hearty dinners."
+    "description": "Intimate dining and live performance venue in Mossel Bay hosting touring South African theatre productions, comedy shows, and live music alongside hearty dinners.",
+    "sponsored": false
   },
   {
     "id": 1037,
@@ -600,7 +634,8 @@
     "phone": "+27441500045",
     "website": "https://tigersmilk.co.za",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Trendy social kitchen and bar on Courtenay Street in George serving gourmet burgers, artisan pizzas, grills, craft beers, and hosting creative weekend community workshops."
+    "description": "Trendy social kitchen and bar on Courtenay Street in George serving gourmet burgers, artisan pizzas, grills, craft beers, and hosting creative weekend community workshops.",
+    "sponsored": false
   },
   {
     "id": 1038,
@@ -617,7 +652,8 @@
     "phone": "+27769050808",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Charming garden coffee shop and nursery at 73 Hope Street in George offering light bites, homemade cakes, plant shopping, local craft shelves ('Itsi Van Alles'), and monthly Friday Night Markets."
+    "description": "Charming garden coffee shop and nursery at 73 Hope Street in George offering light bites, homemade cakes, plant shopping, local craft shelves ('Itsi Van Alles'), and monthly Friday Night Markets.",
+    "sponsored": false
   },
   {
     "id": 1039,
@@ -634,6 +670,7 @@
     "phone": "+27446202345",
     "website": "",
     "communitySource": "Garden Route Weekend Trips",
-    "description": "Favourite biker-friendly and family country stop in Great Brak River known for Sunday breakfast runs, hearty pub lunches, and shaded outdoor seating."
+    "description": "Favourite biker-friendly and family country stop in Great Brak River known for Sunday breakfast runs, hearty pub lunches, and shaded outdoor seating.",
+    "sponsored": false
   }
 ]

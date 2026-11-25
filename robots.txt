@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /upload.html
+
+Sitemap: https://mbayholiday.co.za/sitemap.xml
